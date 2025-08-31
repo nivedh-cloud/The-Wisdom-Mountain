@@ -1,0 +1,458 @@
+{
+  "adamLineage": {
+    "name": "Adam",
+    "attributes": {
+      "role": "First Man",
+      "years": "930 years",
+      "description": "Created by God from dust, father of all humanity",
+      "icon": "FaUser",
+      "color": "#6366f1",
+      "born": "Day 6 of Creation",
+      "significance": "First human, given dominion over creation",
+      "spouse": "Eve",
+      "father": "God (Creator)",
+      "children": ["Cain", "Abel", "Seth", "other sons and daughters"]
+    },
+    "children": [
+      {
+        "name": "Cain",
+        "attributes": {
+          "role": "First Son",
+          "years": "Unknown (likely 800+)",
+          "description": "First murderer, killed his brother Abel out of jealousy",
+          "icon": "FaUser",
+          "color": "#ef4444",
+          "born": "First son of Adam and Eve",
+          "significance": "First to commit murder, built first city",
+          "spouse": "Unknown wife",
+          "father": "Adam",
+          "children": ["Enoch", "other descendants"]
+        },
+        "children": [
+          {
+            "name": "Enoch (Cain's son)",
+            "attributes": {
+              "role": "Son of Cain",
+              "years": "Unknown",
+              "description": "Built the first city, named after him by his father",
+              "icon": "FaCrown",
+              "color": "#64748b",
+              "born": "Son of Cain",
+              "significance": "First city builder in human history",
+              "spouse": "Unknown",
+              "father": "Cain",
+              "children": ["Irad", "other descendants"]
+            },
+            "children": [
+              {
+                "name": "Irad",
+                "attributes": {
+                  "role": "Son of Enoch",
+                  "years": "Unknown",
+                  "description": "Descendant in the line of Cain",
+                  "icon": "FaUser",
+                  "color": "#64748b",
+                  "born": "Son of Enoch (Cain's son)",
+                  "significance": "Continued Cain's lineage",
+                  "spouse": "Unknown",
+                  "father": "Enoch (Cain's son)",
+                  "children": ["Mehujael"]
+                },
+                "children": [
+                  {
+                    "name": "Mehujael",
+                    "attributes": {
+                      "role": "Son of Irad",
+                      "years": "Unknown",
+                      "description": "Fourth generation from Cain",
+                      "icon": "FaUser",
+                      "color": "#64748b",
+                      "born": "Son of Irad",
+                      "significance": "Continued the line of Cain",
+                      "spouse": "Unknown",
+                      "father": "Irad",
+                      "children": ["Methushael"]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Abel",
+        "attributes": {
+          "role": "Second Son",
+          "years": "Murdered young (likely 100+)",
+          "description": "Righteous shepherd, first martyr, his blood cried out to God",
+          "icon": "FaHeart",
+          "color": "#10b981",
+          "born": "Second son of Adam and Eve",
+          "significance": "First martyr, offered acceptable sacrifice to God",
+          "spouse": "None (died unmarried)",
+          "father": "Adam",
+          "children": ["None (murdered by Cain)"]
+        }
+      },
+      {
+        "name": "Seth",
+        "attributes": {
+          "role": "Third Son",
+          "years": "912 years", 
+          "description": "Appointed by God in place of Abel, ancestor of Noah",
+          "icon": "FaStar",
+          "color": "#34d399",
+          "born": "When Adam was 130 years old",
+          "significance": "Ancestor of Noah and Jesus Christ",
+          "spouse": "Sister or descendant",
+          "father": "Adam",
+          "children": ["Enosh", "other sons and daughters"]
+        },
+        "children": [
+          {
+            "name": "Enosh",
+            "attributes": {
+              "role": "Son of Seth",
+              "years": "905 years",
+              "description": "In his time people began to call on the name of the Lord",
+              "icon": "FaHeart",
+              "color": "#f59e0b",
+              "born": "When Seth was 105 years old",
+              "significance": "Beginning of organized worship of God",
+              "spouse": "Sister or relative",
+              "father": "Seth",
+              "children": ["Kenan", "other sons and daughters"]
+            },
+            "children": [
+              {
+                "name": "Kenan",
+                "attributes": {
+                  "role": "Son of Enosh",
+                  "years": "910 years",
+                  "description": "Faithful descendant in the godly line of Seth",
+                  "icon": "FaShieldAlt",
+                  "color": "#8b5cf6",
+                  "born": "When Enosh was 90 years old",
+                  "significance": "Continued the godly lineage toward Noah",
+                  "spouse": "Sister or relative",
+                  "father": "Enosh",
+                  "children": ["Mahalalel", "other sons and daughters"]
+                },
+                "children": [
+                  {
+                    "name": "Mahalalel",
+                    "attributes": {
+                      "role": "Son of Kenan",
+                      "years": "895 years",
+                      "description": "Name means 'Praise of God' - worshipper of the true God",
+                      "icon": "FaStar",
+                      "color": "#ec4899",
+                      "born": "When Kenan was 70 years old",
+                      "significance": "His name reflects worship and praise",
+                      "spouse": "Sister or relative",
+                      "father": "Kenan",
+                      "children": ["Jared", "other sons and daughters"]
+                    },
+                    "children": [
+                      {
+                        "name": "Jared",
+                        "attributes": {
+                          "role": "Son of Mahalalel",
+                          "years": "962 years",
+                          "description": "Lived the second longest lifespan in history",
+                          "icon": "FaCrown",
+                          "color": "#06b6d4",
+                          "born": "When Mahalalel was 65 years old",
+                          "significance": "Father of Enoch who walked with God",
+                          "spouse": "Sister or relative",
+                          "father": "Mahalalel",
+                          "children": ["Enoch", "other sons and daughters"]
+                        },
+                        "children": [
+                          {
+                            "name": "Enoch",
+                            "attributes": {
+                              "role": "Son of Jared",
+                              "years": "365 years",
+                              "description": "Walked with God and was taken up without dying",
+                              "icon": "FaStar",
+                              "color": "#eab308",
+                              "born": "When Jared was 162 years old",
+                              "significance": "First person to not experience death",
+                              "spouse": "Unknown wife",
+                              "father": "Jared",
+                              "children": ["Methuselah", "other sons and daughters"]
+                            },
+                            "children": [
+                              {
+                                "name": "Methuselah",
+                                "attributes": {
+                                  "role": "Son of Enoch",
+                                  "years": "969 years",
+                                  "description": "Longest lived human in history, died in year of flood",
+                                  "icon": "FaCrown",
+                                  "color": "#dc2626",
+                                  "born": "When Enoch was 65 years old",
+                                  "significance": "Symbol of God's patience before judgment",
+                                  "spouse": "Unknown wife",
+                                  "father": "Enoch",
+                                  "children": ["Lamech", "other sons and daughters"]
+                                },
+                                "children": [
+                                  {
+                                    "name": "Lamech",
+                                    "attributes": {
+                                      "role": "Son of Methuselah",
+                                      "years": "777 years",
+                                      "description": "Father of Noah, prophesied comfort from the curse",
+                                      "icon": "FaHeart",
+                                      "color": "#7c3aed",
+                                      "born": "When Methuselah was 187 years old",
+                                      "significance": "Father of the man who saved humanity",
+                                      "spouse": "Unknown wife",
+                                      "father": "Methuselah",
+                                      "children": ["Noah", "other sons and daughters"]
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "Noah",
+                                        "attributes": {
+                                          "role": "The Preserver",
+                                          "years": "950 years",
+                                          "description": "Built the ark and saved humanity from the flood",
+                                          "icon": "FaShieldAlt",
+                                          "color": "#059669",
+                                          "born": "When Lamech was 182 years old",
+                                          "significance": "Second father of humanity after the flood",
+                                          "spouse": "Naamah (traditional)",
+                                          "father": "Lamech",
+                                          "children": ["Shem", "Ham", "Japheth"]
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "Shem",
+                                            "attributes": {
+                                              "role": "Son of Noah",
+                                              "years": "600 years",
+                                              "description": "Blessed son, ancestor of Abraham and Jesus",
+                                              "icon": "FaStar",
+                                              "color": "#0ea5e9",
+                                              "born": "When Noah was over 500",
+                                              "significance": "Ancestor of the Semitic peoples and Messiah",
+                                              "spouse": "Unknown wife",
+                                              "father": "Noah",
+                                              "children": ["Arphaxad", "Elam", "Asshur", "Lud", "Aram"]
+                                            },
+                                            "children": [
+                                              {
+                                                "name": "Arphaxad",
+                                                "attributes": {
+                                                  "role": "Son of Shem",
+                                                  "years": "438 years",
+                                                  "description": "Ancestor of Abraham, in the line to Christ",
+                                                  "icon": "FaCrown",
+                                                  "color": "#8b5cf6",
+                                                  "born": "2 years after the flood",
+                                                  "significance": "Direct ancestor of Abraham",
+                                                  "spouse": "Unknown wife",
+                                                  "father": "Shem",
+                                                  "children": ["Shelah", "others"]
+                                                },
+                                                "children": [
+                                                  {
+                                                    "name": "Shelah",
+                                                    "attributes": {
+                                                      "role": "Son of Arphaxad",
+                                                      "years": "433 years",
+                                                      "description": "Continued the line toward Abraham",
+                                                      "icon": "FaUser",
+                                                      "color": "#f59e0b",
+                                                      "born": "When Arphaxad was 35",
+                                                      "significance": "Link in chain to Abraham",
+                                                      "spouse": "Unknown wife",
+                                                      "father": "Arphaxad",
+                                                      "children": ["Eber", "others"]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "Ham",
+                                            "attributes": {
+                                              "role": "Son of Noah",
+                                              "years": "Unknown",
+                                              "description": "Saw his father's nakedness, father was cursed",
+                                              "icon": "FaUser",
+                                              "color": "#ef4444",
+                                              "born": "When Noah was over 500",
+                                              "significance": "Ancestor of African and some Middle Eastern peoples",
+                                              "spouse": "Unknown wife",
+                                              "father": "Noah",
+                                              "children": ["Cush", "Mizraim", "Put", "Canaan"]
+                                            }
+                                          },
+                                          {
+                                            "name": "Japheth",
+                                            "attributes": {
+                                              "role": "Son of Noah",
+                                              "years": "Unknown",
+                                              "description": "Eldest son, blessed for covering his father",
+                                              "icon": "FaShieldAlt",
+                                              "color": "#10b981",
+                                              "born": "When Noah was over 500",
+                                              "significance": "Ancestor of European and some Asian peoples",
+                                              "spouse": "Unknown wife",
+                                              "father": "Noah",
+                                              "children": ["Gomer", "Magog", "Madai", "Javan", "Tubal", "Meshech", "Tiras"]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "abrahamLineage": {
+    "name": "Abraham",
+    "attributes": {
+      "role": "Father of Faith",
+      "years": "175 years",
+      "description": "Called by God to leave his homeland, father of many nations",
+      "icon": "FaCrown",
+      "color": "#6366f1",
+      "born": "In Ur of the Chaldeans",
+      "significance": "Father of the Jewish, Christian, and Islamic faiths",
+      "spouse": "Sarah (and Hagar, Keturah)",
+      "father": "Terah",
+      "children": ["Isaac", "Ishmael", "sons of Keturah"]
+    },
+    "children": [
+      {
+        "name": "Isaac",
+        "attributes": {
+          "role": "Son of Promise",
+          "years": "180 years",
+          "description": "Miracle child born to Abraham and Sarah in old age",
+          "icon": "FaStar",
+          "color": "#34d399",
+          "born": "When Abraham was 100",
+          "significance": "Child of promise, nearly sacrificed by Abraham",
+          "spouse": "Rebekah",
+          "father": "Abraham",
+          "children": ["Esau", "Jacob"]
+        },
+        "children": [
+          {
+            "name": "Esau",
+            "attributes": {
+              "role": "Elder Twin",
+              "years": "Unknown",
+              "description": "Hunter who sold his birthright for stew",
+              "icon": "FaUser",
+              "color": "#ef4444",
+              "born": "First of twins to Isaac and Rebekah",
+              "significance": "Father of the Edomites, lost blessing",
+              "spouse": "Judith, Basemath, Mahalath",
+              "father": "Isaac",
+              "children": ["Eliphaz", "Reuel", "others"]
+            }
+          },
+          {
+            "name": "Jacob",
+            "attributes": {
+              "role": "Israel",
+              "years": "147 years",
+              "description": "Wrestled with God, father of the 12 tribes",
+              "icon": "FaCrown",
+              "color": "#8b5cf6",
+              "born": "Second of twins to Isaac and Rebekah",
+              "significance": "Father of the 12 tribes of Israel",
+              "spouse": "Leah, Rachel, Bilhah, Zilpah",
+              "father": "Isaac",
+              "children": ["12 sons including Joseph, Benjamin, Judah"]
+            },
+            "children": [
+              {
+                "name": "Joseph",
+                "attributes": {
+                  "role": "Dreamer",
+                  "years": "110 years",
+                  "description": "Sold into slavery, became ruler of Egypt",
+                  "icon": "FaCrown",
+                  "color": "#eab308",
+                  "born": "Son of Jacob and Rachel",
+                  "significance": "Saved Israel from famine, type of Christ",
+                  "spouse": "Asenath",
+                  "father": "Jacob",
+                  "children": ["Manasseh", "Ephraim"]
+                }
+              },
+              {
+                "name": "Benjamin",
+                "attributes": {
+                  "role": "Beloved Son",
+                  "years": "Unknown",
+                  "description": "Youngest son, beloved by Jacob",
+                  "icon": "FaHeart",
+                  "color": "#ec4899",
+                  "born": "Son of Jacob and Rachel",
+                  "significance": "Ancestor of King Saul and Apostle Paul",
+                  "spouse": "Unknown",
+                  "father": "Jacob",
+                  "children": ["10 sons"]
+                }
+              },
+              {
+                "name": "Judah",
+                "attributes": {
+                  "role": "Royal Line",
+                  "years": "Unknown",
+                  "description": "Received the blessing, ancestor of kings",
+                  "icon": "FaCrown",
+                  "color": "#dc2626",
+                  "born": "Son of Jacob and Leah",
+                  "significance": "Ancestor of David and Jesus Christ",
+                  "spouse": "Shua's daughter, then Tamar",
+                  "father": "Jacob",
+                  "children": ["Er", "Onan", "Shelah", "Perez", "Zerah"]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ishmael",
+        "attributes": {
+          "role": "Son of Hagar",
+          "years": "137 years",
+          "description": "Born to Abraham and Hagar, father of Arab nations",
+          "icon": "FaUser",
+          "color": "#f59e0b",
+          "born": "When Abraham was 86",
+          "significance": "Father of Arab peoples, blessed by God",
+          "spouse": "Egyptian wife",
+          "father": "Abraham",
+          "children": ["12 princes/sons"]
+        }
+      }
+    ]
+  }
+}

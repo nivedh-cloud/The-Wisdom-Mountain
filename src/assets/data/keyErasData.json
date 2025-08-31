@@ -1,0 +1,483 @@
+{
+  "keyEras": [
+    {
+      "id": 1,
+      "name": "Creation",
+      "nameTelugu": "సృష్టి",
+      "period": "In the Beginning",
+      "dateRange": "Genesis 1-2",
+      "duration": "7 days",
+      "keyEvents": [
+        "Creation of heavens and earth",
+        "Creation of light and darkness",
+        "Creation of sky and waters",
+        "Creation of land and vegetation",
+        "Creation of sun, moon, and stars",
+        "Creation of sea creatures and birds",
+        "Creation of land animals and humans",
+        "God's rest on the seventh day"
+      ],
+      "keyFigures": ["God", "Adam", "Eve"],
+      "keyLocations": ["Heaven", "Garden of Eden"],
+      "description": {
+        "en": "The period when God created the universe, earth, and all life, culminating in the creation of humanity in His image",
+        "te": "దేవుడు విశ్వం, భూమి మరియు సమస్త జీవులను సృష్టించిన కాలం, తన రూపంలో మానవత్వం సృష్టిలో కుల్మినేట్ అయింది"
+      },
+      "significance": {
+        "en": "Establishes God as Creator and source of all life, humans made in God's image with dominion over creation",
+        "te": "దేవుడిని సృష్టికర్త మరియు సమస్త జీవం యొక్క మూలంగా స్థాపిస్తుంది, మానవులు దేవుని రూపంలో సృష్టిపై ఆధిపత్యంతో తయారు చేయబడ్డారు"
+      },
+      "scripture": "Genesis 1:1-2:25"
+    },
+    {
+      "id": 2,
+      "name": "The Fall",
+      "nameTelugu": "పతనం",
+      "period": "Early History",
+      "dateRange": "Unknown",
+      "duration": "Single event with lasting consequences",
+      "keyEvents": [
+        "Serpent's temptation of Eve",
+        "Adam and Eve eat forbidden fruit",
+        "Realization of nakedness and shame",
+        "God's call and judgment",
+        "First promise of redemption (protoevangelium)",
+        "Expulsion from Garden of Eden",
+        "Beginning of death and suffering"
+      ],
+      "keyFigures": ["Adam", "Eve", "Satan (serpent)", "God"],
+      "keyLocations": ["Garden of Eden", "Tree of Knowledge"],
+      "description": {
+        "en": "The tragic event when humanity disobeyed God, bringing sin, death, and separation into the world",
+        "te": "మానవత్వం దేవునికి అవిధేయత చూపించిన దురభిప్రాయ సంఘటన, ప్రపంచంలోకి పాపం, మరణం మరియు విభజనను తెచ్చింది"
+      },
+      "significance": {
+        "en": "Introduction of sin into human nature, need for redemption, promise of Messiah",
+        "te": "మానవ స్వభావంలో పాపం పరిచయం, విముక్తి అవసరం, మెస్సియా వాగ్దానం"
+      },
+      "scripture": "Genesis 3:1-24"
+    },
+    {
+      "id": 3,
+      "name": "The Flood",
+      "nameTelugu": "జలప్రళయం",
+      "period": "Antediluvian Period",
+      "dateRange": "2348 BC (traditional)",
+      "duration": "Over 1 year (flood and receding)",
+      "keyEvents": [
+        "Increasing wickedness on earth",
+        "God's decision to destroy mankind",
+        "Noah's call to build the ark",
+        "Gathering of animals two by two",
+        "40 days and nights of rain",
+        "All flesh destroyed except ark occupants",
+        "Ark rests on Mount Ararat",
+        "Rainbow covenant with Noah"
+      ],
+      "keyFigures": ["Noah", "Noah's family", "God"],
+      "keyLocations": ["Global flood", "Mount Ararat", "Ark"],
+      "description": {
+        "en": "God's judgment on worldwide wickedness through a global flood, preserving righteous Noah and his family",
+        "te": "ప్రపంచవ్యాప్త దుష్టత్వంపై ప్రపంచ జలప్రళయం ద్వారా దేవుని తీర్పు, నీతిమంతుడైన నోహు మరియు అతని కుటుంబాన్ని రక్షించడం"
+      },
+      "significance": {
+        "en": "Demonstrates God's judgment on sin and His mercy in salvation, new beginning for humanity",
+        "te": "పాపంపై దేవుని తీర్పు మరియు మోక్షంలో అతని దయను ప్రదర్శిస్తుంది, మానవత్వానికి కొత్త ప్రారంభం"
+      },
+      "scripture": "Genesis 6:1-9:29"
+    },
+    {
+      "id": 4,
+      "name": "The Patriarchs",
+      "nameTelugu": "పితృగణులు",
+      "period": "Patriarchal Age",
+      "dateRange": "2166-1805 BC",
+      "duration": "About 360 years",
+      "keyEvents": [
+        "God's call to Abraham",
+        "Covenant with Abraham",
+        "Birth of Isaac",
+        "Sacrifice of Isaac",
+        "Isaac's marriage to Rebekah",
+        "Birth of Jacob and Esau",
+        "Jacob's wrestling with God",
+        "Joseph sold into Egypt",
+        "Jacob's family moves to Egypt"
+      ],
+      "keyFigures": ["Abraham", "Isaac", "Jacob/Israel", "Joseph"],
+      "keyLocations": ["Ur", "Haran", "Canaan", "Egypt"],
+      "description": {
+        "en": "The foundational period when God established His covenant with Abraham and his descendants",
+        "te": "దేవుడు అబ్రాహాము మరియు అతని వంశీకుల సాથి తన నిబంధనను స్థాపించిన పునాది కాలం"
+      },
+      "significance": {
+        "en": "Establishment of covenant people, promises of land, descendants, and blessing to all nations",
+        "te": "నిబంధన ప్రజల స్థాపన, భూమి, వంశవృద్ధి మరియు అన్ని జాతులకు ఆశీర్వాదం వాగ్దానాలు"
+      },
+      "scripture": "Genesis 12:1-50:26"
+    },
+    {
+      "id": 5,
+      "name": "Egyptian Bondage",
+      "nameTelugu": "ఈజిప్టు బానిసత్వం",
+      "period": "Slavery in Egypt",
+      "dateRange": "1805-1446 BC",
+      "duration": "About 430 years",
+      "keyEvents": [
+        "Joseph's rise to power in Egypt",
+        "Jacob's family settles in Goshen",
+        "New pharaoh who didn't know Joseph",
+        "Israelites become slaves",
+        "Oppression and forced labor",
+        "Population growth despite oppression",
+        "Killing of Hebrew male babies",
+        "Moses' birth and preservation"
+      ],
+      "keyFigures": ["Joseph", "Pharaohs of Egypt", "Moses", "Israelites"],
+      "keyLocations": ["Egypt", "Goshen", "Nile River"],
+      "description": {
+        "en": "The period when Jacob's descendants multiplied in Egypt but eventually became enslaved",
+        "te": "యాకోబు వంశీకులు ఈజిప్టులో వృద్ధి చెందిన కాలం కానీ చివరికి బానిసలు అయ్యారు"
+      },
+      "significance": {
+        "en": "Fulfillment of prophecy about 400 years in foreign land, preparation for Exodus",
+        "te": "విదేశీ భూమిలో 400 సంవత్సరాల ప్రవచనం నెరవేర్పు, నిష్క్రమణ కోసం సిద్ధత"
+      },
+      "scripture": "Exodus 1:1-12:36"
+    },
+    {
+      "id": 6,
+      "name": "The Exodus",
+      "nameTelugu": "నిష్క్రమణ",
+      "period": "Deliverance from Egypt",
+      "dateRange": "1446 BC",
+      "duration": "Several months",
+      "keyEvents": [
+        "Moses' call at burning bush",
+        "Ten plagues on Egypt",
+        "Institution of Passover",
+        "Death of firstborn",
+        "Exodus from Egypt",
+        "Crossing of Red Sea",
+        "Pharaoh's army destroyed",
+        "Song of Moses and Miriam"
+      ],
+      "keyFigures": ["Moses", "Aaron", "Pharaoh", "Israelites"],
+      "keyLocations": ["Egypt", "Red Sea", "Wilderness"],
+      "description": {
+        "en": "God's miraculous deliverance of Israel from Egyptian slavery through Moses",
+        "te": "మోషే ద్వారా ఈజిప్టు బానిసత్వం నుండి ఇశ్రాయేలు యొక్క దేవుని అద్భుత విముక్తి"
+      },
+      "significance": {
+        "en": "Demonstrates God's power and faithfulness, foundation event for Israel's identity",
+        "te": "దేవుని శక్తి మరియు విశ్వసనీయతను ప్రదర్శిస్తుంది, ఇశ్రాయేలు గుర్తింపు కోసం పునాది సంఘటన"
+      },
+      "scripture": "Exodus 3:1-15:21"
+    },
+    {
+      "id": 7,
+      "name": "The Wilderness Wanderings",
+      "nameTelugu": "అరణ్య ప్రవాసాలు",
+      "period": "Desert Journey",
+      "dateRange": "1446-1406 BC",
+      "duration": "40 years",
+      "keyEvents": [
+        "Arrival at Mount Sinai",
+        "Giving of the Law (Ten Commandments)",
+        "Golden calf incident",
+        "Construction of Tabernacle",
+        "Spies sent to Promised Land",
+        "Rebellion at Kadesh Barnea",
+        "40 years of wandering begins",
+        "Various rebellions and judgments",
+        "Death of Aaron and Moses"
+      ],
+      "keyFigures": ["Moses", "Aaron", "Joshua", "Caleb", "Israelites"],
+      "keyLocations": ["Mount Sinai", "Kadesh Barnea", "Wilderness", "Jordan River"],
+      "description": {
+        "en": "Israel's 40-year journey in the wilderness due to unbelief, including receiving the Law at Sinai",
+        "te": "అవిశ్వాసం వల్ల అరణ్యంలో ఇశ్రాయేలు 40 సంవత్సరాల ప్రయాణం, సీనాయిలో ధర్మశాస్త్రం స్వీకరించడంతో సహా"
+      },
+      "significance": {
+        "en": "Receiving of Law, establishment of worship system, consequences of unbelief",
+        "te": "ధర్మశాస్త్రం స్వీకరించడం, ఆరాధన విధానం స్థాపన, అవిశ్వాసం యొక్క పర్యవసానాలు"
+      },
+      "scripture": "Exodus 19:1-Deuteronomy 34:12"
+    },
+    {
+      "id": 8,
+      "name": "Conquest of Canaan",
+      "nameTelugu": "కనాను జయం",
+      "period": "Conquest Period",
+      "dateRange": "1406-1400 BC",
+      "duration": "About 7 years",
+      "keyEvents": [
+        "Crossing Jordan River",
+        "Fall of Jericho",
+        "Defeat at Ai due to Achan's sin",
+        "Covenant renewal at Mount Ebal",
+        "Gibeonite deception",
+        "Southern campaign",
+        "Northern campaign",
+        "Division of land among tribes"
+      ],
+      "keyFigures": ["Joshua", "Caleb", "Israelite tribes"],
+      "keyLocations": ["Jordan River", "Jericho", "Ai", "Gibeon", "Canaan"],
+      "description": {
+        "en": "Joshua's conquest of the Promised Land and division among the twelve tribes",
+        "te": "వాగ్దాన భూమిని యెహోషువ జయించడం మరియు పన్నెండు గిరిజనుల మధ్య విభజన"
+      },
+      "significance": {
+        "en": "Fulfillment of God's promise to Abraham about the land, establishment in Promised Land",
+        "te": "భూమి గురించి అబ్రాహాముకు దేవుని వాగ్దానం నెరవేర్పు, వాగ్దాన భూమిలో స్థాపన"
+      },
+      "scripture": "Joshua 1:1-24:33"
+    },
+    {
+      "id": 9,
+      "name": "Period of Judges",
+      "nameTelugu": "న్యాయాధిపతుల కాలం",
+      "period": "Judges Period",
+      "dateRange": "1400-1050 BC",
+      "duration": "About 350 years",
+      "keyEvents": [
+        "Cycle of sin, oppression, crying out, deliverance",
+        "Rise of various judges",
+        "Deborah's victory over Canaanites",
+        "Gideon's defeat of Midianites",
+        "Jephthah's tragic vow",
+        "Samson's exploits against Philistines",
+        "Decline into moral chaos",
+        "Civil war with tribe of Benjamin"
+      ],
+      "keyFigures": ["Othniel", "Deborah", "Gideon", "Jephthah", "Samson"],
+      "keyLocations": ["Various tribal territories", "Enemy nations"],
+      "description": {
+        "en": "Cyclical period of Israel's disobedience, oppression, and deliverance through judges",
+        "te": "న్యాయాధిపతుల ద్వారా ఇశ్రాయేలు అవిధేయత, అణచివేత మరియు విముక్తి యొక్క చక్రీయ కాలం"
+      },
+      "significance": {
+        "en": "Demonstrates consequences of unfaithfulness and God's mercy in providing deliverers",
+        "te": "అవిశ్వాసం యొక్క పర్యవసానాలను మరియు విముక్తికర్తలను అందించడంలో దేవుని దయను ప్రదర్శిస్తుంది"
+      },
+      "scripture": "Judges 1:1-21:25"
+    },
+    {
+      "id": 10,
+      "name": "United Kingdom",
+      "nameTelugu": "ఐక్య రాజ్యం",
+      "period": "Monarchy Period",
+      "dateRange": "1050-930 BC",
+      "duration": "120 years",
+      "keyEvents": [
+        "Israel demands a king",
+        "Saul anointed as first king",
+        "Saul's disobedience and rejection",
+        "David anointed as future king",
+        "David's victory over Goliath",
+        "David becomes king over Judah, then all Israel",
+        "Conquest of Jerusalem as capital",
+        "Davidic Covenant",
+        "Solomon's reign and temple building",
+        "Solomon's wisdom and prosperity",
+        "Solomon's apostasy in later years"
+      ],
+      "keyFigures": ["Samuel", "Saul", "David", "Solomon"],
+      "keyLocations": ["Jerusalem", "Temple", "Kingdom borders"],
+      "description": {
+        "en": "Israel's golden age under kings Saul, David, and Solomon with Jerusalem as capital",
+        "te": "జెరూసలేం రాజధానిగా సౌలు, దావీదు మరియు సొలొమోను రాజుల క్రింద ఇశ్రాయేలు స్వర్ణయుగం"
+      },
+      "significance": {
+        "en": "Establishment of Davidic dynasty, building of Temple, peak of Israel's power and influence",
+        "te": "దావీదు రాజవంశం స్థాపన, దేవాలయ నిర్మాణం, ఇశ్రాయేలు శక్తి మరియు ప్రభావం శిఖరం"
+      },
+      "scripture": "1 Samuel 8:1-1 Kings 11:43"
+    },
+    {
+      "id": 11,
+      "name": "Divided Kingdom",
+      "nameTelugu": "విభజిత రాజ్యం",
+      "period": "Split Kingdom",
+      "dateRange": "930-586 BC",
+      "duration": "344 years",
+      "keyEvents": [
+        "Kingdom splits after Solomon's death",
+        "Jeroboam leads northern rebellion",
+        "Golden calves set up in Dan and Bethel",
+        "Continuous warfare between kingdoms",
+        "Ministry of prophets Elijah and Elisha",
+        "Assyrian conquest of Northern Kingdom (722 BC)",
+        "Babylonian threats to Southern Kingdom",
+        "Destruction of Jerusalem and Temple (586 BC)"
+      ],
+      "keyFigures": ["Rehoboam", "Jeroboam", "Various kings", "Prophets"],
+      "keyLocations": ["Samaria (North)", "Jerusalem (South)"],
+      "description": {
+        "en": "Period when Israel split into Northern Kingdom (Israel) and Southern Kingdom (Judah)",
+        "te": "ఇశ్రాయేలు ఉత్తర రాజ్యం (ఇశ్రాయేలు) మరియు దక్షిణ రాజ్యం (యూదా)గా విభజించిన కాలం"
+      },
+      "significance": {
+        "en": "Consequences of Solomon's apostasy, gradual decline leading to exile",
+        "te": "సొలొమోను మతభ్రష్టత్వం యొక్క పర్యవసానాలు, బహిష్కరణకు దారితీసిన క్రమిక క్షీణత"
+      },
+      "scripture": "1 Kings 12:1-2 Kings 25:30"
+    },
+    {
+      "id": 12,
+      "name": "Babylonian Exile",
+      "nameTelugu": "బబులోను బహిష్కరణ",
+      "period": "Exile Period",
+      "dateRange": "605-538 BC",
+      "duration": "70 years",
+      "keyEvents": [
+        "First deportation (Daniel and nobles)",
+        "Second deportation (Ezekiel and craftsmen)",
+        "Final siege and destruction of Jerusalem",
+        "Temple and city destroyed",
+        "Mass deportation to Babylon",
+        "Life in exile",
+        "Daniel's ministry in Babylon",
+        "Ezekiel's visions and ministry"
+      ],
+      "keyFigures": ["Nebuchadnezzar", "Daniel", "Ezekiel", "Jeremiah"],
+      "keyLocations": ["Babylon", "Jerusalem (destroyed)", "Rivers of Babylon"],
+      "description": {
+        "en": "Period when Judah was conquered by Babylon and many Jews were taken into exile",
+        "te": "యూదా బబులోనుచే జయించబడిన కాలం మరియు అనేక యూదులు బహిష్కరణకు తీసుకెళ్లబడ్డారు"
+      },
+      "significance": {
+        "en": "Fulfillment of prophetic warnings, purification of Israel's faith, preparation for return",
+        "te": "ప్రవచన హెచ్చరికల నెరవేర్పు, ఇశ్రాయేలు విశ్వాసం శుద్ధీకరణ, తిరిగి రావడానికి సిద్ధత"
+      },
+      "scripture": "2 Kings 24:1-25:30, Daniel, Ezekiel"
+    },
+    {
+      "id": 13,
+      "name": "Return from Exile",
+      "nameTelugu": "బహిష్కరణ నుండి తిరిగి రావడం",
+      "period": "Post-Exilic Period",
+      "dateRange": "538-432 BC",
+      "duration": "About 100 years",
+      "keyEvents": [
+        "Cyrus's decree allowing return",
+        "First return under Zerubbabel",
+        "Foundation of second Temple laid",
+        "Opposition to rebuilding",
+        "Temple completed under Haggai and Zechariah",
+        "Second return under Ezra",
+        "Third return under Nehemiah",
+        "Rebuilding of Jerusalem's walls",
+        "Spiritual renewal and reform"
+      ],
+      "keyFigures": ["Cyrus", "Zerubbabel", "Ezra", "Nehemiah", "Haggai", "Zechariah"],
+      "keyLocations": ["Jerusalem", "Second Temple", "Judah"],
+      "description": {
+        "en": "Period of restoration when Jews returned from Babylon to rebuild Temple and Jerusalem",
+        "te": "దేవాలయం మరియు జెరూసలేం పునర్నిర్మాణానికి యూదులు బబులోను నుండి తిరిగి వచ్చిన పునరుద్ధరణ కాలం"
+      },
+      "significance": {
+        "en": "God's faithfulness in restoration, rebuilding of Temple and walls, spiritual renewal",
+        "te": "పునరుద్ధరణలో దేవుని విశ్వసనీయత, దేవాలయం మరియు గోడల పునర్నిర్మాణం, ఆధ్యాత్మిక పునరుద్ధరణ"
+      },
+      "scripture": "Ezra 1:1-Nehemiah 13:31"
+    },
+    {
+      "id": 14,
+      "name": "Intertestamental Period",
+      "nameTelugu": "నిబంధనల మధ్య కాలం",
+      "period": "Silent Years",
+      "dateRange": "432-4 BC",
+      "duration": "About 400 years",
+      "keyEvents": [
+        "End of prophetic ministry",
+        "Persian rule continues",
+        "Alexander the Great conquers",
+        "Hellenistic influence spreads",
+        "Ptolemaic rule over Judea",
+        "Seleucid rule and persecution",
+        "Maccabean revolt and independence",
+        "Hasmonean dynasty",
+        "Roman conquest of Palestine"
+      ],
+      "keyFigures": ["Alexander the Great", "Antiochus Epiphanes", "Maccabees", "Hasmoneans"],
+      "keyLocations": ["Jerusalem", "Palestine", "Greek and Roman empires"],
+      "description": {
+        "en": "Period between Old and New Testaments with no canonical prophetic revelation",
+        "te": "పాత మరియు కొత్త నిబంధనల మధ్య కాలం, అధికారిక ప్రవచనాత్మక వెల్లడిక లేని కాలం"
+      },
+      "significance": {
+        "en": "Preparation for Messiah's coming, spread of Greek language and culture, Roman peace",
+        "te": "మెస్సియా రాకడానికి సిద్ధత, గ్రీకు భాష మరియు సంస్కృతి వ్యాప్తి, రోమన్ శాంతి"
+      },
+      "scripture": "Between Malachi and Matthew"
+    },
+    {
+      "id": 15,
+      "name": "Life of Christ",
+      "nameTelugu": "క్రీస్తు జీవితం",
+      "period": "Gospel Period",
+      "dateRange": "4 BC - 30 AD",
+      "duration": "About 33 years",
+      "keyEvents": [
+        "Annunciation to Mary",
+        "Birth in Bethlehem",
+        "Flight to Egypt",
+        "Childhood in Nazareth",
+        "Baptism by John the Baptist",
+        "Temptation in wilderness",
+        "Public ministry begins",
+        "Choosing of twelve disciples",
+        "Sermon on the Mount",
+        "Miracles and parables",
+        "Transfiguration",
+        "Triumphal entry into Jerusalem",
+        "Crucifixion and resurrection"
+      ],
+      "keyFigures": ["Jesus Christ", "Mary", "Joseph", "John the Baptist", "Twelve disciples"],
+      "keyLocations": ["Bethlehem", "Nazareth", "Jerusalem", "Galilee", "Judea"],
+      "description": {
+        "en": "The earthly life and ministry of Jesus Christ, the promised Messiah",
+        "te": "వాగ్దానం చేసిన మెస్సియా యేసు క్రీస్తు యొక్క భూమిపై జీవితం మరియు సేవ"
+      },
+      "significance": {
+        "en": "Fulfillment of Old Testament prophecies, salvation accomplished through death and resurrection",
+        "te": "పాత నిబంధన ప్రవచనాల నెరవేర్పు, మరణం మరియు పునరుత్థానం ద్వారా మోక్షం సాధించబడింది"
+      },
+      "scripture": "Matthew, Mark, Luke, John"
+    },
+    {
+      "id": 16,
+      "name": "Early Church",
+      "nameTelugu": "ప్రారంభ చర్చి",
+      "period": "Apostolic Age",
+      "dateRange": "30-100 AD",
+      "duration": "About 70 years",
+      "keyEvents": [
+        "Day of Pentecost",
+        "Birth of the church",
+        "Peter's ministry to Jews",
+        "Stephen's martyrdom",
+        "Philip's ministry to Samaritans",
+        "Paul's conversion",
+        "Peter's vision and Gentile ministry",
+        "Paul's missionary journeys",
+        "Jerusalem Council",
+        "Spread throughout Roman Empire",
+        "Writing of New Testament books",
+        "Persecution under various emperors"
+      ],
+      "keyFigures": ["Peter", "Paul", "Stephen", "Philip", "Barnabas", "Other apostles"],
+      "keyLocations": ["Jerusalem", "Samaria", "Antioch", "Asia Minor", "Greece", "Rome"],
+      "description": {
+        "en": "Period of rapid church growth and expansion throughout the Roman Empire",
+        "te": "రోమన్ సామ్రాజ్యం అంతటా వేగవంతమైన చర్చి వృద్ధి మరియు విస్తరణ కాలం"
+      },
+      "significance": {
+        "en": "Establishment of Christian church, spread of gospel to all nations, writing of New Testament",
+        "te": "క్రైస్తవ చర్చి స్థాపన, అన్ని జాతులకు సువార్త వ్యాప్తి, కొత్త నిబంధన రచన"
+      },
+      "scripture": "Acts, Epistles, Revelation"
+    }
+  ]
+}

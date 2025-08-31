@@ -1,0 +1,93 @@
+{
+  "adam-to-noah": [
+    { "year": "0", "person": "Adam", "person_te": "ఆదాం", "age": 930, "famous": "Creation of Adam" },
+    { "year": "130", "person": "Seth", "person_te": "శేత్", "age": 912, "famous": "Birth of Seth" },
+    { "year": "235", "person": "Enosh", "person_te": "ఏనోష్", "age": 905, "famous": "Birth of Enosh" },
+    { "year": "325", "person": "Kenan", "person_te": "కైనాన్", "age": 910, "famous": "Birth of Kenan" },
+    { "year": "395", "person": "Mahalalel", "person_te": "మహలలేలు", "age": 895, "famous": "Birth of Mahalalel" },
+    { "year": "460", "person": "Jared", "person_te": "యారెదు", "age": 962, "famous": "Birth of Jared" },
+    { "year": "622", "person": "Enoch", "person_te": "హనోక్", "age": 365, "famous": "Walked with God; taken by God" },
+    { "year": "687", "person": "Methuselah", "person_te": "మెతూషెలా", "age": 969, "famous": "Oldest man in the Bible" },
+    { "year": "874", "person": "Lamech", "person_te": "లామెకు", "age": 777, "famous": "Father of Noah" },
+    { "year": "930", "person": "Noah", "person_te": "నోహు", "age": 950, "famous": "Survived the Flood" }
+  ],
+  "noah-to-abraham": [
+    { "year": "1056", "person": "Noah", "person_te": "నోహు", "age": 950, "famous": "The Flood" },
+    { "year": "1558", "person": "Shem", "person_te": "శేము", "age": 600, "famous": "Son of Noah" },
+    { "year": "1658", "person": "Arphaxad", "person_te": "అర్పక్సదు", "age": 438, "famous": "Son of Shem" },
+    { "year": "1693", "person": "Shelah", "person_te": "శేలా", "age": 433, "famous": "Son of Arphaxad" },
+    { "year": "1723", "person": "Eber", "person_te": "హేబరు", "age": 464, "famous": "Son of Shelah; ancestor of Hebrews" },
+    { "year": "1757", "person": "Peleg", "person_te": "పేలెగు", "age": 239, "famous": "Division of the earth" },
+    { "year": "1787", "person": "Reu", "person_te": "రేఉ", "age": 239, "famous": "Son of Peleg" },
+    { "year": "1819", "person": "Serug", "person_te": "సెరూకు", "age": 230, "famous": "Son of Reu" },
+    { "year": "1849", "person": "Nahor", "person_te": "నహోరు", "age": 148, "famous": "Son of Serug" },
+    { "year": "1878", "person": "Terah", "person_te": "తెరహు", "age": 205, "famous": "Father of Abraham" },
+    { "year": "1948", "person": "Abraham", "person_te": "అబ్రాహాము", "age": 175, "famous": "Father of the faithful" }
+  ],
+  "abraham-to-moses": [
+    { "year": "1991", "person": "Isaac", "person_te": "ఇసాక్", "age": 180, "famous": "Son of Abraham" },
+    { "year": "2051", "person": "Jacob", "person_te": "యాకోబు", "age": 147, "famous": "Son of Isaac; Israel" },
+    { "year": "2108", "person": "Levi", "person_te": "లేవి", "age": 137, "famous": "Tribe of priests" },
+    { "year": "2245", "person": "Kohath", "person_te": "కోహాత్", "age": 133, "famous": "Son of Levi" },
+    { "year": "2278", "person": "Amram", "person_te": "అమ్రాం", "age": 137, "famous": "Father of Moses" },
+    { "year": "2368", "person": "Moses", "person_te": "మోషే", "age": 120, "famous": "Led Exodus from Egypt" }
+  ],
+  "moses-to-david": [
+    { "year": "2368", "person": "Joshua", "person_te": "యెహోషువ", "age": 110, "famous": "Succeeded Moses; led Israel into Canaan" },
+    { "year": "2458", "person": "Othniel", "person_te": "ఒత్నియేలు", "age": null, "famous": "First Judge of Israel" },
+    { "year": "2538", "person": "Gideon", "person_te": "గిద్యోను", "age": null, "famous": "Judge; defeated Midianites" },
+    { "year": "2600", "person": "Samuel", "person_te": "శమూయేలు", "age": null, "famous": "Last Judge; anointed Saul and David" },
+    { "year": "2700", "person": "Saul", "person_te": "సౌలు", "age": 72, "famous": "First King of Israel" },
+    { "year": "2800", "person": "David", "person_te": "దావీదు", "age": 70, "famous": "Second King; united Israel" }
+  ],
+  "david-to-hezekiah": [
+    { "year": "2800", "person": "David", "person_te": "దావీదు", "age": 70, "famous": "King of Israel" },
+    { "year": "2870", "person": "Solomon", "person_te": "సొలొమోను", "age": 80, "famous": "Built the Temple" },
+    { "year": "2950", "person": "Rehoboam", "person_te": "రెహబోయాము", "age": 58, "famous": "Son of Solomon" },
+    { "year": "3008", "person": "Asa", "person_te": "ఆసా", "age": 41, "famous": "King of Judah" },
+    { "year": "3049", "person": "Jehoshaphat", "person_te": "యెహోషఫాటు", "age": 60, "famous": "King of Judah" },
+    { "year": "3109", "person": "Hezekiah", "person_te": "హిజ్కియా", "age": 54, "famous": "Reformer King" }
+  ],
+  "before-babylonian-exile": [
+    { "year": "3200", "person": "Manasseh", "person_te": "మనస్సే", "age": 67, "famous": "King before exile" },
+    { "year": "3267", "person": "Amon", "person_te": "ఆమోను", "age": 24, "famous": "King before exile" },
+    { "year": "3291", "person": "Josiah", "person_te": "యోషీయా", "age": 39, "famous": "Last good king before exile" },
+    { "year": "3330", "person": "Jehoiakim", "person_te": "యెహోయాకీము", "age": 36, "famous": "King during Babylonian invasion" }
+  ],
+  "after-babylonian-exile": [
+    { "year": "605-562 BCE", "person": "Nebuchadnezzar", "person_te": "నెబుకద్నెజర్", "age": "43 years", "famous": "Babylonian Empire ruler" },
+    { "year": "562-560 BCE", "person": "Evil-Merodach", "person_te": "ఈవిల్-మెరోదక్", "age": "2 years", "famous": "Babylonian Empire ruler" },
+    { "year": "560-556 BCE", "person": "Neriglissar", "person_te": "నెరిగ్లిస్సర్", "age": "4 years", "famous": "Babylonian Empire ruler" },
+    { "year": "556 BCE", "person": "Labashi-Marduk", "person_te": "లాబాషి-మార్దుక్", "age": "1 year", "famous": "Babylonian Empire ruler" },
+    { "year": "556-539 BCE", "person": "Nabonidus", "person_te": "నాబోనిదుస్", "age": "17 years", "famous": "Last Babylonian Empire ruler" },
+    { "year": "539-530 BCE", "person": "Cyrus", "person_te": "సైరస్", "age": "9 years", "famous": "Persian Empire; allowed Jews to return" },
+    { "year": "530-522 BCE", "person": "Cambyses II", "person_te": "కాంబైసిస్ II", "age": "8 years", "famous": "Persian Empire ruler" },
+    { "year": "522-486 BCE", "person": "Darius I", "person_te": "దారయవేషు I", "age": "36 years", "famous": "Persian Empire; temple completion support" },
+    { "year": "486-465 BCE", "person": "Ahasuerus (Xerxes I)", "person_te": "అహష్వేరోష్ (జెర్క్సిస్ I)", "age": "21 years", "famous": "Persian Empire; Esther's husband" },
+    { "year": "465-424 BCE", "person": "Artaxerxes I", "person_te": "అర్తక్షస్త I", "age": "41 years", "famous": "Persian Empire; sent Ezra and Nehemiah" },
+    { "year": "423-404 BCE", "person": "Darius II", "person_te": "దారయవేషు II", "age": "19 years", "famous": "Persian Empire ruler" },
+    { "year": "404-359 BCE", "person": "Artaxerxes II", "person_te": "అర్తక్షస్త II", "age": "45 years", "famous": "Persian Empire ruler" },
+    { "year": "358-338 BCE", "person": "Artaxerxes III", "person_te": "అర్తక్షస్త III", "age": "20 years", "famous": "Persian Empire ruler" },
+    { "year": "338-336 BCE", "person": "Arses", "person_te": "అర్సెస్", "age": "2 years", "famous": "Persian Empire ruler" },
+    { "year": "336-330 BCE", "person": "Darius III", "person_te": "దారయవేషు III", "age": "6 years", "famous": "Last Persian Empire ruler" },
+    { "year": "336-323 BCE", "person": "Alexander the Great", "person_te": "అలెగ్జాండర్ ది గ్రేట్", "age": "13 years", "famous": "Macedonian Empire conqueror" },
+    { "year": "305-285 BCE", "person": "Ptolemy I Soter", "person_te": "టోలెమీ I సోటర్", "age": "20 years", "famous": "Ptolemaic Empire (Greek) founder" },
+    { "year": "285-246 BCE", "person": "Ptolemy II Philadelphus", "person_te": "టోలెమీ II ఫిలాడెల్ఫస్", "age": "39 years", "famous": "Ptolemaic Empire (Greek) ruler" },
+    { "year": "246-222 BCE", "person": "Ptolemy III Euergetes", "person_te": "టోలెమీ III యూర్గెటెస్", "age": "24 years", "famous": "Ptolemaic Empire (Greek) ruler" },
+    { "year": "221-204 BCE", "person": "Ptolemy IV Philopator", "person_te": "టోలెమీ IV ఫిలోపేటర్", "age": "17 years", "famous": "Ptolemaic Empire (Greek) ruler" },
+    { "year": "204-180 BCE", "person": "Ptolemy V Epiphanes", "person_te": "టోలెమీ V ఎపిఫానెస్", "age": "24 years", "famous": "Ptolemaic Empire (Greek) ruler" },
+    { "year": "180-145 BCE", "person": "Ptolemy VI Philometor", "person_te": "టోలెమీ VI ఫిలోమెటర్", "age": "35 years", "famous": "Ptolemaic Empire (Greek) ruler" },
+    { "year": "150-146 BCE", "person": "Alexander Balas", "person_te": "అలెగ్జాండర్ బాలాస్", "age": "4 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "146-125 BCE", "person": "Demetrius II Nicator", "person_te": "డెమెట్రియస్ II నికేటర్", "age": "21 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "128-123 BCE", "person": "Alexander II Zabina", "person_te": "అలెగ్జాండర్ II జాబినా", "age": "5 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "125-96 BCE", "person": "Antiochus VIII Grypus", "person_te": "యాంటియోకస్ VIII గ్రైపస్", "age": "29 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "114-95 BCE", "person": "Antiochus IX Cyzicenus", "person_te": "యాంటియోకస్ IX సైజిసెనస్", "age": "19 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "95-92 BCE", "person": "Antiochus X Eusebes Philopator", "person_te": "యాంటియోకస్ X యూసెబెస్ ఫిలోపేటర్", "age": "3 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "95-87 BCE", "person": "Demetrius III Euergetes", "person_te": "డెమెట్రియస్ III యూర్గెటెస్", "age": "8 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "87-84 BCE", "person": "Antiochus XII Dionysus", "person_te": "యాంటియోకస్ XII డియోనిసస్", "age": "3 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "95-75 BCE", "person": "Philip I Philadelphus", "person_te": "ఫిలిప్ I ఫిలాడెల్ఫస్", "age": "20 years", "famous": "Seleucid Empire (Greek) ruler" },
+    { "year": "69-64 BCE", "person": "Antiochus XIII Asiaticus", "person_te": "యాంటియోకస్ XIII ఆసియాటికస్", "age": "5 years", "famous": "Last Seleucid Empire (Greek) ruler" },
+    { "year": "37-4 BCE", "person": "Herod the Great", "person_te": "హేరోదు గ్రేట్", "age": "33 years", "famous": "Roman Empire; ruled during Jesus' birth" },
+    { "year": "from 6 BCE", "person": "Roman Governors", "person_te": "రోమన్ గవర్నర్లు", "age": "Ongoing", "famous": "Roman Empire direct rule" }
+  ]
+}

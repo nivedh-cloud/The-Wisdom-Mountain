@@ -1,0 +1,70 @@
+{
+  "tableHeaders": {
+    "en": {
+      "judahTitle": "Judah Kings",
+      "israelTitle": "Israel Kings",
+      "king": "King",
+      "year": "Year",
+      "yearsRuled": "Years Ruled",
+      "goodBad": "Good/Bad",
+      "prophet": "Prophet at the time",
+      "chartLabel": "Years Ruled"
+    },
+    "te": {
+      "judahTitle": "యూదా రాజులు",
+      "israelTitle": "ఇస్రాయేల్ రాజులు", 
+      "king": "రాజు",
+      "year": "సంవత్సరం",
+      "yearsRuled": "పాలించిన సంవత్సరాలు",
+      "goodBad": "మంచి/చెడు",
+      "prophet": "ప్రవక్త",
+      "chartLabel": "పాలించిన సంవత్సరాలు"
+    }
+  },
+  "judah-kings": [
+    { "king": "Saul", "year": "1050 BC", "yearsRuled": 40, "goodBad": "Bad", "prophet": "Samuel" },
+    { "king": "David", "year": "1010 BC", "yearsRuled": 40, "goodBad": "Good", "prophet": "Nathan, Gad" },
+    { "king": "Solomon", "year": "970 BC", "yearsRuled": 40, "goodBad": "Good", "prophet": "Ahijah" },
+    { "king": "Rehoboam", "year": "931 BC", "yearsRuled": 17, "goodBad": "Bad", "prophet": "Shemaiah, Iddo" },
+    { "king": "Abijah", "year": "913 BC", "yearsRuled": 3, "goodBad": "Bad", "prophet": "Iddo" },
+    { "king": "Asa", "year": "910 BC", "yearsRuled": 41, "goodBad": "Good", "prophet": "Azariah, Hanani" },
+    { "king": "Jehoshaphat", "year": "869 BC", "yearsRuled": 25, "goodBad": "Good", "prophet": "Jehu, Eliezer" },
+    { "king": "Jehoram", "year": "848 BC", "yearsRuled": 8, "goodBad": "Bad", "prophet": "Elijah" },
+    { "king": "Ahaziah", "year": "841 BC", "yearsRuled": 1, "goodBad": "Bad", "prophet": "Elisha" },
+    { "king": "Athaliah (Queen)", "year": "840 BC", "yearsRuled": 6, "goodBad": "Bad", "prophet": "Jehoiada" },
+    { "king": "Joash", "year": "835 BC", "yearsRuled": 40, "goodBad": "Good/Bad", "prophet": "Jehoiada, Zechariah" },
+    { "king": "Amaziah", "year": "796 BC", "yearsRuled": 29, "goodBad": "Good/Bad", "prophet": "Unknown" },
+    { "king": "Uzziah (Azariah)", "year": "792 BC", "yearsRuled": 52, "goodBad": "Good", "prophet": "Isaiah, Amos" },
+    { "king": "Jotham", "year": "750 BC", "yearsRuled": 16, "goodBad": "Good", "prophet": "Isaiah, Micah" },
+    { "king": "Ahaz", "year": "735 BC", "yearsRuled": 16, "goodBad": "Bad", "prophet": "Isaiah, Micah" },
+    { "king": "Hezekiah", "year": "715 BC", "yearsRuled": 29, "goodBad": "Good", "prophet": "Isaiah, Micah" },
+    { "king": "Manasseh", "year": "686 BC", "yearsRuled": 55, "goodBad": "Bad/Repented", "prophet": "Unknown" },
+    { "king": "Amon", "year": "642 BC", "yearsRuled": 2, "goodBad": "Bad", "prophet": "Unknown" },
+    { "king": "Josiah", "year": "640 BC", "yearsRuled": 31, "goodBad": "Good", "prophet": "Jeremiah, Huldah" },
+    { "king": "Jehoahaz", "year": "609 BC", "yearsRuled": 0.25, "goodBad": "Bad", "prophet": "Jeremiah" },
+    { "king": "Jehoiakim", "year": "609 BC", "yearsRuled": 11, "goodBad": "Bad", "prophet": "Jeremiah, Urijah" },
+    { "king": "Jehoiachin", "year": "598 BC", "yearsRuled": 0.25, "goodBad": "Bad", "prophet": "Jeremiah" },
+    { "king": "Zedekiah", "year": "597 BC", "yearsRuled": 11, "goodBad": "Bad", "prophet": "Jeremiah" }
+  ],
+  "israel-kings": [
+      { "king": "Jeroboam I", "year": "931 BC", "yearsRuled": 22, "goodBad": "Bad", "prophet": "Ahijah" },
+      { "king": "Nadab", "year": "910 BC", "yearsRuled": 2, "goodBad": "Bad", "prophet": "Ahijah" },
+      { "king": "Baasha", "year": "909 BC", "yearsRuled": 24, "goodBad": "Bad", "prophet": "Jehu" },
+      { "king": "Elah", "year": "886 BC", "yearsRuled": 2, "goodBad": "Bad", "prophet": "Unknown" },
+      { "king": "Zimri", "year": "885 BC", "yearsRuled": 0.04, "goodBad": "Bad", "prophet": "Unknown" },
+      { "king": "Omri", "year": "885 BC", "yearsRuled": 12, "goodBad": "Bad", "prophet": "Unknown" },
+      { "king": "Ahab", "year": "874 BC", "yearsRuled": 22, "goodBad": "Bad", "prophet": "Elijah, Micaiah" },
+      { "king": "Ahaziah", "year": "853 BC", "yearsRuled": 2, "goodBad": "Bad", "prophet": "Elijah" },
+      { "king": "Joram (Jehoram)", "year": "852 BC", "yearsRuled": 12, "goodBad": "Bad", "prophet": "Elisha" },
+      { "king": "Jehu", "year": "841 BC", "yearsRuled": 28, "goodBad": "Bad", "prophet": "Elisha" },
+      { "king": "Jehoahaz", "year": "814 BC", "yearsRuled": 17, "goodBad": "Bad", "prophet": "Elisha" },
+      { "king": "Jehoash", "year": "798 BC", "yearsRuled": 16, "goodBad": "Bad", "prophet": "Elisha" },
+      { "king": "Jeroboam II", "year": "782 BC", "yearsRuled": 41, "goodBad": "Bad", "prophet": "Jonah, Amos, Hosea" },
+      { "king": "Zechariah", "year": "753 BC", "yearsRuled": 0.5, "goodBad": "Bad", "prophet": "Unknown" },
+      { "king": "Shallum", "year": "752 BC", "yearsRuled": 0.08, "goodBad": "Bad", "prophet": "Unknown" },
+      { "king": "Menahem", "year": "752 BC", "yearsRuled": 10, "goodBad": "Bad", "prophet": "Unknown" },
+      { "king": "Pekahiah", "year": "742 BC", "yearsRuled": 2, "goodBad": "Bad", "prophet": "Unknown" },
+      { "king": "Pekah", "year": "740 BC", "yearsRuled": 20, "goodBad": "Bad", "prophet": "Unknown" },
+      { "king": "Hoshea", "year": "732 BC", "yearsRuled": 9, "goodBad": "Bad", "prophet": "Unknown" }
+    ]
+}

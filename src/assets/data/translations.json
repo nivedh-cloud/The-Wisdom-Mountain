@@ -1,0 +1,46 @@
+{
+  "en": {
+    "common": {
+      "close": "Close",
+      "details": "Details",
+      "viewDetails": "View Details",
+      "period": "Period",
+      "scripture": "Scripture Reference",
+      "biography": "Biography",
+      "achievements": "Key Achievements",
+      "significance": "Significance",
+      "category": "Category",
+      "booksWritten": "Books Written",
+      "keyProphecies": "Key Prophecies",
+      "none": "None",
+      "summary": "Summary",
+      "description": "Description",
+      "location": "Location",
+      "testament": "Testament"
+    },
+    "judges": {
+      "judge": "Judge",
+      "tribe": "Tribe",
+      "yearsOfJudgeship": "Years of Judgeship",
+      "oppressor": "Oppressor",
+      "title": "Judges of Israel",
+      "chartLabel": "Period of Judges"
+    },
+    "prophets": {
+      "prophet": "Prophet",
+      "ministry": "Ministry",
+      "type": "Type",
+      "title": "Prophets of Israel",
+      "chartLabel": "Prophetic Ministry"
+    },
+    "maps": {
+      "map": "Map",
+      "location": "Location",
+      "events": "Events",
+      "title": "Biblical Maps",
+      "viewMap": "View Map",
+      "mapNotFound": "Map not found",
+      "mapImage": "Map Image"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+[
+  { "year": "539 BC", "person": "Cyrus", "person_te": "సైరస్", "age": "Unknown", "famous": "Allowed Jews to return to Jerusalem" },
+  { "year": "537 BC", "person": "Zerubbabel", "person_te": "జెరుబ్బాబెల్", "age": "Unknown", "famous": "Led first return from exile; rebuilt temple" },
+  { "year": "537 BC", "person": "Joshua (High Priest)", "person_te": "యేషువా", "age": "Unknown", "famous": "High priest during temple rebuilding" },
+  { "year": "458 BC", "person": "Ezra", "person_te": "ఎజ్రా", "age": "Unknown", "famous": "Priest and scribe; led religious reforms" },
+  { "year": "445 BC", "person": "Nehemiah", "person_te": "నెహెమియా", "age": "Unknown", "famous": "Governor; rebuilt Jerusalem walls" },
+  { "year": "520 BC", "person": "Haggai", "person_te": "హగ్గై", "age": "Unknown", "famous": "Prophet who encouraged temple rebuilding" },
+  { "year": "520 BC", "person": "Zechariah", "person_te": "జెకర్యా", "age": "Unknown", "famous": "Prophet; visions of temple restoration" },
+  { "year": "460 BC", "person": "Malachi", "person_te": "మలాకీ", "age": "Unknown", "famous": "Last Old Testament prophet" },
+  { "year": "516 BC", "person": "Darius I", "person_te": "దారయవేషు", "age": "Unknown", "famous": "Persian king; supported temple completion" },
+  { "year": "465 BC", "person": "Artaxerxes I", "person_te": "అర్తక్షస్త", "age": "Unknown", "famous": "Persian king; sent Ezra and Nehemiah" },
+  { "year": "480 BC", "person": "Esther", "person_te": "ఎస్తేరు", "age": "Unknown", "famous": "Jewish queen who saved her people" },
+  { "year": "480 BC", "person": "Mordecai", "person_te": "మొర్దెకై", "age": "Unknown", "famous": "Esther's cousin; saved Jewish people" }
+]

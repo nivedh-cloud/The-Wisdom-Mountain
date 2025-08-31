@@ -1,0 +1,92 @@
+{
+  "oldTestament": {
+    "torah": [
+      {"id": 1, "name": "Genesis", "nameHebrew": "בְּרֵאשִׁית", "nameTelugu": "ఆదికాండము", "author": "Moses", "authorHebrew": "מֹשֶׁה", "authorTelugu": "మోషే", "writtenDate": "1450-1410 BC", "chapters": 50, "verses": 1533, "category": "Law/Torah"},
+      {"id": 2, "name": "Exodus", "nameHebrew": "שְׁמוֹת", "nameTelugu": "నిర్గమకాండము", "author": "Moses", "authorHebrew": "מֹשֶׁה", "authorTelugu": "మోషే", "writtenDate": "1450-1410 BC", "chapters": 40, "verses": 1213, "category": "Law/Torah"},
+      {"id": 3, "name": "Leviticus", "nameHebrew": "וַיִּקְרָא", "nameTelugu": "లేవీయకాండము", "author": "Moses", "authorHebrew": "מֹשֶׁה", "authorTelugu": "మోషే", "writtenDate": "1450-1410 BC", "chapters": 27, "verses": 859, "category": "Law/Torah"},
+      {"id": 4, "name": "Numbers", "nameHebrew": "בְּמִדְבַּר", "nameTelugu": "సంఖ్యాకాండము", "author": "Moses", "authorHebrew": "מֹשֶׁה", "authorTelugu": "మోషే", "writtenDate": "1450-1410 BC", "chapters": 36, "verses": 1288, "category": "Law/Torah"},
+      {"id": 5, "name": "Deuteronomy", "nameHebrew": "דְּבָרִים", "nameTelugu": "ద్వితీయోపదేశకాండము", "author": "Moses", "authorHebrew": "מֹשֶׁה", "authorTelugu": "మోషే", "writtenDate": "1410 BC", "chapters": 34, "verses": 959, "category": "Law/Torah"}
+    ],
+    "historical": [
+      {"id": 6, "name": "Joshua", "nameHebrew": "יְהוֹשֻׁעַ", "nameTelugu": "యెహోషువ", "author": "Joshua", "authorHebrew": "יְהוֹשֻׁעַ", "authorTelugu": "యెహోషువ", "writtenDate": "1400-1370 BC", "chapters": 24, "verses": 658, "category": "History"},
+      {"id": 7, "name": "Judges", "nameHebrew": "שֹׁפְטִים", "nameTelugu": "న్యాయాధిపతులు", "author": "Samuel (trad.)", "authorHebrew": "שְׁמוּאֵל", "authorTelugu": "సమూయేలు", "writtenDate": "1050-1000 BC", "chapters": 21, "verses": 618, "category": "History"},
+      {"id": 8, "name": "Ruth", "nameHebrew": "רוּת", "nameTelugu": "రూతు", "author": "Samuel (trad.)", "authorHebrew": "שְׁמוּאֵל", "authorTelugu": "సమూయేలు", "writtenDate": "1050-1000 BC", "chapters": 4, "verses": 85, "category": "History"},
+      {"id": 9, "name": "1 Samuel", "nameHebrew": "שְׁמוּאֵל א׳", "nameTelugu": "1 సమూయేలు", "author": "Samuel, Nathan, Gad", "authorHebrew": "שְׁמוּאֵל, נָתָן, גָּד", "authorTelugu": "సమూయేలు, నాతాను, గాదు", "writtenDate": "1000-900 BC", "chapters": 31, "verses": 810, "category": "History"},
+      {"id": 10, "name": "2 Samuel", "nameHebrew": "שְׁמוּאֵל ב׳", "nameTelugu": "2 సమూయేలు", "author": "Nathan, Gad (trad.)", "authorHebrew": "נָתָן, גָּד", "authorTelugu": "నాతాను, గాదు", "writtenDate": "1000-900 BC", "chapters": 24, "verses": 695, "category": "History"},
+      {"id": 11, "name": "1 Kings", "nameHebrew": "מְלָכִים א׳", "nameTelugu": "1 రాజులు", "author": "Jeremiah (trad.)", "authorHebrew": "יִרְמְיָהוּ", "authorTelugu": "యిర్మీయా", "writtenDate": "600-550 BC", "chapters": 22, "verses": 816, "category": "History"},
+      {"id": 12, "name": "2 Kings", "nameHebrew": "מְלָכִים ב׳", "nameTelugu": "2 రాజులు", "author": "Jeremiah (trad.)", "authorHebrew": "יִרְמְיָהוּ", "authorTelugu": "యిర్మీయా", "writtenDate": "600-550 BC", "chapters": 25, "verses": 719, "category": "History"},
+      {"id": 13, "name": "1 Chronicles", "nameHebrew": "דִּבְרֵי הַיָּמִים א׳", "nameTelugu": "1 దినవృత్తాంతములు", "author": "Ezra (trad.)", "authorHebrew": "עֶזְרָא", "authorTelugu": "ఎజ్రా", "writtenDate": "450-430 BC", "chapters": 29, "verses": 942, "category": "History"},
+      {"id": 14, "name": "2 Chronicles", "nameHebrew": "דִּבְרֵי הַיָּמִים ב׳", "nameTelugu": "2 దినవృత్తాంతములు", "author": "Ezra (trad.)", "authorHebrew": "עֶזְרָא", "authorTelugu": "ఎజ్రా", "writtenDate": "450-430 BC", "chapters": 36, "verses": 822, "category": "History"},
+      {"id": 15, "name": "Ezra", "nameHebrew": "עֶזְרָא", "nameTelugu": "ఎజ్రా", "author": "Ezra", "authorHebrew": "עֶזְרָא", "authorTelugu": "ఎజ్రా", "writtenDate": "450-400 BC", "chapters": 10, "verses": 280, "category": "History"},
+      {"id": 16, "name": "Nehemiah", "nameHebrew": "נְחֶמְיָה", "nameTelugu": "నెహెమ్యా", "author": "Nehemiah", "authorHebrew": "נְחֶמְיָה", "authorTelugu": "నెహెమ్యా", "writtenDate": "445-420 BC", "chapters": 13, "verses": 406, "category": "History"},
+      {"id": 17, "name": "Esther", "nameHebrew": "אֶסְתֵּר", "nameTelugu": "ఎస్తేరు", "author": "Unknown (Mordecai?)", "authorHebrew": "לא ידוע", "authorTelugu": "తెలియదు", "writtenDate": "465-425 BC", "chapters": 10, "verses": 167, "category": "History"}
+    ],
+    "wisdom": [
+      {"id": 18, "name": "Job", "nameHebrew": "אִיּוֹב", "nameTelugu": "యోబు", "author": "Unknown (possibly Moses or Job)", "authorHebrew": "לא ידוע", "authorTelugu": "తెలియదు", "writtenDate": "2000-1500 BC", "chapters": 42, "verses": 1070, "category": "Wisdom"},
+      {"id": 19, "name": "Psalms", "nameHebrew": "תְּהִלִּים", "nameTelugu": "కీర్తనలు", "author": "David, Asaph, Sons of Korah, Solomon, Moses, others", "authorHebrew": "דָּוִד, אָסָף, בְּנֵי קֹרַח, שְׁלֹמֹה, מֹשֶׁה", "authorTelugu": "దావీదు, ఆసాపు, కోరహు కుమారులు, సొలొమోను, మోషే", "writtenDate": "1440-400 BC", "chapters": 150, "verses": 2461, "category": "Wisdom/Poetry"},
+      {"id": 20, "name": "Proverbs", "nameHebrew": "מִשְׁלֵי", "nameTelugu": "సామెతలు", "author": "Solomon, Agur, Lemuel", "authorHebrew": "שְׁלֹמֹה, אָגוּר, לְמוּאֵל", "authorTelugu": "సొలొమోను, ఆగూరు, లెమూయేలు", "writtenDate": "970-700 BC", "chapters": 31, "verses": 915, "category": "Wisdom"},
+      {"id": 21, "name": "Ecclesiastes", "nameHebrew": "קֹהֶלֶת", "nameTelugu": "ప్రకటన", "author": "Solomon (trad.)", "authorHebrew": "שְׁלֹמֹה", "authorTelugu": "సొలొమోను", "writtenDate": "935 BC", "chapters": 12, "verses": 222, "category": "Wisdom"},
+      {"id": 22, "name": "Song of Songs", "nameHebrew": "שִׁיר הַשִּׁירִים", "nameTelugu": "కీర్తనల కీర్తన", "author": "Solomon", "authorHebrew": "שְׁלֹמֹה", "authorTelugu": "సొలొమోను", "writtenDate": "965 BC", "chapters": 8, "verses": 117, "category": "Wisdom/Poetry"}
+    ],
+    "majorProphets": [
+      {"id": 23, "name": "Isaiah", "nameHebrew": "יְשַׁעְיָהוּ", "nameTelugu": "యెషయా", "author": "Isaiah", "authorHebrew": "יְשַׁעְיָהוּ", "authorTelugu": "యెషయా", "writtenDate": "740-681 BC", "chapters": 66, "verses": 1292, "category": "Major Prophet"},
+      {"id": 24, "name": "Jeremiah", "nameHebrew": "יִרְמְיָהוּ", "nameTelugu": "యిర్మీయా", "author": "Jeremiah", "authorHebrew": "יִרְמְיָהוּ", "authorTelugu": "యిర్మీయా", "writtenDate": "627-586 BC", "chapters": 52, "verses": 1364, "category": "Major Prophet"},
+      {"id": 25, "name": "Lamentations", "nameHebrew": "אֵיכָה", "nameTelugu": "విలాపవాక్యములు", "author": "Jeremiah", "authorHebrew": "יִרְמְיָהוּ", "authorTelugu": "యిర్మీయా", "writtenDate": "586 BC", "chapters": 5, "verses": 154, "category": "Major Prophet"},
+      {"id": 26, "name": "Ezekiel", "nameHebrew": "יְחֶזְקֵאל", "nameTelugu": "యెహెజ్కేలు", "author": "Ezekiel", "authorHebrew": "יְחֶזְקֵאל", "authorTelugu": "యెహెజ్కేలు", "writtenDate": "593-571 BC", "chapters": 48, "verses": 1273, "category": "Major Prophet"},
+      {"id": 27, "name": "Daniel", "nameHebrew": "דָּנִיֵּאל", "nameTelugu": "దానియేలు", "author": "Daniel", "authorHebrew": "דָּנִיֵּאל", "authorTelugu": "దానియేలు", "writtenDate": "605-536 BC", "chapters": 12, "verses": 357, "category": "Major Prophet"}
+    ],
+    "minorProphets": [
+      {"id": 28, "name": "Hosea", "nameHebrew": "הוֹשֵׁעַ", "nameTelugu": "హోషేయ", "author": "Hosea", "authorHebrew": "הוֹשֵׁעַ", "authorTelugu": "హోషేయ", "writtenDate": "760-715 BC", "chapters": 14, "verses": 197, "category": "Minor Prophet"},
+      {"id": 29, "name": "Joel", "nameHebrew": "יוֹאֵל", "nameTelugu": "యోవేలు", "author": "Joel", "authorHebrew": "יוֹאֵל", "authorTelugu": "యోవేలు", "writtenDate": "835-796 BC", "chapters": 3, "verses": 73, "category": "Minor Prophet"},
+      {"id": 30, "name": "Amos", "nameHebrew": "עָמוֹס", "nameTelugu": "ఆమోసు", "author": "Amos", "authorHebrew": "עָמוֹס", "authorTelugu": "ఆమోసు", "writtenDate": "760-750 BC", "chapters": 9, "verses": 146, "category": "Minor Prophet"},
+      {"id": 31, "name": "Obadiah", "nameHebrew": "עֹבַדְיָה", "nameTelugu": "ఓబద్యా", "author": "Obadiah", "authorHebrew": "עֹבַדְיָה", "authorTelugu": "ఓబద్యా", "writtenDate": "586 BC", "chapters": 1, "verses": 21, "category": "Minor Prophet"},
+      {"id": 32, "name": "Jonah", "nameHebrew": "יוֹנָה", "nameTelugu": "యోనా", "author": "Jonah", "authorHebrew": "יוֹנָה", "authorTelugu": "యోనా", "writtenDate": "785-760 BC", "chapters": 4, "verses": 48, "category": "Minor Prophet"},
+      {"id": 33, "name": "Micah", "nameHebrew": "מִיכָה", "nameTelugu": "మీకా", "author": "Micah", "authorHebrew": "מִיכָה", "authorTelugu": "మీకా", "writtenDate": "742-687 BC", "chapters": 7, "verses": 105, "category": "Minor Prophet"},
+      {"id": 34, "name": "Nahum", "nameHebrew": "נַחוּם", "nameTelugu": "నహూము", "author": "Nahum", "authorHebrew": "נַחוּם", "authorTelugu": "నహూము", "writtenDate": "663-612 BC", "chapters": 3, "verses": 47, "category": "Minor Prophet"},
+      {"id": 35, "name": "Habakkuk", "nameHebrew": "חֲבַקּוּק", "nameTelugu": "హబక్కూకు", "author": "Habakkuk", "authorHebrew": "חֲבַקּוּק", "authorTelugu": "హబక్కూకు", "writtenDate": "609-598 BC", "chapters": 3, "verses": 56, "category": "Minor Prophet"},
+      {"id": 36, "name": "Zephaniah", "nameHebrew": "צְפַנְיָה", "nameTelugu": "జెఫన్యా", "author": "Zephaniah", "authorHebrew": "צְפַנְיָה", "authorTelugu": "జెఫన్యా", "writtenDate": "640-609 BC", "chapters": 3, "verses": 53, "category": "Minor Prophet"},
+      {"id": 37, "name": "Haggai", "nameHebrew": "חַגַּי", "nameTelugu": "హగ్గయి", "author": "Haggai", "authorHebrew": "חַגַּי", "authorTelugu": "హగ్గయి", "writtenDate": "520 BC", "chapters": 2, "verses": 38, "category": "Minor Prophet"},
+      {"id": 38, "name": "Zechariah", "nameHebrew": "זְכַרְיָה", "nameTelugu": "జెకర్యా", "author": "Zechariah", "authorHebrew": "זְכַרְיָה", "authorTelugu": "జెకర్యా", "writtenDate": "520-518 BC", "chapters": 14, "verses": 211, "category": "Minor Prophet"},
+      {"id": 39, "name": "Malachi", "nameHebrew": "מַלְאָכִי", "nameTelugu": "మలాకీ", "author": "Malachi", "authorHebrew": "מַלְאָכִי", "authorTelugu": "మలాకీ", "writtenDate": "430 BC", "chapters": 4, "verses": 55, "category": "Minor Prophet"}
+    ]
+  },
+  "newTestament": {
+    "gospels": [
+      {"id": 40, "name": "Matthew", "nameGreek": "Κατὰ Μαθθαῖον", "nameTelugu": "మత్తయి", "author": "Matthew (Levi)", "authorGreek": "Μαθθαῖος", "authorTelugu": "మత్తయి", "writtenDate": "60-70 AD", "chapters": 28, "verses": 1071, "category": "Gospel"},
+      {"id": 41, "name": "Mark", "nameGreek": "Κατὰ Μᾶρκον", "nameTelugu": "మార్కు", "author": "John Mark", "authorGreek": "Μᾶρκος", "authorTelugu": "మార్కు", "writtenDate": "55-65 AD", "chapters": 16, "verses": 678, "category": "Gospel"},
+      {"id": 42, "name": "Luke", "nameGreek": "Κατὰ Λουκᾶν", "nameTelugu": "లూకా", "author": "Luke", "authorGreek": "Λουκᾶς", "authorTelugu": "లూకా", "writtenDate": "60-70 AD", "chapters": 24, "verses": 1151, "category": "Gospel"},
+      {"id": 43, "name": "John", "nameGreek": "Κατὰ Ἰωάννην", "nameTelugu": "యోహాను", "author": "John the Apostle", "authorGreek": "Ἰωάννης", "authorTelugu": "యోహాను", "writtenDate": "85-95 AD", "chapters": 21, "verses": 879, "category": "Gospel"}
+    ],
+    "history": [
+      {"id": 44, "name": "Acts", "nameGreek": "Πράξεις Ἀποστόλων", "nameTelugu": "అపొస్తలుల కార్యములు", "author": "Luke", "authorGreek": "Λουκᾶς", "authorTelugu": "లూకా", "writtenDate": "62-70 AD", "chapters": 28, "verses": 1007, "category": "History"}
+    ],
+    "paulineEpistles": [
+      {"id": 45, "name": "Romans", "nameGreek": "Πρὸς Ῥωμαίους", "nameTelugu": "రోమీయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "57 AD", "chapters": 16, "verses": 433, "category": "Pauline Epistle"},
+      {"id": 46, "name": "1 Corinthians", "nameGreek": "Πρὸς Κορινθίους Α΄", "nameTelugu": "1 కొరింథీయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "55 AD", "chapters": 16, "verses": 437, "category": "Pauline Epistle"},
+      {"id": 47, "name": "2 Corinthians", "nameGreek": "Πρὸς Κορινθίους Β΄", "nameTelugu": "2 కొరింథీయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "56 AD", "chapters": 13, "verses": 257, "category": "Pauline Epistle"},
+      {"id": 48, "name": "Galatians", "nameGreek": "Πρὸς Γαλάτας", "nameTelugu": "గలతీయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "49 AD", "chapters": 6, "verses": 149, "category": "Pauline Epistle"},
+      {"id": 49, "name": "Ephesians", "nameGreek": "Πρὸς Ἐφεσίους", "nameTelugu": "ఎఫెసీయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "60 AD", "chapters": 6, "verses": 155, "category": "Pauline Epistle"},
+      {"id": 50, "name": "Philippians", "nameGreek": "Πρὸς Φιλιππησίους", "nameTelugu": "ఫిలిప్పీయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "61 AD", "chapters": 4, "verses": 104, "category": "Pauline Epistle"},
+      {"id": 51, "name": "Colossians", "nameGreek": "Πρὸς Κολοσσαεῖς", "nameTelugu": "కొలస్సయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "60 AD", "chapters": 4, "verses": 95, "category": "Pauline Epistle"},
+      {"id": 52, "name": "1 Thessalonians", "nameGreek": "Πρὸς Θεσσαλονικεῖς Α΄", "nameTelugu": "1 థెస్సలొనీకయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "51 AD", "chapters": 5, "verses": 89, "category": "Pauline Epistle"},
+      {"id": 53, "name": "2 Thessalonians", "nameGreek": "Πρὸς Θεσσαλονικεῖς Β΄", "nameTelugu": "2 థెస్సలొనీకయులకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "51 AD", "chapters": 3, "verses": 47, "category": "Pauline Epistle"},
+      {"id": 54, "name": "1 Timothy", "nameGreek": "Πρὸς Τιμόθεον Α΄", "nameTelugu": "1 తిమోతికి", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "63 AD", "chapters": 6, "verses": 113, "category": "Pauline Epistle"},
+      {"id": 55, "name": "2 Timothy", "nameGreek": "Πρὸς Τιμόθεον Β΄", "nameTelugu": "2 తిమోతికి", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "64 AD", "chapters": 4, "verses": 83, "category": "Pauline Epistle"},
+      {"id": 56, "name": "Titus", "nameGreek": "Πρὸς Τίτον", "nameTelugu": "తీతుకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "64 AD", "chapters": 3, "verses": 46, "category": "Pauline Epistle"},
+      {"id": 57, "name": "Philemon", "nameGreek": "Πρὸς Φιλήμονα", "nameTelugu": "ఫిలేమోనుకు", "author": "Paul", "authorGreek": "Παῦλος", "authorTelugu": "పౌలు", "writtenDate": "60 AD", "chapters": 1, "verses": 25, "category": "Pauline Epistle"}
+    ],
+    "generalEpistles": [
+      {"id": 58, "name": "Hebrews", "nameGreek": "Πρὸς Ἑβραίους", "nameTelugu": "హెబ్రీయులకు", "author": "Unknown (Paul?)", "authorGreek": "Παῦλος?", "authorTelugu": "తెలియదు", "writtenDate": "64-68 AD", "chapters": 13, "verses": 303, "category": "General Epistle"},
+      {"id": 59, "name": "James", "nameGreek": "Ἰάκωβος", "nameTelugu": "యాకోబు", "author": "James", "authorGreek": "Ἰάκωβος", "authorTelugu": "యాకోబు", "writtenDate": "45-49 AD", "chapters": 5, "verses": 108, "category": "General Epistle"},
+      {"id": 60, "name": "1 Peter", "nameGreek": "Πέτρος Α΄", "nameTelugu": "1 పేతురు", "author": "Peter", "authorGreek": "Πέτρος", "authorTelugu": "పేతురు", "writtenDate": "64 AD", "chapters": 5, "verses": 105, "category": "General Epistle"},
+      {"id": 61, "name": "2 Peter", "nameGreek": "Πέτρος Β΄", "nameTelugu": "2 పేతురు", "author": "Peter", "authorGreek": "Πέτρος", "authorTelugu": "పేతురు", "writtenDate": "67 AD", "chapters": 3, "verses": 61, "category": "General Epistle"},
+      {"id": 62, "name": "1 John", "nameGreek": "Ἰωάννου Α΄", "nameTelugu": "1 యోహాను", "author": "John", "authorGreek": "Ἰωάννης", "authorTelugu": "యోహాను", "writtenDate": "85-95 AD", "chapters": 5, "verses": 105, "category": "General Epistle"},
+      {"id": 63, "name": "2 John", "nameGreek": "Ἰωάννου Β΄", "nameTelugu": "2 యోహాను", "author": "John", "authorGreek": "Ἰωάννης", "authorTelugu": "యోహాను", "writtenDate": "85-95 AD", "chapters": 1, "verses": 13, "category": "General Epistle"},
+      {"id": 64, "name": "3 John", "nameGreek": "Ἰωάννου Γ΄", "nameTelugu": "3 యోహాను", "author": "John", "authorGreek": "Ἰωάννης", "authorTelugu": "యోహాను", "writtenDate": "85-95 AD", "chapters": 1, "verses": 15, "category": "General Epistle"},
+      {"id": 65, "name": "Jude", "nameGreek": "Ἰούδας", "nameTelugu": "యూదా", "author": "Jude", "authorGreek": "Ἰούδας", "authorTelugu": "యూదా", "writtenDate": "65-80 AD", "chapters": 1, "verses": 25, "category": "General Epistle"}
+    ],
+    "prophecy": [
+      {"id": 66, "name": "Revelation", "nameGreek": "Ἀποκάλυψις Ἰωάννου", "nameTelugu": "ప్రకటన గ్రంథము", "author": "John", "authorGreek": "Ἰωάννης", "authorTelugu": "యోహాను", "writtenDate": "95 AD", "chapters": 22, "verses": 404, "category": "Prophecy"}
+    ]
+  }
+}

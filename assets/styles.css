@@ -1,0 +1,47 @@
+/* Accordion main header - light theme fix */
+ .accordion-main-header {
+  background: #edeaff;
+  color: #2a1a6e;
+  border: none;
+  border-radius: 16px;
+  padding: 18px 24px;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(75,60,196,0.08);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+ .accordion-main-header.active, .accordion-main-header:focus {
+  background: #d1c4f7;
+  color: #1a0e4a;
+}
+
+.accordion-section {
+  margin-bottom: 24px;
+}
+
+ .accordion-sub-header {
+  background: #f6f4ff;
+  color: #2a1a6e;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+ .accordion-sub-header.active, .accordion-sub-header:focus {
+  background: #e0dbfa;
+  color: #1a0e4a;
+}

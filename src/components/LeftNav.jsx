@@ -1,0 +1,226 @@
+
+
+import menuConfig from '../assets/data/menuConfig.json';
+import biblicalBooksData from '../assets/data/biblicalBooksData.json';
+import { FaSearch, FaSignOutAlt, FaMoon, FaBook, FaBookOpen, FaUser, FaList, FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import { FaHome, FaUsers, FaCrown, FaSitemap, FaGavel, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { useState } from 'react';
+
+// Glyphicon mapping for menu items
+const glyphiconMap = {
+  FaUser: 'glyphicon-user',
+  FaCrown: 'glyphicon-king',
+  FaTree: 'glyphicon-tree-deciduous', 
+  FaBible: 'glyphicon-book',
+  FaUserFriends: 'glyphicon-user',
+  GiCrownCoin: 'glyphicon-king',
+  FaBook: 'glyphicon-book',
+  FaBookOpen: 'glyphicon-book-open',
+  FaList: 'glyphicon-list',
+  'glyphicon-user': 'glyphicon-user',
+  'glyphicon-map-marker': 'glyphicon-map-marker',
+  'glyphicon-time': 'glyphicon-time'
+};
+
+// Component for rendering glyphicon
+const GlyphIcon = ({ iconName, className = '' }) => (
+  <span className={`glyphicon ${glyphiconMap[iconName] || iconName || 'glyphicon-user'} ${className}`}></span>
+);
+
+const LeftNav = ({ lang, page, setPage, translations }) => {
+  // Search state
+  const [search, setSearch] = useState('');
+  
+  // Accordion state for Books & Writers
+  const [expandedSections, setExpandedSections] = useState({
+    oldTestament: false,
+    newTestament: false,
+    authors: false
+  });
+
+  // Determine which menu to show
+  let menuType = 'genealogy';
+  if (page === 'kings' || ['judah-kings','israel-kings'].includes(page)) menuType = 'kings';
+  if (page === 'family-trees' || ['adam-lineage','abraham-lineage'].includes(page)) menuType = 'familytrees';
+  if (page === 'judges' || ['list-of-judges'].includes(page)) menuType = 'judges';
+  if (page === 'prophets' || ['list-of-prophets'].includes(page)) menuType = 'prophets';
+  if (page === 'maps' || ['old-testament-maps','new-testament-maps','israel-maps-tribes'].includes(page)) menuType = 'maps';
+  if (page === 'keyeras' || ['wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile'].includes(page)) menuType = 'keyeras';
+  if (page === 'bookswriters' || ['old-testament-books','new-testament-books','biblical-authors','books-by-category','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) menuType = 'bookswriters';
+  if (page === 'genealogy' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile'].includes(page)) menuType = 'genealogy';
+  
+  // Menu header from JSON
+
+  const menuHeader = menuConfig.menuHeaders[menuType][lang];
+  // Menu items
+  const menuItems = menuConfig.menus[menuType] || [];
+
+  const filteredItems = Array.isArray(menuItems)
+    ? menuItems.filter(item => item.label[lang].toLowerCase().includes(search.toLowerCase()))
+    : [];
+
+  // Toggle accordion sections
+  const toggleSection = (section) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+  // Render accordion-style Books & Writers navigation
+  const renderBooksAccordion = () => {
+    return (
+      <div className="books-accordion">
+        {/* Old Testament Section */}
+        <div className="accordion-section">
+          <button 
+            className="accordion-main-header"
+            onClick={() => toggleSection('oldTestament')}
+          >
+            <div className="main-header-content">
+              <FaBook className="main-header-icon" />
+              <span>{lang === 'te' ? 'పాత నిబంధన పుస్తకాలు' : 'Old Testament Books'}</span>
+            </div>
+            {expandedSections.oldTestament ? <FaChevronDown /> : <FaChevronRight />}
+          </button>
+          {expandedSections.oldTestament && (
+            <div className="accordion-content">
+              {Object.entries(biblicalBooksData.oldTestament).map(([category, books]) => (
+                <div key={category} className="sub-category-section">
+                  <button 
+                    className="accordion-sub-header"
+                    onClick={() => setPage(`old-testament-${category}`)}
+                  >
+                    <div className="sub-header-content">
+                      <span className="sub-category-icon">📚</span>
+                      <span>
+                        {category === 'torah' && (lang === 'te' ? 'ధర్మశాస్త్రం' : 'Torah/Law')}
+                        {category === 'historical' && (lang === 'te' ? 'చరిత్ర పుస్తకాలు' : 'Historical Books')}
+                        {category === 'wisdom' && (lang === 'te' ? 'జ్ఞాన పుస్తకాలు' : 'Wisdom Books')}
+                        {category === 'majorProphets' && (lang === 'te' ? 'ప్రధాన ప్రవక్తలు' : 'Major Prophets')}
+                        {category === 'minorProphets' && (lang === 'te' ? 'చిన్న ప్రవక్తలు' : 'Minor Prophets')}
+                      </span>
+                    </div>
+                    <span className="book-count">({books.length})</span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* New Testament Section */}
+        <div className="accordion-section">
+          <button 
+            className="accordion-main-header"
+            onClick={() => toggleSection('newTestament')}
+          >
+            <div className="main-header-content">
+              <FaBookOpen className="main-header-icon" />
+              <span>{lang === 'te' ? 'కొత్త నిబంధన పుస్తకాలు' : 'New Testament Books'}</span>
+            </div>
+            {expandedSections.newTestament ? <FaChevronDown /> : <FaChevronRight />}
+          </button>
+          {expandedSections.newTestament && (
+            <div className="accordion-content">
+              {Object.entries(biblicalBooksData.newTestament).map(([category, books]) => (
+                <div key={category} className="sub-category-section">
+                  <button 
+                    className="accordion-sub-header"
+                    onClick={() => setPage(`new-testament-${category}`)}
+                  >
+                    <div className="sub-header-content">
+                      <span className="sub-category-icon">📖</span>
+                      <span>
+                        {category === 'gospels' && (lang === 'te' ? 'సువార్తలు' : 'Gospels')}
+                        {category === 'history' && (lang === 'te' ? 'చరిత్ర' : 'History')}
+                        {category === 'paulineEpistles' && (lang === 'te' ? 'పౌలు లేఖలు' : 'Pauline Epistles')}
+                        {category === 'generalEpistles' && (lang === 'te' ? 'సాధారణ లేఖలు' : 'General Epistles')}
+                        {category === 'prophecy' && (lang === 'te' ? 'ప్రవచనం' : 'Prophecy')}
+                      </span>
+                    </div>
+                    <span className="book-count">({books.length})</span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Biblical Authors Section */}
+        <div className="accordion-section">
+          <button 
+            className="accordion-main-header"
+            onClick={() => toggleSection('authors')}
+          >
+            <div className="main-header-content">
+              <FaUser className="main-header-icon" />
+              <span>{lang === 'te' ? 'బైబిల్ రచయితలు' : 'Biblical Authors'}</span>
+            </div>
+            {expandedSections.authors ? <FaChevronDown /> : <FaChevronRight />}
+          </button>
+          {expandedSections.authors && (
+            <div className="accordion-content">
+              <div className="sub-category-section">
+                <button 
+                  className="accordion-sub-header"
+                  onClick={() => setPage('biblical-authors')}
+                >
+                  <div className="sub-header-content">
+                    <span className="sub-category-icon">✍️</span>
+                    <span>{lang === 'te' ? 'రచయితల జాబితా' : 'Authors List'}</span>
+                  </div>
+                  <span className="book-count">({biblicalBooksData.biblicalAuthors.length})</span>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <aside className="sidebar">
+      <div className="sidebar-header">{menuHeader}</div>
+      
+      {/* Search Bar - only show for non-accordion modes */}
+      {menuType !== 'bookswriters' && (
+        <div className="sidebar-search-container">
+          <div className="sidebar-search-wrapper">
+            <FaSearch className="sidebar-search-icon" />
+            <input
+              className="sidebar-search sidebar-search-padded"
+              placeholder={lang === 'te' ? 'వెతకండి...' : 'Search...'}
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Books & Writers Accordion or Regular Menu */}
+      {menuType === 'bookswriters' ? (
+        renderBooksAccordion()
+      ) : (
+        <ul className="sidebar-menu">
+          {filteredItems.map(item => {
+            return (
+              <li key={item.key} className={item.key === 'tree' ? 'menu-item-tree' : ''}>
+                <button className={`sidebar-menu-item ${page === item.key ? 'active' : ''}`} onClick={() => setPage(item.key)}>
+                  {item.key === 'adam-to-jesus' ? (
+                    <FaSitemap className="sidebar-menu-icon" />
+                  ) : (
+                    <GlyphIcon iconName={item.icon} className="sidebar-menu-icon" />
+                  )}
+                  {item.label[lang]}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </aside>
+  );
+};
+export default LeftNav;
