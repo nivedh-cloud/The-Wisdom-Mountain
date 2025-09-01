@@ -1,3 +1,4 @@
+import './DataGrid.css';
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList } from 'recharts';
 import { FaChartBar, FaTimes, FaPrint, FaFileExcel } from 'react-icons/fa';
@@ -36,6 +37,7 @@ export default function DataGrid({
   const [filterText, setFilterText] = useState('');
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
   const { isDarkMode } = useTheme();
 
   // Theme-aware colors
@@ -44,6 +46,39 @@ export default function DataGrid({
     background: isDarkMode ? '#1e293b' : '#ffffff',
     text: isDarkMode ? '#e2e8f0' : '#334155',
     border: isDarkMode ? '#334155' : '#e5e7eb'
+  };
+
+  // Tooltip handlers
+  const handleMouseEnter = (event, content) => {
+    if (!content || content === '') return;
+    
+    const rect = event.currentTarget.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    
+    setTooltip({
+      show: true,
+      content: String(content),
+      x: rect.left + scrollLeft + rect.width / 2,
+      y: rect.top + scrollTop - 10
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip({ show: false, content: '', x: 0, y: 0 });
+  };
+
+  const handleMouseMove = (event) => {
+    if (tooltip.show) {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      
+      setTooltip(prev => ({
+        ...prev,
+        x: event.clientX + scrollLeft,
+        y: event.clientY + scrollTop - 10
+      }));
+    }
   };
 
   // Print function
@@ -273,7 +308,13 @@ export default function DataGrid({
 
         // Note: Map name clickability is now handled by custom row renderers in specific grids
         return (
-          <td key={colIndex} className="table-cell">
+          <td 
+            key={colIndex} 
+            className="table-cell"
+            onMouseEnter={(e) => handleMouseEnter(e, value)}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseMove}
+          >
             {value}
           </td>
         );
@@ -282,7 +323,9 @@ export default function DataGrid({
   );
 
   // Use custom row renderer if provided
-  const rowRenderer = customRowRenderer || defaultRowRenderer;
+  const rowRenderer = customRowRenderer ? 
+    (row, index) => customRowRenderer(row, index, { handleMouseEnter, handleMouseLeave, handleMouseMove }) :
+    defaultRowRenderer;
 
   // Render chart if chart configuration is provided
   const renderChart = () => {
@@ -605,9 +648,11 @@ export default function DataGrid({
         </div>
         
         <div className="header-actions">
-          <span className="row-count-text">
+          <button className='action-button print-button'>
+          <span className="">
             {filteredData.length} {lang === 'te' ? 'రికార్డులు' : 'rows'}
           </span>
+          </button>
           <button
             onClick={handlePrint}
             className="action-button print-button"
@@ -627,7 +672,7 @@ export default function DataGrid({
           {chartConfig && (
             <button
               onClick={() => setShowChart(true)}
-              className="action-button chart-button"
+              className="action-button print-button"
               title={t.showChart}
             >
               <FaChartBar />
@@ -769,6 +814,39 @@ export default function DataGrid({
               )}
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Tooltip */}
+      {tooltip.show && (
+        <div
+          className="data-grid-tooltip"
+          style={{
+            position: 'absolute',
+            left: tooltip.x,
+            top: tooltip.y,
+            transform: 'translateX(-50%) translateY(-100%)',
+            background: isDarkMode 
+              ? 'rgba(30, 41, 59, 0.95)' 
+              : 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            border: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)'}`,
+            borderRadius: '8px',
+            padding: '12px 16px',
+            boxShadow: isDarkMode 
+              ? '0 8px 32px rgba(0, 0, 0, 0.3)' 
+              : '0 8px 32px rgba(0, 0, 0, 0.1)',
+            color: colors.text,
+            fontSize: '16px',
+            fontWeight: '500',
+            maxWidth: '300px',
+            wordWrap: 'break-word',
+            zIndex: 10000,
+            pointerEvents: 'none',
+            lineHeight: '1.4'
+          }}
+        >
+          {tooltip.content}
         </div>
       )}
     </div>

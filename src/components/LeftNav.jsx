@@ -27,7 +27,7 @@ const GlyphIcon = ({ iconName, className = '' }) => (
   <span className={`glyphicon ${glyphiconMap[iconName] || iconName || 'glyphicon-user'} ${className}`}></span>
 );
 
-const LeftNav = ({ lang, page, setPage, translations }) => {
+const LeftNav = ({ lang, page, navigateToPage, translations }) => {
   // Search state
   const [search, setSearch] = useState('');
   
@@ -89,7 +89,7 @@ const LeftNav = ({ lang, page, setPage, translations }) => {
                 <div key={category} className="sub-category-section">
                   <button 
                     className="accordion-sub-header"
-                    onClick={() => setPage(`old-testament-${category}`)}
+                    onClick={() => navigateToPage(`old-testament-${category}`)}
                   >
                     <div className="sub-header-content">
                       <span className="sub-category-icon">📚</span>
@@ -127,7 +127,7 @@ const LeftNav = ({ lang, page, setPage, translations }) => {
                 <div key={category} className="sub-category-section">
                   <button 
                     className="accordion-sub-header"
-                    onClick={() => setPage(`new-testament-${category}`)}
+                    onClick={() => navigateToPage(`new-testament-${category}`)}
                   >
                     <div className="sub-header-content">
                       <span className="sub-category-icon">📖</span>
@@ -164,7 +164,7 @@ const LeftNav = ({ lang, page, setPage, translations }) => {
               <div className="sub-category-section">
                 <button 
                   className="accordion-sub-header"
-                  onClick={() => setPage('biblical-authors')}
+                  onClick={() => navigateToPage('biblical-authors')}
                 >
                   <div className="sub-header-content">
                     <span className="sub-category-icon">✍️</span>
@@ -207,7 +207,7 @@ const LeftNav = ({ lang, page, setPage, translations }) => {
           {filteredItems.map(item => {
             return (
               <li key={item.key} className={item.key === 'tree' ? 'menu-item-tree' : ''}>
-                <button className={`sidebar-menu-item ${page === item.key ? 'active' : ''}`} onClick={() => setPage(item.key)}>
+                <button className={`sidebar-menu-item ${page === item.key ? 'active' : ''}`} onClick={() => navigateToPage(item.key)}>
                   {item.key === 'adam-to-jesus' ? (
                     <FaSitemap className="sidebar-menu-icon" />
                   ) : (

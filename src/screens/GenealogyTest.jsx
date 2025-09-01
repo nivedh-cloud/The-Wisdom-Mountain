@@ -41,7 +41,7 @@ const translations = {
   }
 };
 
-function convertGenealogyToFlatArray(genealogyData) {
+function convertGenealogyToFlatArray(genealogyData, lang = 'en') {
   const flatArray = [];
   
   function traverseNode(node) {
@@ -49,12 +49,12 @@ function convertGenealogyToFlatArray(genealogyData) {
     
     if (node.name) {
       flatArray.push({
-        person: node.name,
+        person: lang === 'te' ? (node.nameTe || node.name) : node.name,
         age: node.age || '',
         birth: node.birth || '',
         death: node.death || '',
-        spouse: node.spouse || '',
-        detail: node.detail || ''
+        spouse: lang === 'te' ? (node.spouseTe || node.spouse) : node.spouse,
+        detail: lang === 'te' ? (node.detailTe || node.detail) : node.detail
       });
     }
     
@@ -76,36 +76,54 @@ function convertGenealogyToFlatArray(genealogyData) {
   return flatArray;
 }
 
-function filterGenealogyBySection(flatData, section) {
+function filterGenealogyBySection(flatData, section, lang = 'en') {
+  // Define name mappings for key biblical figures in both languages
+  const nameMap = {
+    adam: { en: 'adam', te: 'ఆదాము' },
+    noah: { en: 'noah', te: 'నోహు' },
+    abraham: { en: 'abraham', te: 'అబ్రాహాము' },
+    moses: { en: 'moses', te: 'మోషే' },
+    david: { en: 'david', te: 'దావీదు' },
+    hezekiah: { en: 'hezekiah', te: 'హిజ్కియా' }
+  };
+
+  const findPersonIndex = (data, keyName) => {
+    const nameToFind = nameMap[keyName] ? nameMap[keyName][lang] : keyName;
+    return data.findIndex(person => 
+      person.person.toLowerCase().includes(nameMap[keyName]?.en?.toLowerCase() || keyName) ||
+      person.person.includes(nameMap[keyName]?.te || keyName)
+    );
+  };
+
   const sectionFilters = {
     'adam-to-jesus': () => flatData, // Show all 1050+ records
     'adam-to-noah': (data) => {
-      const startIndex = data.findIndex(person => person.person.toLowerCase().includes('adam'));
-      const endIndex = data.findIndex(person => person.person.toLowerCase().includes('noah'));
+      const startIndex = findPersonIndex(data, 'adam');
+      const endIndex = findPersonIndex(data, 'noah');
       return endIndex >= 0 ? data.slice(startIndex, endIndex + 1) : data.slice(startIndex, startIndex + 10);
     },
     'noah-to-abraham': (data) => {
-      const startIndex = data.findIndex(person => person.person.toLowerCase().includes('noah'));
-      const endIndex = data.findIndex(person => person.person.toLowerCase().includes('abraham'));
+      const startIndex = findPersonIndex(data, 'noah');
+      const endIndex = findPersonIndex(data, 'abraham');
       return endIndex >= 0 ? data.slice(startIndex, endIndex + 1) : data.slice(startIndex, startIndex + 15);
     },
     'abraham-to-moses': (data) => {
-      const startIndex = data.findIndex(person => person.person.toLowerCase().includes('abraham'));
-      const endIndex = data.findIndex(person => person.person.toLowerCase().includes('moses'));
+      const startIndex = findPersonIndex(data, 'abraham');
+      const endIndex = findPersonIndex(data, 'moses');
       return endIndex >= 0 ? data.slice(startIndex, endIndex + 1) : data.slice(startIndex, startIndex + 15);
     },
     'moses-to-david': (data) => {
-      const startIndex = data.findIndex(person => person.person.toLowerCase().includes('moses'));
-      const endIndex = data.findIndex(person => person.person.toLowerCase().includes('david'));
+      const startIndex = findPersonIndex(data, 'moses');
+      const endIndex = findPersonIndex(data, 'david');
       return endIndex >= 0 ? data.slice(startIndex, endIndex + 1) : data.slice(startIndex, startIndex + 20);
     },
     'david-to-hezekiah': (data) => {
-      const startIndex = data.findIndex(person => person.person.toLowerCase().includes('david'));
-      const endIndex = data.findIndex(person => person.person.toLowerCase().includes('hezekiah'));
+      const startIndex = findPersonIndex(data, 'david');
+      const endIndex = findPersonIndex(data, 'hezekiah');
       return endIndex >= 0 ? data.slice(startIndex, endIndex + 1) : data.slice(startIndex, startIndex + 25);
     },
     'before-babylonian-exile': (data) => {
-      const startIndex = data.findIndex(person => person.person.toLowerCase().includes('hezekiah'));
+      const startIndex = findPersonIndex(data, 'hezekiah');
       return data.slice(startIndex, startIndex + 18);
     },
     'after-babylonian-exile': (data) => {
@@ -121,8 +139,19 @@ function filterGenealogyBySection(flatData, section) {
 export default function GenealogyGrid({ lang, section = 'adam-to-jesus' }) {
   const t = translations[lang] || translations.en;
   
-  const flatGenealogyData = convertGenealogyToFlatArray(genealogyBilingualData);
-  const data = filterGenealogyBySection(flatGenealogyData, section);
+  console.log('GenealogyGrid rendered with:', { lang, section });
+  
+  const flatGenealogyData = convertGenealogyToFlatArray(genealogyBilingualData, lang);
+  console.log('Flat genealogy data length:', flatGenealogyData.length);
+  
+  const data = filterGenealogyBySection(flatGenealogyData, section, lang);
+  console.log(`Filtered data for ${section}:`, data.length, 'records');
+  
+  if (data.length > 0) {
+    console.log('Sample filtered record:', data[0]);
+  } else {
+    console.log('No records found for section:', section);
+  }
   
   console.log(`Showing ${data.length} records for ${section}`);
 
@@ -130,6 +159,14 @@ export default function GenealogyGrid({ lang, section = 'adam-to-jesus' }) {
     {
       header: t.person,
       dataKey: 'person'
+    },
+    {
+      header: t.spouse,
+      dataKey: 'spouse'
+    },
+    {
+      header: t.detail,
+      dataKey: 'detail'
     },
     {
       header: t.age,
@@ -142,14 +179,6 @@ export default function GenealogyGrid({ lang, section = 'adam-to-jesus' }) {
     {
       header: t.death,
       dataKey: 'death'
-    },
-    {
-      header: t.spouse,
-      dataKey: 'spouse'
-    },
-    {
-      header: t.detail,
-      dataKey: 'detail'
     }
   ];
 

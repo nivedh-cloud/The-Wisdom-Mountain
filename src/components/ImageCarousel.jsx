@@ -2,33 +2,50 @@ import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight, FaPause, FaPlay } from 'react-icons/fa';
 import './ImageCarousel.css';
 
-const ImageCarousel = ({ images, autoPlayInterval = 5000 }) => {
+const ImageCarousel = ({ images, autoPlayInterval = 8000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Auto-play functionality
+  // Auto-play functionality with smoother transitions
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => 
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsTransitioning(false);
+      }, 150);
     }, autoPlayInterval);
 
     return () => clearInterval(interval);
   }, [currentIndex, isAutoPlaying, images.length, autoPlayInterval]);
 
   const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   const goToNext = () => {
-    setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   const goToSlide = (index) => {
-    setCurrentIndex(index);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   const toggleAutoPlay = () => {
@@ -47,14 +64,24 @@ const ImageCarousel = ({ images, autoPlayInterval = 5000 }) => {
           <img
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
-            className="carousel-image"
+            className={`carousel-image ${isTransitioning ? 'transitioning' : ''}`}
           />
           
           {/* Image Overlay with Text */}
           <div className="carousel-overlay">
             <div className="carousel-content">
-              <h2 className="carousel-title">{images[currentIndex].title}</h2>
-              <p className="carousel-description">{images[currentIndex].description}</p>
+              <h2 
+                className={`carousel-title ${isTransitioning ? 'slide-out' : 'slide-in'}`}
+                key={`title-${currentIndex}`}
+              >
+                {images[currentIndex].title}
+              </h2>
+              <p 
+                className={`carousel-description ${isTransitioning ? 'slide-out' : 'slide-in'}`}
+                key={`desc-${currentIndex}`}
+              >
+                {images[currentIndex].description}
+              </p>
             </div>
           </div>
         </div>

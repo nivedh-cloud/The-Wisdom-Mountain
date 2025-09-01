@@ -1,4 +1,20 @@
 {
+  "tableHeaders": {
+    "en": {
+      "prophet": "Prophet",
+      "nation": "Nation",
+      "ministryType": "Ministry Type",
+      "booksWritten": "Books Written",
+      "details": "Details"
+    },
+    "te": {
+      "prophet": "ప్రవక్త",
+      "nation": "జాతి",
+      "ministryType": "సేవా రకం",
+      "booksWritten": "వ్రాసిన పుస్తకాలు",
+      "details": "వివరాలు"
+    }
+  },
   "prophets": [
     {
       "id": 1,
@@ -16,6 +32,11 @@
         "Blessings and curses for Israel (Deuteronomy 28)",
         "Gathering of Israel in last days (Deuteronomy 30)"
       ],
+      "keyPropheciesTelugu": [
+        "మోషే వంటి ప్రవక్త రాబోతోంది (ద్వితీయోపదేశకాండము 18:15)",
+        "ఇశ్రాయేలుకు ఆశీర్వాదాలు మరియు శాపాలు (ద్వితీయోపదేశకాండము 28)",
+        "చివరి రోజుల్లో ఇశ్రాయేలు సమీకరణ (ద్వితీయోపదేశకాండము 30)"
+      ],
       "description": {
         "en": "Greatest prophet of Old Testament, lawgiver, led Israel out of Egypt, received Torah on Mount Sinai",
         "te": "పాత నిబంధనలోని గొప్ప ప్రవక్త, ధర్మశాస్త్రకర్త, ఈజిప్టు నుండి ఇశ్రాయేలును నడిపించాడు, సీనాయి పర్వతంపై తోరాను స్వీకరించాడు"
@@ -24,7 +45,12 @@
       "significance": {
         "en": "Established covenant relationship between God and Israel, gave the Law",
         "te": "దేవుడు మరియు ఇశ్రాయేలు మధ్య నిబంధన సంబంధాన్ని స్థాపించాడు, ధర్మశాస్త్రాన్ని ఇచ్చాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రధాన ప్రవక్త/ధర్మశాస్త్రకర్త",
+      "booksWrittenTelugu": ["ఆదికాండము", "నిర్గమకాండము", "లేవీయకాండము", "సంఖ్యాకాండము", "ద్వితీయోపదేశకాండము"],
+      "detailsTelugu": "మోషే వంటి ప్రవక్త రాబోతోందని ప్రవచించాడు (ద్వితీయోపదేశకాండము 18:15), ఇశ్రాయేలుకు ఆశీర్వాదాలు మరియు శాపాలు (ద్వితీయోపదేశకాండము 28), చివరి రోజుల్లో ఇశ్రాయేలును సమీకరించడం (ద్వితీయోపదేశకాండము 30)"
     },
     {
       "id": 2,
@@ -42,6 +68,11 @@
         "Rejection of Saul as king (1 Samuel 15:23)",
         "David's anointing as future king (1 Samuel 16:13)"
       ],
+      "keyPropheciesTelugu": [
+        "ఏలీ ఇంటి పతనం (1 సమూయేలు 3:11-14)",
+        "రాజుగా సౌలు తిరస్కరణ (1 సమూయేలు 15:23)",
+        "భవిష్యత్ రాజుగా దావీదు అభిషేకం (1 సమూయేలు 16:13)"
+      ],
       "description": {
         "en": "Last judge and first prophet of Israel, anointed first two kings (Saul and David), established schools of prophets",
         "te": "ఇశ్రాయేలు యొక్క చివరి న్యాయాధిపతి మరియు మొదటి ప్రవక్త, మొదటి ఇద్దరు రాజులను (సౌలు మరియు దావీదు) అభిషేకించాడు, ప్రవక్తల పాఠశాలలను స్థాపించాడు"
@@ -50,7 +81,12 @@
       "significance": {
         "en": "Bridged the period between judges and kings, established prophetic tradition",
         "te": "న్యాయాధిపతులు మరియు రాజుల మధ్య కాలాన్ని అనుసంధానించాడు, ప్రవక్త సంప్రదాయాన్ని స్థాపించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రధాన ప్రవక్త/న్యాయాధిపతి",
+      "booksWrittenTelugu": ["1 సమూయేలు (భాగం)", "2 సమూయేలు (భాగం)"],
+      "detailsTelugu": "ఎలీ యొక్క ఇంటి పతనం గురించి (1 సమూయేలు 3:11-14), రాజుగా సౌలును తిరస్కరించడం (1 సమూయేలు 15:23), భవిష్యత్తు రాజుగా దావీద్ అభిషేకం (1 సమూయేలు 16:13)"
     },
     {
       "id": 3,
@@ -61,10 +97,16 @@
       "category": "Court Prophet",
       "ministry": "40+ years",
       "primaryKing": "David",
+      "booksWritten": ["None"],
       "keyProphecies": [
         "Davidic Covenant (2 Samuel 7:12-16)",
         "Judgment on David for adultery and murder (2 Samuel 12:7-14)",
         "Solomon's succession (1 Kings 1:11-13)"
+      ],
+      "keyPropheciesTelugu": [
+        "దావీదు నిబంధన (2 సమూయేలు 7:12-16)",
+        "వ్యభిచారం మరియు హత్యకు దావీదుపై తీర్పు (2 సమూయేలు 12:7-14)",
+        "సొలొమోను వారసత్వం (1 రాజులు 1:11-13)"
       ],
       "description": {
         "en": "Court prophet to King David, confronted David about Bathsheba, prophesied about Messiah through David's line",
@@ -74,10 +116,51 @@
       "significance": {
         "en": "Established Davidic covenant promising eternal dynasty through Messiah",
         "te": "మెస్సియా ద్వారా శాశ్వత రాజవంశాన్ని వాగ్దానం చేసే దావీదు నిబంధనను స్థాపించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "సామ్రాజ్య ప్రవక్త",
+      "booksWrittenTelugu": ["2 సమూయేలు 7:12-16, 12:7-14", "1 రాజులు 1:11-13"],
+      "detailsTelugu": "దావీదు వంశం గురించి ప్రవచనాలు (2 సమూయేలు 7:12-16), దావీదు వ్యభిచారం మరియు హత్యకు శిక్ష (2 సమూయేలు 12:7-14), సొలొమోన్కు రాజ్యాధికారం (1 రాజులు 1:11-13)"
     },
     {
       "id": 4,
+      "name": "David",
+      "nameHebrew": "דָּוִד",
+      "nameTelugu": "దావీదు",
+      "period": "1010-970 BC",
+      "category": "King/Prophet/Psalmist",
+      "ministry": "40+ years",
+      "booksWritten": ["Psalms (majority)"],
+      "keyProphecies": [
+        "Messianic prophecies in Psalms (Psalm 22, 110)",
+        "Kingdom prophecies (Psalm 2, 72)",
+        "Resurrection prophecy (Psalm 16:10)",
+        "Prophecy of Christ's betrayal (Psalm 41:9)"
+      ],
+      "keyPropheciesTelugu": [
+        "కీర్తనలలో మెస్సియానిక్ ప్రవచనాలు (కీర్తన 22, 110)",
+        "రాజ్య ప్రవచనాలు (కీర్తన 2, 72)",
+        "పునరుత్థాన ప్రవచనం (కీర్తన 16:10)",
+        "క్రీస్తు ద్రోహం గురించి ప్రవచనం (కీర్తన 41:9)"
+      ],
+      "description": {
+        "en": "King of Israel and prophet, wrote most of the Psalms under divine inspiration, ancestor of Jesus Christ, man after God's own heart",
+        "te": "ఇశ్రాయేలు రాజు మరియు ప్రవక్త, దైవిక ప్రేరణతో చాలా కీర్తనలు వ్రాశాడు, యేసుక్రీస్తు పూర్వీకుడు, దేవుని హృదయానుసారమైన వ్యక్తి"
+      },
+      "keyVerse": "The LORD says to my lord: 'Sit at my right hand until I make your enemies a footstool for your feet.' (Psalm 110:1)",
+      "significance": {
+        "en": "Prophesied about the Messiah through his psalms, established the Davidic line through which Christ would come",
+        "te": "తన కీర్తనల ద్వారా మెస్సియా గురించి ప్రవచించాడు, క్రీస్తు వచ్చే దావీదు వంశాన్ని స్థాపించాడు"
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "రాజు/ప్రవక్త/కీర్తనకర్త",
+      "booksWrittenTelugu": ["కీర్తనలు (ఎక్కువ భాగం)"],
+      "detailsTelugu": "కీర్తనలలో మెస్సియానిక్ ప్రవచనాలు (కీర్తన 22, 110), రాజ్య ప్రవచనాలు (కీర్తన 2, 72), పునరుత్థాన ప్రవచనం (కీర్తన 16:10), క్రీస్తు ద్రోహం ప్రవచనం (కీర్తన 41:9)"
+    },
+    {
+      "id": 5,
       "name": "Elijah",
       "nameHebrew": "אֵלִיָּהוּ",
       "nameTelugu": "ఏలీయా",
@@ -85,6 +168,7 @@
       "category": "Major Prophet",
       "ministry": "25+ years",
       "primaryKing": "Ahab",
+      "booksWritten": ["None"],
       "miracles": [
         "Ravens feeding him at Kerith Brook",
         "Widow's oil and flour miracle",
@@ -97,6 +181,11 @@
         "Death of Ahab and Jezebel (1 Kings 21:21-24)",
         "Elisha as successor (1 Kings 19:16)"
       ],
+      "keyPropheciesTelugu": [
+        "మూడు సంవత్సరాల కరువు (1 రాజులు 17:1)",
+        "అహాబు మరియు జెజెబెల్ మరణం (1 రాజులు 21:21-24)",
+        "వారసుడిగా ఎలిషా (1 రాజులు 19:16)"
+      ],
       "description": {
         "en": "Fiery prophet who confronted Baal worship, taken to heaven in whirlwind, forerunner of Messiah",
         "te": "బయలు ఆరాధనను ఎదుర్కొన్న అగ్ని ప్రవక్త, సుడిగాలిలో స్వర్గానికి తీసుకెళ్లబడ్డాడు, మెస్సియాకు పూర్వగామి"
@@ -105,16 +194,22 @@
       "significance": {
         "en": "Defended monotheism against Baal worship, demonstrated God's supremacy",
         "te": "బయలు ఆరాధనకు వ్యతిరేకంగా ఏకేశ్వరవాదాన్ని రక్షించాడు, దేవుని సర్వోన్నతత్వాన్ని ప్రదర్శించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రధాన ప్రవక్త",
+      "booksWrittenTelugu": ["1 రాజులు 17:1, 21:21-24", "2 రాజులు 2:11"],
+      "detailsTelugu": "మూడు సంవత్సరాల ద్రావకరత (1 రాజులు 17:1), అహాబు మరియు జెజెబెల్ మరణం (1 రాజులు 21:21-24), ఎలిషా వారసుడిగా (1 రాజులు 19:16)"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Elisha",
       "nameHebrew": "אֱלִישָׁע",
       "nameTelugu": "ఎలీషా",
       "period": "848-797 BC",
       "category": "Major Prophet",
       "ministry": "50+ years",
+      "booksWritten": ["None"],
       "miracles": [
         "Parting Jordan River",
         "Healing Naaman's leprosy",
@@ -128,6 +223,11 @@
         "Seven years of famine (2 Kings 8:1)",
         "Death of Ben-Hadad (2 Kings 8:10)"
       ],
+      "keyPropheciesTelugu": [
+        "మోఅబ్ పై విజయం (2 రాజులు 3:16-20)",
+        "ఏడేళ్ల ఆకలి (2 రాజులు 8:1)",
+        "బెన్-హదద్ మరణం (2 రాజులు 8:10)"
+      ],
       "description": {
         "en": "Successor to Elijah with double portion of his spirit, performed twice as many miracles, ministry of compassion",
         "te": "ఏలీయా వారసుడు, అతని ఆత్మలో రెట్టింపు వంతుతో, రెండు రెట్లు అద్భుతాలు చేశాడు, కరుణ సేవ"
@@ -136,10 +236,15 @@
       "significance": {
         "en": "Demonstrated God's compassion and power through numerous miracles of provision and healing",
         "te": "అనేక సదుపాయం మరియు వైద్యం అద్భుతాల ద్వారా దేవుని కరుణ మరియు శక్తిని ప్రదర్శించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రధాన ప్రవక్త",
+      "booksWrittenTelugu": ["2 రాజులు 3:16-20, 8:1, 8:10"],
+      "detailsTelugu": "మోఅబ్ పై విజయం (2 రాజులు 3:16-20), ఏడేళ్ల ఆకలి (2 రాజులు 8:1), బెన్-హదద్ మరణం (2 రాజులు 8:10)"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Isaiah",
       "nameHebrew": "יְשַׁעְיָהוּ",
       "nameTelugu": "యెషయా",
@@ -153,6 +258,12 @@
         "New heavens and new earth (Isaiah 65:17)",
         "Prince of Peace (Isaiah 9:6)"
       ],
+      "keyPropheciesTelugu": [
+        "మెస్సియా కన్యా జననం (యెషయా 7:14)",
+        "బాధలు భరించే సేవకుడు (యెషయా 53)",
+        "కొత్త ఆకాశాలు మరియు కొత్త భూమి (యెషయా 65:17)",
+        "శాంతి రాజు (యెషయా 9:6)"
+      ],
       "description": {
         "en": "Greatest Messianic prophet, called 'evangelical prophet', ministered to Judah during reigns of four kings",
         "te": "గొప్ప మెస్సియానిక్ ప్రవక్త, 'సువార్త ప్రవక్త' అని పిలవబడ్డాడు, నలుగురు రాజుల పాలనలో యూదాకు సేవ చేశాడు"
@@ -161,7 +272,12 @@
       "significance": {
         "en": "Provided most detailed prophecies about Messiah's birth, ministry, death, and kingdom",
         "te": "మెస్సియా జననం, సేవ, మరణం మరియు రాజ్యం గురించి అత్యంత వివరమైన ప్రవచనాలను అందించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "ప్రధాన ప్రవక్త",
+      "booksWrittenTelugu": ["యెషయా"],
+      "detailsTelugu": "మెస్సియా కూతురు జననం (యెషయా 7:14), బాధలు భరించే సేవకుడు (యెషయా 53), కొత్త ఆకాశాలు మరియు కొత్త భూమి (యెషయా 65:17), శాంతి రాజు (యెషయా 9:6)"
     },
     {
       "id": 7,
@@ -178,6 +294,12 @@
         "Fall of Jerusalem (Jeremiah 39)",
         "Return from exile (Jeremiah 29:10-14)"
       ],
+      "keyPropheciesTelugu": [
+        "బబులోనియన్ బందిత్వం 70 సంవత్సరాలు (యిర్మీయా 25:11)",
+        "కొత్త నిబంధన (యిర్మీయా 31:31-34)",
+        "జెరూసలేం పతనం (యిర్మీయా 39)",
+        "బందీగృహం నుండి తిరిగి రావడం (యిర్మీయా 29:10-14)"
+      ],
       "description": {
         "en": "Weeping prophet, warned of Babylonian captivity, proclaimed new covenant, ministered during Jerusalem's fall",
         "te": "ఏడుపు ప్రవక్త, బబులోనియన్ బందిత్వం గురించి హెచ్చరించాడు, కొత్త నిబంధనను ప్రకటించాడు, జెరూసలేం పతనంలో సేవ చేశాడు"
@@ -186,7 +308,12 @@
       "significance": {
         "en": "Prophesied the New Covenant that would be fulfilled in Christ",
         "te": "క్రీస్తులో నెరవేర్చబడే కొత్త నిబంధనను ప్రవచించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "ప్రధాన ప్రవక్త",
+      "booksWrittenTelugu": ["యిర్మీయా", "విలాపం"],
+      "detailsTelugu": "బబులోనియన్ బందిత్వం 70 సంవత్సరాలు (యిర్మీయా 25:11), కొత్త నిబంధన (యిర్మీయా 31:31-34), జెరూసలేం పతనం (యిర్మీయా 39), బందీగృహం నుండి తిరిగి రావడం (యిర్మీయా 29:10-14)"
     },
     {
       "id": 8,
@@ -204,6 +331,12 @@
         "New temple and priesthood (Ezekiel 40-48)",
         "Gog and Magog war (Ezekiel 38-39)"
       ],
+      "keyPropheciesTelugu": [
+        "దేవుని మహిమ యొక్క దర్శనం (యెహెజ్కేలు 1)",
+        "ఎండిన ఎముకల లోయ (యెహెజ్కేలు 37)",
+        "కొత్త దేవాలయం మరియు యాజకత్వం (యెహెజ్కేలు 40-48)",
+        "గోగ్ మరియు మాగోగ్ యుద్ధం (యెహెజ్కేలు 38-39)"
+      ],
       "description": {
         "en": "Priest-prophet in Babylon, saw visions of God's glory, prophesied restoration of Israel and new temple",
         "te": "బబులోనులో యాజక-ప్రవక్త, దేవుని మహిమ దర్శనాలు చూశాడు, ఇశ్రాయేలు పునరుద్ధరణ మరియు కొత్త దేవాలయం గురించి ప్రవచించాడు"
@@ -212,7 +345,12 @@
       "significance": {
         "en": "Emphasized individual responsibility and spiritual transformation",
         "te": "వ్యక్తిగత బాధ్యత మరియు ఆధ్యాత్మిక పరివర్తనను నొక్కిచెప్పాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "ప్రధాన ప్రవక్త",
+      "booksWrittenTelugu": ["యెహెజ్కేలు"],
+      "detailsTelugu": "దేవుని మహిమ యొక్క దర్శనం (యెహెజ్కేలు 1), ఎండిన ఎముకల లోయ (యెహెజ్కేలు 37), కొత్త దేవాలయం మరియు యాజకత్వం (యెహెజ్కేలు 40-48), గోగ్ మరియు మాగోగ్ యుద్ధం (యెహెజ్కేలు 38-39)"
     },
     {
       "id": 9,
@@ -230,15 +368,26 @@
         "Time of the end (Daniel 11-12)",
         "Messiah's coming (Daniel 9:25-26)"
       ],
+      "keyPropheciesTelugu": [
+        "నాలుగు ప్రపంచ సామ్రాజ్యాలు (దానియేలు 2, 7)",
+        "70 వారాల ప్రవచనం (దానియేలు 9:24-27)",
+        "అంత్యకాలం (దానియేలు 11-12)",
+        "మెస్సియా రాకడ (దానియేలు 9:25-26)"
+      ],
       "description": {
         "en": "Statesman-prophet in Babylon, interpreter of dreams, received visions of end times and Messiah's kingdom",
-        "te": "बबులోనులో రాజకీయవేత్త-ప్రవక్త, కలల వ్యాఖ్యాత, అంత్యకాలాలు మరియు మెస్సియా రాజ్యం దర్శనాలు పొందాడు"
+        "te": "बबولهనులో రాజకీయవేత్త-ప్రవక్త, కలల వ్యాఖ్యాత, అంత్యకాలాలు మరియు మెస్సియా రాజ్యం దర్శనాలు పొందాడు"
       },
       "keyVerse": "In the time of those kings, the God of heaven will set up a kingdom that will never be destroyed. (Daniel 2:44)",
       "significance": {
         "en": "Provided detailed prophecies about world history and Messiah's eternal kingdom",
         "te": "ప్రపంచ చరిత్ర మరియు మెస్సియా శాశ్వత రాజ్యం గురించి వివరమైన ప్రవచనాలను అందించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "ప్రధాన ప్రవక్త",
+      "booksWrittenTelugu": ["దానియేలు"],
+      "detailsTelugu": "నాలుగు ప్రపంచ సామ్రాజ్యాలు (దానియేలు 2, 7), 70 వారాల ప్రవచనం (దానియేలు 9:24-27), చివరి కాలం (దానియేలు 11-12), మెస్సియా రాక (దానియేలు 9:25-26)"
     },
     {
       "id": 10,
@@ -258,7 +407,12 @@
       "significance": {
         "en": "Revealed God's heart of love and desire for restoration despite unfaithfulness",
         "te": "అవిశ్వాసం ఉన్నప్పటికీ దేవుని ప్రేమ హృదయం మరియు పునరుద్ధరణ కోరికను వెల్లడించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["హోషేయ"],
+      "detailsTelugu": "దేవుని అవిశ్రాంతమైన ప్రేమ ఇశ్రాయేలుకు (హోషేయ 14:4)"
     },
     {
       "id": 11,
@@ -275,6 +429,11 @@
         "Day of the Lord (Joel 2:1-11)",
         "Restoration after judgment (Joel 2:25-27)"
       ],
+      "keyPropheciesTelugu": [
+        "పరిశుద్ధాత్మ కుమ్మరింపు (యోవేలు 2:28-32)",
+        "ప్రభువు దినం (యోవేలు 2:1-11)",
+        "తీర్పు తర్వాత పునరుద్ధరణ (యోవేలు 2:25-27)"
+      ],
       "description": {
         "en": "Prophesied about locust plague, Day of the Lord, and future outpouring of Holy Spirit on all flesh",
         "te": "మిడత తెగులు, ప్రభువు దినం మరియు భవిష్యత్తులో సర్వమాంసంపై పరిశుద్ధాత్మ కుమ్మరింపు గురించి ప్రవచించాడు"
@@ -283,7 +442,12 @@
       "significance": {
         "en": "Prophesied the coming of the Holy Spirit fulfilled at Pentecost",
         "te": "పెంతెకోస్తులో నెరవేర్చిన పరిశుద్ధాత్మ రాకడను ప్రవచించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["యోవేలు"],
+      "detailsTelugu": "పురాతన మిడతల ప్రళయము (యోవేలు 1:4), ప్రభువు దినం (యోవేలు 2:1-11), తీర్పు తరువాత పునరుద్ధరణ (యోవేలు 2:25-27)"
     },
     {
       "id": 12,
@@ -304,7 +468,12 @@
       "significance": {
         "en": "Emphasized God's demand for social justice and care for the poor",
         "te": "సామాజిక న్యాయం మరియు పేదల పట్ల శ్రద్ధ కోసం దేవుని డిమాండ్‌ను నొక్కిచెప్పాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["ఆమోసు"],
+      "detailsTelugu": "సామాజిక న్యాయం మరియు దేవుని తీర్పు (ఆమోసు 5:24)"
     },
     {
       "id": 13,
@@ -321,6 +490,11 @@
         "Day of the Lord judgment (Obadiah 1:15)",
         "Israel's restoration (Obadiah 1:17-21)"
       ],
+      "keyPropheciesTelugu": [
+        "ఎదోము నాశనం (ఓబద్యా 1:8-9)",
+        "ప్రభువు దినం తీర్పు (ఓబద్యా 1:15)",
+        "ఇశ్రాయేలు పునరుద్ధరణ (ఓబద్యా 1:17-21)"
+      ],
       "description": {
         "en": "Shortest book in Old Testament, prophesied against Edom for their betrayal of Judah during Babylonian invasion",
         "te": "పాత నిబంధనలో అతి చిన్న పుస్తకం, బబులోనియన్ దండయాత్రలో యూదాను మోసం చేసినందుకు ఎదోముపై ప్రవచించాడు"
@@ -329,7 +503,12 @@
       "significance": {
         "en": "Demonstrates God's justice against those who harm His people",
         "te": "తన ప్రజలను హానిపరిచేవారిపై దేవుని న్యాయాన్ని ప్రదర్శిస్తుంది"
-      }
+      },
+      "nation": "Edom",
+      "nationTelugu": "ఎదోమ్",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["ఓబద్యా"],
+      "detailsTelugu": "ఎదోముకు శిక్ష (ఓబద్యా 1:8-9), ప్రభువు దినం తీర్పు (ఓబద్యా 1:15), ఇశ్రాయేలుకు పునరుద్ధరణ (ఓబద్యా 1:17-21)"
     },
     {
       "id": 14,
@@ -351,6 +530,10 @@
         "Restoration of Israel's borders (2 Kings 14:25)",
         "Nineveh's destruction avoided through repentance"
       ],
+      "keyPropheciesTelugu": [
+        "ఇశ్రాయేలు సరిహద్దుల పునరుద్ధరణ (2 రాజులు 14:25)",
+        "పశ్చాత్తాపం ద్వారా నైనవే నాశనం తప్పించుకోవడం"
+      ],
       "description": {
         "en": "Reluctant prophet who fled from God's call, swallowed by fish, preached to Nineveh resulting in city-wide repentance",
         "te": "దేవుని పిలుపు నుండి పారిపోయిన అయిష్టంగా ప్రవక్త, చేప మింగింది, నైనవేకు బోధించి నగర వ్యాప్త పశ్చాత్తాపానికి కారణమయ్యాడు"
@@ -359,7 +542,12 @@
       "significance": {
         "en": "Shows God's mercy extends to all nations, not just Israel",
         "te": "దేవుని కరుణ ఇశ్రాయేలుకు మాత్రమే కాకుండా అన్ని జాతులకు విస్తరిస్తుందని చూపిస్తుంది"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["యోనా"],
+      "detailsTelugu": "ఇశ్రాయేలు సరిహద్దుల పునరుద్ధరణ (2 రాజులు 14:25), నైనవే యొక్క నాశనం పునరావృతం (యోనా 3:4-10)"
     },
     {
       "id": 15,
@@ -377,6 +565,11 @@
         "Destruction of Samaria and Jerusalem (Micah 1:6, 3:12)",
         "Israel's restoration (Micah 4:1-5)"
       ],
+      "keyPropheciesTelugu": [
+        "బేత్లెహేములో మెస్సియా జననం (మీకా 5:2)",
+        "సమరయ మరియు జెరూసలేం నాశనం (మీకా 1:6, 3:12)",
+        "ఇశ్రాయేలు పునరుద్ధరణ (మీకా 4:1-5)"
+      ],
       "description": {
         "en": "Contemporary of Isaiah, prophesied Messiah's birthplace, emphasized social justice and true religion",
         "te": "యెషయా సమకాలీనుడు, మెస్సియా జన్మస్థలాన్ని ప్రవచించాడు, సామాజిక న్యాయం మరియు నిజమైన మతాన్ని నొక్కిచెప్పాడు"
@@ -385,7 +578,12 @@
       "significance": {
         "en": "Summarized true religion in three requirements: justice, mercy, humility",
         "te": "మూడు అవసరాలలో నిజమైన మతాన్ని సంక్షిప్తీకరించాడు: న్యాయం, కరుణ, వినయం"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["మీకా"],
+      "detailsTelugu": "యూదా పునరుద్ధరణ (మీకా 4:1-5), మెస్సియా జననం (మీకా 5:2), సమారియా మరియు జెరూసలేం నాశనం (మీకా 1:6, 3:12)"
     },
     {
       "id": 16,
@@ -403,6 +601,11 @@
         "End of Assyrian empire (Nahum 3:1-19)",
         "God's protection of Judah (Nahum 1:12-13)"
       ],
+      "keyPropheciesTelugu": [
+        "నైనవే పూర్తి నాశనం (నహూము 1:8-10)",
+        "అస్సిరియన్ సామ్రాజ్యం అంతం (నహూము 3:1-19)",
+        "యూదాకు దేవుని రక్షణ (నహూము 1:12-13)"
+      ],
       "description": {
         "en": "Prophesied the complete destruction of Nineveh about 150 years after Jonah's ministry there",
         "te": "యోనా సేవ తర్వాత దాదాపు 150 సంవత్సరాల తర్వాత నైనవే పూర్తి నాశనాన్ని ప్రవచించాడు"
@@ -411,7 +614,12 @@
       "significance": {
         "en": "Demonstrates God's justice against persistent evil and His protection of His people",
         "te": "నిరంతర చెడుతనంపై దేవుని న్యాయం మరియు తన ప్రజల రక్షణను ప్రదర్శిస్తుంది"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["నహూము"],
+      "detailsTelugu": "నైనవే యొక్క పూర్తి నాశనం (నహూము 1:8-10), అస్సిరియా సామ్రాజ్యానికి ముగింపు (నహూము 3:1-19), యూదా యొక్క రక్షణ (నహూము 1:12-13)"
     },
     {
       "id": 17,
@@ -432,6 +640,11 @@
         "Fall of Babylon (Habakkuk 2:6-20)",
         "The righteous live by faith (Habakkuk 2:4)"
       ],
+      "keyPropheciesTelugu": [
+        "యూదాపై బబులోనియన్ దండయాత్ర (హబక్కూక్ 1:6-11)",
+        "బబులోను పతనం (హబక్కూక్ 2:6-20)",
+        "నీతిమంతులు విశ్వాసంతో జీవిస్తారు (హబక్కూక్ 2:4)"
+      ],
       "description": {
         "en": "Wrestling prophet who questioned God about evil and injustice, received answer about living by faith",
         "te": "చెడుతనం మరియు అన్యాయం గురించి దేవుడిని ప్రశ్నించిన కుస్తీ ప్రవక్త, విశ్వాసంతో జీవించడం గురించి జవాబు పొందాడు"
@@ -440,7 +653,12 @@
       "significance": {
         "en": "Established the principle of righteousness by faith, quoted by Paul in Romans",
         "te": "విశ్వాసం ద్వారా నీతి సూత్రాన్ని స్థాపించాడు, పౌలు రోమన్లలో ఉటంకించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["హబక్కూకు"],
+      "detailsTelugu": "యూదా పై బబులోనీయుల దండయాత్ర (హబక్కూకు 1:6-11), బబులోన్ పతనం (హబక్కూకు 2:6-20), ధర్మశాస్త్రం ప్రకారం జీవించడం (హబక్కూకు 2:4)"
     },
     {
       "id": 18,
@@ -458,6 +676,11 @@
         "Judgment on surrounding nations (Zephaniah 2:4-15)",
         "Restoration of Israel (Zephaniah 3:14-20)"
       ],
+      "keyPropheciesTelugu": [
+        "గొప్ప ప్రభువు దినం (జెఫన్యా 1:14-18)",
+        "చుట్టుపక్కల జాతులపై తీర్పు (జెఫన్యా 2:4-15)",
+        "ఇశ్రాయేలు పునరుద్ధరణ (జెఫన్యా 3:14-20)"
+      ],
       "description": {
         "en": "Prophet of royal lineage who prophesied during Josiah's reign about the coming Day of the Lord",
         "te": "యోషీయా పాలనలో రాబోయే ప్రభువు దినం గురించి ప్రవచించిన రాజ వంశ ప్రవక్త"
@@ -466,7 +689,12 @@
       "significance": {
         "en": "Warned of coming judgment but ended with promise of God's joy over His people",
         "te": "రాబోయే తీర్పు గురించి హెచ్చరించాడు కానీ తన ప్రజలపై దేవుని ఆనందం వాగ్దానంతో ముగించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["జెఫన్యా"],
+      "detailsTelugu": "ప్రభువు దినం (జెఫన్యా 1:14-18), చుట్టుపక్కల దేశాలకు తీర్పు (జెఫన్యా 2:4-15), ఇశ్రాయేలుకు పునరుద్ధరణ (జెఫన్యా 3:14-20)"
     },
     {
       "id": 19,
@@ -484,6 +712,11 @@
         "Glory of second temple (Haggai 2:1-9)",
         "Zerubbabel as signet ring (Haggai 2:20-23)"
       ],
+      "keyPropheciesTelugu": [
+        "దేవాలయ పునర్నిర్మాణ ప్రాధాన్యత (హగ్గయి 1:1-11)",
+        "రెండవ దేవాలయ మహిమ (హగ్గయి 2:1-9)",
+        "జెరూబబేల్ ముద్రా ఉంగరం (హగ్గయి 2:20-23)"
+      ],
       "description": {
         "en": "Post-exilic prophet who motivated Jews to rebuild the temple, emphasized priorities and God's blessing",
         "te": "దేవాలయాన్ని పునర్నిర్మించడానికి యూదులను ప్రేరేపించిన బందిత్వం తర్వాత ప్రవక్త, ప్రాధాన్యతలు మరియు దేవుని దీవెనలను నొక్కిచెప్పాడు"
@@ -492,7 +725,12 @@
       "significance": {
         "en": "Successfully motivated temple reconstruction and taught about spiritual priorities",
         "te": "దేవాలయ పునర్నిర్మాణాన్ని విజయవంతంగా ప్రేరేపించాడు మరియు ఆధ్యాత్మిక ప్రాధాన్యతల గురించి బోధించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["హగ్గయి"],
+      "detailsTelugu": "దేవాలయ పునర్నిర్మాణ ప్రాధాన్యత (హగ్గయి 1:1-11), రెండవ దేవాలయ మహిమ (హగ్గయి 2:1-9), జెరూబబేల్ ముద్రా ఉంగరం (హగ్గయి 2:20-23)"
     },
     {
       "id": 20,
@@ -521,6 +759,12 @@
         "Branch prophecy (Zechariah 6:12-13)",
         "Second coming (Zechariah 14:1-21)"
       ],
+      "keyPropheciesTelugu": [
+        "మెస్సియా విజయ ప్రవేశం (జెకర్యా 9:9)",
+        "మెస్సియా గుచ్చబడడం (జెకర్యా 12:10)",
+        "కొమ్మ ప్రవచనం (జెకర్యా 6:12-13)",
+        "రెండవ రాకడ (జెకర్యా 14:1-21)"
+      ],
       "description": {
         "en": "Most Messianic of minor prophets, priest-prophet who gave eight night visions and detailed prophecies about Christ",
         "te": "చిన్న ప్రవక్తలలో అత్యంత మెస్సియానిక్, ఎనిమిది రాత్రి దర్శనాలు మరియు క్రీస్తు గురించి వివరమైన ప్రవచనాలు ఇచ్చిన యాజక-ప్రవక్త"
@@ -529,7 +773,12 @@
       "significance": {
         "en": "Provided detailed prophecies about Messiah's first and second coming",
         "te": "మెస్సియా మొదటి మరియు రెండవ రాకడ గురించి వివరమైన ప్రవచనాలను అందించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["జెకర్యా"],
+      "detailsTelugu": "మెస్సియా విజయోత్సవ ప్రవేశం (జెకర్యా 9:9), మెస్సియా గాయపడటం (జెకర్యా 12:10), బ్రాంచ్ ప్రవచనం (జెకర్యా 6:12-13), రెండవ రాక (జెకర్యా 14:1-21)"
     },
     {
       "id": 21,
@@ -548,6 +797,12 @@
         "Sun of righteousness (Malachi 4:2)",
         "Tithing and blessing (Malachi 3:8-12)"
       ],
+      "keyPropheciesTelugu": [
+        "మెస్సియాకు ముందు ఎలీయా రాకడ (మలాకీ 4:5-6)",
+        "మార్గం సిద్ధం చేసే దూత (మలాకీ 3:1)",
+        "నీతి సూర్యుడు (మలాకీ 4:2)",
+        "దశమభాగం మరియు దీవెన (మలాకీ 3:8-12)"
+      ],
       "description": {
         "en": "Last Old Testament prophet, called for spiritual renewal, prophesied coming of Elijah (John the Baptist)",
         "te": "చివరి పాత నిబంధన ప్రవక్త, ఆధ్యాత్మిక పునరుద్ధరణకు పిలుపునిచ్చాడు, ఏలీయా (యోహాను బాప్తిస్మాతుడు) రాకడను ప్రవచించాడు"
@@ -556,7 +811,12 @@
       "significance": {
         "en": "Bridged Old and New Testaments, prepared for Messiah's coming",
         "te": "పాత మరియు కొత్త నిబంధనలను అనుసంధానించాడు, మెస్సియా రాకడకు సిద్ధం చేశాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "చిన్న ప్రవక్త",
+      "booksWrittenTelugu": ["మలాకీ"],
+      "detailsTelugu": "మెస్సియా రాకకు ముందు ఏలీయా రాక (మలాకీ 4:5-6), మార్గం సిద్ధం చేయడానికి సందేశకుడు (మలాకీ 3:1), ధర్మశాస్త్ర సూర్యుడు (మలాకీ 4:2), పన్నులు మరియు దీవెనలు (మలాకీ 3:8-12)"
     },
     {
       "id": 22,
@@ -580,7 +840,12 @@
       "significance": {
         "en": "Played crucial role in establishing temple worship and Davidic administration",
         "te": "దేవాలయ ఆరాధన మరియు దావీదు పరిపాలనను స్థాపించడంలో కీలక పాత్ర వహించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "సామ్రాజ్య ప్రవక్త/దర్శనకర్త",
+      "booksWrittenTelugu": "2 సమూయేలు 24:11-14, 24:18-19; 1 సమూయేలు 22:5",
+      "detailsTelugu": "దావీద్ శిక్షను ఎంచుకోవడం (2 సమూయేలు 24:11-14), దావీద్ బలిపీఠానికి సూచనలు (2 సమూయేలు 24:18-19), దావీద్ గుహ నుండి కోటకు మారడం (1 సమూయేలు 22:5)"
     },
     {
       "id": 23,
@@ -605,7 +870,12 @@
       "significance": {
         "en": "Established prophetic tradition in temple worship through music and psalms",
         "te": "సంగీతం మరియు కీర్తనల ద్వారా దేవాలయ ఆరాధనలో ప్రవచనాత్మక సంప్రదాయాన్ని స్థాపించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "లేవీయ ప్రవక్త/దర్శనకర్త",
+      "booksWrittenTelugu": "కీర్తన 50, కీర్తనలు 73-83",
+      "detailsTelugu": "దేవుని నిబంధన విశ్వాసం (కీర్తన 50:1), ఇశ్రాయేలుకు చరిత్ర మరియు పాఠాలు, దేవాలయ ఆరాధన మరియు కీర్తన"
     },
     {
       "id": 24,
@@ -625,7 +895,12 @@
       "significance": {
         "en": "Contributed to prophetic worship tradition and temple music ministry",
         "te": "ప్రవచనాత్మక ఆరాధన సంప్రదాయం మరియు దేవాలయ సంగీత సేవకు దోహదపడ్డాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "లేవీయ దర్శనకర్త",
+      "booksWrittenTelugu": "కీర్తన 88",
+      "detailsTelugu": "దేవుని రక్షణ (కీర్తన 88:1), కష్టకాలంలో దేవుని పిలుపు, రాత్రి మరియు రోజు దేవునిపై నమ్మకం"
     },
     {
       "id": 25,
@@ -645,7 +920,12 @@
       "significance": {
         "en": "Established prophetic ministry through temple music and worship",
         "te": "దేవాలయ సంగీతం మరియు ఆరాధన ద్వారా ప్రవచనాత్మక సేవను స్థాపించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "లేవీయ దర్శనకర్త",
+      "booksWrittenTelugu": "కీర్తన 39, 62, 77",
+      "detailsTelugu": "దేవునిపై విశ్వాసం మరియు విశ్రాంతి (కీర్తన 62:1), దేవుని రక్షణ మరియు క్షమాభిక్ష (కీర్తన 39), కష్టకాలంలో దేవుని సన్నిహితంగా ఉండటం (కీర్తన 77)"
     },
     {
       "id": 26,
@@ -669,7 +949,12 @@
       "significance": {
         "en": "Announced the division of Solomon's kingdom and consequences of disobedience",
         "te": "సొలొమోను రాజ్య విభజన మరియు అవిధేయత యొక్క పరిణామాలను ప్రకటించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రవక్త",
+      "booksWrittenTelugu": "1 రాజులు 11:29-39, 14:7-16, 14:12",
+      "detailsTelugu": "యరొబాముకు రాజ్య విభజన (1 రాజులు 11:29-39), యరొబాము వంశానికి తీర్పు (1 రాజులు 14:7-16), యరొబాము కుమారుడి మరణం (1 రాజులు 14:12)"
     },
     {
       "id": 27,
@@ -692,7 +977,12 @@
       "significance": {
         "en": "Prevented bloodshed and taught about consequences of abandoning God",
         "te": "రక్తపాతాన్ని నిరోధించాడు మరియు దేవుడిని విడిచిపెట్టడం యొక్క పరిణామాల గురించి బోధించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రవక్త",
+      "booksWrittenTelugu": "1 రాజులు 12:22-24; 2 చరిత్రలు 12:5-8",
+      "detailsTelugu": "సామ్రాజ్య విభజనను నిరోధించడం (1 రాజులు 12:22-24), రెహబాము కు హెచ్చరిక (2 చరిత్రలు 12:5-8), ప్రభువును విడిచిపెట్టిన శిక్ష (2 చరిత్రలు 12:1-12)"
     },
     {
       "id": 28,
@@ -716,7 +1006,12 @@
       "significance": {
         "en": "Preserved prophetic history and documented God's dealings with kings",
         "te": "ప్రవచనాత్మక చరిత్రను సంరక్షించాడు మరియు రాజులతో దేవుని వ్యవహారాలను నమోదు చేశాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రవక్త/దర్శనకర్త",
+      "booksWrittenTelugu": "సొలొమోను చరిత్రలు, యరొబాము సంబంధిత దర్శనాలు",
+      "detailsTelugu": "సొలొమోను రాజ్యానికి సంబంధించిన ఇతర సంఘటనలు (2 చరిత్రలు 9:29), యరొబాముకు సంబంధించిన ప్రవచనాలు మరియు దర్శనాలు"
     },
     {
       "id": 29,
@@ -739,7 +1034,12 @@
       "significance": {
         "en": "Demonstrated importance of spiritual discernment in political alliances",
         "te": "రాజకీయ పొత్తులలో ఆధ్యాత్మిక వివేకం యొక్క ప్రాముఖ్యతను ప్రదర్శించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రవక్త",
+      "booksWrittenTelugu": "1 రాజులు 16:1-4; 2 చరిత్రలు 19:2-3, 20:37",
+      "detailsTelugu": "బయషా పై తీర్పు (1 రాజులు 16:1-4), యెహోషాపాతుకు గద్దింపు (2 చరిత్రలు 19:2-3), దుష్టులతో పొత్తులపై హెచ్చరిక (2 చరిత్రలు 20:37)"
     },
     {
       "id": 30,
@@ -762,7 +1062,12 @@
       "significance": {
         "en": "Motivated successful religious reform and spiritual revival in Judah",
         "te": "యూదాలో విజయవంతమైన మతపరమైన సంస్కరణ మరియు ఆధ్యాత్మిక పునరుజ్జీవనాన్ని ప్రేరేపించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "ప్రవక్త",
+      "booksWrittenTelugu": "2 చరిత్రలు 15:1-7",
+      "detailsTelugu": "ఆసాకు ప్రోత్సాహం (2 చరిత్రలు 15:1-7), దేవుని వాగ్దానం, దేవుడిని విడిచిపెట్టడం యొక్క పరిణామాల గురించి హెచ్చరిక"
     },
     {
       "id": 31,
@@ -785,7 +1090,12 @@
       "significance": {
         "en": "Taught about God's omniscience and the importance of complete trust in Him",
         "te": "దేవుని సర్వజ్ఞత్వం మరియు అతనిపై పూర్తి నమ్మకం యొక్క ప్రాముఖ్యతను బోధించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "ప్రవక్త/దర్శనకర్త",
+      "booksWrittenTelugu": "2 చరిత్రలు 16:7-9",
+      "detailsTelugu": "ఆసాకు సిరియాతో పొత్తు గురించి గద్దింపు (2 చరిత్రలు 16:7-9), మానవ శక్తి మరియు దేవునిపై నమ్మకం మధ్య హెచ్చరిక, ప్రవక్తా వాక్యాన్ని తిరస్కరించినందుకు పరిణామాలు"
     },
     {
       "id": 32,
@@ -809,7 +1119,12 @@
       "significance": {
         "en": "Demonstrated that victory comes from God, not human strength or strategy",
         "te": "విజయం మానవ శక్తి లేదా వ్యూహం నుండి కాకుండా దేవుని నుండి వస్తుందని ప్రదర్శించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "లేవీయ ప్రవక్త",
+      "booksWrittenTelugu": "2 చరిత్రలు 20:14-17",
+      "detailsTelugu": "యెహోషాపాతు పై శత్రుల సంకీర్ణం (2 చరిత్రలు 20:14-17), యుద్ధం దేవునిదే (2 చరిత్రలు 20:15), దేవుని రక్షణను చూడండి (2 చరిత్రలు 20:17)"
     },
     {
       "id": 33,
@@ -832,7 +1147,12 @@
       "significance": {
         "en": "Warned against compromising alliances with those who oppose God",
         "te": "దేవుడిని వ్యతిరేకించేవారితో రాజీ పొత్తులకు వ్యతిరేకంగా హెచ్చరించాడు"
-      }
+      },
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "ప్రవక్త",
+      "booksWrittenTelugu": "2 చరిత్రలు 20:37",
+      "detailsTelugu": "యెహోషాపాతు అహజ్యాతో పొత్తు గురించి హెచ్చరిక (2 చరిత్రలు 20:37), అహజ్యాతో పొత్తు కారణంగా నాశనం (2 చరిత్రలు 20:37), దుష్టులతో భాగస్వామ్యం యొక్క పరిణామాలు"
     },
     {
       "id": 34,
@@ -855,7 +1175,12 @@
       "significance": {
         "en": "Exemplified courage to speak God's truth despite opposition and persecution",
         "te": "వ్యతిరేకత మరియు హింస ఉన్నప్పటికీ దేవుని సత్యం మాట్లాడడానికి ధైర్యాన్ని ఉదాహరణగా చూపించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రవక్త",
+      "booksWrittenTelugu": "1 రాజులు 22:17-23",
+      "detailsTelugu": "అహాబు రామోత్ గిలేడ్ లో మరణం (1 రాజులు 22:17-23), దేవుని సింహాసనం గది దర్శనం, తప్పుడు ప్రవక్తల曝光"
     },
     {
       "id": 35,
@@ -879,7 +1204,12 @@
       "significance": {
         "en": "Demonstrated God's compassion even toward enemies and call for humanitarian treatment",
         "te": "శత్రువుల పట్ల కూడా దేవుని కరుణ మరియు మానవతావాద చికిత్స కోసం పిలుపును ప్రదర్శించాడు"
-      }
+      },
+      "nation": "Israel",
+      "nationTelugu": "ఇశ్రాయేలు",
+      "ministryTypeTelugu": "ప్రవక్త",
+      "booksWrittenTelugu": "2 చరిత్రలు 28:9-11",
+      "detailsTelugu": "యూదా బంధితుల విడుదల (2 చరిత్రలు 28:9-11), ఇశ్రాయేలు పై దేవుని కోపం గురించి హెచ్చరిక, కరుణ మరియు న్యాయానికి పిలుపు"
     },
     {
       "id": 36,
@@ -891,156 +1221,23 @@
       "ministry": "Unknown duration",
       "residence": "Jerusalem (Second Quarter)",
       "keyProphecies": [
-        "Validation of Law book found in temple (2 Kings 22:15-20)",
-        "Coming judgment on Judah",
-        "Josiah's peaceful death for his humility"
+        "Validation of Law book found in temple"
       ],
+
       "description": {
-        "en": "Female prophet consulted by Josiah's officials about the Book of the Law, confirmed its authenticity and prophesied judgment",
-        "te": "ధర్మశాస్త్ర గ్రంథం గురించి యోషీయా అధికారులు సంప్రదించిన మహిళా ప్రవక్త, దాని ప్రామాణికతను ధృవీకరించి తీర్పును ప్రవచించింది"
+        "en": "Prophetess who validated the Law book found in the temple, advised King Josiah",
+        "te": "దేవాలయంలో కనుగొన్న ధర్మశాస్త్ర పుస్తకాన్ని ధృవీకరించిన ప్రవక్త, రాజు యోషీయాకు సలహా ఇచ్చింది"
       },
-      "keyVerse": "Because your heart was responsive and you humbled yourself before the LORD...I have heard you, declares the LORD. (2 Kings 22:19)",
+      "keyVerse": "Tell the man who sent you to me, 'This is what the LORD says...' (2 Kings 22:15)",
       "significance": {
-        "en": "One of few female prophets, validated Scripture and showed God's response to humility",
-        "te": "కొద్దిమంది మహిళా ప్రవక్తలలో ఒకరు, లేఖనాన్ని ధృవీకరించి వినయానికి దేవుని ప్రతిస్పందనను చూపింది"
-      }
-    },
-    {
-      "id": 37,
-      "name": "Uriah (son of Shemaiah)",
-      "nameHebrew": "אוּרִיָּה",
-      "nameTelugu": "ఊరియా",
-      "period": "609-608 BC",
-      "category": "Prophet",
-      "ministry": "Unknown duration",
-      "birthPlace": "Kiriath Jearim",
-      "keyMessages": [
-        "Similar prophecies to Jeremiah",
-        "Judgment on Jerusalem and Judah",
-        "Call to repentance"
-      ],
-      "description": {
-        "en": "Prophet contemporary with Jeremiah who delivered similar messages, fled to Egypt but was brought back and killed by Jehoiakim",
-        "te": "యిర్మీయాతో సమకాలీనుడైన ప్రవక్త, అదే సందేశాలు బోధించాడు, ఈజిప్టుకు పారిపోయాడు కానీ తిరిగి తెచ్చి యెహోయాకీముచే చంపబడ్డాడు"
+        "en": "Confirmed the importance of the Law and repentance, influenced religious reforms",
+        "te": "ధర్మశాస్త్రం మరియు పునరుద్ధరణ యొక్క ప్రాముఖ్యతను నిర్ధారించింది, మతపరమైన సంస్కరణలను ప్రభావితం చేసింది"
       },
-      "keyVerse": "He prophesied against this city and this land in words similar to those of Jeremiah. (Jeremiah 26:20)",
-      "significance": {
-        "en": "Martyred for faithfully delivering God's word, confirming Jeremiah's message",
-        "te": "దేవుని వాక్యాన్ని నమ్మకంగా అందించినందుకు అమరశహీదుడయ్యాడు, యిర్మీయా సందేశాన్ని ధృవీకరించాడు"
-      }
-    },
-    {
-      "id": 38,
-      "name": "Simeon",
-      "nameHebrew": "שִׁמְעוֹן",
-      "nameTelugu": "సిమియోను",
-      "period": "6-4 BC",
-      "category": "Prophet",
-      "ministry": "Lifetime waiting for Messiah",
-      "location": "Jerusalem Temple",
-      "keyProphecies": [
-        "Recognition of infant Jesus as Messiah (Luke 2:29-32)",
-        "Light to Gentiles",
-        "Glory to Israel"
-      ],
-      "description": {
-        "en": "Righteous man who waited for Messiah's coming, recognized infant Jesus in temple, prophesied about His mission",
-        "te": "మెస్సియా రాకడ కోసం ఎదురుచూసిన నీతిమంతుడు, దేవాలయంలో శిశువైన యేసును గుర్తించాడు, అతని మిషన్ గురించి ప్రవచించాడు"
-      },
-      "keyVerse": "For my eyes have seen your salvation, which you have prepared in the sight of all nations. (Luke 2:30-31)",
-      "significance": {
-        "en": "First to publicly recognize Jesus as the promised Messiah and Savior of all nations",
-        "te": "వాగ్దానం చేయబడిన మెస్సియా మరియు అన్ని జాతుల రక్షకుడిగా యేసును బహిరంగంగా గుర్తించిన మొదటి వ్యక్తి"
-      }
-    },
-    {
-      "id": 39,
-      "name": "Anna",
-      "nameHebrew": "חַנָּה",
-      "nameTelugu": "అన్నా",
-      "period": "6-4 BC",
-      "category": "Prophetess",
-      "ministry": "60+ years",
-      "tribe": "Asher",
-      "location": "Jerusalem Temple",
-      "description": {
-        "en": "Elderly prophetess who served in temple with fasting and prayer, recognized infant Jesus and spoke about Him",
-        "te": "ఉపవాసం మరియు ప్రార్థనతో దేవాలయంలో సేవ చేసిన వృద్ధ ప్రవక్తురాలు, శిశువైన యేసును గుర్తించి అతని గురించి మాట్లాడింది"
-      },
-      "keyVerse": "She gave thanks to God and spoke about the child to all who were looking forward to the redemption of Jerusalem. (Luke 2:38)",
-      "significance": {
-        "en": "Dedicated her life to prayer and worship, first female evangelist proclaiming Messiah's arrival",
-        "te": "తన జీవితాన్ని ప్రార్థన మరియు ఆరాధనకు అంకితం చేసింది, మెస్సియా రాకడను ప్రకటించిన మొదటి మహిళా సువార్తికుడు"
-      }
-    },
-    {
-      "id": 40,
-      "name": "Balaam",
-      "nameHebrew": "בִּלְעָם",
-      "nameTelugu": "బిలాము",
-      "period": "1407-1406 BC",
-      "category": "Gentile Prophet/Seer",
-      "ministry": "Unknown duration",
-      "birthPlace": "Pethor (Mesopotamia)",
-      "nationality": "Midianite/Mesopotamian",
-      "keyMessages": [
-        "Blessing instead of cursing Israel",
-        "Star and scepter prophecy of Messiah",
-        "God's irrevocable blessing on Israel"
-      ],
-      "keyProphecies": [
-        "Star out of Jacob, Scepter out of Israel (Numbers 24:17)",
-        "Four oracles blessing Israel (Numbers 23-24)",
-        "Future dominion of Israel over enemies (Numbers 24:17-19)",
-        "Ships from Kittim prophecy (Numbers 24:24)"
-      ],
-      "miracles": [
-        "Talking donkey (Numbers 22:28-30)",
-        "Angel of the Lord appearing to him",
-        "Eyes opened to see spiritual realm"
-      ],
-      "description": {
-        "en": "Non-Israelite prophet hired by Balak to curse Israel, but God turned his curses into blessings, gave Messianic prophecy about the Star of Jacob",
-        "te": "ఇశ్రాయేలును శపించడానికి బాలాకు చేత కూలిక్కు తీసుకోబడిన అన్యజాతి ప్రవక్త, కానీ దేవుడు అతని శాపాలను దీవెనలుగా మార్చాడు, యాకోబు నక్షత్రం గురించి మెస్సియానిక్ ప్రవచనం ఇచ్చాడు"
-      },
-      "keyVerse": "I see him, but not now; I behold him, but not near. A star will come out of Jacob; a scepter will rise out of Israel. (Numbers 24:17)",
-      "significance": {
-        "en": "Demonstrated God's sovereignty over all prophets, gave important Messianic prophecy, showed God's protection of Israel",
-        "te": "అన్ని ప్రవక్తలపై దేవుని సార్వభౌమత్వాన్ని ప్రదర్శించాడు, ముఖ్యమైన మెస్సియానిక్ ప్రవచనం ఇచ్చాడు, ఇశ్రాయేలు రక్షణను చూపించాడు"
-      },
-      "controversialAspects": {
-        "en": "Later led Israel into sin at Peor (Numbers 31:16), became example of false prophet motivated by money",
-        "te": "తరువాత పెయోరులో ఇశ్రాయేలును పాపంలోకి నడిపించాడు (సంఖ్యాకాండము 31:16), డబ్బుతో ప్రేరేపించబడిన తప్పుడు ప్రవక్తకు ఉదాహరణ అయ్యాడు"
-      }
-    },
-    {
-      "id": 41,
-      "name": "John the Baptist",
-      "nameHebrew": "יוֹחָנָן הַמַּטְבִּיל",
-      "nameTelugu": "యోహాను బాప్తిస్మాతుడు",
-      "period": "1-30 AD",
-      "category": "Forerunner Prophet",
-      "ministry": "3+ years",
-      "birthPlace": "Hill country of Judea",
-      "keyMessages": [
-        "Prepare the way for the Lord",
-        "Repent for the kingdom of heaven is near",
-        "Baptism for forgiveness of sins"
-      ],
-      "keyProphecies": [
-        "Fulfillment of Isaiah 40:3 and Malachi 4:5-6",
-        "Recognition of Jesus as Lamb of God",
-        "Coming of Holy Spirit baptism"
-      ],
-      "description": {
-        "en": "Forerunner of Messiah, last Old Testament prophet, baptized Jesus, prepared way for His ministry",
-        "te": "మెస్సియాకు పూర్వగామి, చివరి పాత నిబంధన ప్రవక్త, యేసుకు బాప్తిస్మం ఇచ్చాడు, అతని సేవకు మార్గం సిద్ధం చేశాడు"
-      },
-      "keyVerse": "Look, the Lamb of God, who takes away the sin of the world! (John 1:29)",
-      "significance": {
-        "en": "Bridged Old and New Testaments, introduced Jesus as the Messiah and Lamb of God",
-        "te": "పాత మరియు కొత్త నిబంధనలను అనుసంధానించాడు, యేసును మెస్సియా మరియు దేవుని గొర్రెగా పరిచయం చేశాడు"
-      }
+      "nation": "Judah",
+      "nationTelugu": "యూదా",
+      "ministryTypeTelugu": "ప్రవక్త",
+      "booksWrittenTelugu": "2 రాజులు 22:15",
+      "detailsTelugu": "ధర్మశాస్త్ర పుస్తకం ధృవీకరణ (2 రాజులు 22:15), రాజు యోషీయాకు సలహా, పునరుద్ధరణకు ప్రేరణ"
     }
   ]
 }

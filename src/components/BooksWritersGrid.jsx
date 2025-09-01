@@ -25,6 +25,26 @@ const BooksWritersGrid = ({ lang, page }) => {
 
   const { category: selectedCategory, subCategory: selectedSubCategory } = getCategoryFromPage();
 
+  // Function to translate category names
+  const getCategoryTranslation = (category, lang) => {
+    if (lang !== 'te') return category;
+    
+    const categoryTranslations = {
+      'Law/Torah': 'ధర్మశాస్త్రం/తోరా',
+      'History': 'చరిత్ర',
+      'Wisdom': 'జ్ఞానోపదేశ గ్రంథాలు',
+      'Wisdom/Poetry': 'జ్ఞానోపదేశ/కవిత్వ గ్రంథాలు',
+      'Major Prophet': 'ప్రధాన ప్రవక్త',
+      'Minor Prophet': 'చిన్న ప్రవక్త',
+      'Gospel': 'సువార్త',
+      'Pauline Epistle': 'పౌలు లేఖలు',
+      'General Epistle': 'సాధారణ లేఖలు',
+      'Prophecy': 'ప్రవచనం'
+    };
+    
+    return categoryTranslations[category] || category;
+  };
+
   // Get page title based on current page
   const getPageTitle = () => {
     if (selectedCategory === 'biblical-authors') {
@@ -163,12 +183,12 @@ const BooksWritersGrid = ({ lang, page }) => {
       return books.map((book, index) => ({
         name: lang === 'te' ? book.nameTelugu : book.name,
         nameOriginal: book.nameHebrew || '',
-        author: book.author,
+        author: lang === 'te' ? book.authorTelugu : book.author,
         writtenDate: book.writtenDate,
         chapters: book.chapters,
         verses: book.verses,
-        category: book.category,
-  theme: book.theme ? book.theme[lang] : '',
+        category: getCategoryTranslation(book.category, lang),
+        theme: book.theme ? book.theme[lang] : '',
         details: 'VIEW_DETAILS',
         _original: book,
         _type: 'book'
@@ -178,12 +198,12 @@ const BooksWritersGrid = ({ lang, page }) => {
       return books.map((book, index) => ({
         name: lang === 'te' ? book.nameTelugu : book.name,
         nameOriginal: book.nameGreek || '',
-        author: book.author,
+        author: lang === 'te' ? book.authorTelugu : book.author,
         writtenDate: book.writtenDate,
         chapters: book.chapters,
         verses: book.verses,
-        category: book.category,
-  theme: book.theme ? book.theme[lang] : '',
+        category: getCategoryTranslation(book.category, lang),
+        theme: book.theme ? book.theme[lang] : '',
         details: 'VIEW_DETAILS',
         _original: book,
         _type: 'book'
@@ -227,7 +247,8 @@ const BooksWritersGrid = ({ lang, page }) => {
   };
 
   // Custom row renderer with details icon
-  const customRowRenderer = (row, index) => {
+  const customRowRenderer = (row, index, tooltipHandlers = {}) => {
+    const { handleMouseEnter, handleMouseLeave, handleMouseMove } = tooltipHandlers;
     const columns = getColumns();
     return (
       <tr
@@ -255,7 +276,13 @@ const BooksWritersGrid = ({ lang, page }) => {
           }
           
           return (
-            <td key={colIndex} className="table-cell">
+            <td 
+              key={colIndex} 
+              className="table-cell"
+              onMouseEnter={handleMouseEnter ? (e) => handleMouseEnter(e, value) : undefined}
+              onMouseLeave={handleMouseLeave || undefined}
+              onMouseMove={handleMouseMove || undefined}
+            >
               {value}
             </td>
           );

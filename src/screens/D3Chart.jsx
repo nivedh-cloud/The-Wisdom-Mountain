@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import * as d3 from 'd3';
-import { FaDownload, FaSearchPlus, FaSearchMinus, FaRedo, FaChartLine, FaHandPaper, FaArrowsAltV, FaArrowsAltH, FaExpandArrowsAlt, FaCompressArrowsAlt } from 'react-icons/fa';
+import { FaDownload, FaSearchPlus, FaSearchMinus, FaRedo, FaChartLine, FaHandPaper, FaArrowsAltV, FaArrowsAltH, FaExpandArrowsAlt, FaCompressArrowsAlt, FaSitemap } from 'react-icons/fa';
 import genealogyBilingualData from '../assets/data/genealogy-bilingual-improved.json';
 import translationsData from '../assets/data/translations.json';
 import Modal from '../components/Modal';
+import PageHeader from '../components/PageHeader';
 import { useTheme } from '../contexts/ThemeContext';
 import JesusImage from '../assets/images/JesusImageThumbnail.png';
 
@@ -1833,6 +1834,11 @@ export default function D3Chart({ lang = 'en' }) {
   };
 
   return (
+    <div>
+      <PageHeader 
+        title={lang === 'te' ? 'బైబలికల్ ఫ్యామిలీ ట్రీ' : 'Biblical Family Tree'}
+        icon={<FaSitemap />}
+      />
     <div className="d3-chart-container" style={{ 
       position: 'relative',
       background: isDarkMode 
@@ -1842,34 +1848,7 @@ export default function D3Chart({ lang = 'en' }) {
       overflow: 'hidden'
     }}>
       {/* Title Header */}
-      <div className="d3-chart-title" style={{ 
-        position: 'absolute',
-        top: '20px',
-        left: '20px',
-        zIndex: 1100,
-        background: isDarkMode 
-          ? 'linear-gradient(145deg, rgba(30, 30, 30, 0.95) 0%, rgba(51, 65, 85, 0.95) 100%)' 
-          : 'linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
-        backdropFilter: 'blur(15px)',
-        padding: '15px 25px',
-        borderRadius: '16px',
-        border: `2px solid ${isDarkMode ? 'rgba(129, 140, 248, 0.2)' : 'rgba(79, 70, 229, 0.2)'}`,
-        boxShadow: isDarkMode 
-          ? '0 20px 40px -10px rgba(0, 0, 0, 0.3)' 
-          : '0 20px 40px -10px rgba(79, 70, 229, 0.15)'
-      }}>
-        <h1 style={{ 
-          color: getTextColor(), 
-          margin: 0, 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '10px',
-          fontSize: '20px'
-        }}>
-          <FaChartLine className="icon" />
-          {safeTranslations.d3Chart.title}
-        </h1>
-      </div>
+      
 
       {/* Floating Controls Panel */}
       <div className="d3-chart-controls-panel" style={{
@@ -1893,6 +1872,7 @@ export default function D3Chart({ lang = 'en' }) {
         minWidth: '320px',
         overflow: 'visible'
       }}>
+
         {/* Search Section */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <label style={{ 
@@ -2105,7 +2085,6 @@ export default function D3Chart({ lang = 'en' }) {
             </button>
           </div>
         </div>
-
         {/* Actions & Layout Section */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <label style={{ 
@@ -2115,7 +2094,7 @@ export default function D3Chart({ lang = 'en' }) {
             textTransform: 'uppercase',
             letterSpacing: '0.5px'
           }}>
-            {lang === 'te' ? 'చర్యలు & లేఅవుట్' : 'Actions & Layout'}
+            {lang === 'te' ? 'చర్యలు, లేఅవుట్ & లైన్ స్టైల్' : 'Actions, Layout & Line Style'}
           </label>
           
           {/* All Buttons in One Row */}
@@ -2138,7 +2117,7 @@ export default function D3Chart({ lang = 'en' }) {
               }}
             >
               <FaHandPaper />
-              <span style={{ fontSize: '10px' }}>Pan</span>
+              <span style={{ fontSize: '10px' }}></span>
             </button>
             
             <button 
@@ -2161,7 +2140,7 @@ export default function D3Chart({ lang = 'en' }) {
               onMouseOut={(e) => e.target.style.backgroundColor = '#2563eb'}
             >
               <FaRedo />
-              <span style={{ fontSize: '10px' }}>Reset</span>
+              <span style={{ fontSize: '10px' }}></span>
             </button>
             
             <button 
@@ -2184,7 +2163,7 @@ export default function D3Chart({ lang = 'en' }) {
               onMouseOut={(e) => e.target.style.backgroundColor = '#2563eb'}
             >
               <FaDownload />
-              <span style={{ fontSize: '10px' }}>Save</span>
+              <span style={{ fontSize: '10px' }}></span>
             </button>
             
             {/* Layout Controls */}
@@ -2212,7 +2191,7 @@ export default function D3Chart({ lang = 'en' }) {
               }}
             >
               <FaArrowsAltV />
-              <span style={{ fontSize: '10px' }}>Vertical</span>
+              <span style={{ fontSize: '10px' }}></span>
             </button>
 
             <button 
@@ -2239,24 +2218,8 @@ export default function D3Chart({ lang = 'en' }) {
               }}
             >
               <FaArrowsAltH />
-              <span style={{ fontSize: '10px' }}>Horizontal</span>
+              <span style={{ fontSize: '10px' }}></span>
             </button>
-          </div>
-        </div>
-
-        {/* Line Style Controls Section */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <label style={{ 
-            fontSize: '12px', 
-            fontWeight: '600', 
-            color: getTextColor(),
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px'
-          }}>
-            {lang === 'te' ? 'లైన్ స్టైల్' : 'Line Style'}
-          </label>
-          
-          <div style={{ display: 'flex', gap: '6px' }}>
             <button 
               onClick={() => setLineStyle('straight')}
               title={lang === 'te' ? 'నేరుగా లైన్లు' : 'Straight Lines'}
@@ -2345,6 +2308,8 @@ export default function D3Chart({ lang = 'en' }) {
             </button>
           </div>
         </div>
+
+        
 
         {/* Expand/Collapse All Controls - TEMPORARILY HIDDEN */}
         {/* 
@@ -2640,6 +2605,7 @@ export default function D3Chart({ lang = 'en' }) {
           </div>
         </Modal>
       )}
+    </div>
     </div>
   );
 }

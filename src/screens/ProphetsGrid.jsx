@@ -19,21 +19,26 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
   const translations = translationsData[lang] || translationsData.en;
   
   // Transform prophets data for DataGrid
-  const data = prophetsData.prophets.map((prophet, index) => ({
-    prophet: lang === 'te' ? prophet.nameTelugu : prophet.name,
-    period: prophet.period,
-    ministry: Array.isArray(prophet.ministry) ? prophet.ministry.join(', ') : prophet.ministry,
-    type: prophet.category || prophet.type || 'Prophet',
-    booksWritten: Array.isArray(prophet.booksWritten) 
-      ? prophet.booksWritten.length 
-      : (prophet.booksWritten ? 1 : 0),
-    booksWrittenText: Array.isArray(prophet.booksWritten) 
-      ? prophet.booksWritten.join(', ') 
-      : prophet.booksWritten || 'None',
-    details: 'VIEW_DETAILS',
-    // Keep original data for detailed view
-    _original: prophet
-  }));
+  const data = prophetsData.prophets.map((prophet, index) => {
+    const booksWrittenArr = lang === 'te' 
+      ? prophet.booksWrittenTelugu 
+      : prophet.booksWritten;
+
+    return {
+      prophet: lang === 'te' ? prophet.nameTelugu : prophet.name,
+      period: prophet.period,
+      ministry: Array.isArray(prophet.ministry) ? prophet.ministry.join(', ') : prophet.ministry,
+      type: lang === 'te' ? prophet.ministryTypeTelugu : (prophet.category || prophet.type || 'Prophet'),
+      nation: lang === 'te' ? prophet.nationTelugu : prophet.nation,
+      booksWritten: Array.isArray(booksWrittenArr) 
+        ? booksWrittenArr.join(', ') 
+        : booksWrittenArr,
+      
+      details: 'VIEW_DETAILS',
+      // Keep original data for detailed view
+      _original: prophet
+    };
+  });
 
   // Define columns for the prophets grid
   const columns = [
@@ -54,8 +59,12 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
       dataKey: 'type'
     },
     {
+      header: translations.prophets.nation,
+      dataKey: 'nation'
+    },
+    {
       header: translations.common.booksWritten,
-      dataKey: 'booksWrittenText'
+      dataKey: 'booksWritten'
     },
     {
       header: translations.common.details,
@@ -80,40 +89,49 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
   };
 
   // Custom row renderer for prophets with details icon
-  const customRowRenderer = (row, index) => (
-    <tr
-      key={index}
-      className={`table-row ${index % 2 === 0 ? 'table-row-even' : 'table-row-odd'}`}
-    >
-      {columns.map((column, colIndex) => {
-        let value = row[column.dataKey];
-        
-        // Apply custom formatter if provided
-        if (column.formatter) {
-          value = column.formatter(value, row, lang);
-        }
+  const customRowRenderer = (row, index, tooltipHandlers = {}) => {
+    const { handleMouseEnter, handleMouseLeave, handleMouseMove } = tooltipHandlers;
+    return (
+      <tr
+        key={index}
+        className={`table-row ${index % 2 === 0 ? 'table-row-even' : 'table-row-odd'}`}
+      >
+        {columns.map((column, colIndex) => {
+          let value = row[column.dataKey];
+          
+          // Apply custom formatter if provided
+          if (column.formatter) {
+            value = column.formatter(value, row, lang);
+          }
 
-        // Special handling for details icon column
-        if (value === 'DETAILS_ICON') {
+          // Special handling for details icon column
+          if (value === 'DETAILS_ICON') {
+            return (
+              <td key={colIndex} className="table-cell text-center">
+                <FaInfoCircle
+                  onClick={() => handleDetailsClick(row)}
+                  className="details-icon"
+                  title={translations.common.viewDetails}
+                />
+              </td>
+            );
+          }
+          
           return (
-            <td key={colIndex} className="table-cell text-center">
-              <FaInfoCircle
-                onClick={() => handleDetailsClick(row)}
-                className="details-icon"
-                title={translations.common.viewDetails}
-              />
+            <td 
+              key={colIndex} 
+              className="table-cell"
+              onMouseEnter={handleMouseEnter ? (e) => handleMouseEnter(e, value) : undefined}
+              onMouseLeave={handleMouseLeave || undefined}
+              onMouseMove={handleMouseMove || undefined}
+            >
+              {value}
             </td>
           );
-        }
-        
-        return (
-          <td key={colIndex} className="table-cell">
-            {value}
-          </td>
-        );
-      })}
-    </tr>
-  );
+        })}
+      </tr>
+    );
+  };
 
   // Function to handle details icon click
   const handleDetailsClick = (rowData) => {
@@ -167,9 +185,15 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
                 <div className="details-modal-field">
                   <div className="details-modal-label">{translations.common.booksWritten}:</div>
                   <div className="details-modal-value">
-                    {Array.isArray(selectedProphet.booksWritten) 
-                      ? selectedProphet.booksWritten.join(', ') 
-                      : (selectedProphet.booksWritten || translations.common.none)}
+                    {(() => {
+                      const booksArray = lang === 'te' && selectedProphet.booksWrittenTelugu
+                        ? selectedProphet.booksWrittenTelugu
+                        : selectedProphet.booksWritten;
+                      
+                      return Array.isArray(booksArray) 
+                        ? booksArray.join(', ') 
+                        : (booksArray || translations.common.none);
+                    })()}
                   </div>
                 </div>
               </div>
@@ -197,7 +221,10 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
               <div className="details-modal-section">
                 <h3>{translations.common.keyProphecies}</h3>
                 <ul className="details-modal-list">
-                  {selectedProphet.keyProphecies.map((prophecy, index) => (
+                  {(lang === 'te' && selectedProphet.keyPropheciesTelugu 
+                    ? selectedProphet.keyPropheciesTelugu 
+                    : selectedProphet.keyProphecies
+                  ).map((prophecy, index) => (
                     <li key={index}>{prophecy}</li>
                   ))}
                 </ul>

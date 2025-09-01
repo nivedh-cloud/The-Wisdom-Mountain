@@ -16,22 +16,28 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
   const iconColor = kingsMenu.iconColor || '#6366f1';
 
   const t = (kingsData.tableHeaders && kingsData.tableHeaders[lang]) || kingsData.tableHeaders.en;
-  const data = kingsData[section] || [];
+  const data = kingsData[section].map(king => ({
+    king: lang === 'te' ? king.kingTelugu : king.king,
+    year: lang === 'te' ? king.yearTelugu : king.year,
+    yearsRuled: lang === 'te' ? king.yearsRuledTelugu : king.yearsRuled,
+    goodBad: lang === 'te' ? king.goodBadTelugu : king.goodBad,
+    prophet: lang === 'te' ? king.prophetTelugu : king.prophet
+  }));
 
   // Color categorization for kings based on Good/Bad/Repented status
   const getKingCategoryColor = (goodBad) => {
-    switch (goodBad) {
-      case 'Good':
-        return '#22c55e'; // Green for good kings
-      case 'Bad':
-        return '#ef4444'; // Red for bad kings  
-      case 'Good/Bad':
-        return '#f59e0b'; // Amber for mixed kings
-      case 'Bad/Repented':
-        return '#8b5cf6'; // Purple for repented kings
-      default:
-        return '#6b7280'; // Gray for unknown
-    }
+    const goodBadMapped = lang === 'te' ? {
+      'మంచి': '#22c55e',
+      'చెడు': '#ef4444',
+      'మిశ్రమ': '#f59e0b',
+      'పశ్చాత్తాపపడిన': '#8b5cf6'
+    } : {
+      'Good': '#22c55e',
+      'Bad': '#ef4444',
+      'Good/Bad': '#f59e0b',
+      'Bad/Repented': '#8b5cf6'
+    };
+    return goodBadMapped[goodBad] || '#6b7280';
   };
 
   // Get category label
@@ -214,7 +220,8 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
   ];
 
   // Custom row renderer to show color indicators
-  const customRowRenderer = (row, rowIndex) => {
+  const customRowRenderer = (row, rowIndex, tooltipHandlers = {}) => {
+    const { handleMouseEnter, handleMouseLeave, handleMouseMove } = tooltipHandlers;
     const categoryColor = getKingCategoryColor(row.goodBad);
     
     return (
@@ -225,7 +232,13 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
           // Special handling for goodBad column to show color indicator
           if (column.dataKey === 'goodBad') {
             return (
-              <td key={colIndex} className="table-cell">
+              <td 
+                key={colIndex} 
+                className="table-cell"
+                onMouseEnter={handleMouseEnter ? (e) => handleMouseEnter(e, value) : undefined}
+                onMouseLeave={handleMouseLeave || undefined}
+                onMouseMove={handleMouseMove || undefined}
+              >
                 <div style={{ 
                   display: 'flex', 
                   alignItems: 'center', 
@@ -251,7 +264,13 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
           
           // Regular cell rendering
           return (
-            <td key={colIndex} className="table-cell">
+            <td 
+              key={colIndex} 
+              className="table-cell"
+              onMouseEnter={handleMouseEnter ? (e) => handleMouseEnter(e, value) : undefined}
+              onMouseLeave={handleMouseLeave || undefined}
+              onMouseMove={handleMouseMove || undefined}
+            >
               {value}
             </td>
           );

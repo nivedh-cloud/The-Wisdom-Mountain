@@ -21,10 +21,10 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
   // Transform judges data for DataGrid
   const data = judgesData.judges.map(judge => ({
     judge: lang === 'te' ? judge.nameTelugu : judge.name,
-    tribe: judge.tribe,
+    tribe: lang === 'te' ? judge.tribeTelugu : judge.tribe,
     period: judge.period,
-    yearsOfJudgeship: judge.yearsOfJudgeship,
-    oppressor: judge.oppressor,
+    yearsOfJudgeship: lang === 'te' ? judge.yearsOfJudgeshipTelugu : judge.yearsOfJudgeship,
+    oppressor: lang === 'te' ? judge.oppressorTelugu : judge.oppressor,
     details: 'VIEW_DETAILS', // Special value for details icon
     // Keep original data for detailed view
     _original: judge
@@ -80,40 +80,49 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
   };
 
   // Custom row renderer for judges with details icon
-  const customRowRenderer = (row, index) => (
-    <tr
-      key={index}
-      className={`table-row ${index % 2 === 0 ? 'table-row-even' : 'table-row-odd'}`}
-    >
-      {columns.map((column, colIndex) => {
-        let value = row[column.dataKey];
-        
-        // Apply custom formatter if provided
-        if (column.formatter) {
-          value = column.formatter(value, row, lang);
-        }
+  const customRowRenderer = (row, index, tooltipHandlers = {}) => {
+    const { handleMouseEnter, handleMouseLeave, handleMouseMove } = tooltipHandlers;
+    return (
+      <tr
+        key={index}
+        className={`table-row ${index % 2 === 0 ? 'table-row-even' : 'table-row-odd'}`}
+      >
+        {columns.map((column, colIndex) => {
+          let value = row[column.dataKey];
+          
+          // Apply custom formatter if provided
+          if (column.formatter) {
+            value = column.formatter(value, row, lang);
+          }
 
-        // Special handling for details icon column
-        if (value === 'DETAILS_ICON') {
+          // Special handling for details icon column
+          if (value === 'DETAILS_ICON') {
+            return (
+              <td key={colIndex} className="table-cell text-center">
+                <FaInfoCircle
+                  onClick={() => handleDetailsClick(row)}
+                  className="details-icon"
+                  title={translations.common.viewDetails}
+                />
+              </td>
+            );
+          }
+          
           return (
-            <td key={colIndex} className="table-cell text-center">
-              <FaInfoCircle
-                onClick={() => handleDetailsClick(row)}
-                className="details-icon"
-                title={translations.common.viewDetails}
-              />
+            <td 
+              key={colIndex} 
+              className="table-cell"
+              onMouseEnter={handleMouseEnter ? (e) => handleMouseEnter(e, value) : undefined}
+              onMouseLeave={handleMouseLeave || undefined}
+              onMouseMove={handleMouseMove || undefined}
+            >
+              {value}
             </td>
           );
-        }
-        
-        return (
-          <td key={colIndex} className="table-cell">
-            {value}
-          </td>
-        );
-      })}
-    </tr>
-  );
+        })}
+      </tr>
+    );
+  };
 
   // Function to handle details icon click
   const handleDetailsClick = (rowData) => {

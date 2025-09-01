@@ -6,10 +6,14 @@
       "nameHebrew": "עָתְנִיאֵל",
       "nameTelugu": "ఒత్నీయేలు",
       "tribe": "Judah",
+      "tribeTelugu": "యూదా",
       "period": "1373-1333 BC",
       "yearsOfJudgeship": 40,
+      "yearsOfJudgeshipTelugu": "40 సంవత్సరాలు",
       "oppressor": "Cushan-Rishathaim of Mesopotamia",
+      "oppressorTelugu": "మెసొపొటేమియా యొక్క కుషాన్-రిషాతైమ్",
       "yearsOfOppression": 8,
+      "yearsOfOppressionTelugu": "8 సంవత్సరాలు",
       "description": {
         "en": "First judge of Israel, nephew of Caleb, delivered Israel from Mesopotamian oppression",
         "te": "ఇశ్రాయేలు యొక్క మొదటి న్యాయాధిపతి, కాలేబు యొక్క మేనల్లుడు, మెసొపొటేమియా అణచివేత నుండి ఇశ్రాయేలును విడిపించాడు"
@@ -27,10 +31,14 @@
       "nameHebrew": "אֵהוּד",
       "nameTelugu": "ఏహూదు",
       "tribe": "Benjamin",
+      "tribeTelugu": "బెన్యామీన్",
       "period": "1316-1236 BC",
       "yearsOfJudgeship": 80,
+      "yearsOfJudgeshipTelugu": "80 సంవత్సరాలు",
       "oppressor": "Eglon king of Moab",
+      "oppressorTelugu": "మోయాబు రాజు ఎగ్లోన్",
       "yearsOfOppression": 18,
+      "yearsOfOppressionTelugu": "18 సంవత్సరాలు",
       "description": {
         "en": "Left-handed judge who assassinated King Eglon of Moab with a concealed dagger",
         "te": "దాచిన కత్తితో మోయాబు రాజు ఎగ్లోనును హత్య చేసిన ఎడమచేతి న్యాయాధిపతి"
@@ -38,8 +46,8 @@
       "scripture": "Judges 3:12-30",
       "keyVerse": "Ehud reached with his left hand, drew the sword from his right thigh and plunged it into the king's belly.",
       "significance": {
-        "en": "Showed God can use anyone, regardless of physical limitations, for His purposes",
-        "te": "భౌతిక పరిమితులతో సంబంధం లేకుండా దేవుడు ఎవరినైనా తన ప్రయోజనాల కోసం ఉపయోగించగలడని చూపించాడు"
+        "en": "Demonstrated God's deliverance through unexpected means",
+        "te": "అనూహ్యమైన మార్గాల ద్వారా దేవుని విముక్తిని చూపించాడు"
       }
     },
     {
@@ -69,10 +77,14 @@
       "nameHebrew": "דְּבוֹרָה",
       "nameTelugu": "దెబోరా",
       "tribe": "Ephraim",
+      "tribeTelugu": "ఎఫ్రాయిమ్",
       "period": "1209-1169 BC",
       "yearsOfJudgeship": 40,
+      "yearsOfJudgeshipTelugu": "40 సంవత్సరాలు",
       "oppressor": "Jabin king of Canaan and Sisera",
+      "oppressorTelugu": "కనాన్ రాజు జాబిన్ మరియు సిసెరా",
       "yearsOfOppression": 20,
+      "yearsOfOppressionTelugu": "20 సంవత్సరాలు",
       "description": {
         "en": "Prophetess and judge, only female judge, led Israel with Barak against Canaanites",
         "te": "ప్రవక్తురాలు మరియు న్యాయాధిపతి, ఏకైక మహిళా న్యాయాధిపతి, కనానీయుల వ్యతిరేకంగా బారాకుతో కలిసి ఇశ్రాయేలును నడిపించింది"
@@ -90,10 +102,14 @@
       "nameHebrew": "גִּדְעוֹן",
       "nameTelugu": "గిద్యోను",
       "tribe": "Manasseh",
+      "tribeTelugu": "మనస్సెహ్",
       "period": "1169-1129 BC",
       "yearsOfJudgeship": 40,
+      "yearsOfJudgeshipTelugu": "40 సంవత్సరాలు",
       "oppressor": "Midianites",
+      "oppressorTelugu": "మిద్యానీయులు",
       "yearsOfOppression": 7,
+      "yearsOfOppressionTelugu": "7 సంవత్సరాలు",
       "description": {
         "en": "Defeated vast Midianite army with only 300 men using trumpets, jars, and torches",
         "te": "కేవలం 300 మంది వ్యక్తులతో బూరలు, కలషలు మరియు దీపాలను ఉపయోగించి విస్తారమైన మిద్యానీయుల సైన్యాన్ని ఓడించాడు"
@@ -111,10 +127,14 @@
       "nameHebrew": "תּוֹלָע",
       "nameTelugu": "తోలా",
       "tribe": "Issachar",
+      "tribeTelugu": "ఇస్సాచార్",
       "period": "1129-1106 BC",
       "yearsOfJudgeship": 23,
+      "yearsOfJudgeshipTelugu": "23 సంవత్సరాలు",
       "oppressor": "Internal strife",
+      "oppressorTelugu": "అంతర్గత ఘర్షణ",
       "yearsOfOppression": "Ongoing",
+      "yearsOfOppressionTelugu": "నిరంతరం జరుగుతున్న",
       "description": {
         "en": "Minor judge who arose to save Israel after Abimelech's destructive reign",
         "te": "అబీమెలెకు యొక్క విధ్వంసక పాలన తర్వాత ఇశ్రాయేలును రక్షించడానికి లేచిన చిన్న న్యాయాధిపతి"
@@ -132,10 +152,14 @@
       "nameHebrew": "יָאִיר",
       "nameTelugu": "యాయీరు",
       "tribe": "Gilead (Manasseh)",
+      "tribeTelugu": "గిలియాదు (మనస్సెహ్)",
       "period": "1106-1084 BC",
       "yearsOfJudgeship": 22,
+      "yearsOfJudgeshipTelugu": "22 సంవత్సరాలు",
       "oppressor": "None mentioned",
+      "oppressorTelugu": "ప్రస్తావించబడలేదు",
       "yearsOfOppression": 0,
+      "yearsOfOppressionTelugu": "0 సంవత్సరాలు",
       "description": {
         "en": "Minor judge from Gilead who had 30 sons riding 30 donkeys, controlling 30 towns",
         "te": "30 మంది కుమారులు 30 గాడిదలపై స్వారీ చేస్తూ, 30 పట్టణాలను నియంత్రించిన గిలియాదు నుండి వచ్చిన చిన్న న్యాయాధిపతి"
@@ -153,10 +177,14 @@
       "nameHebrew": "יִפְתָּח",
       "nameTelugu": "యెఫ్తా",
       "tribe": "Gilead (Manasseh)",
+      "tribeTelugu": "గిలియాదు (మనస్సెహ్)",
       "period": "1084-1078 BC",
       "yearsOfJudgeship": 6,
+      "yearsOfJudgeshipTelugu": "6 సంవత్సరాలు",
       "oppressor": "Ammonites",
+      "oppressorTelugu": "అమ్మోనీయులు",
       "yearsOfOppression": 18,
+      "yearsOfOppressionTelugu": "18 సంవత్సరాలు",
       "description": {
         "en": "Outcast who became judge, made tragic vow concerning his daughter before battle",
         "te": "బహిష్కృతుడు అయిన వ్యక్తి న్యాయాధిపతి అయ్యాడు, యుద్ధానికి ముందు తన కుమార్తె గురించి దురభిప్రాయ మొక్కుబడి చేశాడు"
@@ -174,10 +202,14 @@
       "nameHebrew": "אִבְצָן",
       "nameTelugu": "ఇబ్జాను",
       "tribe": "Judah (Bethlehem)",
+      "tribeTelugu": "యూదా (బేత్లెహేము)",
       "period": "1078-1071 BC",
       "yearsOfJudgeship": 7,
+      "yearsOfJudgeshipTelugu": "7 సంవత్సరాలు",
       "oppressor": "None mentioned",
+      "oppressorTelugu": "ప్రస్తావించబడలేదు",
       "yearsOfOppression": 0,
+      "yearsOfOppressionTelugu": "0 సంవత్సరాలు",
       "description": {
         "en": "Minor judge from Bethlehem with 30 sons and 30 daughters, made strategic marriages",
         "te": "బేత్లెహేము నుండి వచ్చిన 30 మంది కుమారులు మరియు 30 మంది కుమార్తెలతో వ్యూహాత్మక వివాహాలు చేసిన చిన్న న్యాయాధిపతి"
@@ -195,10 +227,14 @@
       "nameHebrew": "אֵלוֹן",
       "nameTelugu": "ఏలోను",
       "tribe": "Zebulun",
+      "tribeTelugu": "జెబూలూను",
       "period": "1071-1061 BC",
       "yearsOfJudgeship": 10,
+      "yearsOfJudgeshipTelugu": "10 సంవత్సరాలు",
       "oppressor": "None mentioned",
+      "oppressorTelugu": "ప్రస్తావించబడలేదు",
       "yearsOfOppression": 0,
+      "yearsOfOppressionTelugu": "0 సంవత్సరాలు",
       "description": {
         "en": "Minor judge from Zebulun, brief mention in scripture",
         "te": "జెబూలూను నుండి వచ్చిన చిన్న న్యాయాధిపతి, గ్రంథంలో సంక్షిప్త ప్రస్తావన"
@@ -216,10 +252,14 @@
       "nameHebrew": "עַבְדּוֹן",
       "nameTelugu": "అబ్దోను",
       "tribe": "Ephraim",
+      "tribeTelugu": "ఎఫ్రాయిమ్",
       "period": "1061-1053 BC",
       "yearsOfJudgeship": 8,
+      "yearsOfJudgeshipTelugu": "8 సంవత్సరాలు",
       "oppressor": "None mentioned",
+      "oppressorTelugu": "ప్రస్తావించబడలేదు",
       "yearsOfOppression": 0,
+      "yearsOfOppressionTelugu": "0 సంవత్సరాలు",
       "description": {
         "en": "Minor judge with 40 sons and 30 grandsons who rode on 70 donkeys",
         "te": "70 గాడిదలపై స్వారీ చేసిన 40 మంది కుమారులు మరియు 30 మంది మనుమలతో ఉన్న చిన్న న్యాయాధిపతి"
@@ -237,10 +277,14 @@
       "nameHebrew": "שִׁמְשׁוֹן",
       "nameTelugu": "సంసోను",
       "tribe": "Dan",
+      "tribeTelugu": "దాన్",
       "period": "1053-1033 BC",
       "yearsOfJudgeship": 20,
+      "yearsOfJudgeshipTelugu": "20 సంవత్సరాలు",
       "oppressor": "Philistines",
+      "oppressorTelugu": "ఫిలిష్తీయులు",
       "yearsOfOppression": 40,
+      "yearsOfOppressionTelugu": "40 సంవత్సరాలు",
       "description": {
         "en": "Nazirite with supernatural strength, betrayed by Delilah, died destroying Philistine temple",
         "te": "అతీంద్రియ బలంతో ఉన్న నాజీరుడు, దలీలాచే మోసపోయాడు, ఫిలిష్తీయుల దేవాలయాన్ని నాశనం చేస్తూ మరణించాడు"

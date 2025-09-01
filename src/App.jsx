@@ -2,11 +2,14 @@
 
 
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import TopHeader from './components/TopHeader';
 import MenuBar from './components/MenuBar';
 import LeftNav from './components/LeftNav';
+import PageHeader from './components/PageHeader';
+import ProphecyOfTheDay from './components/ProphecyOfTheDay';
 import GridComponent from './components/GridComponent';
 import FamilyTree from './components/FamilyTree';
 import ImageCarousel from './components/ImageCarousel';
@@ -16,6 +19,7 @@ import carouselData from './assets/data/carouselData.json';
 import './styles/App.css';
 import './styles/GlobalStyles.css';
 import IsraelMapsTribes from './screens/IsraelMapsTribes';
+import { FaUsers, FaCrown, FaGavel, FaMapMarkerAlt, FaClock, FaBook, FaHome, FaSitemap } from 'react-icons/fa';
 
 // Translations data
 const translations = {
@@ -42,7 +46,32 @@ const translations = {
 
 function App() {
   const [lang, setLang] = useState('en');
-  const [page, setPage] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Get current page from URL path
+  const getCurrentPage = () => {
+    const path = location.pathname;
+    if (path === '/') return 'home';
+    return path.substring(1); // Remove the leading slash
+  };
+
+  const [page, setPage] = useState(getCurrentPage());
+
+  // Update page state when URL changes
+  useEffect(() => {
+    setPage(getCurrentPage());
+  }, [location.pathname]);
+
+  // Navigation function that updates both state and URL
+  const navigateToPage = (newPage) => {
+    setPage(newPage);
+    if (newPage === 'home') {
+      navigate('/');
+    } else {
+      navigate(`/${newPage}`);
+    }
+  };
 
   // Prepare carousel images with language-specific content
   const carouselImages = carouselData.carouselImages.map(image => ({
@@ -56,74 +85,121 @@ function App() {
     <ThemeProvider>
       <div className={`app-container ${page === 'home' ? 'home-page' : ''}`}>
         <TopHeader lang={lang} setLang={setLang} />
-        <MenuBar lang={lang} page={page} setPage={setPage} setLang={setLang} />
+        <MenuBar lang={lang} page={page} setPage={navigateToPage} setLang={setLang} />
         <div className="main-layout">
           {(page === 'genealogy' || page === 'kings' || page === 'judges' || page === 'prophets' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','adam-lineage','abraham-lineage','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && (
-            <LeftNav
-              lang={lang}
-              page={page}
-              setPage={setPage}
-              translations={translations}
+                        <LeftNav 
+              lang={lang} 
+              page={page} 
+              navigateToPage={navigateToPage} 
+              translations={translations} 
             />
           )}
           <main className="main-content">
-            {page === 'home' && (
-              <ImageCarousel images={carouselImages} autoPlayInterval={6000} />
-            )}
-            {page === 'd3-chart' && (
-              <GridComponent lang={lang} page={page} />
-            )}
-            {page === 'genealogy' && (
-              <div className="page-container">
-                <h2 className="page-title-medium">{lang === 'te' ? 'వంశావళి' : 'Genealogy'}</h2>
-                <p className="page-description-medium">{lang === 'te' ? 'బైబిల్ వంశావళి విభాగాలను ఎంచుకోండి.' : 'Select a genealogy section from the left.'}</p>
-              </div>
-            )}
-            {page === 'tree' && <div className="demo-text">{lang === 'te' ? 'వంశావళి ట్రీ (డెమో త్వరలో)' : 'Genealogy Tree (Demo Coming Soon)'}</div>}
-            {page === 'judges' && (
-              <div className="page-container">
-                <h2 className="page-title-medium">{lang === 'te' ? 'న్యాయాధిపతులు' : 'Judges'}</h2>
-                <p className="page-description-medium">{lang === 'te' ? 'న్యాయాధిపతుల జాబితాను ఎంచుకోండి.' : 'Select a judges section from the left.'}</p>
-              </div>
-            )}
-            {page === 'prophets' && (
-              <div className="page-container">
-                <h2 className="page-title-medium">{lang === 'te' ? 'ప్రవక్తలు' : 'Prophets'}</h2>
-                <p className="page-description-medium">{lang === 'te' ? 'ప్రవక్తల జాబితాను ఎంచుకోండి.' : 'Select a prophets section from the left.'}</p>
-              </div>
-            )}
-            {page === 'maps' && (
-              <div className="page-container">
-                <h2 className="page-title-medium">{lang === 'te' ? 'మ్యాప్‌లు' : 'Maps'}</h2>
-                <p className="page-description-medium">{lang === 'te' ? 'మ్యాప్ విభాగాన్ని ఎంచుకోండి.' : 'Select a maps section from the left.'}</p>
-              </div>
-            )}
-            {page === 'keyeras' && (
-              <div className="page-container">
-                <h2 className="page-title-medium">{lang === 'te' ? 'ముఖ్య యుగాలు' : 'Key Eras'}</h2>
-                <p className="page-description-medium">{lang === 'te' ? 'కీలకమైన కాలాలను ఎంచుకోండి.' : 'Select a key era from the left.'}</p>
-              </div>
-            )}
-            {page === 'bookswriters' && (
-              <div className="page-container">
-                <h2 className="page-title-medium">{lang === 'te' ? 'పుస్తకాలు మరియు రచయితలు' : 'Books & Writers'}</h2>
-                <p className="page-description-medium">{lang === 'te' ? 'బైబిల్ పుస్తకాలు మరియు రచయితల విభాగాన్ని ఎంచుకోండి.' : 'Select a biblical books and writers section from the left.'}</p>
-              </div>
-            )}
-            {['old-testament-books', 'new-testament-books', 'biblical-authors', 'books-by-category', 'old-testament-torah', 'old-testament-historical', 'old-testament-wisdom', 'old-testament-majorProphets', 'old-testament-minorProphets', 'new-testament-gospels', 'new-testament-history', 'new-testament-paulineEpistles', 'new-testament-generalEpistles', 'new-testament-prophecy'].includes(page) && (
-              <BooksWritersGrid lang={lang} page={page} />
-            )}
-            
-            {page === 'israel-maps-tribes' && (
-              <div className="page-container">
-                <h2 className="page-title-medium">{lang === 'te' ? 'ఇస్రాయేల్ గోత్రాల మ్యాప్' : 'Israel Tribes Map'}</h2>
-                <p className="page-description-medium">{lang === 'te' ? 'ఇస్రాయేల్ గోత్రాల భూభాగాలను మ్యాప్‌లో చూడండి.' : 'View the territories of the tribes of Israel on the map.'}</p>
-                <IsraelMapsTribes />
-              </div>
-            )}
-            {page !== 'd3-chart' && page !== 'israel-maps-tribes' && page !== 'bookswriters' && !['old-testament-books', 'new-testament-books', 'biblical-authors', 'books-by-category', 'old-testament-torah', 'old-testament-historical', 'old-testament-wisdom', 'old-testament-majorProphets', 'old-testament-minorProphets', 'new-testament-gospels', 'new-testament-history', 'new-testament-paulineEpistles', 'new-testament-generalEpistles', 'new-testament-prophecy'].includes(page) && <GridComponent lang={lang} page={page} />}
-            {page === 'tree' && <div className="demo-text">{lang === 'te' ? 'వంశావళి ట్రీ (డెమో త్వరలో)' : 'Genealogy Tree (Demo Coming Soon)'}</div>}
-            {['adam-lineage', 'abraham-lineage'].includes(page) && <FamilyTree treeType={page} />}
+            <Routes>
+              <Route path="/" element={
+                <div style={{ 
+                  position: 'fixed', 
+                  top: 0, 
+                  left: 0, 
+                  width: '100vw', 
+                  height: 'calc(100vh - 80px)', /* Leave space for footer */
+                  zIndex: 1 
+                }}>
+                  <ImageCarousel images={carouselImages} autoPlayInterval={10000} />
+                  <ProphecyOfTheDay lang={lang} />
+                </div>
+              } />
+              <Route path="/d3-chart" element={
+                <GridComponent lang={lang} page={page} />
+              } />
+              <Route path="/genealogy" element={
+                <div className="page-container">
+                  <PageHeader 
+                    title={lang === 'te' ? 'వంశావళి' : 'Genealogy'}
+                    subtitle={lang === 'te' ? 'బైబిల్ వంశావళి విభాగాలను ఎంచుకోండి.' : 'Select a genealogy section from the left.'}
+                    icon={<FaUsers />}
+                  />
+                </div>
+              } />
+              <Route path="/tree" element={
+                <div className="demo-text">{lang === 'te' ? 'వంశావళి ట్రీ (డెమో త్వరలో)' : 'Genealogy Tree (Demo Coming Soon)'}</div>
+              } />
+              <Route path="/judges" element={
+                <div className="page-container">
+                  <PageHeader 
+                    title={lang === 'te' ? 'న్యాయాధిపతులు' : 'Judges'}
+                    subtitle={lang === 'te' ? 'న్యాయాధిపతుల జాబితాను ఎంచుకోండి.' : 'Select a judges section from the left.'}
+                    icon={<FaGavel />}
+                  />
+                </div>
+              } />
+              <Route path="/prophets" element={
+                <div className="page-container">
+                  <PageHeader 
+                    title={lang === 'te' ? 'ప్రవక్తలు' : 'Prophets'}
+                    subtitle={lang === 'te' ? 'ప్రవక్తల జాబితాను ఎంచుకోండి.' : 'Select a prophets section from the left.'}
+                    icon={<FaBook />}
+                  />
+                </div>
+              } />
+              <Route path="/maps" element={
+                <div className="page-container">
+                  <PageHeader 
+                    title={lang === 'te' ? 'మ్యాప్‌లు' : 'Maps'}
+                    subtitle={lang === 'te' ? 'మ్యాప్ విభాగాన్ని ఎంచుకోండి.' : 'Select a maps section from the left.'}
+                    icon={<FaMapMarkerAlt />}
+                  />
+                </div>
+              } />
+              <Route path="/keyeras" element={
+                <div className="page-container">
+                  <PageHeader 
+                    title={lang === 'te' ? 'ముఖ్య యుగాలు' : 'Key Eras'}
+                    subtitle={lang === 'te' ? 'కీలకమైన కాలాలను ఎంచుకోండి.' : 'Select a key era from the left.'}
+                    icon={<FaClock />}
+                  />
+                </div>
+              } />
+              <Route path="/bookswriters" element={
+                <div className="page-container">
+                  <PageHeader 
+                    title={lang === 'te' ? 'పుస్తకాలు మరియు రచయితలు' : 'Books & Writers'}
+                    subtitle={lang === 'te' ? 'బైబిల్ పుస్తకాలు మరియు రచయితల విభాగాన్ని ఎంచుకోండి.' : 'Select a biblical books and writers section from the left.'}
+                    icon={<FaBook />}
+                  />
+                  <BooksWritersGrid lang={lang} page="old-testament-torah" />
+                </div>
+              } />
+              <Route path="/israel-maps-tribes" element={
+                <div className="page-container">
+                  <PageHeader 
+                    title={lang === 'te' ? 'ఇస్రాయేల్ గోత్రాల మ్యాప్' : 'Israel Tribes Map'}
+                    subtitle={lang === 'te' ? 'ఇస్రాయేల్ గోత్రాల భూభాగాలను మ్యాప్‌లో చూడండి.' : 'View the territories of the tribes of Israel on the map.'}
+                    icon={<FaMapMarkerAlt />}
+                  />
+                  <IsraelMapsTribes />
+                </div>
+              } />
+              {/* Books and Writers routes */}
+              {['old-testament-books', 'new-testament-books', 'biblical-authors', 'books-by-category', 'old-testament-torah', 'old-testament-historical', 'old-testament-wisdom', 'old-testament-majorProphets', 'old-testament-minorProphets', 'new-testament-gospels', 'new-testament-history', 'new-testament-paulineEpistles', 'new-testament-generalEpistles', 'new-testament-prophecy'].map(route => (
+                <Route key={route} path={`/${route}`} element={
+                  <BooksWritersGrid lang={lang} page={route} />
+                } />
+              ))}
+              {/* Family Tree routes */}
+              {['adam-lineage', 'abraham-lineage'].map(route => (
+                <Route key={route} path={`/${route}`} element={
+                  <FamilyTree treeType={route} />
+                } />
+              ))}
+              {/* GridComponent routes for all other pages */}
+              {['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile'].map(route => (
+                <Route key={route} path={`/${route}`} element={
+                  <GridComponent lang={lang} page={route} />
+                } />
+              ))}
+            </Routes>
           </main>
         </div>
         <Footer />

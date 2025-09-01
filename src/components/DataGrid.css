@@ -1,0 +1,118 @@
+/* DataGrid Button Styles - matches screenshot example */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.row-count-text {
+  padding: 0 18px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #a5a3e8;
+  border-radius: 12px;
+  background: #5e54c7;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 8px;
+  box-shadow: 0 2px 8px rgba(75,60,196,0.08);
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(75,60,196,0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.print-button {
+  background: #10b981;
+  color: #fff;
+}
+.print-button:hover {
+  background: #059669;
+}
+
+.excel-button {
+  background: #22c55e;
+  color: #fff;
+}
+.excel-button:hover {
+  background: #15803d;
+}
+
+.chart-button {
+  background: #6366f1;
+  color: #fff;
+}
+.chart-button:hover {
+  background: #3730a3;
+}
+
+.action-button-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .header-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .row-count-text, .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Tooltip Styles */
+.data-grid-tooltip {
+  opacity: 0;
+  animation: tooltipFadeIn 0.2s ease-out forwards;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-100%) scale(1);
+  }
+}
+
+/* Enhanced Table Cell Hover Effects */
+.table-cell {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: default;
+  position: relative;
+}
+
+.table-cell:hover {
+  background-color: var(--hover-bg, rgba(99, 102, 241, 0.1)) !important;
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+/* Dark theme hover effect */
+.dark .table-cell:hover {
+  background-color: rgba(129, 140, 248, 0.2) !important;
+}
+
+/* Light theme hover effect */
+.light .table-cell:hover {
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}

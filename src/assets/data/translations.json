@@ -16,7 +16,8 @@
       "summary": "Summary",
       "description": "Description",
       "location": "Location",
-      "testament": "Testament"
+      "testament": "Testament",
+      "nation": "Nation"
     },
     "judges": {
       "judge": "Judge",
@@ -31,7 +32,8 @@
       "ministry": "Ministry",
       "type": "Type",
       "title": "Prophets of Israel",
-      "chartLabel": "Prophetic Ministry"
+      "chartLabel": "Prophetic Ministry",
+      "nation": "Nation"
     },
     "maps": {
       "map": "Map",
@@ -41,6 +43,52 @@
       "viewMap": "View Map",
       "mapNotFound": "Map not found",
       "mapImage": "Map Image"
+    }
+  },
+  "te": {
+    "common": {
+      "close": "మూసివేయి",
+      "details": "వివరాలు",
+      "viewDetails": "వివరాలు చూడండి",
+      "period": "కాలం",
+      "scripture": "వేదాగమ సూచన",
+      "biography": "జీవిత చరిత్ర",
+      "achievements": "ముఖ్య విజయాలు",
+      "significance": "ప్రాముఖ్యత",
+      "category": "వర్గం",
+      "booksWritten": "వ్రాసిన పుస్తకాలు",
+      "keyProphecies": "ముఖ్య ప్రవచనాలు",
+      "none": "ఏదీ లేదు",
+      "summary": "సారాంశం",
+      "description": "వర్ణన",
+      "location": "స్థానం",
+      "testament": "నిబంధన",
+      "nation": "జాతి"
+    },
+    "judges": {
+      "judge": "న్యాయాధిపతి",
+      "tribe": "గోత్రం",
+      "yearsOfJudgeship": "న్యాయాధిపతి సంవత్సరాలు",
+      "oppressor": "అణచివేసేవాడు",
+      "title": "ఇశ్రాయేలు న్యాయాధిపతులు",
+      "chartLabel": "న్యాయాధిపతుల కాలం"
+    },
+    "prophets": {
+      "prophet": "ప్రవక్త",
+      "ministry": "సేవ",
+      "type": "రకం",
+      "title": "ఇశ్రాయేలు ప్రవక్తలు",
+      "chartLabel": "ప్రవచన సేవ",
+      "nation": "జాతి"
+    },
+    "maps": {
+      "map": "మ్యాప్",
+      "location": "స్థానం",
+      "events": "సంఘటనలు",
+      "title": "బైబిల్ మ్యాప్స్",
+      "viewMap": "మ్యాప్ చూడండి",
+      "mapNotFound": "మ్యాప్ కనుగొనబడలేదు",
+      "mapImage": "మ్యాప్ చిత్రం"
     }
   }
 }
