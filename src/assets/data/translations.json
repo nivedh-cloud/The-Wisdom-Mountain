@@ -30,6 +30,7 @@
     "prophets": {
       "prophet": "Prophet",
       "ministry": "Ministry",
+      "ministryYears": "Ministry Years",
       "type": "Type",
       "title": "Prophets of Israel",
       "chartLabel": "Prophetic Ministry",
@@ -76,6 +77,7 @@
     "prophets": {
       "prophet": "ప్రవక్త",
       "ministry": "సేవ",
+      "ministryYears": "సేవా సంవత్సరాలు",
       "type": "రకం",
       "title": "ఇశ్రాయేలు ప్రవక్తలు",
       "chartLabel": "ప్రవచన సేవ",

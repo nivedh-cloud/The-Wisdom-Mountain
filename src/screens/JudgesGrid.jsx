@@ -26,6 +26,8 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
     yearsOfJudgeship: lang === 'te' ? judge.yearsOfJudgeshipTelugu : judge.yearsOfJudgeship,
     oppressor: lang === 'te' ? judge.oppressorTelugu : judge.oppressor,
     details: 'VIEW_DETAILS', // Special value for details icon
+    // Keep original numeric values for chart regardless of language
+    yearsOfJudgeshipNumeric: judge.yearsOfJudgeship,
     // Keep original data for detailed view
     _original: judge
   }));
@@ -66,7 +68,7 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
 
   // Chart configuration
   const chartConfig = {
-    dataKey: 'yearsOfJudgeship',
+    dataKey: 'yearsOfJudgeshipNumeric', // Use numeric value for chart
     xDataKey: 'judge',
     label: translations.judges.chartLabel,
     xLabel: translations.judges.judge,

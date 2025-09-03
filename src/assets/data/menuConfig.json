@@ -42,7 +42,8 @@
       { "key": "old-testament-books", "icon": "FaBook", "label": { "en": "Old Testament Books", "te": "పాత నిబంధన పుస్తకాలు" } },
       { "key": "new-testament-books", "icon": "FaBookOpen", "label": { "en": "New Testament Books", "te": "కొత్త నిబంధన పుస్తకాలు" } },
       { "key": "biblical-authors", "icon": "FaUser", "label": { "en": "Biblical Authors", "te": "బైబిల్ రచయితలు" } },
-      { "key": "books-by-category", "icon": "FaList", "label": { "en": "Books by Category", "te": "వర్గం వారీగా పుస్తకాలు" } }
+      { "key": "books-by-category", "icon": "FaList", "label": { "en": "Books by Category", "te": "వర్గం వారీగా పుస్తకాలు" } },
+      { "key": "names-of-god", "icon": "GiHolyGrail", "iconColor": "#8b5cf6", "label": { "en": "Names of GOD", "te": "దేవుని నామాలు" } }
     ],
     "maps": [
       { "key": "old-testament-maps", "icon": "glyphicon-map-marker", "label": { "en": "Old Testament Maps", "te": "పాత నిబంధన మ్యాప్‌లు" } },

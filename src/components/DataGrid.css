@@ -94,25 +94,63 @@
   }
 }
 
-/* Enhanced Table Cell Hover Effects */
-.table-cell {
+/* Enhanced Table Row Hover Effects */
+.table-row {
   transition: background-color 0.2s ease, transform 0.1s ease;
   cursor: default;
   position: relative;
 }
 
-.table-cell:hover {
+.table-row:hover {
   background-color: var(--hover-bg, rgba(99, 102, 241, 0.1)) !important;
-  transform: scale(1.02);
+  transform: scale(1.01);
   z-index: 1;
 }
 
+.table-row:hover .table-cell {
+  background-color: transparent !important;
+}
+
 /* Dark theme hover effect */
-.dark .table-cell:hover {
+.dark .table-row:hover {
   background-color: rgba(129, 140, 248, 0.2) !important;
 }
 
 /* Light theme hover effect */
-.light .table-cell:hover {
+.light .table-row:hover {
   background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+/* Remove individual cell hover effects */
+.table-cell {
+  transition: none;
+  cursor: default;
+  position: relative;
+}
+
+/* Alternating row colors */
+.table-row-even {
+  background-color: var(--row-even-bg, rgba(0, 0, 0, 0.02));
+}
+
+.table-row-odd {
+  background-color: var(--row-odd-bg, rgba(0, 0, 0, 0.05));
+}
+
+/* Dark theme alternating rows */
+.dark .table-row-even {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.dark .table-row-odd {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Light theme alternating rows */
+.light .table-row-even {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.light .table-row-odd {
+  background-color: rgba(0, 0, 0, 0.03);
 }

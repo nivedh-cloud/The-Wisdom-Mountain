@@ -66,9 +66,13 @@ export default function MapsGrid({ lang, section = 'old-testament-maps' }) {
   ];
 
   // Custom row renderer for maps with icons
-  const customRowRenderer = (row, rowIndex) => {
+  const customRowRenderer = (row, rowIndex, tooltipHandlers = {}) => {
+    const { handleMouseEnter, handleMouseLeave, handleMouseMove } = tooltipHandlers;
     return (
-      <tr key={rowIndex} className="data-row">
+      <tr 
+        key={rowIndex} 
+        className={`table-row ${rowIndex % 2 === 0 ? 'table-row-even' : 'table-row-odd'}`}
+      >
         {columns.map((column, colIndex) => {
           const value = row[column.dataKey];
           
@@ -102,7 +106,13 @@ export default function MapsGrid({ lang, section = 'old-testament-maps' }) {
           
           // Regular cell rendering
           return (
-            <td key={colIndex} className="table-cell">
+            <td 
+              key={colIndex} 
+              className="table-cell"
+              onMouseEnter={handleMouseEnter ? (e) => handleMouseEnter(e, value) : undefined}
+              onMouseLeave={handleMouseLeave || undefined}
+              onMouseMove={handleMouseMove || undefined}
+            >
               {value}
             </td>
           );

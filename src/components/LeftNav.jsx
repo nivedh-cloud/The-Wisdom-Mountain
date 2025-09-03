@@ -35,7 +35,8 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
   const [expandedSections, setExpandedSections] = useState({
     oldTestament: false,
     newTestament: false,
-    authors: false
+    authors: false,
+    namesOfGod: false
   });
 
   // Determine which menu to show
@@ -46,7 +47,7 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
   if (page === 'prophets' || ['list-of-prophets'].includes(page)) menuType = 'prophets';
   if (page === 'maps' || ['old-testament-maps','new-testament-maps','israel-maps-tribes'].includes(page)) menuType = 'maps';
   if (page === 'keyeras' || ['wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile'].includes(page)) menuType = 'keyeras';
-  if (page === 'bookswriters' || ['old-testament-books','new-testament-books','biblical-authors','books-by-category','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) menuType = 'bookswriters';
+  if (page === 'bookswriters' || ['old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) menuType = 'bookswriters';
   if (page === 'genealogy' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile'].includes(page)) menuType = 'genealogy';
   
   // Menu header from JSON
@@ -147,30 +148,42 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
           )}
         </div>
 
-        {/* Biblical Authors Section */}
+        
+
+        {/* Names of God Section */}
         <div className="accordion-section">
           <button 
             className="accordion-main-header"
-            onClick={() => toggleSection('authors')}
+            onClick={() => toggleSection('namesOfGod')}
           >
             <div className="main-header-content">
-              <FaUser className="main-header-icon" />
-              <span>{lang === 'te' ? 'బైబిల్ రచయితలు' : 'Biblical Authors'}</span>
+              <span className="main-header-icon" style={{ color: '#8b5cf6' }}>🏆</span>
+              <span>{lang === 'te' ? 'దేవుని నామాలు' : 'Names of God'}</span>
             </div>
-            {expandedSections.authors ? <FaChevronDown /> : <FaChevronRight />}
+            {expandedSections.namesOfGod ? <FaChevronDown /> : <FaChevronRight />}
           </button>
-          {expandedSections.authors && (
+          {expandedSections.namesOfGod && (
             <div className="accordion-content">
               <div className="sub-category-section">
                 <button 
                   className="accordion-sub-header"
-                  onClick={() => navigateToPage('biblical-authors')}
+                  onClick={() => navigateToPage('old-testament-names')}
                 >
                   <div className="sub-header-content">
-                    <span className="sub-category-icon">✍️</span>
-                    <span>{lang === 'te' ? 'రచయితల జాబితా' : 'Authors List'}</span>
+                    <span className="sub-category-icon">📜</span>
+                    <span>{lang === 'te' ? 'పాత నిబంధన నామాలు' : 'Old Testament Names'}</span>
                   </div>
-                  <span className="book-count">({biblicalBooksData.biblicalAuthors.length})</span>
+                </button>
+              </div>
+              <div className="sub-category-section">
+                <button 
+                  className="accordion-sub-header"
+                  onClick={() => navigateToPage('new-testament-names')}
+                >
+                  <div className="sub-header-content">
+                    <span className="sub-category-icon">✝️</span>
+                    <span>{lang === 'te' ? 'కొత్త నిబంధన నామాలు' : 'New Testament Names'}</span>
+                  </div>
                 </button>
               </div>
             </div>

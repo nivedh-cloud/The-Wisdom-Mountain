@@ -15,6 +15,9 @@ import FamilyTree from './components/FamilyTree';
 import ImageCarousel from './components/ImageCarousel';
 import Footer from './components/Footer';
 import BooksWritersGrid from './components/BooksWritersGrid';
+import NamesOfGodGrid from './screens/NamesOfGodGrid';
+import OldTestamentNames from './screens/OldTestamentNames';
+import NewTestamentNames from './screens/NewTestamentNames';
 import carouselData from './assets/data/carouselData.json';
 import './styles/App.css';
 import './styles/GlobalStyles.css';
@@ -87,7 +90,7 @@ function App() {
         <TopHeader lang={lang} setLang={setLang} />
         <MenuBar lang={lang} page={page} setPage={navigateToPage} setLang={setLang} />
         <div className="main-layout">
-          {(page === 'genealogy' || page === 'kings' || page === 'judges' || page === 'prophets' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','adam-lineage','abraham-lineage','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && (
+          {(page === 'genealogy' || page === 'kings' || page === 'judges' || page === 'prophets' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','adam-lineage','abraham-lineage','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && (
                         <LeftNav 
               lang={lang} 
               page={page} 
@@ -187,6 +190,18 @@ function App() {
                   <BooksWritersGrid lang={lang} page={route} />
                 } />
               ))}
+              {/* Names of God route */}
+              <Route path="/names-of-god" element={
+                <NamesOfGodGrid lang={lang} />
+              } />
+              {/* Old Testament Names route */}
+              <Route path="/old-testament-names" element={
+                <OldTestamentNames lang={lang} />
+              } />
+              {/* New Testament Names route */}
+              <Route path="/new-testament-names" element={
+                <NewTestamentNames lang={lang} />
+              } />
               {/* Family Tree routes */}
               {['adam-lineage', 'abraham-lineage'].map(route => (
                 <Route key={route} path={`/${route}`} element={

@@ -1,0 +1,802 @@
+{
+    "israelKingsDetails": {
+      "Jeroboam I": {
+        "name": "Jeroboam I",
+        "nameTelugu": "యరొబాము I",
+        "title": "First King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు మొదటి రాజు",
+        "period": "931-910 BC",
+        "periodTelugu": "క్రీ.పూ. 931-910",
+        "biography": {
+          "en": "Jeroboam I was the first king of the northern Kingdom of Israel after the revolt of the ten northern Israelite tribes against Rehoboam that put an end to the United Monarchy.",
+          "te": "సంయుక్త రాచరికాన్ని అంతం చేసిన రెహోబాముపై పది ఉత్తర ఇశ్రాయేలు గోత్రాలు తిరుగుబాటు చేసిన తర్వాత ఉత్తర ఇశ్రాయేలు రాజ్యానికి మొదటి రాజు యరొబాము I."
+        },
+        "achievements": {
+          "en": [
+            "Established the Kingdom of Israel as a separate entity from Judah.",
+            "Fortified Shechem and Penuel."
+          ],
+          "te": [
+            "ఇశ్రాయేలు రాజ్యాన్ని యూదా నుండి ప్రత్యేక రాజ్యంగా స్థాపించాడు.",
+            "షెకెము మరియు పెనుయేలును బలపరిచాడు."
+          ]
+        },
+        "failures": {
+          "en": [
+            "Led Israel into idolatry by setting up two golden calves in Bethel and Dan.",
+            "Appointed priests from outside the tribe of Levi.",
+            "His actions are consistently condemned throughout the books of Kings as 'the sin of Jeroboam'."
+          ],
+          "te": [
+            "బేతేలు మరియు దానులో రెండు బంగారు దూడలను ఏర్పాటు చేసి ఇశ్రాయేలీయులను విగ్రహారాధనలోకి నడిపించాడు.",
+            "లేవి గోత్రం వెలుపల నుండి యాజకులను నియమించాడు.",
+            "అతని చర్యలు రాజుల పుస్తకాల అంతటా 'యరొబాము పాపం'గా ఖండించబడ్డాయి."
+          ]
+        },
+        "bibleReferences": {
+          "en": "1 Kings 11-14",
+          "te": "1 రాజులు 11-14"
+        },
+        "prophets": ["Ahijah the Shilonite"],
+        "prophetsTelugu": ["అహీయా షిలోనీతి"]
+      },
+      "Nadab": {
+        "name": "Nadab",
+        "nameTelugu": "నాదాబు",
+        "title": "Second King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు రెండవ రాజు",
+        "period": "910-909 BC",
+        "periodTelugu": "క్రీ.పూ. 910-909",
+        "biography": {
+          "en": "Nadab was the second king of the northern Kingdom of Israel. He was the son and successor of Jeroboam I.",
+          "te": "నాదాబు ఉత్తర ఇశ్రాయేలు రాజ్యానికి రెండవ రాజు. అతను యరొబాము I యొక్క కుమారుడు మరియు వారసుడు."
+        },
+        "achievements": {
+          "en": [
+            "Continued his father's policies."
+          ],
+          "te": [
+            "తండ్రి విధానాలనే కొనసాగించాడు."
+          ]
+        },
+        "failures": {
+          "en": [
+            "Walked in the ways of his father, continuing the idolatrous practices.",
+            "Was assassinated by Baasha, one of his own commanders, while besieging the Philistine city of Gibbethon."
+          ],
+          "te": [
+            "విగ్రహారాధన పద్ధతులను కొనసాగిస్తూ తన తండ్రి మార్గాల్లో నడిచాడు.",
+            "ఫిలిష్తీయుల నగరమైన గిబ్బెతోనును ముట్టడిస్తున్నప్పుడు, అతని సొంత సైన్యాధిపతులలో ఒకడైన బయషా చేత హత్య చేయబడ్డాడు."
+          ]
+        },
+        "bibleReferences": {
+          "en": "1 Kings 15:25-31",
+          "te": "1 రాజులు 15:25-31"
+        },
+        "prophets": [],
+        "prophetsTelugu": []
+      },
+      "Baasha": {
+        "name": "Baasha",
+        "nameTelugu": "బయషా",
+        "title": "Third King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు మూడవ రాజు",
+        "period": "909-886 BC",
+        "periodTelugu": "క్రీ.పూ. 909-886",
+        "biography": {
+          "en": "Baasha was the third king of Israel who came to power by assassinating Nadab. He reigned for 24 years and continued the idolatrous practices of his predecessors.",
+          "te": "బయషా నాదాబును హత్య చేసి అధికారంలోకి వచ్చిన ఇశ్రాయేలు మూడవ రాజు. అతను 24 సంవత్సరాలు పరిపాలించాడు మరియు తన పూర్వీకుల విగ్రహారాధన పద్ధతులను కొనసాగించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Eliminated the house of Jeroboam as prophesied",
+            "Fortified Ramah to control access to Judah",
+            "Maintained Israel's independence for 24 years"
+          ],
+          "te": [
+            "ప్రవచనం ప్రకారం యరొబాము వంశాన్ని నిర్మూలించాడు",
+            "యూదాకు వెళ్లే మార్గాన్ని నియంత్రించడానికి రామాను బలపరిచాడు",
+            "24 సంవత్సరాలు ఇశ్రాయేలు స్వాతంత్య్రాన్ని కొనసాగించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Walked in the way of Jeroboam and his sin",
+            "Provoked God to anger with idols",
+            "His dynasty was also condemned to destruction"
+          ],
+          "te": [
+            "యరొబాము మార్గంలో మరియు అతని పాపంలో నడిచాడు",
+            "విగ్రహాలతో దేవుని కోపాన్ని రేపాడు",
+            "అతని వంశం కూడా నాశనానికి గురైంది"
+          ]
+        },
+        "bibleReferences": {
+          "en": "1 Kings 15:16-16:7",
+          "te": "1 రాజులు 15:16-16:7"
+        },
+        "prophets": ["Jehu"],
+        "prophetsTelugu": ["యెహూ"]
+      },
+      "Elah": {
+        "name": "Elah",
+        "nameTelugu": "ఏలా",
+        "title": "Fourth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు నాలుగవ రాజు",
+        "period": "886-885 BC",
+        "periodTelugu": "క్రీ.పూ. 886-885",
+        "biography": {
+          "en": "Elah was the son of Baasha and the fourth king of Israel. He reigned for only two years before being assassinated by Zimri while drunk.",
+          "te": "ఏలా బయషా కుమారుడు మరియు ఇశ్రాయేలు నాలుగవ రాజు. మద్యపాన స్థితిలో ఉన్నప్పుడు జిమ్రీ చేత హత్య చేయబడడానికి ముందు కేవలం రెండు సంవత్సరాలు మాత్రమే పరిపాలించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Inherited the throne from his father"
+          ],
+          "te": [
+            "తన తండ్రి నుండి సింహాసనాన్ని వారసత్వంగా పొందాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Continued in his father's idolatrous ways",
+            "Was killed while drunk in his steward's house",
+            "His short reign ended the dynasty of Baasha"
+          ],
+          "te": [
+            "తన తండ్రి విగ్రహారాధన మార్గాలను కొనసాగించాడు",
+            "తన నిర్వాహకుడి ఇంట్లో మద్యపాన స్థితిలో హత్య చేయబడ్డాడు",
+            "అతని చిన్న పాలన బయషా వంశాన్ని అంతం చేసింది"
+          ]
+        },
+        "bibleReferences": {
+          "en": "1 Kings 16:6-14",
+          "te": "1 రాజులు 16:6-14"
+        },
+        "prophets": [],
+        "prophetsTelugu": []
+      },
+      "Zimri": {
+        "name": "Zimri",
+        "nameTelugu": "జిమ్రీ",
+        "title": "Fifth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు ఐదవ రాజు",
+        "period": "885 BC (7 days)",
+        "periodTelugu": "క్రీ.పూ. 885 (7 రోజులు)",
+        "biography": {
+          "en": "Zimri was a commander who assassinated King Elah and reigned for only seven days. When Omri besieged Tirzah, Zimri burned the palace and died in the flames.",
+          "te": "జిమ్రీ రాజు ఏలాను హత్య చేసిన సైన్యాధిపతి మరియు కేవలం ఏడు రోజులు మాత్రమే పరిపాలించాడు. ఒమ్రీ తిర్సాను ముట్టడించినప్పుడు, జిమ్రీ రాజభవనాన్ని కాల్చివేసి మంటల్లో మరణించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Eliminated the house of Baasha as prophesied",
+            "Briefly held the throne of Israel"
+          ],
+          "te": [
+            "ప్రవచనం ప్రకారం బయషా వంశాన్ని నిర్మూలించాడు",
+            "కొద్దిసేపు ఇశ్రాయేలు సింహాసనాన్ని పట్టుకున్నాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "His reign lasted only seven days",
+            "Committed suicide when faced with defeat",
+            "Failed to establish a stable dynasty"
+          ],
+          "te": [
+            "అతని పాలన కేవలం ఏడు రోజులు మాత్రమే కొనసాగింది",
+            "ఓటమిని ఎదుర్కొన్నప్పుడు ఆత్మహత్య చేసుకున్నాడు",
+            "స్థిరమైన వంశాన్ని స్థాపించడంలో విఫలమయ్యాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "1 Kings 16:9-20",
+          "te": "1 రాజులు 16:9-20"
+        },
+        "prophets": [],
+        "prophetsTelugu": []
+      },
+      "Omri": {
+        "name": "Omri",
+        "nameTelugu": "ఒమ్రీ",
+        "title": "Sixth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు ఆరవ రాజు",
+        "period": "885-874 BC",
+        "periodTelugu": "క్రీ.పూ. 885-874",
+        "biography": {
+          "en": "Omri was a military commander who became king after defeating Zimri. He founded Samaria as the new capital of Israel and established a powerful dynasty.",
+          "te": "ఒమ్రీ జిమ్రీని ఓడించిన తర్వాత రాజైన సైన్యాధిపతి. అతను షోమ్రోనును ఇశ్రాయేలు కొత్త రాజధానిగా స్థాపించాడు మరియు శక్తివంతమైన వంశాన్ని స్థాపించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Founded Samaria as Israel's capital",
+            "Established diplomatic relations with neighboring kingdoms",
+            "Strengthened Israel militarily and economically",
+            "Founded the Omride dynasty"
+          ],
+          "te": [
+            "షోమ్రోనును ఇశ్రాయేలు రాజధానిగా స్థాపించాడు",
+            "పొరుగు రాజ్యాలతో దౌత్య సంబంధాలను ఏర్పాటు చేశాడు",
+            "ఇశ్రాయేలును సైనికంగా మరియు ఆర్థికంగా బలపరిచాడు",
+            "ఒమ్రీ వంశాన్ని స్థాపించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Did evil in the sight of the Lord",
+            "Walked in the ways of Jeroboam",
+            "Introduced Baal worship through Ahab's marriage"
+          ],
+          "te": [
+            "యెహోవా దృష్టిలో చెడు చేశాడు",
+            "యరొబాము మార్గాల్లో నడిచాడు",
+            "అహాబు వివాహం ద్వారా బయలు ఆరాధనను ప్రవేశపెట్టాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "1 Kings 16:16-28",
+          "te": "1 రాజులు 16:16-28"
+        },
+        "prophets": [],
+        "prophetsTelugu": []
+      },
+      "Ahab": {
+        "name": "Ahab",
+        "nameTelugu": "అహాబు",
+        "title": "Seventh King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు ఏడవ రాజు",
+        "period": "874-853 BC",
+        "periodTelugu": "క్రీ.పూ. 874-853",
+        "biography": {
+          "en": "Ahab was the son of Omri and one of the most notorious kings of Israel. His marriage to Jezebel introduced Baal worship, leading to major conflicts with the prophet Elijah.",
+          "te": "అహాబు ఒమ్రీ కుమారుడు మరియు ఇశ్రాయేలు అత్యంత అపఖ్యాతి పాలైన రాజుల్లో ఒకడు. అతని యెజెబెలు వివాహం బయలు ఆరాధనను ప్రవేశపెట్టింది, ప్రవక్త ఏలీయాతో పెద్ద సంఘర్షణలకు దారితీసింది."
+        },
+        "achievements": {
+          "en": [
+            "Built an ivory palace in Samaria",
+            "Established trade relationships",
+            "Military victories against Syria",
+            "Expanded Israel's territory"
+          ],
+          "te": [
+            "షోమ్రోనులో దంతపు రాజభవనాన్ని నిర్మించాడు",
+            "వాణిజ్య సంబంధాలను ఏర్పాటు చేశాడు",
+            "సిరియాపై సైనిక విజయాలు",
+            "ఇశ్రాయేలు భూభాగాన్ని విస్తరించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Married Jezebel and introduced Baal worship",
+            "Persecuted the prophets of the Lord",
+            "Coveted Naboth's vineyard leading to murder",
+            "Did more evil than all previous kings"
+          ],
+          "te": [
+            "యెజెబెలును వివాహం చేసుకుని బయలు ఆరాధనను ప్రవేశపెట్టాడు",
+            "యెహోవా ప్రవక్తలను హింసించాడు",
+            "నాబోతు ద్రాక్షతోటను కోరి హత్యకు దారితీసింది",
+            "మునుపటి అన్ని రాజుల కంటే ఎక్కువ చెడు చేశాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "1 Kings 16:29-22:40",
+          "te": "1 రాజులు 16:29-22:40"
+        },
+        "prophets": ["Elijah", "Micaiah"],
+        "prophetsTelugu": ["ఏలీయా", "మిఖాయా"]
+      },
+      "Ahaziah": {
+        "name": "Ahaziah",
+        "nameTelugu": "అహజ్యా",
+        "title": "Eighth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు ఎనిమిదవ రాజు",
+        "period": "853-852 BC",
+        "periodTelugu": "క్రీ.పూ. 853-852",
+        "biography": {
+          "en": "Ahaziah was the son of Ahab and Jezebel. He reigned for only two years and continued his parents' idolatrous practices. He died from injuries after falling through a lattice.",
+          "te": "అహజ్యా అహాబు మరియు యెజెబెలు కుమారుడు. అతను కేవలం రెండు సంవత్సరాలు పరిపాలించాడు మరియు తన తల్లిదండ్రుల విగ్రహారాధన పద్ధతులను కొనసాగించాడు. జాలక గుండా పడిన గాయాలతో మరణించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Maintained the kingdom inherited from his father"
+          ],
+          "te": [
+            "తన తండ్రి నుండి వారసత్వంగా పొందిన రాజ్యాన్ని కొనసాగించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Served Baal and worshipped him",
+            "Provoked the Lord God of Israel to anger",
+            "Consulted Baal-zebub instead of the Lord when injured"
+          ],
+          "te": [
+            "బయలును సేవించి అతనిని ఆరాధించాడు",
+            "ఇశ్రాయేలు దేవుడైన యెహోవా కోపాన్ని రేపాడు",
+            "గాయపడినప్పుడు యెహోవాను కాకుండా బయల్జెబబును సంప్రదించాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "1 Kings 22:51-2 Kings 1:18",
+          "te": "1 రాజులు 22:51-2 రాజులు 1:18"
+        },
+        "prophets": ["Elijah"],
+        "prophetsTelugu": ["ఏలీయా"]
+      },
+      "Joram": {
+        "name": "Joram",
+        "nameTelugu": "యోరాము",
+        "title": "Ninth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు తొమ్మిదవ రాజు",
+        "period": "852-841 BC",
+        "periodTelugu": "క్రీ.పూ. 852-841",
+        "biography": {
+          "en": "Joram (also called Jehoram) was the son of Ahab and brother of Ahaziah. He removed some Baal worship but continued in Jeroboam's sins. He was killed by Jehu.",
+          "te": "యోరాము (యెహోరాము అని కూడా పిలుస్తారు) అహాబు కుమారుడు మరియు అహజ్యా సోదరుడు. అతను కొంత బయలు ఆరాధనను తొలగించాడు కానీ యరొబాము పాపాలను కొనసాగించాడు. యెహూ చేత హత్య చేయబడ్డాడు."
+        },
+        "achievements": {
+          "en": [
+            "Removed the sacred pillar of Baal",
+            "Allied with Judah against Moab",
+            "Maintained Israel's territorial integrity"
+          ],
+          "te": [
+            "బయలు పవిత్ర స్తంభాన్ని తొలగించాడు",
+            "మోయాబుకు వ్యతిరేకంగా యూదాతో కూటమి చేశాడు",
+            "ఇశ్రాయేలు భూభాగ సమగ్రతను కొనసాగించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Continued in the sins of Jeroboam",
+            "Did not completely remove Baal worship",
+            "Lost the battle against Hazael of Syria"
+          ],
+          "te": [
+            "యరొబాము పాపాలను కొనసాగించాడు",
+            "బయలు ఆరాధనను పూర్తిగా తొలగించలేదు",
+            "సిరియా హజాయేలుతో యుద్ధంలో ఓడిపోయాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 1:17-9:24",
+          "te": "2 రాజులు 1:17-9:24"
+        },
+        "prophets": ["Elisha"],
+        "prophetsTelugu": ["ఎలీషా"]
+      },
+      "Jehu": {
+        "name": "Jehu",
+        "nameTelugu": "యెహూ",
+        "title": "Tenth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పదవ రాజు",
+        "period": "841-814 BC",
+        "periodTelugu": "క్రీ.పూ. 841-814",
+        "biography": {
+          "en": "Jehu was anointed by Elisha's servant to destroy the house of Ahab. He zealously eliminated Baal worship but continued in Jeroboam's sins regarding the golden calves.",
+          "te": "యెహూ అహాబు వంశాన్ని నాశనం చేయడానికి ఎలీషా సేవకుడిచే అభిషేకించబడ్డాడు. అతను అతిశయంగా బయలు ఆరాధనను నిర్మూలించాడు కానీ బంగారు దూడలకు సంబంధించి యరొబాము పాపాలను కొనసాగించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Destroyed the house of Ahab completely",
+            "Eliminated Baal worship from Israel",
+            "Killed Jezebel and the prophets of Baal",
+            "Established a new dynasty"
+          ],
+          "te": [
+            "అహాబు వంశాన్ని పూర్తిగా నాశనం చేశాడు",
+            "ఇశ్రాయేలు నుండి బయలు ఆరాధనను నిర్మూలించాడు",
+            "యెజెబెలును మరియు బయలు ప్రవక్తలను చంపాడు",
+            "కొత్త వంశాన్ని స్థాపించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Did not follow the Lord with all his heart",
+            "Continued worshipping the golden calves",
+            "Lost territory to Hazael of Syria",
+            "Paid tribute to Assyria"
+          ],
+          "te": [
+            "తన పూర్ణహృదయంతో యెహోవాను అనుసరించలేదు",
+            "బంగారు దూడలను ఆరాధించడం కొనసాగించాడు",
+            "సిరియా హజాయేలుకు భూభాగాన్ని కోల్పోయాడు",
+            "అష్షూరుకు పన్ను చెల్లించాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 9-10",
+          "te": "2 రాజులు 9-10"
+        },
+        "prophets": ["Elisha"],
+        "prophetsTelugu": ["ఎలీషా"]
+      },
+      "Jehoahaz": {
+        "name": "Jehoahaz",
+        "nameTelugu": "యెహోయాహాజు",
+        "title": "Eleventh King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పదకొండవ రాజు",
+        "period": "814-798 BC",
+        "periodTelugu": "క్రీ.పూ. 814-798",
+        "biography": {
+          "en": "Jehoahaz was the son of Jehu. His reign was marked by oppression from Syria under Hazael and Ben-hadad. He sought the Lord's help and was granted some relief.",
+          "te": "యెహోయాహాజు యెహూ కుమారుడు. అతని పాలనలో హజాయేలు మరియు బెన్‌హదదు కింద సిరియా అణచివేతకు గురైంది. అతను యెహోవా సహాయం కోరాడు మరియు కొంత ఉపశమనం లభించింది."
+        },
+        "achievements": {
+          "en": [
+            "Sought the Lord when oppressed by Syria",
+            "Received deliverance from Syrian oppression",
+            "Maintained the kingdom despite challenges"
+          ],
+          "te": [
+            "సిరియా అణచివేత కింద ఉన్నప్పుడు యెహోవాను వేడుకున్నాడు",
+            "సిరియా అణచివేత నుండి విముక్తి పొందాడు",
+            "సవాళ్లు ఉన్నప్పటికీ రాజ్యాన్ని కొనసాగించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Followed the sins of Jeroboam",
+            "Did not remove the Asherah pole from Samaria",
+            "Army was reduced to almost nothing by Syria"
+          ],
+          "te": [
+            "యరొబాము పాపాలను అనుసరించాడు",
+            "షోమ్రోను నుండి అషేరా స్తంభాన్ని తొలగించలేదు",
+            "సిరియా వల్ల సైన్యం దాదాపు శూన్యానికి తగ్గింది"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 13:1-9",
+          "te": "2 రాజులు 13:1-9"
+        },
+        "prophets": ["Elisha"],
+        "prophetsTelugu": ["ఎలీషా"]
+      },
+      "Jehoash": {
+        "name": "Jehoash",
+        "nameTelugu": "యెహోయాషు",
+        "title": "Twelfth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పన్నెండవ రాజు",
+        "period": "798-782 BC",
+        "periodTelugu": "క్రీ.పూ. 798-782",
+        "biography": {
+          "en": "Jehoash (also called Joash) was the son of Jehoahaz. He visited the dying prophet Elisha and received prophecies of victory over Syria. He defeated Syria three times as prophesied.",
+          "te": "యెహోయాషు (యోవాషు అని కూడా పిలుస్తారు) యెహోయాహాజు కుమారుడు. అతను మరణిస్తున్న ప్రవక్త ఎలీషాను సందర్శించాడు మరియు సిరియాపై విజయ ప్రవచనలు పొందాడు. ప్రవచనం ప్రకారం సిరియాను మూడుసార్లు ఓడించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Defeated Syria three times as prophesied",
+            "Recovered cities lost by his father",
+            "Defeated Amaziah of Judah at Beth-shemesh",
+            "Strengthened Israel's military position"
+          ],
+          "te": [
+            "ప్రవచనం ప్రకారం సిరియాను మూడుసార్లు ఓడించాడు",
+            "తన తండ్రి కోల్పోయిన నగరాలను తిరిగి పొందాడు",
+            "బేత్‌షెమెషులో యూదా అమజ్యాను ఓడించాడు",
+            "ఇశ్రాయేలు సైనిక స్థితిని బలపరిచాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Did not depart from the sins of Jeroboam",
+            "Continued the golden calf worship",
+            "Did not completely follow the Lord"
+          ],
+          "te": [
+            "యరొబాము పాపాల నుండి తొలగలేదు",
+            "బంగారు దూడ ఆరాధనను కొనసాగించాడు",
+            "యెహోవాను పూర్తిగా అనుసరించలేదు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 13:10-14:16",
+          "te": "2 రాజులు 13:10-14:16"
+        },
+        "prophets": ["Elisha"],
+        "prophetsTelugu": ["ఎలీషా"]
+      },
+      "Jeroboam II": {
+        "name": "Jeroboam II",
+        "nameTelugu": "యరొబాము II",
+        "title": "Thirteenth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పదమూడవ రాజు",
+        "period": "782-753 BC",
+        "periodTelugu": "క్రీ.పూ. 782-753",
+        "biography": {
+          "en": "Jeroboam II was the son of Jehoash and the most successful king of the northern kingdom. He restored Israel's borders and brought prosperity, but spiritual corruption continued.",
+          "te": "యరొబాము II యెహోయాషు కుమారుడు మరియు ఉత్తర రాజ్యం అత్యంత విజయవంతమైన రాజు. అతను ఇశ్రాయేలు సరిహద్దులను పునరుద్ధరించాడు మరియు శ్రేయస్సు తెచ్చాడు, కానీ ఆధ్యాత్మిక అవినీతి కొనసాగింది."
+        },
+        "achievements": {
+          "en": [
+            "Restored Israel's borders from Lebo-hamath to the Dead Sea",
+            "Brought economic prosperity to Israel",
+            "Longest reigning king of Israel (41 years)",
+            "Recovered Damascus and Hamath"
+          ],
+          "te": [
+            "లెబో-హమాత్ నుండి చనిపోయిన సముద్రం వరకు ఇశ్రాయేలు సరిహద్దులను పునరుద్ధరించాడు",
+            "ఇశ్రాయేలుకు ఆర్థిక శ్రేయస్సు తెచ్చాడు",
+            "ఇశ్రాయేలు దీర్ఘకాలం పరిపాలించిన రాజు (41 సంవత్సరాలు)",
+            "దమస్కు మరియు హమాత్‌ను తిరిగి పొందాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Did not depart from the sins of Jeroboam I",
+            "Allowed social injustice to flourish",
+            "Ignored prophetic warnings about coming judgment",
+            "Spiritual apostasy continued under his reign"
+          ],
+          "te": [
+            "యరొబాము I పాపాల నుండి తొలగలేదు",
+            "సామాజిక అన్యాయం వృద్ధి చెందడానికి అనుమతించాడు",
+            "రాబోయే తీర్పు గురించి ప్రవక్త హెచ్చరికలను విస్మరించాడు",
+            "అతని పాలనలో ఆధ్యాత్మిక విశ్వాసద్రోహం కొనసాగింది"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 14:23-29",
+          "te": "2 రాజులు 14:23-29"
+        },
+        "prophets": ["Jonah", "Amos", "Hosea"],
+        "prophetsTelugu": ["యోనా", "ఆమోసు", "హోషేయ"]
+      },
+      "Zechariah": {
+        "name": "Zechariah",
+        "nameTelugu": "జెకర్యా",
+        "title": "Fourteenth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పద్నాలుగవ రాజు",
+        "period": "753 BC (6 months)",
+        "periodTelugu": "క్రీ.పూ. 753 (6 నెలలు)",
+        "biography": {
+          "en": "Zechariah was the son of Jeroboam II and the last king of Jehu's dynasty. He reigned for only six months before being assassinated by Shallum, ending the dynasty as prophesied.",
+          "te": "జెకర్యా యరొబాము II కుమారుడు మరియు యెహూ వంశం చివరి రాజు. ప్రవచనం ప్రకారం వంశం ముగిసిన షల్లుముచే హత్య చేయబడడానికి ముందు కేవలం ఆరు నెలలు మాత్రమే పరిపాలించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Inherited the prosperous kingdom from his father"
+          ],
+          "te": [
+            "తన తండ్రి నుండి సమృద్ధిశాలి రాజ్యాన్ని వారసత్వంగా పొందాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Did evil in the sight of the Lord",
+            "Continued in the sins of Jeroboam",
+            "Failed to maintain his dynasty",
+            "Was assassinated after only six months"
+          ],
+          "te": [
+            "యెహోవా దృష్టిలో చెడు చేశాడు",
+            "యరొబాము పాపాలను కొనసాగించాడు",
+            "తన వంశాన్ని కొనసాగించడంలో విఫలమయ్యాడు",
+            "కేవలం ఆరు నెలల తర్వాత హత్య చేయబడ్డాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 15:8-12",
+          "te": "2 రాజులు 15:8-12"
+        },
+        "prophets": [],
+        "prophetsTelugu": []
+      },
+      "Shallum": {
+        "name": "Shallum",
+        "nameTelugu": "షల్లుము",
+        "title": "Fifteenth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పదిహేనవ రాజు",
+        "period": "752 BC (1 month)",
+        "periodTelugu": "క్రీ.పూ. 752 (1 నెల)",
+        "biography": {
+          "en": "Shallum assassinated Zechariah and became king, but his reign lasted only one month before Menahem killed him. This marked the beginning of a period of political instability in Israel.",
+          "te": "షల్లుము జెకర్యాను హత్య చేసి రాజయ్యాడు, కానీ మెనహేముచే చంపబడడానికి ముందు అతని పాలన కేవలం ఒక నెల మాత్రమే కొనసాగింది. ఇది ఇశ్రాయేలులో రాజకీయ అస్థిరత కాలానికి నాంది పలికింది."
+        },
+        "achievements": {
+          "en": [
+            "Successfully assassinated Zechariah",
+            "Briefly held the throne of Israel"
+          ],
+          "te": [
+            "జెకర్యాను విజయవంతంగా హత్య చేశాడు",
+            "కొద్దిసేపు ఇశ్రాయేలు సింహాసనాన్ని పట్టుకున్నాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "His reign lasted only one month",
+            "Failed to establish a stable rule",
+            "Was assassinated by Menahem"
+          ],
+          "te": [
+            "అతని పాలన కేవలం ఒక నెల మాత్రమే కొనసాగింది",
+            "స్థిరమైన పాలనను స్థాపించడంలో విఫలమయ్యాడు",
+            "మెనహేముచే హత్య చేయబడ్డాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 15:13-15",
+          "te": "2 రాజులు 15:13-15"
+        },
+        "prophets": [],
+        "prophetsTelugu": []
+      },
+      "Menahem": {
+        "name": "Menahem",
+        "nameTelugu": "మెనహేము",
+        "title": "Sixteenth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పదహారవ రాజు",
+        "period": "752-742 BC",
+        "periodTelugu": "క్రీ.పూ. 752-742",
+        "biography": {
+          "en": "Menahem killed Shallum and became king. His reign was marked by brutality and paying heavy tribute to Assyria to maintain his throne. He attacked Tiphsah with extreme cruelty.",
+          "te": "మెనహేము షల్లుమును చంపి రాజయ్యాడు. అతని పాలన క్రూరత్వం మరియు తన సింహాసనాన్ని కొనసాగించడానికి అష్షూరుకు భారీ పన్ను చెల్లించడంతో గుర్తించబడింది. అతను తిప్సహుపై అత్యంత క్రూరత్వంతో దాడి చేశాడు."
+        },
+        "achievements": {
+          "en": [
+            "Established his rule over Israel",
+            "Maintained his throne for 10 years",
+            "Secured Assyrian support"
+          ],
+          "te": [
+            "ఇశ్రాయేలుపై తన పాలనను స్థాపించాడు",
+            "10 సంవత్సరాలు తన సింహాసనాన్ని కొనసాగించాడు",
+            "అష్షూరు మద్దతును పొందాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Showed extreme cruelty at Tiphsah",
+            "Paid heavy tribute to Assyria",
+            "Did evil in the sight of the Lord",
+            "Continued in the sins of Jeroboam"
+          ],
+          "te": [
+            "తిప్సహులో అత్యంత క్రూరత్వం చూపించాడు",
+            "అష్షూరుకు భారీ పన్ను చెల్లించాడు",
+            "యెహోవా దృష్టిలో చెడు చేశాడు",
+            "యరొబాము పాపాలను కొనసాగించాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 15:16-22",
+          "te": "2 రాజులు 15:16-22"
+        },
+        "prophets": [],
+        "prophetsTelugu": []
+      },
+      "Pekahiah": {
+        "name": "Pekahiah",
+        "nameTelugu": "పెకహ్యా",
+        "title": "Seventeenth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పదిహేడవ రాజు",
+        "period": "742-740 BC",
+        "periodTelugu": "క్రీ.పూ. 742-740",
+        "biography": {
+          "en": "Pekahiah was the son of Menahem. He reigned for only two years before being assassinated by his own captain, Pekah, in the palace of Samaria.",
+          "te": "పెకహ్యా మెనహేము కుమారుడు. షోమ్రోను రాజభవనంలో తన సొంత సైన్యాధిపతి పెకహుచే హత్య చేయబడడానికి ముందు కేవలం రెండు సంవత్సరాలు మాత్రమే పరిపాలించాడు."
+        },
+        "achievements": {
+          "en": [
+            "Inherited the throne from his father",
+            "Maintained the kingdom briefly"
+          ],
+          "te": [
+            "తన తండ్రి నుండి సింహాసనాన్ని వారసత్వంగా పొందాడు",
+            "కొద్దిసేపు రాజ్యాన్ని కొనసాగించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Did evil in the sight of the Lord",
+            "Did not depart from the sins of Jeroboam",
+            "Was assassinated by his own captain",
+            "Failed to establish a stable rule"
+          ],
+          "te": [
+            "యెహోవా దృష్టిలో చెడు చేశాడు",
+            "యరొబాము పాపాల నుండి తొలగలేదు",
+            "తన సొంత సైన్యాధిపతిచే హత్య చేయబడ్డాడు",
+            "స్థిరమైన పాలనను స్థాపించడంలో విఫలమయ్యాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 15:23-26",
+          "te": "2 రాజులు 15:23-26"
+        },
+        "prophets": [],
+        "prophetsTelugu": []
+      },
+      "Pekah": {
+        "name": "Pekah",
+        "nameTelugu": "పెకహు",
+        "title": "Eighteenth King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు పద్దెనిమిదవ రాజు",
+        "period": "740-732 BC",
+        "periodTelugu": "క్రీ.పూ. 740-732",
+        "biography": {
+          "en": "Pekah was a captain who assassinated Pekahiah and became king. He allied with Syria against Judah but lost much territory to Assyria. He was eventually killed by Hoshea.",
+          "te": "పెకహు పెకహ్యాను హత్య చేసి రాజైన సైన్యాధిపతి. అతను యూదాకు వ్యతిరేకంగా సిరియాతో కూటమి చేశాడు కానీ అష్షూరుకు చాలా భూభాగాన్ని కోల్పోయాడు. చివరికి హోషేయాచే చంపబడ్డాడు."
+        },
+        "achievements": {
+          "en": [
+            "Formed alliance with Syria against Judah",
+            "Captured Judean cities initially",
+            "Maintained independence for several years"
+          ],
+          "te": [
+            "యూదాకు వ్యతిరేకంగా సిరియాతో కూటమి ఏర్పాటు చేశాడు",
+            "మొదట్లో యూదా నగరాలను స్వాధీనం చేసుకున్నాడు",
+            "చాలా సంవత్సరాలు స్వాతంత్య్రాన్ని కొనసాగించాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Did evil in the sight of the Lord",
+            "Lost much territory to Tiglath-pileser of Assyria",
+            "Failed in the Syro-Ephraimite War",
+            "Was assassinated by Hoshea"
+          ],
+          "te": [
+            "యెహోవా దృష్టిలో చెడు చేశాడు",
+            "అష్షూరు తిగ్లత్‌పిలేసెరుకు చాలా భూభాగాన్ని కోల్పోయాడు",
+            "సిరో-ఎఫ్రాయిము యుద్ధంలో విఫలమయ్యాడు",
+            "హోషేయాచే హత్య చేయబడ్డాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 15:27-31, Isaiah 7:1-9",
+          "te": "2 రాజులు 15:27-31, యెషయా 7:1-9"
+        },
+        "prophets": ["Isaiah"],
+        "prophetsTelugu": ["యెషయా"]
+      },
+      "Hoshea": {
+        "name": "Hoshea",
+        "nameTelugu": "హోషేయ",
+        "title": "Last King of Israel",
+        "titleTelugu": "ఇశ్రాయేలు చివరి రాజు",
+        "period": "732-722 BC",
+        "periodTelugu": "క్రీ.పూ. 732-722",
+        "biography": {
+          "en": "Hoshea was the last king of Israel. He killed Pekah and became king, but rebelled against Assyria. This led to the siege of Samaria and the end of the northern kingdom in 722 BC.",
+          "te": "హోషేయ ఇశ్రాయేలు చివరి రాజు. అతను పెకహును చంపి రాజయ్యాడు, కానీ అష్షూరుకు వ్యతిరేకంగా తిరుగుబాటు చేశాడు. ఇది షోమ్రోను ముట్టడికి మరియు క్రీ.పూ. 722లో ఉత్తర రాజ్యం అంతానికి దారితీసింది."
+        },
+        "achievements": {
+          "en": [
+            "Initially maintained vassal relationship with Assyria",
+            "Attempted to restore Israel's independence",
+            "Sought alliance with Egypt"
+          ],
+          "te": [
+            "మొదట్లో అష్షూరుతో సామంత సంబంధాన్ని కొనసాగించాడు",
+            "ఇశ్రాయేలు స్వాతంత్య్రాన్ని పునరుద్ధరించడానికి ప్రయత్నించాడు",
+            "ఈజిప్టుతో కూటమిని కోరాడు"
+          ]
+        },
+        "failures": {
+          "en": [
+            "Rebelled against Assyria leading to Israel's fall",
+            "Failed to secure Egyptian support",
+            "Lost the siege of Samaria",
+            "Presided over the end of the northern kingdom"
+          ],
+          "te": [
+            "అష్షూరుకు వ్యతిరేకంగా తిరుగుబాటు చేసి ఇశ్రాయేలు పతనానికి దారితీసాడు",
+            "ఈజిప్టు మద్దతు పొందడంలో విఫలమయ్యాడు",
+            "షోమ్రోను ముట్టడిలో ఓడిపోయాడు",
+            "ఉత్తర రాజ్యం అంతానికి అధ్యక్షత వహించాడు"
+          ]
+        },
+        "bibleReferences": {
+          "en": "2 Kings 17:1-6, 18:9-12",
+          "te": "2 రాజులు 17:1-6, 18:9-12"
+        },
+        "prophets": ["Hosea", "Micah"],
+        "prophetsTelugu": ["హోషేయ", "మీకా"]
+      }
+    }
+  }

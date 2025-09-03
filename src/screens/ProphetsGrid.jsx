@@ -24,6 +24,18 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
       ? prophet.booksWrittenTelugu 
       : prophet.booksWritten;
 
+    // Calculate number of books for chart (numeric value)
+    const booksCount = Array.isArray(prophet.booksWritten) 
+      ? prophet.booksWritten.length 
+      : (prophet.booksWritten && prophet.booksWritten !== 'None' ? 1 : 0);
+
+    // Extract numeric years from ministry field for chart
+    const ministryYears = (() => {
+      const ministryStr = Array.isArray(prophet.ministry) ? prophet.ministry.join(', ') : prophet.ministry;
+      const match = ministryStr.match(/(\d+)\+?\s*years?/i);
+      return match ? parseInt(match[1], 10) : 0;
+    })();
+
     return {
       prophet: lang === 'te' ? prophet.nameTelugu : prophet.name,
       period: prophet.period,
@@ -33,6 +45,10 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
       booksWritten: Array.isArray(booksWrittenArr) 
         ? booksWrittenArr.join(', ') 
         : booksWrittenArr,
+      
+      // Add numeric fields for chart
+      booksWrittenCount: booksCount,
+      ministryYears: ministryYears,
       
       details: 'VIEW_DETAILS',
       // Keep original data for detailed view
@@ -75,11 +91,11 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
 
   // Chart configuration
   const chartConfig = {
-    dataKey: 'booksWritten',
+    dataKey: 'ministryYears', // Use ministry years for chart
     xDataKey: 'prophet',
-    label: translations.prophets.chartLabel,
+    label: translations.prophets.ministryYears || 'Ministry Years',
     xLabel: translations.prophets.prophet,
-    yLabel: translations.prophets.chartLabel
+    yLabel: translations.prophets.ministryYears || 'Ministry Years'
   };
 
   // Icon configuration
