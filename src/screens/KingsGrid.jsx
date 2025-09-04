@@ -35,14 +35,71 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
     prophet: lang === 'te' ? king.prophetTelugu : king.prophet,
     // Keep original numeric values for chart regardless of language
     yearsRuledNumeric: king.yearsRuled,
-    // Keep original king name for lookup
-    _originalKingName: king.king
+    // Use unique ID for lookup instead of name
+    _kingId: king.id,
+    // Keep alternative names for display
+    _alternativeNames: king.alternativeNames
   }));
 
   // Function to handle king name click
-  const handleKingClick = (kingName) => {
-    // Find king details in the loaded kingsDetails
-    const kingDetail = kingsDetails[kingName];
+  const handleKingClick = (kingId) => {
+    // Find king details using ID mapping
+    let kingDetail = null;
+    
+    // Map IDs to original names used in details files
+    const idToNameMapping = {
+      // Judah Kings
+      'saul': 'Saul',
+      'david': 'David', 
+      'solomon': 'Solomon',
+      'rehoboam': 'Rehoboam',
+      'abijah': 'Abijah',
+      'asa': 'Asa',
+      'jehoshaphat': 'Jehoshaphat',
+      'jehoram': 'Jehoram',
+      'ahaziah': 'Ahaziah',
+      'athaliah': 'Athaliah',
+      'joash': 'Joash',
+      'amaziah': 'Amaziah',
+      'uzziah': 'Uzziah',
+      'jotham': 'Jotham',
+      'ahaz': 'Ahaz',
+      'hezekiah': 'Hezekiah',
+      'manasseh': 'Manasseh',
+      'amon': 'Amon',
+      'josiah': 'Josiah',
+      'jehoahaz': 'Jehoahaz',
+      'jehoiakim': 'Jehoiakim',
+      'jehoiachin': 'Jehoiachin',
+      'zedekiah': 'Zedekiah',
+      
+      // Israel Kings
+      'jeroboam1': 'Jeroboam I',
+      'nadab': 'Nadab',
+      'baasha': 'Baasha',
+      'elah': 'Elah',
+      'zimri': 'Zimri',
+      'omri': 'Omri',
+      'ahab': 'Ahab',
+      'ahaziah-israel': 'Ahaziah (Israel)',
+      'joram-israel': 'Joram',
+      'jehu': 'Jehu',
+      'jehoahaz-israel': 'Jehoahaz (Israel)',
+      'jehoash-israel': 'Jehoash',
+      'jeroboam2': 'Jeroboam II',
+      'zechariah-israel': 'Zechariah',
+      'shallum-israel': 'Shallum',
+      'menahem': 'Menahem',
+      'pekahiah': 'Pekahiah',
+      'pekah': 'Pekah',
+      'hoshea': 'Hoshea'
+    };
+    
+    const originalName = idToNameMapping[kingId];
+    if (originalName) {
+      kingDetail = kingsDetails[originalName];
+    }
+    
     if (kingDetail) {
       setSelectedKing(kingDetail);
       setShowKingModal(true);
@@ -317,7 +374,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
                 onMouseMove={handleMouseMove || undefined}
               >
                 <span 
-                  onClick={() => handleKingClick(row._originalKingName)}
+                  onClick={() => handleKingClick(row._kingId)}
                   style={{ 
                     color: '#6366f1', 
                     fontWeight: '600',

@@ -697,6 +697,266 @@
       "testamentTelugu": "పాత నిబంధన",
       "category": "Helper Names",
       "categoryTelugu": "సహాయకుడు నామాలు"
+    },
+    {
+      "name": "Maher-Shalal-Hash-Baz",
+      "nameTelugu": "మహేర్-షాలాల్-హాష్-బాజ్",
+      "meaning": {
+        "en": "Swift to Spoil, Quick to Plunder",
+        "te": "త్వరగా దోచుకునేవాడు, వేగంగా కొల్లగొట్టేవాడు"
+      },
+      "reference": {
+        "en": "Isaiah 8:1-3",
+        "te": "యెషయా 8:1-3"
+      },
+      "description": {
+        "en": "A prophetic name given to Isaiah's son, representing God's swift judgment and deliverance of His people from their enemies.",
+        "te": "యెషయా కుమారుడికి ఇవ్వబడిన ప్రవచన నామం, దేవుడు తన ప్రజలను శత్రువుల నుండి త్వరిత తీర్పు మరియు విముక్తిని సూచిస్తుంది."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Judgment Names",
+      "categoryTelugu": "తీర్పు నామాలు"
+    },
+    {
+      "name": "Immanuel",
+      "nameTelugu": "ఇమ్మానుఎల్",
+      "meaning": {
+        "en": "God With Us",
+        "te": "దేవుడు మనతో"
+      },
+      "reference": {
+        "en": "Isaiah 7:14",
+        "te": "యెషయా 7:14"
+      },
+      "description": {
+        "en": "A prophetic name meaning 'God with us,' foretelling the coming Messiah who would be God incarnate dwelling among His people.",
+        "te": "'దేవుడు మనతో' అని అర్థం వచ్చే ప్రవచన నామం, తన ప్రజల మధ్య నివసించే దేవుని అవతారంగా వచ్చే మెసియాను ముందుగా చెబుతుంది."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Messianic Names",
+      "categoryTelugu": "మెసియా నామాలు"
+    },
+    {
+      "name": "Beulah",
+      "nameTelugu": "బేయులా",
+      "meaning": {
+        "en": "Married, The Land that is Married",
+        "te": "వివాహితురాలు, వివాహం చేసుకున్న భూమి"
+      },
+      "reference": {
+        "en": "Isaiah 62:4",
+        "te": "యెషయా 62:4"
+      },
+      "description": {
+        "en": "A name representing God's restored relationship with His people, like a bridegroom rejoicing over his bride.",
+        "te": "వరుడు తన వధువుపై ఆనందించినట్లుగా, దేవుడు తన ప్రజలతో పునరుద్ధరించిన సంబంధాన్ని సూచించే నామం."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Covenant Names",
+      "categoryTelugu": "ఒడంబడిక నామాలు"
+    },
+    {
+      "name": "Hephzibah",
+      "nameTelugu": "హెప్జీబా",
+      "meaning": {
+        "en": "My Delight is in Her",
+        "te": "నా ఆనందం ఆమెలో ఉంది"
+      },
+      "reference": {
+        "en": "Isaiah 62:4",
+        "te": "యెషయా 62:4"
+      },
+      "description": {
+        "en": "A name expressing God's delight in His people and His land, showing His love and pleasure in His covenant relationship.",
+        "te": "దేవుడు తన ప్రజలలో మరియు తన భూమిలో ఆనందించడాన్ని వ్యక్తపరిచే నామం, తన ఒడంబడిక సంబంధంలో అతని ప్రేమ మరియు ఆనందాన్ని చూపిస్తుంది."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Love Names",
+      "categoryTelugu": "ప్రేమ నామాలు"
+    },
+    {
+      "name": "Jehovah-Maccaddeshcem",
+      "nameTelugu": "యెహోవా-మక్కాదేషెం",
+      "meaning": {
+        "en": "The Lord Who Sanctifies You",
+        "te": "మిమ్మల్ని పవిత్రపరిచే ప్రభువు"
+      },
+      "reference": {
+        "en": "Exodus 31:13",
+        "te": "నిర్గమకాండము 31:13"
+      },
+      "description": {
+        "en": "Reveals God as the one who sets His people apart and makes them holy for His purposes.",
+        "te": "తన ప్రజలను వేరుచేసి, తన ప్రయోజనాల కోసం వారిని పవిత్రపరిచేవాడుగా దేవుని వెల్లడిస్తుంది."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Sanctification Names",
+      "categoryTelugu": "పవిత్రీకరణ నామాలు"
+    },
+    {
+      "name": "Jehovah-Gmolah",
+      "nameTelugu": "యెహోవా-గ్మోలా",
+      "meaning": {
+        "en": "The Lord of Recompense",
+        "te": "ప్రతిఫలం ఇచ్చే ప్రభువు"
+      },
+      "reference": {
+        "en": "Jeremiah 51:56",
+        "te": "యిర్మీయా 51:56"
+      },
+      "description": {
+        "en": "God as the righteous judge who repays according to deeds and brings justice to the earth.",
+        "te": "కార్యాలను బట్టి ప్రతిఫలం ఇచ్చే మరియు భూమిపై న్యాయాన్ని తెచ్చే నీతియుక్త న్యాయాధిపతిగా దేవుడు."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Justice Names",
+      "categoryTelugu": "న్యాయ నామాలు"
+    },
+    {
+      "name": "El-Bethel",
+      "nameTelugu": "ఎల్-బేతేల్",
+      "meaning": {
+        "en": "God of the House of God",
+        "te": "దేవుని ఇంటి దేవుడు"
+      },
+      "reference": {
+        "en": "Genesis 35:7",
+        "te": "ఆదికాండము 35:7"
+      },
+      "description": {
+        "en": "The God who reveals Himself in sacred places and makes ordinary places holy by His presence.",
+        "te": "పవిత్ర స్థలాలలో తనను వెల్లడిపరిచే మరియు తన సన్నిధిచేత సాధారణ స్థలాలను పవిత్రంగా చేసే దేవుడు."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Presence Names",
+      "categoryTelugu": "సన్నిధి నామాలు"
+    },
+    {
+      "name": "El-Elohe-Israel",
+      "nameTelugu": "ఎల్-ఎలోహే-ఇశ్రాయేల్",
+      "meaning": {
+        "en": "God, the God of Israel",
+        "te": "దేవుడు, ఇశ్రాయేలు దేవుడు"
+      },
+      "reference": {
+        "en": "Genesis 33:20",
+        "te": "ఆదికాండము 33:20"
+      },
+      "description": {
+        "en": "The personal God of Jacob (Israel), emphasizing the covenant relationship between God and His chosen people.",
+        "te": "యాకోబు (ఇశ్రాయేలు) యొక్క వ్యక్తిగత దేవుడు, దేవుడు మరియు అతని ఎన్నుకున్న ప్రజల మధ్య ఒడంబడిక సంబంధాన్ని నొక్కిచెబుతుంది."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Covenant Names",
+      "categoryTelugu": "ఒడంబడిక నామాలు"
+    },
+    {
+      "name": "Shiloh",
+      "nameTelugu": "షిలో",
+      "meaning": {
+        "en": "He Whose Right It Is, Peace Bringer",
+        "te": "అధికారం గలవాడు, శాంతి తేనేవాడు"
+      },
+      "reference": {
+        "en": "Genesis 49:10",
+        "te": "ఆదికాండము 49:10"
+      },
+      "description": {
+        "en": "A messianic title referring to the coming ruler who will bring peace and whose right it is to rule.",
+        "te": "శాంతిని తెచ్చే మరియు పాలించే అధికారం గలిగిన రాబోయే పాలకుడిని సూచించే మెసియా బిరుదు."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Messianic Names",
+      "categoryTelugu": "మెసియా నామాలు"
+    },
+    {
+      "name": "Branch of Righteousness",
+      "nameTelugu": "నీతి కొమ్మ",
+      "meaning": {
+        "en": "Righteous Descendant, Just Ruler",
+        "te": "నీతిమంతమైన వంశస్థుడు, న్యాయవంతమైన పాలకుడు"
+      },
+      "reference": {
+        "en": "Jeremiah 33:15",
+        "te": "యిర్మీయా 33:15"
+      },
+      "description": {
+        "en": "A messianic title describing the coming righteous king from David's line who will execute justice and righteousness.",
+        "te": "న్యాయం మరియు నీతిని అమలు చేసే దావీదు వంశం నుండి వచ్చే నీతిమంతమైన రాజుని వర్ణించే మెసియా బిరుదు."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Messianic Names",
+      "categoryTelugu": "మెసియా నామాలు"
+    },
+    {
+      "name": "The Branch",
+      "nameTelugu": "కొమ్మ",
+      "meaning": {
+        "en": "The Shoot, The Sprouting One",
+        "te": "మొలక, మొలుచుకునేవాడు"
+      },
+      "reference": {
+        "en": "Zechariah 3:8",
+        "te": "జెకర్యా 3:8"
+      },
+      "description": {
+        "en": "A messianic title representing new life and growth, the promised descendant who will restore God's kingdom.",
+        "te": "కొత్త జీవితం మరియు వృద్ధిని సూచించే మెసియా బిరుదు, దేవుని రాజ్యాన్ని పునరుద్ధరించే వాగ్దానం చేయబడిన వంశస్థుడు."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Messianic Names",
+      "categoryTelugu": "మెసియా నామాలు"
+    },
+    {
+      "name": "The Desire of All Nations",
+      "nameTelugu": "అన్ని రాజ్యాల కోరిక",
+      "meaning": {
+        "en": "The Longed-for One, Hope of Nations",
+        "te": "కోరుకునేవాడు, రాజ్యాల ఆశ"
+      },
+      "reference": {
+        "en": "Haggai 2:7",
+        "te": "హగ్గయ 2:7"
+      },
+      "description": {
+        "en": "A messianic title describing the one whom all nations will long for and who will bring glory to God's house.",
+        "te": "అన్ని రాజ్యాలు కోరుకునే మరియు దేవుని ఇంటికి మహిమను తెచ్చే వ్యక్తిని వర్ణించే మెసియా బిరుదు."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Messianic Names",
+      "categoryTelugu": "మెసియా నామాలు"
+    },
+    {
+      "name": "Sun of Righteousness",
+      "nameTelugu": "నీతి సూర్యుడు",
+      "meaning": {
+        "en": "Righteous Sun, Healing Light",
+        "te": "నీతిమంతమైన సూర్యుడు, స్వస్థత వెలుగు"
+      },
+      "reference": {
+        "en": "Malachi 4:2",
+        "te": "మలాకీ 4:2"
+      },
+      "description": {
+        "en": "A messianic title describing the coming one who will bring healing and righteousness like the rising sun.",
+        "te": "ఉదయించే సూర్యుడిలాగా స్వస్థత మరియు నీతిని తెచ్చే రాబోయేవాడిని వర్ణించే మెసియా బిరుదు."
+      },
+      "testament": "Old Testament",
+      "testamentTelugu": "పాత నిబంధన",
+      "category": "Messianic Names",
+      "categoryTelugu": "మెసియా నామాలు"
     }
   ],
   "newTestamentNames": [

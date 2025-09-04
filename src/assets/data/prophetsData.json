@@ -18,9 +18,13 @@
   "prophets": [
     {
       "id": 1,
-      "name": "Moses",
+      "name": "Moses (Moshe)",
       "nameHebrew": "מֹשֶׁה",
       "nameTelugu": "మోషే",
+      "alternativeNames": {
+        "en": "The Lawgiver, Man of God",
+        "te": "ధర్మశాస్త్రకర్త, దేవుని మనిషి"
+      },
       "period": "1526-1406 BC",
       "category": "Major Prophet/Lawgiver",
       "ministry": "40 years in wilderness",
@@ -161,9 +165,13 @@
     },
     {
       "id": 5,
-      "name": "Elijah",
+      "name": "Elijah (The Tishbite)",
       "nameHebrew": "אֵלִיָּהוּ",
-      "nameTelugu": "ఏలీయా",
+      "nameTelugu": "ఏలీయా (తిష్బీయుడు)",
+      "alternativeNames": {
+        "en": "The Tishbite, Fire Prophet",
+        "te": "తిష్బీయుడు, అగ్ని ప్రవక్త"
+      },
       "period": "875-848 BC",
       "category": "Major Prophet",
       "ministry": "25+ years",
@@ -245,9 +253,13 @@
     },
     {
       "id": 7,
-      "name": "Isaiah",
+      "name": "Isaiah (The Evangelist Prophet)",
       "nameHebrew": "יְשַׁעְיָהוּ",
-      "nameTelugu": "యెషయా",
+      "nameTelugu": "యెషయా (సువార్త ప్రవక్త)",
+      "alternativeNames": {
+        "en": "The Evangelist Prophet, Prince of Prophets",
+        "te": "సువార్త ప్రవక్త, ప్రవక్తల రాజు"
+      },
       "period": "740-681 BC",
       "category": "Major Prophet",
       "ministry": "60+ years",
@@ -281,9 +293,13 @@
     },
     {
       "id": 7,
-      "name": "Jeremiah",
+      "name": "Jeremiah (The Weeping Prophet)",
       "nameHebrew": "יִרְמְיָהוּ",
-      "nameTelugu": "యిర్మీయా",
+      "nameTelugu": "యిర్మీయా (ఏడుపు ప్రవక్త)",
+      "alternativeNames": {
+        "en": "The Weeping Prophet, Prophet of the New Covenant",
+        "te": "ఏడుపు ప్రవక్త, కొత్త నిబంధన ప్రవక్త"
+      },
       "period": "627-586 BC",
       "category": "Major Prophet",
       "ministry": "40+ years",
@@ -354,9 +370,13 @@
     },
     {
       "id": 9,
-      "name": "Daniel",
+      "name": "Daniel (Belteshazzar)",
       "nameHebrew": "דָּנִיֵּאל",
-      "nameTelugu": "దానియేలు",
+      "nameTelugu": "దానియేలు (బేల్తేషస్సరు)",
+      "alternativeNames": {
+        "en": "Belteshazzar",
+        "te": "బేల్తేషస్సరు"
+      },
       "period": "605-535 BC",
       "category": "Major Prophet",
       "ministry": "70+ years",
