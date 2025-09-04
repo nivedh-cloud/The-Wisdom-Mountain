@@ -43,16 +43,24 @@
     flex-shrink: 0;
   }
   
+  /* Table container margins - default for desktop */
+  .table-header-container,
+  .table-body-container {
+    margin: 0 1em;
+  }
+  
   .data-grid-table {
     font-size: 0.9rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    min-width: 100%;
   }
   
   .data-grid-table th,
   .data-grid-table td {
     padding: 0.6rem 0.4rem;
-    min-width: 100px;
+    min-width: 120px; /* Increased for better readability */
+    white-space: nowrap;
   }
   
   .data-grid-table thead th {
@@ -76,14 +84,119 @@
     display: flex !important;
   }
   
+  /* Complete mobile table scrolling override */
+  .data-grid-container {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+  
+  /* Remove container margins for mobile to enable full-width scrolling */
+  .table-header-container,
+  .table-body-container {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    /* Ensure both containers have the same scrollable width */
+    box-sizing: border-box !important;
+  }
+  
+  /* Force table to be scrollable */
+  .genealogy-table {
+    min-width: 700px !important;
+    width: max-content !important;
+    table-layout: auto !important;
+    /* Ensure both header and body tables have exactly the same width */
+    border-collapse: collapse !important;
+  }
+  
+  /* Ensure both tables in header and body have the same layout */
+  .table-header-container .genealogy-table,
+  .table-body-container .genealogy-table {
+    width: 100% !important;
+    min-width: 700px !important;
+    table-layout: fixed !important;
+  }
+  
+  /* Ensure table cells have minimum widths */
+  .genealogy-table th,
+  .genealogy-table td {
+    min-width: 120px !important;
+    white-space: nowrap !important;
+    padding: 8px 12px !important;
+  }
+  
+  /* Make the table body container scrollable */
+  .table-body-container {
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  /* Make header container scrollable too */
+  .table-header-container {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    /* Hide scrollbar on header but allow programmatic scrolling */
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  .table-header-container::-webkit-scrollbar {
+    display: none !important;
+  }
+  
   .row-count-text {
     height: 36px;
+    padding: 0 8px;
+    font-size: 0.8rem;
+    min-width: max-content;
+    flex-shrink: 0;
+  }
+  
+  .action-button {
+    height: 36px;
+    padding: 0 10px;
+    font-size: 0.8rem;
+    gap: 4px;
+    min-width: max-content;
+    flex-shrink: 0;
+  }
+  
+  .data-grid-table {
+    font-size: 0.8rem;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .data-grid-table th,
+  .data-grid-table td {
+    padding: 0.5rem 0.3rem;
+    min-width: 100px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  
+  .data-grid-table th {
+    font-weight: 600;
+    background: var(--primary-color) !important;
+    color: white !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .row-count-text {
     font-size: 0.8rem;
     padding: 0 8px;
     margin: 0;
     text-align: center;
     min-width: max-content;
     flex-shrink: 0;
+    height: 36px;
   }
   
   .action-button {
@@ -100,6 +213,7 @@
   .action-button-text {
     font-size: 0.75rem;
   }
+}
   
   /* Ensure horizontal scrolling for very narrow screens */
   @media (max-width: 360px) {
@@ -260,7 +374,7 @@
     gap: 8px;
   }
   .row-count-text, .action-button {
-    width: 100%;
+    width: auto;
     justify-content: center;
   }
 }

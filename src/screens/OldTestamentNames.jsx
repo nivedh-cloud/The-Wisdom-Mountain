@@ -73,11 +73,14 @@ const OldTestamentNames = ({ lang }) => {
   };
 
   return (
-    <div style={{
-      padding: '20px',
-      backgroundColor: isDarkMode ? '#1a1a2e' : '#f8fafc',
-      minHeight: '100vh'
-    }}>
+    <div 
+      className="names-of-god-container"
+      style={{
+        padding: '20px',
+        backgroundColor: isDarkMode ? '#1a1a2e' : '#f8fafc',
+        minHeight: '100vh'
+      }}
+    >
       <DataGrid
         data={gridData}
         columns={columns}

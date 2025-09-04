@@ -1775,7 +1775,7 @@
   }
   
   .action-button {
-    width: 100%;
+    width: auto;
     justify-content: center;
   }
 }
@@ -2384,8 +2384,18 @@
     margin: 0 0.5em;
   }
   
+  /* Enhanced mobile table scrolling for Names of God and other grids */
+  .table-header-container,
+  .table-body-container {
+    margin: 0 0.3em !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
   .genealogy-table {
     min-width: 500px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
   
   .table-header-cell,
@@ -3197,6 +3207,20 @@
     top: 75px !important;
     left: 12px !important;
     font-size: 1em !important;
+  }
+  
+  /* Enhanced table scrolling for ultra small screens */
+  .table-header-container,
+  .table-body-container {
+    margin: 0 0.2em !important;
+    border-radius: 8px !important;
+  }
+  
+  .data-grid-table th,
+  .data-grid-table td {
+    min-width: 90px !important;
+    padding: 0.4rem 0.2rem !important;
+    font-size: 0.75rem !important;
   }
 }
 

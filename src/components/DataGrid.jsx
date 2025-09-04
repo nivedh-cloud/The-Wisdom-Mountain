@@ -1,5 +1,5 @@
 import './DataGrid.css';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList } from 'recharts';
 import { FaChartBar, FaTimes, FaPrint, FaFileExcel } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
@@ -67,6 +67,38 @@ export default function DataGrid({
   const handleMouseLeave = () => {
     setTooltip({ show: false, content: '', x: 0, y: 0 });
   };
+
+  // Refs for scroll synchronization
+  const headerContainerRef = useRef(null);
+  const bodyContainerRef = useRef(null);
+
+  // Synchronize header and body horizontal scrolling
+  useEffect(() => {
+    const headerContainer = headerContainerRef.current;
+    const bodyContainer = bodyContainerRef.current;
+
+    if (!headerContainer || !bodyContainer) return;
+
+    const syncHeaderScroll = () => {
+      if (headerContainer && bodyContainer) {
+        bodyContainer.scrollLeft = headerContainer.scrollLeft;
+      }
+    };
+
+    const syncBodyScroll = () => {
+      if (headerContainer && bodyContainer) {
+        headerContainer.scrollLeft = bodyContainer.scrollLeft;
+      }
+    };
+
+    headerContainer.addEventListener('scroll', syncHeaderScroll);
+    bodyContainer.addEventListener('scroll', syncBodyScroll);
+
+    return () => {
+      headerContainer.removeEventListener('scroll', syncHeaderScroll);
+      bodyContainer.removeEventListener('scroll', syncBodyScroll);
+    };
+  }, []);
 
   const handleMouseMove = (event) => {
     if (tooltip.show) {
@@ -604,13 +636,16 @@ export default function DataGrid({
   };
 
   return (
-    <div style={{ 
-      height: '100%', 
-      display: 'flex', 
-      flexDirection: 'column',
-      maxHeight: 'calc(100vh - 120px)',
-      overflow: 'hidden'
-    }}>
+    <div 
+      className="data-grid-container" 
+      style={{ 
+        height: '100%', 
+        display: 'flex', 
+        flexDirection: 'column',
+        maxHeight: 'calc(100vh - 120px)',
+        overflow: 'hidden'
+      }}
+    >
       {/* Header Section */}
       <div className="section-header">
         <h2 className={icon ? "section-title-with-icon" : "section-title"} style={icon ? { color: icon.color } : {}}>
@@ -685,30 +720,36 @@ export default function DataGrid({
       {/* Table Section with Fixed Header */}
       <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
         {/* Fixed Table Header */}
-        <div className="table-header-container" style={{ 
-          flexShrink: 0,
-          background: 'var(--card-bg)',
-          borderRadius: '12px 12px 0 0',
-          boxShadow: '0 4px 12px var(--shadow-medium)',
-          margin: '0 1em',
-          overflow: 'hidden'
-        }}>
+        <div 
+          ref={headerContainerRef}
+          className="table-header-container" 
+          style={{ 
+            flexShrink: 0,
+            background: 'var(--card-bg)',
+            borderRadius: '12px 12px 0 0',
+            boxShadow: '0 4px 12px var(--shadow-medium)',
+            overflow: 'hidden'
+          }}
+        >
           <table className="genealogy-table" style={{ marginBottom: 0 }}>
             {renderTableHeader()}
           </table>
         </div>
         
         {/* Scrollable Table Body */}
-        <div className="table-body-container" style={{
-          flex: 1,
-          overflowY: 'auto',
-          overflowX: 'auto',
-          background: 'var(--card-bg)',
-          borderRadius: '0 0 12px 12px',
-          boxShadow: '0 4px 12px var(--shadow-medium)',
-          margin: '0 1em',
-          maxHeight: 'calc(100vh - 320px)'
-        }}>
+        <div 
+          ref={bodyContainerRef}
+          className="table-body-container" 
+          style={{
+            flex: 1,
+            overflowY: 'auto',
+            overflowX: 'auto',
+            background: 'var(--card-bg)',
+            borderRadius: '0 0 12px 12px',
+            boxShadow: '0 4px 12px var(--shadow-medium)',
+            maxHeight: 'calc(100vh - 320px)'
+          }}
+        >
           <table className="genealogy-table" style={{ borderRadius: 0 }}>
             <tbody>
               {filteredData.map((row, index) => rowRenderer(row, index))}
