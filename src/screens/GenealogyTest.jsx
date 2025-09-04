@@ -48,14 +48,20 @@ function convertGenealogyToFlatArray(genealogyData, lang = 'en') {
     if (!node) return;
     
     if (node.name) {
-      flatArray.push({
-        person: lang === 'te' ? (node.nameTe || node.name) : node.name,
+      const record = {
+        person: lang === 'te' ? (node.nameTe || node.nameEn || node.name) : (node.nameEn || node.name),
         age: node.age || '',
         birth: node.birth || '',
         death: node.death || '',
-        spouse: lang === 'te' ? (node.spouseTe || node.spouse) : node.spouse,
-        detail: lang === 'te' ? (node.detailTe || node.detail) : node.detail
-      });
+        spouse: lang === 'te' ? (node.spouseTe || node.spouseEn || node.spouse) : (node.spouseEn || node.spouse),
+        detail: lang === 'te' ? (node.detailTe || node.detailEn || node.detail) : (node.detailEn || node.detail)
+      };
+      flatArray.push(record);
+      
+      // Debug first few records for Telugu
+      if (flatArray.length <= 5 && lang === 'te') {
+        console.log(`Record ${flatArray.length}:`, record);
+      }
     }
     
     // Check for both 'children' and '_children' properties
@@ -89,10 +95,36 @@ function filterGenealogyBySection(flatData, section, lang = 'en') {
 
   const findPersonIndex = (data, keyName) => {
     const nameToFind = nameMap[keyName] ? nameMap[keyName][lang] : keyName;
-    return data.findIndex(person => 
-      person.person.toLowerCase().includes(nameMap[keyName]?.en?.toLowerCase() || keyName) ||
-      person.person.includes(nameMap[keyName]?.te || keyName)
-    );
+    
+    // Try multiple search patterns for better matching
+    const index = data.findIndex(person => {
+      const personName = person.person.toLowerCase();
+      const searchNameEn = nameMap[keyName]?.en?.toLowerCase();
+      const searchNameTe = nameMap[keyName]?.te;
+      
+      // Search by English name (always available)
+      if (searchNameEn && personName.includes(searchNameEn)) return true;
+      
+      // Search by Telugu name if available
+      if (searchNameTe && person.person.includes(searchNameTe)) return true;
+      
+      // Fallback to exact name match
+      if (personName.includes(keyName.toLowerCase())) return true;
+      
+      return false;
+    });
+    
+    // Debug search results
+    if (lang === 'te') {
+      console.log(`Looking for ${keyName} (${nameToFind}):`, index);
+      if (index >= 0) {
+        console.log(`Found at index ${index}:`, data[index]);
+      } else {
+        console.log(`Not found. First 10 person names:`, data.slice(0, 10).map(p => p.person));
+      }
+    }
+    
+    return index;
   };
 
   const sectionFilters = {

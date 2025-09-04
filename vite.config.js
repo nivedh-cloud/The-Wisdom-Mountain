@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/The-Wisdom-Mountain/',
   plugins: [
     react(),
     VitePWA({
@@ -17,8 +18,8 @@ export default defineConfig({
         background_color: '#f0f4f8',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/',
-        start_url: '/',
+        scope: '/The-Wisdom-Mountain/',
+        start_url: '/The-Wisdom-Mountain/',
         icons: [
           {
             src: 'pwa-192x192.png',
