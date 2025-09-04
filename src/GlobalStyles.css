@@ -271,13 +271,14 @@
   margin: 0;
   background: #7f53ac;
   color: #fff;
-  padding: 0.7em 0.5em;
+  padding: 0;
   font-weight: 700;
   font-size: 1.3em;
   letter-spacing: 1px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 2px 8px #7f53ac22;
   z-index: 2;
+  position: relative;
 }
 
 /* Menu Bar Styles */
@@ -998,7 +999,7 @@
   
   .mobile-menu-toggle {
     position: fixed !important;
-    top: 85px;
+    top: 120px;
     left: 20px;
     z-index: 1001;
     background: var(--card-bg);
@@ -1115,7 +1116,7 @@
   }
   
   .mobile-menu-toggle {
-    top: 115px;
+    top: 120px;
     left: 15px;
     width: 45px;
     height: 45px;
@@ -1617,7 +1618,7 @@
   .mobile-menu-toggle {
     width: 50px;
     height: 50px;
-    top: 115px;
+    top: 120px;
     left: 20px;
     font-size: 1.3em;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -1715,7 +1716,7 @@
   .mobile-menu-toggle {
     width: 45px;
     height: 45px;
-    top: 115px;
+    top: 120px;
     left: 15px;
   }
   
@@ -1873,7 +1874,7 @@
   .mobile-menu-toggle {
     display: flex !important;
     position: fixed !important;
-    top: 85px !important;
+    top: 120px !important;
     left: 20px !important;
     z-index: 10001 !important;
     width: 48px !important;
@@ -1951,5 +1952,226 @@
   .header-actions {
     padding: 0.5rem !important;
     margin: 0 !important;
+  }
+}
+
+/* TopHeader Mobile Responsive Styles */
+.top-header {
+  position: relative;
+}
+
+.top-header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top-header .header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.top-header .brand-logo {
+  position: relative;
+}
+
+.top-header .logo-image {
+  height: 32px;
+  width: auto;
+}
+
+.top-header .logo-fallback {
+  font-size: 1.5rem;
+}
+
+.top-header .brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-header .brand-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.top-header .brand-tagline {
+  font-size: 0.75rem;
+  margin: 0;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.top-header .header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-header .text-size-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.top-header .text-size-icon {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.top-header .text-size-slider {
+  width: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.top-header .text-size-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.top-header .text-size-label {
+  font-size: 0.75rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+.top-header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.top-header .header-action-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.top-header .header-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.top-header .notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.6rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 10px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.top-header .header-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.top-header .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-header .user-avatar {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.top-header .user-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Mobile styles for TopHeader */
+@media (max-width: 480px) {
+  .top-header .header-container {
+    flex-direction: column !important;
+    padding: 0.5rem !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+  }
+  
+  /* Top row: Logo and basic info */
+  .top-header .header-brand {
+    justify-content: center !important;
+    padding-bottom: 0.5rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  /* Hide text size control on mobile */
+  .top-header .text-size-control {
+    display: none !important;
+  }
+  
+  /* Center theme and language controls */
+  .top-header .header-controls {
+    justify-content: center !important;
+    order: 2 !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Move header actions (menu icon) to bottom */
+  .top-header .header-actions {
+    order: 3 !important;
+    justify-content: center !important;
+    padding-top: 0.5rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  /* Hide user profile info on mobile */
+  .top-header .user-profile {
+    display: none !important;
+  }
+  
+  /* Hide notification on mobile */
+  .top-header .notification-btn {
+    display: none !important;
+  }
+  
+  /* Hide divider on mobile */
+  .top-header .header-divider {
+    display: none !important;
+  }
+  
+  /* Adjust brand text for mobile */
+  .top-header .brand-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .top-header .brand-tagline {
+    font-size: 0.7rem !important;
   }
 }

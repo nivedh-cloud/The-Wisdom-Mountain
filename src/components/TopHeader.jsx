@@ -60,7 +60,7 @@ const TopHeader = ({ lang, setLang }) => {
           <LanguageSwitch lang={lang} setLang={setLang} />
           
           {/* Text Size Control */}
-          <div className="text-size-control">
+          <div className="text-size-control" style={{"display": "none"}}>
             <FaTextHeight className="text-size-icon" />
             <input
               type="range"
@@ -77,14 +77,14 @@ const TopHeader = ({ lang, setLang }) => {
         </div>
 
         {/* Header Actions */}
-        <div className="header-actions">
-          <button className="header-action-btn notification-btn">
+        <div className="header-actions" >
+          <button className="header-action-btn notification-btn" style={{"display": "none"}}>
             <FaBell />
             <span className="notification-badge">3</span>
           </button>
           <div className="header-divider"></div>
           <div className="user-profile">
-            <div className="user-avatar">
+            <div className="user-avatar" style={{"display": "none"}}>
               <FaUser />
             </div>
             <span className="user-name">User</span>
