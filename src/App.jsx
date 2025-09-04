@@ -19,10 +19,11 @@ import NamesOfGodGrid from './screens/NamesOfGodGrid';
 import OldTestamentNames from './screens/OldTestamentNames';
 import NewTestamentNames from './screens/NewTestamentNames';
 import carouselData from './assets/data/carouselData.json';
+import { carouselImages as importedCarouselImages } from './assets/images/carousel-images';
 import './styles/App.css';
 import './styles/GlobalStyles.css';
 import IsraelMapsTribes from './screens/IsraelMapsTribes';
-import { FaUsers, FaCrown, FaGavel, FaMapMarkerAlt, FaClock, FaBook, FaHome, FaSitemap } from 'react-icons/fa';
+import { FaUsers, FaCrown, FaGavel, FaMapMarkerAlt, FaClock, FaBook, FaHome, FaSitemap, FaBars, FaTimes } from 'react-icons/fa';
 
 // Translations data
 const translations = {
@@ -49,6 +50,7 @@ const translations = {
 
 function App() {
   const [lang, setLang] = useState('en');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -66,9 +68,15 @@ function App() {
     setPage(getCurrentPage());
   }, [location.pathname]);
 
+  // Close mobile menu when page changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [page]);
+
   // Navigation function that updates both state and URL
   const navigateToPage = (newPage) => {
     setPage(newPage);
+    setIsMobileMenuOpen(false); // Close mobile menu on navigation
     if (newPage === 'home') {
       navigate('/');
     } else {
@@ -76,9 +84,19 @@ function App() {
     }
   };
 
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Close mobile menu when clicking overlay
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   // Prepare carousel images with language-specific content
   const carouselImages = carouselData.carouselImages.map(image => ({
-    src: image.src,
+    src: importedCarouselImages[image.imageIndex],
     alt: image.alt,
     title: image.title[lang] || image.title.en,
     description: image.description[lang] || image.description.en
@@ -89,13 +107,33 @@ function App() {
       <div className={`app-container ${page === 'home' ? 'home-page' : ''}`}>
         <TopHeader lang={lang} setLang={setLang} />
         <MenuBar lang={lang} page={page} setPage={navigateToPage} setLang={setLang} />
+        
+        {/* Mobile Menu Toggle Button */}
+        {(page === 'genealogy' || page === 'kings' || page === 'judges' || page === 'prophets' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','adam-lineage','abraham-lineage','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && (
+          <button 
+            className="mobile-menu-toggle"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        )}
+        
+        {/* Mobile Overlay */}
+        <div 
+          className={`mobile-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={closeMobileMenu}
+        />
+        
         <div className="main-layout">
           {(page === 'genealogy' || page === 'kings' || page === 'judges' || page === 'prophets' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','adam-lineage','abraham-lineage','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && (
-                        <LeftNav 
+            <LeftNav 
               lang={lang} 
               page={page} 
               navigateToPage={navigateToPage} 
-              translations={translations} 
+              translations={translations}
+              isMobileMenuOpen={isMobileMenuOpen}
+              closeMobileMenu={closeMobileMenu}
             />
           )}
           <main className="main-content">

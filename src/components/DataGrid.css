@@ -4,8 +4,194 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
+.light .table-row-odd {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .header-actions {
+    gap: 6px !important;
+    justify-content: flex-start !important;
+    padding: 0 1em;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .row-count-text {
+    padding: 0 12px;
+    height: 36px;
+    font-size: 0.9rem;
+    margin-right: 4px;
+    min-width: max-content;
+    flex-shrink: 0;
+  }
+  
+  .action-button {
+    padding: 0 14px;
+    height: 36px;
+    font-size: 0.9rem;
+    gap: 5px;
+    min-width: max-content;
+    flex-shrink: 0;
+  }
+  
+  .data-grid-table {
+    font-size: 0.9rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .data-grid-table th,
+  .data-grid-table td {
+    padding: 0.6rem 0.4rem;
+    min-width: 100px;
+  }
+  
+  .data-grid-table thead th {
+    position: sticky;
+    top: 0;
+    background: var(--card-bg);
+    z-index: 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-actions {
+    flex-direction: row !important;
+    gap: 0.4em !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 0.5em;
+    display: flex !important;
+  }
+  
+  .row-count-text {
+    height: 36px;
+    font-size: 0.8rem;
+    padding: 0 8px;
+    margin: 0;
+    text-align: center;
+    min-width: max-content;
+    flex-shrink: 0;
+  }
+  
+  .action-button {
+    height: 36px;
+    font-size: 0.8rem;
+    padding: 0 10px;
+    justify-content: center;
+    border-radius: 8px;
+    min-width: max-content;
+    flex-shrink: 0;
+    gap: 4px;
+  }
+  
+  .action-button-text {
+    font-size: 0.75rem;
+  }
+  
+  /* Ensure horizontal scrolling for very narrow screens */
+  @media (max-width: 360px) {
+    .header-actions {
+      gap: 0.3em !important;
+      padding: 0 0.3em;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
+      overflow-x: auto;
+    }
+    
+    .row-count-text {
+      height: 32px;
+      font-size: 0.75rem;
+      padding: 0 6px;
+    }
+    
+    .action-button {
+      height: 32px;
+      font-size: 0.75rem;
+      padding: 0 8px;
+      gap: 3px;
+      width: auto !important;
+    }
+    
+    .action-button-text {
+      font-size: 0.7rem;
+    }
+  }
+  
+  .data-grid-table {
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+  
+  .data-grid-table th,
+  .data-grid-table td {
+    padding: 0.5rem 0.3rem;
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .data-grid-table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  /* Stack table headers and data for very small screens */
+  @media (max-width: 360px) {
+    .data-grid-table,
+    .data-grid-table thead,
+    .data-grid-table tbody,
+    .data-grid-table th,
+    .data-grid-table td,
+    .data-grid-table tr {
+      display: block;
+    }
+    
+    .data-grid-table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    .data-grid-table tr {
+      border: 1px solid var(--border-color);
+      margin-bottom: 0.5em;
+      border-radius: 8px;
+      padding: 0.5em;
+      background: var(--card-bg);
+    }
+    
+    .data-grid-table td {
+      border: none;
+      position: relative;
+      padding: 0.3em 0.5em 0.3em 35%;
+      text-align: left;
+    }
+    
+    .data-grid-table td:before {
+      content: attr(data-label) ": ";
+      position: absolute;
+      left: 6px;
+      width: 30%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+  }
+}
 .row-count-text {
   padding: 0 18px;
   height: 44px;
@@ -20,6 +206,7 @@
   margin-right: 8px;
   box-shadow: 0 2px 8px rgba(75,60,196,0.08);
   transition: background 0.2s, color 0.2s, border 0.2s;
+  white-space: nowrap;
 }
 
 .action-button {
@@ -35,6 +222,7 @@
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(75,60,196,0.08);
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  min-width: max-content;
 }
 
 .print-button {
@@ -149,6 +337,51 @@
 /* Light theme alternating rows */
 .light .table-row-even {
   background-color: rgba(0, 0, 0, 0.01);
+}
+
+/* FINAL OVERRIDE: Force horizontal layout on ALL mobile devices */
+@media screen and (max-width: 768px) {
+  .header-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 0.5em !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 0 1em !important;
+  }
+  
+  .action-button {
+    flex-shrink: 0 !important;
+    min-width: max-content !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-actions {
+    gap: 0.3em !important;
+    padding: 0 0.5em !important;
+  }
+  
+  .action-button {
+    padding: 0.6em 0.8em !important;
+    font-size: 0.8em !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .header-actions {
+    gap: 0.2em !important;
+    padding: 0 0.3em !important;
+  }
+  
+  .action-button {
+    padding: 0.5em 0.6em !important;
+    font-size: 0.75em !important;
+  }
 }
 
 .light .table-row-odd {

@@ -2,7 +2,7 @@
 
 import menuConfig from '../assets/data/menuConfig.json';
 import biblicalBooksData from '../assets/data/biblicalBooksData.json';
-import { FaSearch, FaSignOutAlt, FaMoon, FaBook, FaBookOpen, FaUser, FaList, FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import { FaSearch, FaSignOutAlt, FaMoon, FaBook, FaBookOpen, FaUser, FaList, FaChevronDown, FaChevronRight, FaTimes } from 'react-icons/fa';
 import { FaHome, FaUsers, FaCrown, FaSitemap, FaGavel, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { useState } from 'react';
 
@@ -27,7 +27,7 @@ const GlyphIcon = ({ iconName, className = '' }) => (
   <span className={`glyphicon ${glyphiconMap[iconName] || iconName || 'glyphicon-user'} ${className}`}></span>
 );
 
-const LeftNav = ({ lang, page, navigateToPage, translations }) => {
+const LeftNav = ({ lang, page, navigateToPage, translations, isMobileMenuOpen, closeMobileMenu }) => {
   // Search state
   const [search, setSearch] = useState('');
   
@@ -38,6 +38,14 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
     authors: false,
     namesOfGod: false
   });
+
+  // Handle navigation with mobile menu close
+  const handleNavigation = (pageKey) => {
+    navigateToPage(pageKey);
+    if (closeMobileMenu) {
+      closeMobileMenu();
+    }
+  };
 
   // Determine which menu to show
   let menuType = 'genealogy';
@@ -90,7 +98,7 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
                 <div key={category} className="sub-category-section">
                   <button 
                     className="accordion-sub-header"
-                    onClick={() => navigateToPage(`old-testament-${category}`)}
+                    onClick={() => handleNavigation(`old-testament-${category}`)}
                   >
                     <div className="sub-header-content">
                       <span className="sub-category-icon">📚</span>
@@ -128,7 +136,7 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
                 <div key={category} className="sub-category-section">
                   <button 
                     className="accordion-sub-header"
-                    onClick={() => navigateToPage(`new-testament-${category}`)}
+                    onClick={() => handleNavigation(`new-testament-${category}`)}
                   >
                     <div className="sub-header-content">
                       <span className="sub-category-icon">📖</span>
@@ -167,7 +175,7 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
               <div className="sub-category-section">
                 <button 
                   className="accordion-sub-header"
-                  onClick={() => navigateToPage('old-testament-names')}
+                  onClick={() => handleNavigation('old-testament-names')}
                 >
                   <div className="sub-header-content">
                     <span className="sub-category-icon">📜</span>
@@ -178,7 +186,7 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
               <div className="sub-category-section">
                 <button 
                   className="accordion-sub-header"
-                  onClick={() => navigateToPage('new-testament-names')}
+                  onClick={() => handleNavigation('new-testament-names')}
                 >
                   <div className="sub-header-content">
                     <span className="sub-category-icon">✝️</span>
@@ -194,7 +202,16 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
   };
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+      {/* Mobile close button */}
+      <button 
+        className="sidebar-close-button"
+        onClick={closeMobileMenu}
+        aria-label="Close menu"
+      >
+        <FaTimes />
+      </button>
+      
       <div className="sidebar-header">{menuHeader}</div>
       
       {/* Search Bar - only show for non-accordion modes */}
@@ -220,7 +237,7 @@ const LeftNav = ({ lang, page, navigateToPage, translations }) => {
           {filteredItems.map(item => {
             return (
               <li key={item.key} className={item.key === 'tree' ? 'menu-item-tree' : ''}>
-                <button className={`sidebar-menu-item ${page === item.key ? 'active' : ''}`} onClick={() => navigateToPage(item.key)}>
+                <button className={`sidebar-menu-item ${page === item.key ? 'active' : ''}`} onClick={() => handleNavigation(item.key)}>
                   {item.key === 'adam-to-jesus' ? (
                     <FaSitemap className="sidebar-menu-icon" />
                   ) : (

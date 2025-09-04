@@ -27,6 +27,7 @@ export default function D3Chart({ lang = 'en' }) {
   const [lineStyle, setLineStyle] = useState('straight'); // Line style: 'straight', 'curved', 'diagonal'
   const [expandAll, setExpandAll] = useState(false); // Track expand all state
   const [forceUpdate, setForceUpdate] = useState(0); // Force re-render counter
+  const [isMobilePanelOpen, setIsMobilePanelOpen] = useState(false); // Mobile panel state
   
   const translations = translationsData[lang] || translationsData.en;
 
@@ -1833,6 +1834,49 @@ export default function D3Chart({ lang = 'en' }) {
     setShowSearchResults(false);
   };
 
+  // Mobile panel functions
+  const toggleMobilePanel = () => {
+    setIsMobilePanelOpen(!isMobilePanelOpen);
+  };
+
+  const closeMobilePanelAfterAction = () => {
+    // Auto-close mobile panel after performing any action
+    if (window.innerWidth <= 768) {
+      setIsMobilePanelOpen(false);
+    }
+  };
+
+  // Wrapper functions that include auto-close for mobile
+  const handleZoomInMobile = () => {
+    handleZoomIn();
+    closeMobilePanelAfterAction();
+  };
+
+  const handleZoomOutMobile = () => {
+    handleZoomOut();
+    closeMobilePanelAfterAction();
+  };
+
+  const handleResetMobile = () => {
+    handleReset();
+    closeMobilePanelAfterAction();
+  };
+
+  const handleDownloadMobile = () => {
+    handleDownload();
+    closeMobilePanelAfterAction();
+  };
+
+  const setIsVerticalMobile = (value) => {
+    setIsVertical(value);
+    closeMobilePanelAfterAction();
+  };
+
+  const setLineStyleMobile = (style) => {
+    setLineStyle(style);
+    closeMobilePanelAfterAction();
+  };
+
   return (
     <div>
       <PageHeader 
@@ -1850,8 +1894,35 @@ export default function D3Chart({ lang = 'en' }) {
       {/* Title Header */}
       
 
+      {/* Mobile Panel Toggle Button */}
+      <button
+        className="mobile-panel-toggle"
+        onClick={toggleMobilePanel}
+        style={{
+          position: 'fixed',
+          top: '50%',
+          right: isMobilePanelOpen ? '100vw' : '10px',
+          transform: 'translateY(-50%)',
+          zIndex: 1200,
+          background: isDarkMode ? '#6366f1' : '#4f46e5',
+          color: 'white',
+          border: 'none',
+          borderRadius: '12px 0 0 12px',
+          width: '50px',
+          height: '50px',
+          fontSize: '20px',
+          cursor: 'pointer',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+          transition: 'all 0.3s ease',
+          display: 'none' // Hidden on desktop
+        }}
+        title={isMobilePanelOpen ? 'Close Panel' : 'Open Controls'}
+      >
+        {isMobilePanelOpen ? '×' : '⚙'}
+      </button>
+
       {/* Floating Controls Panel */}
-      <div className="d3-chart-controls-panel" style={{
+      <div className={`d3-chart-controls-panel ${isMobilePanelOpen ? 'mobile-open' : ''}`} style={{
         position: 'absolute',
         top: '20px',
         right: '20px',
@@ -1870,8 +1941,33 @@ export default function D3Chart({ lang = 'en' }) {
         flexDirection: 'column',
         gap: '20px',
         minWidth: '320px',
-        overflow: 'visible'
+        overflow: 'visible',
+        // Mobile styles will be overridden by CSS media queries
       }}>
+
+        {/* Mobile Close Button */}
+        <button
+          onClick={() => setIsMobilePanelOpen(false)}
+          style={{
+            display: 'none', // Hidden on desktop, shown on mobile via CSS
+            position: 'absolute',
+            top: '15px',
+            right: '15px',
+            background: '#ef4444',
+            color: 'white',
+            border: 'none',
+            borderRadius: '50%',
+            width: '40px',
+            height: '40px',
+            fontSize: '18px',
+            cursor: 'pointer',
+            zIndex: 1200,
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
+          }}
+          className="mobile-close-button"
+        >
+          ×
+        </button>
 
         {/* Search Section */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -1991,7 +2087,7 @@ export default function D3Chart({ lang = 'en' }) {
           
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
             <button 
-              onClick={handleZoomOut} 
+              onClick={handleZoomOutMobile} 
               title={safeTranslations.d3Chart.zoomOut}
               style={{
                 padding: '8px',
@@ -2064,7 +2160,7 @@ export default function D3Chart({ lang = 'en' }) {
             </div>
             
             <button 
-              onClick={handleZoomIn} 
+              onClick={handleZoomInMobile} 
               title={safeTranslations.d3Chart.zoomIn}
               style={{
                 padding: '8px',
@@ -2121,7 +2217,7 @@ export default function D3Chart({ lang = 'en' }) {
             </button>
             
             <button 
-              onClick={handleReset} 
+              onClick={handleResetMobile} 
               title={safeTranslations.d3Chart.resetView}
               style={{
                 padding: '6px 8px',
@@ -2144,7 +2240,7 @@ export default function D3Chart({ lang = 'en' }) {
             </button>
             
             <button 
-              onClick={handleDownload} 
+              onClick={handleDownloadMobile} 
               title={safeTranslations.d3Chart.downloadChart}
               style={{
                 padding: '6px 8px',
@@ -2168,7 +2264,7 @@ export default function D3Chart({ lang = 'en' }) {
             
             {/* Layout Controls */}
             <button 
-              onClick={() => setIsVertical(true)}
+              onClick={() => setIsVerticalMobile(true)}
               title={safeTranslations.d3Chart.verticalLayout}
               style={{
                 padding: '6px 8px',
@@ -2195,7 +2291,7 @@ export default function D3Chart({ lang = 'en' }) {
             </button>
 
             <button 
-              onClick={() => setIsVertical(false)}
+              onClick={() => setIsVerticalMobile(false)}
               title={safeTranslations.d3Chart.horizontalLayout}
               style={{
                 padding: '6px 8px',
@@ -2221,7 +2317,7 @@ export default function D3Chart({ lang = 'en' }) {
               <span style={{ fontSize: '10px' }}></span>
             </button>
             <button 
-              onClick={() => setLineStyle('straight')}
+              onClick={() => setLineStyleMobile('straight')}
               title={lang === 'te' ? 'నేరుగా లైన్లు' : 'Straight Lines'}
               style={{
                 padding: '8px',
@@ -2250,7 +2346,7 @@ export default function D3Chart({ lang = 'en' }) {
             </button>
             
             <button 
-              onClick={() => setLineStyle('curved')}
+              onClick={() => setLineStyleMobile('curved')}
               title={lang === 'te' ? 'వంకర లైన్లు' : 'Curved Lines'}
               style={{
                 padding: '8px',
@@ -2279,7 +2375,7 @@ export default function D3Chart({ lang = 'en' }) {
             </button>
             
             <button 
-              onClick={() => setLineStyle('diagonal')}
+              onClick={() => setLineStyleMobile('diagonal')}
               title={lang === 'te' ? 'వికర్ణ లైన్లు' : 'Diagonal Lines'}
               style={{
                 padding: '8px',

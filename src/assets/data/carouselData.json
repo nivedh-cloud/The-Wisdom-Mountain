@@ -1,7 +1,7 @@
 {
   "carouselImages": [
     {
-      "src": "/carousel-images/carousel-image1.png",
+      "imageIndex": 0,
       "alt": "Biblical Garden of Eden",
       "title": {
         "en": "Garden of Eden",
@@ -13,7 +13,7 @@
       }
     },
     {
-      "src": "/carousel-images/carousel-image2.png",
+      "imageIndex": 1,
       "alt": "Noah's Ark",
       "title": {
         "en": "Noah's Ark & The Great Flood",
@@ -25,7 +25,7 @@
       }
     },
     {
-      "src": "/carousel-images/carousel-image3.png",
+      "imageIndex": 2,
       "alt": "Abraham's Journey",
       "title": {
         "en": "Abraham's Journey of Faith",
@@ -37,7 +37,7 @@
       }
     },
     {
-      "src": "/carousel-images/carousel-image4.png",
+      "imageIndex": 3,
       "alt": "Exodus from Egypt",
       "title": {
         "en": "The Great Exodus",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "src": "/carousel-images/carousel-image5.png",
+      "imageIndex": 4,
       "alt": "King David",
       "title": {
         "en": "David: A Man After God's Heart",
@@ -61,7 +61,7 @@
       }
     },
     {
-      "src": "/carousel-images/carousel-image6.png",
+      "imageIndex": 5,
       "alt": "Jesus Christ",
       "title": {
         "en": "Jesus: The Promised Messiah",
