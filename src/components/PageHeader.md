@@ -81,7 +81,6 @@ The component automatically applies the appropriate theme based on the `useTheme
 ```jsx
 <PageHeader 
   title="Biblical Family Tree"
-  subtitle="Genealogical tree from Adam to Jesus"
   icon={<FaSitemap />}
   actions={
     <div>
