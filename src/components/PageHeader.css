@@ -96,6 +96,8 @@
 
   .page-header-left {
     gap: 0.75rem;
+    left: 1px;
+    top: 149px;
   }
 
   .page-header-icon {
@@ -120,9 +122,10 @@
 
 @media (max-width: 480px) {
   .page-header-left {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 0.5rem;
+    left: 1px;
+    top: 149px;
+    position: absolute;
   }
 
   .page-header-title {

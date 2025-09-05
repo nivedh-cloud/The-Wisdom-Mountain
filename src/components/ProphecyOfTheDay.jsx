@@ -42,7 +42,7 @@ const ProphecyOfTheDay = ({ lang = 'en' }) => {
         <div className="prophecy-header">
           <div className="prophecy-title">
             <FaBookOpen className="prophecy-icon" />
-            <h2>{lang === 'te' ? 'ఈ రోజు వాక్యం' : 'Prophecy of the Day'}</h2>
+            <h2>{lang === 'te' ? 'ఈ రోజు వాక్యం' : 'Promise of the Day'}</h2>
           </div>
           <button 
             className="refresh-button" 

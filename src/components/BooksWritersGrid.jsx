@@ -12,6 +12,12 @@ const BooksWritersGrid = ({ lang, page }) => {
   const getCategoryFromPage = () => {
     if (page === 'biblical-authors') {
       return { category: 'biblical-authors', subCategory: null };
+    } else if (page === 'old-testament-books') {
+      // Show all Old Testament books (all subcategories combined)
+      return { category: 'old-testament-books', subCategory: 'all' };
+    } else if (page === 'new-testament-books') {
+      // Show all New Testament books (all subcategories combined)
+      return { category: 'new-testament-books', subCategory: 'all' };
     } else if (page.startsWith('old-testament-')) {
       const subCategory = page.replace('old-testament-', '');
       return { category: 'old-testament-books', subCategory };
@@ -20,7 +26,7 @@ const BooksWritersGrid = ({ lang, page }) => {
       return { category: 'new-testament-books', subCategory };
     }
     // Default fallback
-    return { category: 'old-testament-books', subCategory: 'torah' };
+    return { category: 'old-testament-books', subCategory: 'all' };
   };
 
   const { category: selectedCategory, subCategory: selectedSubCategory } = getCategoryFromPage();
@@ -50,6 +56,9 @@ const BooksWritersGrid = ({ lang, page }) => {
     if (selectedCategory === 'biblical-authors') {
       return t.biblicalAuthors;
     } else if (selectedCategory === 'old-testament-books') {
+      if (selectedSubCategory === 'all') {
+        return t.oldTestamentBooks;
+      }
       const categoryLabels = {
         torah: t.torah,
         historical: t.historical,
@@ -59,6 +68,9 @@ const BooksWritersGrid = ({ lang, page }) => {
       };
       return categoryLabels[selectedSubCategory] || t.oldTestamentBooks;
     } else if (selectedCategory === 'new-testament-books') {
+      if (selectedSubCategory === 'all') {
+        return t.newTestamentBooks;
+      }
       const categoryLabels = {
         gospels: t.gospels,
         history: t.history,
@@ -103,7 +115,7 @@ const BooksWritersGrid = ({ lang, page }) => {
       booksWritten: 'Books Written',
       totalBooks: 'Total Books',
       keyVerse: 'Key Verse',
-      writtenDate: 'Written Date'
+      writtenDate: 'Written Time'
     },
     te: {
       title: 'బైబిల్ పుస్తకాలు మరియు రచయితలు',
@@ -179,7 +191,19 @@ const BooksWritersGrid = ({ lang, page }) => {
         _type: 'author'
       }));
     } else if (selectedCategory === 'old-testament-books') {
-      const books = biblicalBooksData.oldTestament[selectedSubCategory] || [];
+      let books = [];
+      if (selectedSubCategory === 'all') {
+        // Combine all Old Testament books from all subcategories
+        books = [
+          ...biblicalBooksData.oldTestament.torah,
+          ...biblicalBooksData.oldTestament.historical,
+          ...biblicalBooksData.oldTestament.wisdom,
+          ...biblicalBooksData.oldTestament.majorProphets,
+          ...biblicalBooksData.oldTestament.minorProphets
+        ];
+      } else {
+        books = biblicalBooksData.oldTestament[selectedSubCategory] || [];
+      }
       return books.map((book, index) => ({
         name: lang === 'te' ? book.nameTelugu : book.name,
         nameOriginal: book.nameHebrew || '',
@@ -194,7 +218,19 @@ const BooksWritersGrid = ({ lang, page }) => {
         _type: 'book'
       }));
     } else if (selectedCategory === 'new-testament-books') {
-      const books = biblicalBooksData.newTestament[selectedSubCategory] || [];
+      let books = [];
+      if (selectedSubCategory === 'all') {
+        // Combine all New Testament books from all subcategories
+        books = [
+          ...biblicalBooksData.newTestament.gospels,
+          ...biblicalBooksData.newTestament.history,
+          ...biblicalBooksData.newTestament.paulineEpistles,
+          ...biblicalBooksData.newTestament.generalEpistles,
+          ...biblicalBooksData.newTestament.prophecy
+        ];
+      } else {
+        books = biblicalBooksData.newTestament[selectedSubCategory] || [];
+      }
       return books.map((book, index) => ({
         name: lang === 'te' ? book.nameTelugu : book.name,
         nameOriginal: book.nameGreek || '',

@@ -19,7 +19,14 @@ export default function NamesOfGodGrid({ lang }) {
   const iconColor = namesOfGodMenu.iconColor || '#8b5cf6';
 
   const t = namesOfGodData.tableHeaders[lang] || namesOfGodData.tableHeaders.en;
-  const data = namesOfGodData.namesOfGod.map(name => ({
+  
+  // Combine both Old Testament and New Testament names
+  const allNames = [
+    ...(namesOfGodData.oldTestamentNames || []),
+    ...(namesOfGodData.newTestamentNames || [])
+  ];
+  
+  const data = allNames.map(name => ({
     name: lang === 'te' ? name.nameTelugu : name.name,
     meaning: lang === 'te' ? name.meaning.te : name.meaning.en,
     reference: lang === 'te' ? name.reference.te : name.reference.en,

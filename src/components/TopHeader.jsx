@@ -35,7 +35,7 @@ const TopHeader = ({ lang, setLang }) => {
           <div className="brand-logo">
             <img 
               src={logoImage} 
-              alt="North Mountain Logo" 
+              alt="Wisdom Mountain Logo" 
               className="logo-image"
               onError={(e) => {
                 // Fallback to text if image fails to load
@@ -46,7 +46,7 @@ const TopHeader = ({ lang, setLang }) => {
             <div className="logo-fallback" style={{display: 'none'}}>🏔️</div>
           </div>
           <div className="brand-text">
-            <h1 className="brand-title">The North Mountain</h1>
+            <h1 className="brand-title">The Wisdom Mountain</h1>
             <p className="brand-tagline">Scripture wisdom</p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const TopHeader = ({ lang, setLang }) => {
         </div>
 
         {/* Header Actions */}
-        <div className="header-actions" >
+        <div className="header-actions"  style={{"display": "none"}}>
           <button className="header-action-btn notification-btn" style={{"display": "none"}}>
             <FaBell />
             <span className="notification-badge">3</span>

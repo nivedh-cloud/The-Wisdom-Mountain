@@ -1,10 +1,22 @@
 
 
 import menuConfig from '../assets/data/menuConfig.json';
-import biblicalBooksData from '../assets/data/biblicalBooksData.json';
-import { FaSearch, FaSignOutAlt, FaMoon, FaBook, FaBookOpen, FaUser, FaList, FaChevronDown, FaChevronRight, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaSignOutAlt, FaMoon, FaBook, FaBookOpen, FaUser, FaList, FaTimes } from 'react-icons/fa';
 import { FaHome, FaUsers, FaCrown, FaSitemap, FaGavel, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { GiHolyGrail } from 'react-icons/gi';
 import { useState } from 'react';
+
+// Icon component mapping for React Icons
+const IconComponents = {
+  FaBook,
+  FaBookOpen,
+  FaUser,
+  FaCrown,
+  FaMapMarkerAlt,
+  FaClock,
+  FaSitemap,
+  GiHolyGrail
+};
 
 // Glyphicon mapping for menu items
 const glyphiconMap = {
@@ -27,17 +39,22 @@ const GlyphIcon = ({ iconName, className = '' }) => (
   <span className={`glyphicon ${glyphiconMap[iconName] || iconName || 'glyphicon-user'} ${className}`}></span>
 );
 
+// Component for rendering both React Icons and Glyphicons
+const MenuIcon = ({ iconName, iconColor, className = '' }) => {
+  // Check if it's a React Icon
+  const IconComponent = IconComponents[iconName];
+  
+  if (IconComponent) {
+    return <IconComponent className={className} style={{ color: iconColor }} />;
+  }
+  
+  // Fallback to Glyphicon
+  return <GlyphIcon iconName={iconName} className={className} />;
+};
+
 const LeftNav = ({ lang, page, navigateToPage, translations, isMobileMenuOpen, closeMobileMenu }) => {
   // Search state
   const [search, setSearch] = useState('');
-  
-  // Accordion state for Books & Writers
-  const [expandedSections, setExpandedSections] = useState({
-    oldTestament: false,
-    newTestament: false,
-    authors: false,
-    namesOfGod: false
-  });
 
   // Handle navigation with mobile menu close
   const handleNavigation = (pageKey) => {
@@ -229,27 +246,27 @@ const LeftNav = ({ lang, page, navigateToPage, translations, isMobileMenuOpen, c
         </div>
       )}
 
-      {/* Books & Writers Accordion or Regular Menu */}
-      {menuType === 'bookswriters' ? (
-        renderBooksAccordion()
-      ) : (
-        <ul className="sidebar-menu">
-          {filteredItems.map(item => {
-            return (
-              <li key={item.key} className={item.key === 'tree' ? 'menu-item-tree' : ''}>
-                <button className={`sidebar-menu-item ${page === item.key ? 'active' : ''}`} onClick={() => handleNavigation(item.key)}>
-                  {item.key === 'adam-to-jesus' ? (
-                    <FaSitemap className="sidebar-menu-icon" />
-                  ) : (
-                    <GlyphIcon iconName={item.icon} className="sidebar-menu-icon" />
-                  )}
-                  {item.label[lang]}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      {/* Simple menu rendering for all menu types including bookswriters */}
+      <ul className="sidebar-menu">
+        {filteredItems.map(item => {
+          return (
+            <li key={item.key} className={item.key === 'tree' ? 'menu-item-tree' : ''}>
+              <button className={`sidebar-menu-item ${page === item.key ? 'active' : ''}`} onClick={() => handleNavigation(item.key)}>
+                {item.key === 'adam-to-jesus' ? (
+                  <FaSitemap className="sidebar-menu-icon" />
+                ) : (
+                  <MenuIcon 
+                    iconName={item.icon} 
+                    iconColor={item.iconColor} 
+                    className="sidebar-menu-icon" 
+                  />
+                )}
+                <span className="nav-label">{item.label[lang]}</span>
+              </button>
+            </li>
+          );
+        })}
+      </ul>
     </aside>
   );
 };

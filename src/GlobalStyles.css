@@ -374,6 +374,23 @@
 .nav-label {
   font-size: 0.9em;
   letter-spacing: 0.3px;
+  display: block !important; /* Ensure label is always visible */
+}
+
+/* Desktop menu styles - ensure text labels are visible */
+@media screen and (min-width: 769px) {
+  .nav-label {
+    display: block !important;
+    font-size: 0.9em !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .nav-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.3em !important;
+  }
 }
 
 .menu-item {
@@ -986,6 +1003,9 @@
     background: var(--hover-bg);
     transform: translateY(-1px);
   }
+    .sidebar-header{
+    margin-left: 60px;
+  }
   
   .page-title {
     font-size: 1.8em;
@@ -998,8 +1018,8 @@
   }
   
   .mobile-menu-toggle {
-    position: fixed !important;
-    top: 120px;
+    position: absolute !important;
+    top: 12px;
     left: 20px;
     z-index: 1001;
     background: var(--card-bg);
@@ -1116,7 +1136,7 @@
   }
   
   .mobile-menu-toggle {
-    top: 120px;
+    top: 12px;
     left: 15px;
     width: 45px;
     height: 45px;
@@ -1479,7 +1499,7 @@
   .section-title,
   .section-title-with-icon {
     font-size: 1.4em;
-    justify-content: center;
+    margin-left: 5px;
   }
   
   .overflow-container {
@@ -1618,7 +1638,7 @@
   .mobile-menu-toggle {
     width: 50px;
     height: 50px;
-    top: 120px;
+    top: 12px;
     left: 20px;
     font-size: 1.3em;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -1716,7 +1736,7 @@
   .mobile-menu-toggle {
     width: 45px;
     height: 45px;
-    top: 120px;
+    top: 12px;
     left: 15px;
   }
   
@@ -1841,13 +1861,13 @@
   
   .mobile-menu-toggle {
     display: flex !important;
-    position: fixed !important;
+    position: absolute !important;
     z-index: 10000 !important;
   }
 }
 
 /* FINAL OVERRIDE - Mobile Sidebar Control */
-@media screen and (max-width: 768px), screen and (max-device-width: 768px), screen and (orientation: portrait) {
+@media screen and (max-width: 768px), screen and (max-device-width: 768px) {
   /* Absolutely force sidebar to be hidden on mobile */
   aside.sidebar {
     position: fixed !important;
@@ -1873,8 +1893,8 @@
   /* Ensure hamburger is always visible */
   .mobile-menu-toggle {
     display: flex !important;
-    position: fixed !important;
-    top: 120px !important;
+    position: absolute !important;
+    top: 12px !important;
     left: 20px !important;
     z-index: 10001 !important;
     width: 48px !important;

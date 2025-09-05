@@ -205,7 +205,7 @@ function App() {
               <Route path="/bookswriters" element={
                 <div className="page-container">
                   <PageHeader 
-                    title={lang === 'te' ? 'పుస్తకాలు మరియు రచయితలు' : 'Books & Writers'}
+                    title={lang === 'te' ? 'పుస్తకాలు & రచయితలు' : 'Books & Writers'}
                     subtitle={lang === 'te' ? 'బైబిల్ పుస్తకాలు మరియు రచయితల విభాగాన్ని ఎంచుకోండి.' : 'Select a biblical books and writers section from the left.'}
                     icon={<FaBook />}
                   />

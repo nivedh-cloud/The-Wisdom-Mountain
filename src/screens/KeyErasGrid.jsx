@@ -27,7 +27,7 @@ export default function KeyErasGrid({ lang, section = 'united-kingdom' }) {
       duration: 'వ్యవధి (సంవత్సరాలు)',
       keyFigures: 'ముఖ్య వ్యక్తులు',
       significance: 'ప్రాముఖ్యత',
-      title: 'బైబిల్ ముఖ్య యుగాలు',
+      title: 'ముఖ్య యుగాలు',
       chartLabel: 'యుగ వ్యవధి (సంవత్సరాలు)'
     }
   };

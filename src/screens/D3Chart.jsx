@@ -1956,7 +1956,6 @@ export default function D3Chart({ lang = 'en' }) {
             background: '#ef4444',
             color: 'white',
             border: 'none',
-            borderRadius: '50%',
             width: '40px',
             height: '40px',
             fontSize: '18px',
@@ -2673,7 +2672,7 @@ export default function D3Chart({ lang = 'en' }) {
         justifyContent: 'center',
         alignItems: 'center',
         cursor: 'grab',
-        zIndex: 1000
+        zIndex: 200
       }}
       onMouseDown={(e) => e.target.style.cursor = 'grabbing'}
       onMouseUp={(e) => e.target.style.cursor = 'grab'}
