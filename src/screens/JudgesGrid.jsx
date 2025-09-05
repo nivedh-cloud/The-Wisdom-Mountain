@@ -134,6 +134,48 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
     }
   };
 
+  // Custom bilingual filter function
+  const bilingualFilter = (row, filterText) => {
+    if (!filterText) return true;
+    const searchText = filterText.toLowerCase();
+    
+    // Get the original judge data to access both English and Telugu fields
+    const originalJudge = row._original;
+    if (!originalJudge) return false;
+    
+    // Search in both English and Telugu fields
+    const searchFields = [
+      // Judge name (multiple variations)
+      originalJudge.name,
+      originalJudge.nameTelugu,
+      originalJudge.nameHebrew,
+      // Tribe information
+      originalJudge.tribe,
+      originalJudge.tribeTelugu,
+      // Period and oppressor
+      originalJudge.period,
+      originalJudge.oppressor,
+      originalJudge.oppressorTelugu,
+      // Years information
+      originalJudge.yearsOfJudgeship?.toString(),
+      originalJudge.yearsOfJudgeshipTelugu,
+      originalJudge.yearsOfOppression?.toString(),
+      originalJudge.yearsOfOppressionTelugu,
+      // Description and significance
+      originalJudge.description?.en,
+      originalJudge.description?.te,
+      originalJudge.significance?.en,
+      originalJudge.significance?.te,
+      // Scripture reference
+      originalJudge.scripture
+    ];
+    
+    // Check if search text matches any of the fields
+    return searchFields.some(field => 
+      field && field.toString().toLowerCase().includes(searchText)
+    );
+  };
+
   return (
     <div style={{ 
       height: '100%', 
@@ -150,6 +192,7 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
         title={translations.judges.title}
         icon={iconConfig}
         chartConfig={chartConfig}
+        customFilter={bilingualFilter}
         customRowRenderer={customRowRenderer}
       />
 

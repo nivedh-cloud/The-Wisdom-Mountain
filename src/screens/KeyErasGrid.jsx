@@ -104,6 +104,44 @@ export default function KeyErasGrid({ lang, section = 'united-kingdom' }) {
     color: iconColor
   };
 
+  // Custom bilingual filter function
+  const bilingualFilter = (row, filterText) => {
+    if (!filterText) return true;
+    const searchText = filterText.toLowerCase();
+    
+    // Get the original era data to access both English and Telugu fields
+    const originalEra = row._original;
+    if (!originalEra) return false;
+    
+    // Search in both English and Telugu fields
+    const searchFields = [
+      // Era name (both languages)
+      originalEra.name,
+      originalEra.nameTelugu,
+      // Period and date information
+      originalEra.period,
+      originalEra.dateRange,
+      originalEra.duration,
+      originalEra.scripture,
+      // Key figures
+      ...(Array.isArray(originalEra.keyFigures) ? originalEra.keyFigures : []),
+      // Key events
+      ...(Array.isArray(originalEra.keyEvents) ? originalEra.keyEvents : []),
+      // Key locations
+      ...(Array.isArray(originalEra.keyLocations) ? originalEra.keyLocations : []),
+      // Description and significance
+      originalEra.description?.en,
+      originalEra.description?.te,
+      originalEra.significance?.en,
+      originalEra.significance?.te
+    ];
+    
+    // Check if search text matches any of the fields
+    return searchFields.some(field => 
+      field && field.toString().toLowerCase().includes(searchText)
+    );
+  };
+
   return (
     <div style={{ 
       height: '100%', 
@@ -120,6 +158,7 @@ export default function KeyErasGrid({ lang, section = 'united-kingdom' }) {
         title={translations.title}
         icon={iconConfig}
         chartConfig={chartConfig}
+        customFilter={bilingualFilter}
       />
     </div>
   );

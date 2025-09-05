@@ -176,7 +176,8 @@ export default function D3Chart({ lang = 'en' }) {
     const tooltipDetail = lang === 'te'
       ? (d.data.detailTe || d.data.detailEn || d.data.detail)
       : (d.data.detailEn || d.data.detail);
-
+    
+    
     // Remove any existing tooltips first
     d3.selectAll(".d3-tooltip").remove();
     
@@ -1013,6 +1014,8 @@ export default function D3Chart({ lang = 'en' }) {
         .attr("height", bbox.height + (padding * 2));
     });
 
+
+
     // Add expand/collapse icons - FINAL LOGIC
     nodeGroups.each(function(d) {
       const nodeGroup = d3.select(this);
@@ -1104,6 +1107,7 @@ export default function D3Chart({ lang = 'en' }) {
     // Create initial tree
     createTreeElements(treeData);
 
+    
     // Debug: List all available nodes in the chart for search debugging
     setTimeout(() => {
       const svg = d3.select(svgRef.current);
@@ -1234,6 +1238,7 @@ export default function D3Chart({ lang = 'en' }) {
   // Update text colors when theme changes
   useEffect(() => {
     if (!svgRef.current) return;
+    
 
     
     const svg = d3.select(svgRef.current);
@@ -1270,7 +1275,15 @@ export default function D3Chart({ lang = 'en' }) {
       // Debug logging for first few nodes
       if ((node.name === 'Adam') || currentDepth <= 1 || 
           node.name === 'Methuselah' || node.name === 'Lamech') {
-        // Debug information available but not logged
+
+          searchName: node.name,
+          nameEn: node.nameEn,
+          nameTe: node.nameTe,
+          language,
+          displayName,
+          displaySpouse,
+          displayDetail
+        });
       }
       
       const result = {
@@ -1512,6 +1525,7 @@ export default function D3Chart({ lang = 'en' }) {
       };
       
       searchInBilingualData();
+      
 
       
       // Debug: log what nodes are actually in the search results
@@ -1613,6 +1627,7 @@ export default function D3Chart({ lang = 'en' }) {
         const containerRect = containerElement.getBoundingClientRect();
         const centerX = containerRect.width / 2;
         const centerY = containerRect.height / 2;
+        
 
 
 
@@ -1621,6 +1636,7 @@ export default function D3Chart({ lang = 'en' }) {
         const scale = 5;
         const translateX = centerX - (targetX * scale);
         const translateY = centerY - (targetY * scale);
+        
 
         
         // Animate to the target
@@ -1633,6 +1649,7 @@ export default function D3Chart({ lang = 'en' }) {
         
         // Update zoom level display
         setZoomLevel(500);
+        
 
         
         // Also highlight the found node temporarily
@@ -1728,6 +1745,7 @@ export default function D3Chart({ lang = 'en' }) {
       const containerRect = containerElement.getBoundingClientRect();
       const centerX = containerRect.width / 2;
       const centerY = containerRect.height / 2;
+      
 
 
 
@@ -1736,6 +1754,7 @@ export default function D3Chart({ lang = 'en' }) {
       const scale = 7.5;
       const translateX = centerX - (targetX * scale);
       const translateY = centerY - (targetY * scale);
+      
 
       
       // Animate to the target
@@ -1748,6 +1767,7 @@ export default function D3Chart({ lang = 'en' }) {
       
       // Update zoom level display
       setZoomLevel(750);
+      
 
     } else {
 
@@ -1819,6 +1839,7 @@ export default function D3Chart({ lang = 'en' }) {
       overflow: 'hidden'
     }}>
       {/* Title Header */}
+      
 
       {/* Mobile Panel Toggle Button */}
       <button
@@ -2329,6 +2350,8 @@ export default function D3Chart({ lang = 'en' }) {
             </button>
           </div>
         </div>
+
+        
 
         {/* Expand/Collapse All Controls - TEMPORARILY HIDDEN */}
         {/* 

@@ -23,9 +23,9 @@ const translations = {
   },
   te: {
     'adam-to-jesus': 'ఆదాం నుండి యేసు (పూర్తి వంశావళి)',
-    'adam-to-noah': 'ఆదాం నుండి నోహు',
-    'noah-to-abraham': 'నోహు నుండి అబ్రాహాము',
-    'abraham-to-moses': 'అబ్రాహాము నుండి మోషే',
+    'adam-to-noah': 'ఆదాం నుండి నోవహు',
+    'noah-to-abraham': 'నోవహు నుండి అబ్రాము',
+    'abraham-to-moses': 'అబ్రాము నుండి మోషే',
     'moses-to-david': 'మోషే నుండి దావీదు', 
     'david-to-hezekiah': 'దావీదు నుండి హిజ్కియా',
     'before-babylonian-exile': 'బబులోనియన్కు ముందు',
@@ -54,7 +54,9 @@ function convertGenealogyToFlatArray(genealogyData, lang = 'en') {
         birth: node.birth || '',
         death: node.death || '',
         spouse: lang === 'te' ? (node.spouseTe || node.spouseEn || node.spouse) : (node.spouseEn || node.spouse),
-        detail: lang === 'te' ? (node.detailTe || node.detailEn || node.detail) : (node.detailEn || node.detail)
+        detail: lang === 'te' ? (node.detailTe || node.detailEn || node.detail) : (node.detailEn || node.detail),
+        // Keep original bilingual data for search purposes
+        originalNode: node
       };
       flatArray.push(record);
       
@@ -86,8 +88,8 @@ function filterGenealogyBySection(flatData, section, lang = 'en') {
   // Define name mappings for key biblical figures in both languages
   const nameMap = {
     adam: { en: 'adam', te: 'ఆదాము' },
-    noah: { en: 'noah', te: 'నోహు' },
-    abraham: { en: 'abraham', te: 'అబ్రాహాము' },
+    noah: { en: 'noah', te: 'నోవహు' },
+    abraham: { en: 'abraham', te: 'అబ్రాము' },
     moses: { en: 'moses', te: 'మోషే' },
     david: { en: 'david', te: 'దావీదు' },
     hezekiah: { en: 'hezekiah', te: 'హిజ్కియా' }
@@ -107,6 +109,9 @@ function filterGenealogyBySection(flatData, section, lang = 'en') {
       
       // Search by Telugu name if available
       if (searchNameTe && person.person.includes(searchNameTe)) return true;
+      
+      // Handle compound names like "Abram/Abraham"
+      if (keyName === 'abraham' && (personName.includes('abram') || personName.includes('abraham'))) return true;
       
       // Fallback to exact name match
       if (personName.includes(keyName.toLowerCase())) return true;
@@ -187,6 +192,45 @@ export default function GenealogyGrid({ lang, section = 'adam-to-jesus' }) {
   
   console.log(`Showing ${data.length} records for ${section}`);
 
+  // Custom bilingual filter function for genealogy
+  const bilingualFilter = (row, filterText) => {
+    if (!filterText) return true;
+    const searchText = filterText.toLowerCase();
+    
+    // Get original node data for bilingual search
+    const original = row.originalNode || {};
+    
+    // Search in displayed fields
+    const displayFields = [
+      row.person,  // Current display name
+      row.spouse,  // Current display spouse
+      row.detail,  // Current display detail
+      row.age?.toString(),
+      row.birth,
+      row.death
+    ];
+    
+    // Search in both English and Telugu fields from original data
+    const bilingualFields = [
+      original.name,
+      original.nameEn,
+      original.nameTe,
+      original.spouse,
+      original.spouseEn,
+      original.spouseTe,
+      original.detail,
+      original.detailEn,
+      original.detailTe
+    ];
+    
+    // Combine all searchable fields
+    const allFields = [...displayFields, ...bilingualFields];
+    
+    return allFields.some(field => 
+      field && field.toString().toLowerCase().includes(searchText)
+    );
+  };
+
   const columns = [
     {
       header: t.person,
@@ -228,6 +272,7 @@ export default function GenealogyGrid({ lang, section = 'adam-to-jesus' }) {
         translations={t}
         lang={lang}
         title={t[section] || t['complete-genealogy']}
+        customFilter={bilingualFilter}
         chartConfig={{
           dataKey: 'age',
           label: t.chartLabel,

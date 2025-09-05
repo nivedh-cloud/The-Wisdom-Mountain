@@ -159,6 +159,39 @@ export default function MapsGrid({ lang, section = 'old-testament-maps' }) {
     setSelectedImage(null);
   };
 
+  // Custom bilingual filter function
+  const bilingualFilter = (row, filterText) => {
+    if (!filterText) return true;
+    const searchText = filterText.toLowerCase();
+    
+    // Get the original map data to access both English and Telugu fields
+    const originalMap = row._original;
+    if (!originalMap) return false;
+    
+    // Search in both English and Telugu fields
+    const searchFields = [
+      // Map title (both languages)
+      originalMap.title,
+      originalMap.titleTelugu,
+      // Period and location
+      originalMap.period,
+      originalMap.modernLocation,
+      originalMap.scripture,
+      // Description and significance
+      originalMap.description?.en,
+      originalMap.description?.te,
+      originalMap.significance?.en,
+      originalMap.significance?.te,
+      // Key locations if available
+      ...(Array.isArray(originalMap.keyLocations) ? originalMap.keyLocations : [])
+    ];
+    
+    // Check if search text matches any of the fields
+    return searchFields.some(field => 
+      field && field.toString().toLowerCase().includes(searchText)
+    );
+  };
+
   return (
     <div style={{ 
       height: '100%', 
@@ -170,6 +203,7 @@ export default function MapsGrid({ lang, section = 'old-testament-maps' }) {
       <DataGrid
         data={transformedData}
         columns={columns}
+        customFilter={bilingualFilter}
         customRowRenderer={customRowRenderer}
         lang={lang}
         title={translations?.maps?.title || 'Biblical Maps'}

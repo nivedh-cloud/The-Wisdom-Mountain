@@ -20,8 +20,8 @@
     "genealogy": [
       { "key": "adam-to-jesus", "icon": "FaBible", "label": { "en": "Family Tree", "te": "కుటుంబ వృక్షాలు" } },
       
-      { "key": "adam-to-noah", "icon": "FaBible", "label": { "en": "Adam to Noah", "te": "ఆదాం నుండి నోహు" } },
-      { "key": "noah-to-abraham", "icon": "FaUserFriends", "label": { "en": "Noah to Abraham", "te": "నోహు నుండి అబ్రాహాము" } },
+      { "key": "adam-to-noah", "icon": "FaBible", "label": { "en": "Adam to Noah", "te": "ఆదాం నుండి నోవహు" } },
+      { "key": "noah-to-abraham", "icon": "FaUserFriends", "label": { "en": "Noah to Abraham", "te": "నోవహు  నుండి అబ్రాహాము" } },
       { "key": "abraham-to-moses", "icon": "FaUserFriends", "label": { "en": "Abraham to Moses", "te": "అబ్రాహాము నుండి మోషే" } },
       { "key": "moses-to-david", "icon": "FaUserFriends", "label": { "en": "Moses to David", "te": "మోషే నుండి దావీదు" } },
       { "key": "david-to-hezekiah", "icon": "FaCrown", "label": { "en": "David to Hezekiah", "te": "దావీదు నుండి హిజ్కియా" } },

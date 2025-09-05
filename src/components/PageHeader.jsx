@@ -21,7 +21,7 @@ const PageHeader = ({
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={`page-header ${className} ${isDarkMode ? 'dark' : 'light'}`}>
+    <div className={`page-header ${className} ${isDarkMode ? 'dark' : 'light'}`} style={{margin:'0 0 20px 0'}}>
       <div className="page-header-content">
         <div className="page-header-left">
           {icon && <div className="page-header-icon">{icon}</div>}

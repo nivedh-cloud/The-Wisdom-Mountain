@@ -157,6 +157,45 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
     }
   };
 
+  // Custom bilingual filter function
+  const bilingualFilter = (row, filterText) => {
+    if (!filterText) return true;
+    const searchText = filterText.toLowerCase();
+    
+    // Get the original prophet data to access both English and Telugu fields
+    const originalProphet = row._original;
+    if (!originalProphet) return false;
+    
+    // Search in both English and Telugu fields
+    const searchFields = [
+      // Prophet name (multiple variations)
+      originalProphet.name,
+      originalProphet.nameTelugu,
+      originalProphet.nameHebrew,
+      // Alternative names
+      originalProphet.alternativeNames?.en,
+      originalProphet.alternativeNames?.te,
+      // Period and category
+      originalProphet.period,
+      originalProphet.category,
+      // Ministry and location info
+      originalProphet.ministry,
+      originalProphet.birthPlace,
+      originalProphet.deathPlace,
+      // Books written (both languages)
+      ...(Array.isArray(originalProphet.booksWritten) ? originalProphet.booksWritten : []),
+      ...(Array.isArray(originalProphet.booksWrittenTelugu) ? originalProphet.booksWrittenTelugu : []),
+      // Description fields
+      originalProphet.description?.en,
+      originalProphet.description?.te
+    ];
+    
+    // Check if search text matches any of the fields
+    return searchFields.some(field => 
+      field && field.toString().toLowerCase().includes(searchText)
+    );
+  };
+
   return (
     <div style={{ 
       height: '100%', 
@@ -173,6 +212,7 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
         title={translations.prophets.title}
         icon={iconConfig}
         chartConfig={chartConfig}
+        customFilter={bilingualFilter}
         customRowRenderer={customRowRenderer}
       />
 

@@ -334,6 +334,46 @@ const BooksWritersGrid = ({ lang, page }) => {
     }
   };
 
+  // Custom bilingual filter function
+  const bilingualFilter = (row, filterText) => {
+    if (!filterText) return true;
+    const searchText = filterText.toLowerCase();
+    
+    // Get the original item data to access both English and Telugu fields
+    const originalItem = row._original;
+    if (!originalItem) return false;
+    
+    // Search in both English and Telugu fields
+    const searchFields = [
+      // Book/Author name (multiple variations)
+      originalItem.name,
+      originalItem.nameTelugu,
+      originalItem.nameHebrew,
+      originalItem.nameGreek,
+      // Author information
+      originalItem.author,
+      originalItem.authorTelugu,
+      originalItem.authorHebrew,
+      // Category and theme
+      originalItem.category,
+      originalItem.writtenDate,
+      originalItem.theme?.en,
+      originalItem.theme?.te,
+      // Books written (for authors)
+      ...(Array.isArray(originalItem.booksWritten) ? originalItem.booksWritten : []),
+      ...(Array.isArray(originalItem.booksWrittenTelugu) ? originalItem.booksWrittenTelugu : []),
+      // Numeric fields as strings
+      originalItem.chapters?.toString(),
+      originalItem.verses?.toString(),
+      originalItem.totalBooks?.toString()
+    ];
+    
+    // Check if search text matches any of the fields
+    return searchFields.some(field => 
+      field && field.toString().toLowerCase().includes(searchText)
+    );
+  };
+
   const data = getData();
   const columns = getColumns();
 
@@ -362,6 +402,7 @@ const BooksWritersGrid = ({ lang, page }) => {
           title={getPageTitle()}
           icon={iconConfig}
           chartConfig={chartConfig}
+          customFilter={bilingualFilter}
           customRowRenderer={customRowRenderer}
         />
       </div>

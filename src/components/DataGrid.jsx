@@ -247,7 +247,9 @@ export default function DataGrid({
   };
 
   // Use custom filter if provided, otherwise use default
-  const filterFunction = customFilter || defaultFilter;
+  const filterFunction = customFilter 
+    ? (row) => customFilter(row, filterText)  // Pass filterText to customFilter
+    : defaultFilter;
   const filteredData = data.filter(filterFunction);
 
   // Default translations
@@ -648,8 +650,8 @@ export default function DataGrid({
     >
       {/* Header Section */}
       <div className="section-header">
-        <h2 className={icon ? "section-title-with-icon" : "section-title"} style={icon ? { color: icon.color } : {}}>
-          {icon && <icon.Icon className="section-icon" style={{ color: icon.color }} />}
+        <h2 className={icon ? "section-title-with-icon" : "section-title"} >
+          {icon && <icon.Icon className="section-icon" />}
           {title}
         </h2>
       </div>

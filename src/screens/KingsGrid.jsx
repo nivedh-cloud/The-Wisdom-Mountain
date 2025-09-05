@@ -524,6 +524,43 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
     color: iconColor
   };
 
+  // Custom bilingual filter function
+  const bilingualFilter = (row, filterText) => {
+    if (!filterText) return true;
+    const searchText = filterText.toLowerCase();
+    
+    // Find the original king data to access both English and Telugu fields
+    const originalKing = kingsData[section].find(king => king.id === row._kingId);
+    if (!originalKing) return false;
+    
+    // Search in both English and Telugu fields
+    const searchFields = [
+      // King name (both languages)
+      originalKing.king,
+      originalKing.kingTelugu,
+      // Prophet name (both languages)
+      originalKing.prophet,
+      originalKing.prophetTelugu,
+      // Year (both languages)
+      originalKing.year,
+      originalKing.yearTelugu,
+      // Years ruled (both languages)
+      originalKing.yearsRuled?.toString(),
+      originalKing.yearsRuledTelugu,
+      // Good/Bad status (both languages)
+      originalKing.goodBad,
+      originalKing.goodBadTelugu,
+      // Alternative names if available
+      originalKing.alternativeNames?.en,
+      originalKing.alternativeNames?.te
+    ];
+    
+    // Check if search text matches any of the fields
+    return searchFields.some(field => 
+      field && field.toString().toLowerCase().includes(searchText)
+    );
+  };
+
   return (
     <div style={{ 
       height: '100%', 
@@ -540,6 +577,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
         title={getTitle()}
         icon={iconConfig}
         chartConfig={chartConfig}
+        customFilter={bilingualFilter}
         customRowRenderer={customRowRenderer}
       />
 
