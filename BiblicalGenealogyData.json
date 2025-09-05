@@ -1,0 +1,494 @@
+[
+  {
+    "id": "adam-1",
+    "name": "Adam",
+    "parent_id": null,
+    "children_ids": [
+      "seth-1"
+    ],
+    "children_names": [
+      "Seth"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "The first man created by God.",
+    "verse_reference": "Genesis 2:7",
+    "total_lifespan": 930,
+    "age_at_fatherhood": 130
+  },
+  {
+    "id": "eve-1",
+    "name": "Eve",
+    "parent_id": null,
+    "children_ids": [
+      "seth-1"
+    ],
+    "children_names": [
+      "Seth"
+    ],
+    "abilities": [
+      "matriarch",
+      "female"
+    ],
+    "description": "The first woman, created from Adam's rib.",
+    "verse_reference": "Genesis 2:22",
+    "total_lifespan": null,
+    "age_at_fatherhood": null
+  },
+  {
+    "id": "seth-1",
+    "name": "Seth",
+    "parent_id": "adam-1",
+    "children_ids": [
+      "enos-1"
+    ],
+    "children_names": [
+      "Enos"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Adam's third son, who continued the lineage of humanity.",
+    "verse_reference": "Genesis 4:25",
+    "total_lifespan": 912,
+    "age_at_fatherhood": 105
+  },
+  {
+    "id": "enos-1",
+    "name": "Enos",
+    "parent_id": "seth-1",
+    "children_ids": [
+      "kenan-1"
+    ],
+    "children_names": [
+      "Kenan"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Seth. In his time, people began to call upon the name of the Lord.",
+    "verse_reference": "Genesis 4:26",
+    "total_lifespan": 905,
+    "age_at_fatherhood": 90
+  },
+  {
+    "id": "kenan-1",
+    "name": "Kenan",
+    "parent_id": "enos-1",
+    "children_ids": [
+      "mahalalel-1"
+    ],
+    "children_names": [
+      "Mahalalel"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Enos.",
+    "verse_reference": "Genesis 5:9",
+    "total_lifespan": 910,
+    "age_at_fatherhood": 70
+  },
+  {
+    "id": "mahalalel-1",
+    "name": "Mahalalel",
+    "parent_id": "kenan-1",
+    "children_ids": [
+      "jared-1"
+    ],
+    "children_names": [
+      "Jared"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Kenan.",
+    "verse_reference": "Genesis 5:12",
+    "total_lifespan": 895,
+    "age_at_fatherhood": 65
+  },
+  {
+    "id": "jared-1",
+    "name": "Jared",
+    "parent_id": "mahalalel-1",
+    "children_ids": [
+      "enoch-1"
+    ],
+    "children_names": [
+      "Enoch"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Mahalalel. Father of Enoch.",
+    "verse_reference": "Genesis 5:15",
+    "total_lifespan": 962,
+    "age_at_fatherhood": 162
+  },
+  {
+    "id": "enoch-1",
+    "name": "Enoch",
+    "parent_id": "jared-1",
+    "children_ids": [
+      "methuselah-1"
+    ],
+    "children_names": [
+      "Methuselah"
+    ],
+    "abilities": [
+      "prophet",
+      "patriarch",
+      "male"
+    ],
+    "description": "Walked faithfully with God and was taken by Him, not experiencing death.",
+    "verse_reference": "Genesis 5:24",
+    "total_lifespan": 365,
+    "age_at_fatherhood": 65
+  },
+  {
+    "id": "methuselah-1",
+    "name": "Methuselah",
+    "parent_id": "enoch-1",
+    "children_ids": [
+      "lamech-1"
+    ],
+    "children_names": [
+      "Lamech"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "The oldest person recorded in the Bible.",
+    "verse_reference": "Genesis 5:27",
+    "total_lifespan": 969,
+    "age_at_fatherhood": 187
+  },
+  {
+    "id": "lamech-1",
+    "name": "Lamech",
+    "parent_id": "methuselah-1",
+    "children_ids": [
+      "noah-1"
+    ],
+    "children_names": [
+      "Noah"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Methuselah. Father of Noah.",
+    "verse_reference": "Genesis 5:28",
+    "total_lifespan": 777,
+    "age_at_fatherhood": 182
+  },
+  {
+    "id": "noah-1",
+    "name": "Noah",
+    "parent_id": "lamech-1",
+    "children_ids": [
+      "shem-1",
+      "ham-1",
+      "japheth-1"
+    ],
+    "children_names": [
+      "Shem",
+      "Ham",
+      "Japheth"
+    ],
+    "abilities": [
+      "patriarch",
+      "prophet",
+      "male"
+    ],
+    "description": "Built the ark and survived the Great Flood with his family.",
+    "verse_reference": "Genesis 6:9",
+    "total_lifespan": 950,
+    "age_at_fatherhood": 500
+  },
+  {
+    "id": "shem-1",
+    "name": "Shem",
+    "parent_id": "noah-1",
+    "children_ids": [
+      "arphaxad-1"
+    ],
+    "children_names": [
+      "Arphaxad"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Noah. His lineage leads to Abraham.",
+    "verse_reference": "Genesis 11:10",
+    "total_lifespan": 600,
+    "age_at_fatherhood": 100
+  },
+  {
+    "id": "arphaxad-1",
+    "name": "Arphaxad",
+    "parent_id": "shem-1",
+    "children_ids": [
+      "shelah-1"
+    ],
+    "children_names": [
+      "Shelah"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Shem.",
+    "verse_reference": "Genesis 11:12",
+    "total_lifespan": 438,
+    "age_at_fatherhood": 35
+  },
+  {
+    "id": "shelah-1",
+    "name": "Shelah",
+    "parent_id": "arphaxad-1",
+    "children_ids": [
+      "eber-1"
+    ],
+    "children_names": [
+      "Eber"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Arphaxad.",
+    "verse_reference": "Genesis 11:14",
+    "total_lifespan": 433,
+    "age_at_fatherhood": 30
+  },
+  {
+    "id": "eber-1",
+    "name": "Eber",
+    "parent_id": "shelah-1",
+    "children_ids": [
+      "peleg-1"
+    ],
+    "children_names": [
+      "Peleg"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Ancestor of the Hebrews, from whom the name 'Hebrew' is thought to derive.",
+    "verse_reference": "Genesis 11:16",
+    "total_lifespan": 464,
+    "age_at_fatherhood": 34
+  },
+  {
+    "id": "peleg-1",
+    "name": "Peleg",
+    "parent_id": "eber-1",
+    "children_ids": [
+      "reu-1"
+    ],
+    "children_names": [
+      "Reu"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "His name means 'division,' because in his time the earth was divided.",
+    "verse_reference": "Genesis 11:18",
+    "total_lifespan": 239,
+    "age_at_fatherhood": 30
+  },
+  {
+    "id": "reu-1",
+    "name": "Reu",
+    "parent_id": "peleg-1",
+    "children_ids": [
+      "serug-1"
+    ],
+    "children_names": [
+      "Serug"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Peleg.",
+    "verse_reference": "Genesis 11:20",
+    "total_lifespan": 239,
+    "age_at_fatherhood": 32
+  },
+  {
+    "id": "serug-1",
+    "name": "Serug",
+    "parent_id": "reu-1",
+    "children_ids": [
+      "nahor-1"
+    ],
+    "children_names": [
+      "Nahor"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Reu.",
+    "verse_reference": "Genesis 11:22",
+    "total_lifespan": 230,
+    "age_at_fatherhood": 30
+  },
+  {
+    "id": "nahor-1",
+    "name": "Nahor",
+    "parent_id": "serug-1",
+    "children_ids": [
+      "terah-1"
+    ],
+    "children_names": [
+      "Terah"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Serug.",
+    "verse_reference": "Genesis 11:24",
+    "total_lifespan": 148,
+    "age_at_fatherhood": 29
+  },
+  {
+    "id": "terah-1",
+    "name": "Terah",
+    "parent_id": "nahor-1",
+    "children_ids": [
+      "abram-1",
+      "nahor-2",
+      "haran-1"
+    ],
+    "children_names": [
+      "Abram",
+      "Nahor",
+      "Haran"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Father of Abram, Nahor, and Haran.",
+    "verse_reference": "Genesis 11:26",
+    "total_lifespan": 205,
+    "age_at_fatherhood": 70
+  },
+  {
+    "id": "abram-1",
+    "name": "Abram",
+    "parent_id": "terah-1",
+    "children_ids": [],
+    "children_names": [],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Later renamed Abraham by God.",
+    "verse_reference": "Genesis 17:5",
+    "total_lifespan": 175,
+    "age_at_fatherhood": 100
+  },
+  {
+    "id": "nahor-2",
+    "name": "Nahor",
+    "parent_id": "terah-1",
+    "children_ids": [],
+    "children_names": [],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Brother of Abraham.",
+    "verse_reference": "Genesis 11:26",
+    "total_lifespan": null,
+    "age_at_fatherhood": null
+  },
+  {
+    "id": "haran-1",
+    "name": "Haran",
+    "parent_id": "terah-1",
+    "children_ids": [
+      "lot-1"
+    ],
+    "children_names": [
+      "Lot"
+    ],
+    "abilities": [
+      "male"
+    ],
+    "description": "Brother of Abraham and father of Lot.",
+    "verse_reference": "Genesis 11:26",
+    "total_lifespan": null,
+    "age_at_fatherhood": null
+  },
+  {
+    "id": "sarai-1",
+    "name": "Sarai",
+    "parent_id": null,
+    "children_ids": [
+      "isaac-1"
+    ],
+    "children_names": [
+      "Isaac"
+    ],
+    "abilities": [
+      "matriarch",
+      "female"
+    ],
+    "description": "Wife of Abram, later renamed Sarah.",
+    "verse_reference": "Genesis 17:15",
+    "total_lifespan": 127,
+    "age_at_fatherhood": 90
+  },
+  {
+    "id": "lot-1",
+    "name": "Lot",
+    "parent_id": "haran-1",
+    "children_ids": [],
+    "children_names": [],
+    "abilities": [
+      "male"
+    ],
+    "description": "Nephew of Abraham.",
+    "verse_reference": "Genesis 11:27",
+    "total_lifespan": null,
+    "age_at_fatherhood": null
+  },
+  {
+    "id": "isaac-1",
+    "name": "Isaac",
+    "parent_id": "abram-1",
+    "children_ids": [
+      "esau-1",
+      "jacob-1"
+    ],
+    "children_names": [
+      "Esau",
+      "Jacob"
+    ],
+    "abilities": [
+      "patriarch",
+      "male"
+    ],
+    "description": "Son of Abraham and Sarah.",
+    "verse_reference": "Genesis 21:3",
+    "total_lifespan": 180,
+    "age_at_fatherhood": 60
+  }
+]
