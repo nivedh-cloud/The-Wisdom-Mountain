@@ -680,10 +680,6 @@ export default function DataGrid({
           </div>
         </div>
         
-        <div className="row-count-section">
-          
-        </div>
-        
         <div className="header-actions">
           <button className='action-button print-button'>
           <span className="">

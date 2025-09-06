@@ -19,7 +19,24 @@ import NamesOfGodGrid from './screens/NamesOfGodGrid';
 import OldTestamentNames from './screens/OldTestamentNames';
 import NewTestamentNames from './screens/NewTestamentNames';
 import carouselData from './assets/data/carouselData.json';
-import { carouselImages as importedCarouselImages } from './assets/images/carousel-images';
+
+// Import carousel images from src assets (Vite will handle the paths correctly)
+import carouselImage1 from './assets/images/carousel-images/carousel-image1.png';
+import carouselImage2 from './assets/images/carousel-images/carousel-image2.png';
+import carouselImage3 from './assets/images/carousel-images/carousel-image3.png';
+import carouselImage4 from './assets/images/carousel-images/carousel-image4.png';
+import carouselImage5 from './assets/images/carousel-images/carousel-image5.png';
+import carouselImage6 from './assets/images/carousel-images/carousel-image6.png';
+
+const importedCarouselImages = [
+  carouselImage1,
+  carouselImage2,
+  carouselImage3,
+  carouselImage4,
+  carouselImage5,
+  carouselImage6
+];
+
 import './styles/App.css';
 import './styles/GlobalStyles.css';
 import IsraelMapsTribes from './screens/IsraelMapsTribes';
@@ -109,7 +126,7 @@ function App() {
         <MenuBar lang={lang} page={page} setPage={navigateToPage} setLang={setLang} />
         
         {/* Mobile Menu Toggle Button */}
-        {(page === 'genealogy' || page === 'kings' || page === 'judges' || page === 'prophets' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','adam-lineage','abraham-lineage','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && (
+        {(page === 'genealogy' || page === 'kings' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','adam-lineage','abraham-lineage','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && page !== 'judges' && page !== 'prophets' && !['list-of-judges', 'list-of-prophets'].includes(page) && (
           <button 
             className="mobile-menu-toggle"
             onClick={toggleMobileMenu}

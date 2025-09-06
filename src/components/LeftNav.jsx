@@ -218,8 +218,19 @@ const LeftNav = ({ lang, page, navigateToPage, translations, isMobileMenuOpen, c
     );
   };
 
+  // Determine if left nav should be hidden
+  const shouldHideLeftNav = ['prophets', 'judges'].includes(menuType);
+  
+  // Debug log (remove in production)
+  if (shouldHideLeftNav) {
+    console.log('🔻 Hiding left nav for:', { page, menuType, shouldHideLeftNav });
+  }
+
   return (
-    <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+    <aside 
+      className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''} ${shouldHideLeftNav ? 'left-nav-hidden' : ''}`}
+      style={shouldHideLeftNav ? { display: 'none !important' } : {}}
+    >
       {/* Mobile close button */}
       <button 
         className="sidebar-close-button"
@@ -232,7 +243,7 @@ const LeftNav = ({ lang, page, navigateToPage, translations, isMobileMenuOpen, c
       <div className="sidebar-header">{menuHeader}</div>
       
       {/* Search Bar - only show for non-accordion modes */}
-      {menuType !== 'bookswriters' && (
+      {!['bookswriters', 'judges', 'kings', 'prophets', 'maps', 'keyeras'].includes(menuType) && (
         <div className="sidebar-search-container">
           <div className="sidebar-search-wrapper">
             <FaSearch className="sidebar-search-icon" />

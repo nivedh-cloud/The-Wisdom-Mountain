@@ -189,6 +189,10 @@
   box-shadow: 0 0 0 3px var(--shadow-light);
 }
 
+  .left-nav-hidden{
+    display: none !important;
+  }
+
 .sidebar-menu {
   list-style: none;
   padding: 0;
@@ -1712,7 +1716,7 @@
     flex-direction: column;
     gap: 0.1em;
   }
-  
+
   .nav-icon {
     font-size: 1em;
   }
@@ -2192,5 +2196,30 @@
   
   .top-header .brand-tagline {
     font-size: 0.7rem !important;
+  }
+}
+
+/* Hide Left Nav for specific screens (Prophets and Judges) */
+.sidebar.left-nav-hidden,
+aside.sidebar.left-nav-hidden,
+.left-nav-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Adjust main content when left nav is hidden */
+.main-layout:has(.left-nav-hidden) .main-content,
+.main-layout .main-content {
+  margin-left: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* For browsers that don't support :has() selector */
+@supports not (selector(:has(*))) {
+  .main-layout .main-content {
+    transition: margin-left 0.3s ease, width 0.3s ease;
   }
 }

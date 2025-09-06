@@ -82,9 +82,9 @@ const TopHeader = ({ lang, setLang }) => {
             <FaBell />
             <span className="notification-badge">3</span>
           </button>
-          <div className="header-divider"></div>
-          <div className="user-profile">
-            <div className="user-avatar" style={{"display": "none"}}>
+          <div className="header-divider" style={{"display": "none"}}></div>
+          <div className="user-profile" style={{"display": "none"}}>
+            <div className="user-avatar" >
               <FaUser />
             </div>
             <span className="user-name">User</span>
