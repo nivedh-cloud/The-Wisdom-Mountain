@@ -1779,7 +1779,8 @@
   }
   
   .search-section {
-    max-width: 100%;
+    max-width: 42%;
+    line-height: 25px;
   }
   
   .row-count-section {

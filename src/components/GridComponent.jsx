@@ -1,3 +1,4 @@
+import React from 'react';
 import GenealogyGrid from '../screens/GenealogyTest';
 import KingsGrid from '../screens/KingsGrid';
 import JudgesGrid from '../screens/JudgesGrid';

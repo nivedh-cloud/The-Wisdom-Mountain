@@ -10,7 +10,9 @@ export default defineConfig(({ command, mode }) => {
   return {
     base,
     plugins: [
-    react(),
+    react({
+      jsxRuntime: 'classic'
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
