@@ -3035,7 +3035,7 @@
   .mobile-panel-toggle {
     display: flex !important;
     position: fixed !important;
-    top: 300px !important;
+    top: 250px !important;
     right: 20px !important;
     z-index: 201 !important;
     background: #6366f1 !important;
