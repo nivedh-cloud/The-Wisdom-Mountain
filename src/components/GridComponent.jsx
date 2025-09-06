@@ -5,6 +5,7 @@ import JudgesGrid from '../screens/JudgesGrid';
 import ProphetsGrid from '../screens/ProphetsGrid';
 import MapsGrid from '../screens/MapsGrid';
 import KeyErasGrid from '../screens/KeyErasGrid';
+import PostExilicGrid from '../screens/PostExilicGrid';
 import D3Chart from '../screens/D3Chart';
 
 const GridComponent = ({ lang, page }) => {
@@ -22,6 +23,9 @@ const GridComponent = ({ lang, page }) => {
   }
   if (page === 'israel-kings') {
     return <div className="grid-container"><KingsGrid lang={lang} section="israel-kings" /></div>;
+  }
+  if (page === 'post-exilic-period') {
+    return <div className="grid-container"><PostExilicGrid lang={lang} section="post-exilic-period" /></div>;
   }
   if (page === 'list-of-judges') {
     return <div className="grid-container"><JudgesGrid lang={lang} section="list-of-judges" /></div>;

@@ -19,7 +19,11 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
   const [selectedProphet, setSelectedProphet] = useState(null);
   
   // Choose the correct details file based on the section
-  const kingsDetails = section === 'israel-kings' ? israelKingsDetails.israelKingsDetails : judahKingsDetails.kingsDetails;
+  const kingsDetails = section === 'israel-kings' 
+    ? israelKingsDetails.israelKingsDetails 
+    : section === 'post-exilic-period'
+    ? [] // No detailed modal data for post-exilic period yet
+    : judahKingsDetails.kingsDetails;
 
   // Load menu config for icon and color
   const kingsMenu = menuConfig.menus.kings.find(m => m.key === section) || {};
@@ -27,7 +31,8 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
   const iconColor = kingsMenu.iconColor || '#6366f1';
 
   const t = (kingsData.tableHeaders && kingsData.tableHeaders[lang]) || kingsData.tableHeaders.en;
-  const data = kingsData[section].map(king => ({
+  const sectionData = kingsData[section] || [];
+  const data = sectionData.map(king => ({
     king: lang === 'te' ? king.kingTelugu : king.king,
     year: lang === 'te' ? king.yearTelugu : king.year,
     yearsRuled: lang === 'te' ? king.yearsRuledTelugu : king.yearsRuled,
@@ -329,7 +334,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
   // Define columns for the kings grid
   const columns = [
     {
-      header: t.king,
+      header: section === 'post-exilic-period' ? (t.leader || 'Leader') : t.king,
       dataKey: 'king'
     },
     {
@@ -337,7 +342,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
       dataKey: 'year'
     },
     {
-      header: t.yearsRuled,
+      header: section === 'post-exilic-period' ? (t.yearsServed || 'Years Served') : t.yearsRuled,
       dataKey: 'yearsRuled'
     },
     {
@@ -514,6 +519,8 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
       return t.judahTitle || 'Judah Kings';
     } else if (section === 'israel-kings') {
       return t.israelTitle || 'Israel Kings';
+    } else if (section === 'post-exilic-period') {
+      return t.postExilicTitle || 'Post-Exilic Leaders';
     }
     return t.title || 'Kings';
   };

@@ -264,7 +264,7 @@ function App() {
                 } />
               ))}
               {/* GridComponent routes for all other pages */}
-              {['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile'].map(route => (
+              {['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','post-exilic-period','list-of-judges','list-of-prophets','old-testament-maps','new-testament-maps','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile'].map(route => (
                 <Route key={route} path={`/${route}`} element={
                   <GridComponent lang={lang} page={route} />
                 } />

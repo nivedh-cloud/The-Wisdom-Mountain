@@ -30,7 +30,8 @@
     ],
     "kings": [
   { "key": "judah-kings", "icon": "FaCrown", "iconColor": "#6366f1", "label": { "en": "Judah Kings", "te": "యూదా రాజులు" } },
-  { "key": "israel-kings", "icon": "GiCrownCoin", "iconColor": "#f59e42", "label": { "en": "Israel Kings", "te": "ఇస్రాయేల్ రాజులు" } }
+  { "key": "israel-kings", "icon": "GiCrownCoin", "iconColor": "#f59e42", "label": { "en": "Israel Kings", "te": "ఇస్రాయేల్ రాజులు" } },
+  { "key": "post-exilic-period", "icon": "FaCrown", "iconColor": "#8b5cf6", "label": { "en": "The Post-Exilic Period", "te": "యూదుల చెర తరువాత కాలం" } }
     ],
     "judges": [
       { "key": "list-of-judges", "icon": "glyphicon-user", "label": { "en": "List of Judges", "te": "న్యాయాధిపతుల జాబితా" } }

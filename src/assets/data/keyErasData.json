@@ -478,6 +478,32 @@
         "te": "క్రైస్తవ చర్చి స్థాపన, అన్ని జాతులకు సువార్త వ్యాప్తి, కొత్త నిబంధన రచన"
       },
       "scripture": "Acts, Epistles, Revelation"
+    },
+    {
+      "id": 15,
+      "name": "The Post-Exilic Period",
+      "nameTelugu": "యూదుల చెర తరువాత కాలం",
+      "period": "Post-Exilic Period",
+      "dateRange": "538-400 BC",
+      "duration": "About 138 years",
+      "keyEvents": [
+        "Return from Babylonian exile",
+        "Rebuilding of the Temple",
+        "Restoration of Jerusalem",
+        "Reforms under Ezra and Nehemiah",
+        "Completion of Old Testament canon"
+      ],
+      "keyFigures": ["Zerubbabel", "Ezra", "Nehemiah", "Haggai", "Zechariah", "Malachi"],
+      "keyLocations": ["Jerusalem", "Judah", "Temple"],
+      "description": {
+        "en": "The period following the return from Babylonian exile when the Jewish people rebuilt their temple, restored their worship, and renewed their covenant with God",
+        "te": "బబులోనియన్ బందిత్వం నుండి తిరిగి వచ్చిన తర్వాత యూదు ప్రజలు తమ దేవాలయాన్ని పునర్నిర్మించారు, వారి ఆరాధనను పునరుద్ధరించారు మరియు దేవునితో తమ ఒప్పందాన్ని నవీకరించిన కాలం"
+      },
+      "significance": {
+        "en": "Restoration of Jewish worship and identity, preparation for the coming Messiah, completion of Old Testament revelation",
+        "te": "యూదు ఆరాధన మరియు గుర్తింపు పునరుద్ధరణ, రాబోయే మెస్సియా కోసం సిద్ధత, పాత నిబంధన ప్రత్యక్షత పూర్తి"
+      },
+      "scripture": "Ezra, Nehemiah, Haggai, Zechariah, Malachi"
     }
   ]
 }
