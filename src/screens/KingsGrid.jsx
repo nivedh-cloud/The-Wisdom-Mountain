@@ -63,10 +63,10 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
       'jehoshaphat': 'Jehoshaphat',
       'jehoram': 'Jehoram',
       'ahaziah': 'Ahaziah',
-      'athaliah': 'Athaliah',
+      'athaliah': 'Athaliah (Queen)',
       'joash': 'Joash',
       'amaziah': 'Amaziah',
-      'uzziah': 'Uzziah',
+      'uzziah': 'Uzziah (Azariah)',
       'jotham': 'Jotham',
       'ahaz': 'Ahaz',
       'hezekiah': 'Hezekiah',
@@ -217,30 +217,30 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
         <div style={{ 
           display: 'flex', 
           justifyContent: 'center', 
-          marginBottom: '20px',
+          marginBottom: '5px',
           flexWrap: 'wrap',
-          gap: '20px'
+          gap: '5px'
         }}>
           {legendData.map((item, index) => (
             <div key={index} style={{ 
               display: 'flex', 
               alignItems: 'center', 
               gap: '8px',
-              padding: '8px 12px',
+              padding: '4px 6px',
               backgroundColor: isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)',
               borderRadius: '8px',
               backdropFilter: 'blur(10px)'
             }}>
               <div style={{ 
-                width: '16px', 
-                height: '16px', 
+                width: '12px', 
+                height: '12px', 
                 backgroundColor: item.color,
                 borderRadius: '4px'
               }}></div>
               <span style={{ 
                 color: colors.text, 
                 fontWeight: '500',
-                fontSize: '14px'
+                fontSize: '11px'
               }}>
                 {item.value}
               </span>
@@ -379,7 +379,10 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
                 onMouseMove={handleMouseMove || undefined}
               >
                 <span 
-                  onClick={() => handleKingClick(row._kingId)}
+                  onClick={(e) => {
+                    if (handleMouseLeave) handleMouseLeave(); // Hide tooltip
+                    handleKingClick(row._kingId);
+                  }}
                   style={{ 
                     color: '#6366f1', 
                     fontWeight: '600',
@@ -682,7 +685,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
 
             {/* Failures */}
             {selectedKing.failures && (
-              <div style={{ marginBottom: '20px' }}>
+              <div style={{ marginBottom: '20px', textAlign: 'left' }}>
                 <h3 style={{ 
                   color: '#ef4444',
                   borderBottom: `2px solid ${isDarkMode ? 'rgba(239, 68, 68, 0.3)' : 'rgba(239, 68, 68, 0.2)'}`,
@@ -717,12 +720,12 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
                   marginBottom: '12px',
                   fontSize: '2.1em'
                 }}>
-                  {lang === 'te' ? 'బైబిల్ సూత్రాలు' : 'Bible References'}
+                  {lang === 'te' ? 'బైబిల్ సూచనలు' : 'Bible References'}
                 </h3>
                 
                 {/* Primary References */}
                 {selectedKing.bibleReferences.primary && (
-                  <div style={{ marginBottom: '20px' }}>
+                  <div style={{ marginBottom: '20px', textAlign: 'left' }}>
                     <h4 style={{ 
                       color: isDarkMode ? '#e2e8f0' : '#334155',
                       marginBottom: '10px',
@@ -753,7 +756,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
 
                 {/* Key Chapters */}
                 {selectedKing.bibleReferences.keyChapters && (
-                  <div>
+                  <div style={{ marginBottom: '20px', textAlign: 'left' }}>
                     <h4 style={{ 
                       color: isDarkMode ? '#e2e8f0' : '#334155',
                       marginBottom: '15px',
@@ -763,6 +766,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
                     </h4>
                     <div style={{ 
                       display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                       gap: '12px'
                     }}>
                       {selectedKing.bibleReferences.keyChapters.map((chapter, index) => (
@@ -851,16 +855,35 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
                   gap: '8px'
                 }}>
                   {(lang === 'te' ? selectedKing.prophetsTelugu : selectedKing.prophets).map((prophet, index) => (
-                    <span key={index} style={{
-                      backgroundColor: isDarkMode ? 'rgba(6, 182, 212, 0.2)' : 'rgba(6, 182, 212, 0.1)',
-                      color: '#06b6d4',
-                      padding: '6px 12px',
-                      borderRadius: '20px',
-                      fontSize: '0.9em',
-                      fontWeight: '500'
-                    }}>
+                    <button 
+                      key={index} 
+                      onClick={() => {
+                        setShowKingModal(false); // Close current king modal
+                        handleProphetClick(prophet); // Open prophet modal
+                      }}
+                      style={{
+                        backgroundColor: isDarkMode ? 'rgba(6, 182, 212, 0.2)' : 'rgba(6, 182, 212, 0.1)',
+                        color: '#06b6d4',
+                        padding: '6px 12px',
+                        borderRadius: '20px',
+                        fontSize: '0.9em',
+                        fontWeight: '500',
+                        border: 'none',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease',
+                        textDecoration: 'underline'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = isDarkMode ? 'rgba(6, 182, 212, 0.3)' : 'rgba(6, 182, 212, 0.2)';
+                        e.target.style.transform = 'translateY(-1px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = isDarkMode ? 'rgba(6, 182, 212, 0.2)' : 'rgba(6, 182, 212, 0.1)';
+                        e.target.style.transform = 'translateY(0)';
+                      }}
+                    >
                       {prophet}
-                    </span>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -915,7 +938,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
             </div>
 
             {/* Introduction */}
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: '20px', textAlign: 'left' }}>
               <h3 style={{ 
                 color: '#059669',
                 borderBottom: `2px solid ${isDarkMode ? 'rgba(5, 150, 105, 0.3)' : 'rgba(5, 150, 105, 0.2)'}`,
@@ -935,7 +958,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
 
             {/* Key Events */}
             {selectedProphet.keyEvents && (
-              <div style={{ marginBottom: '20px' }}>
+              <div style={{ marginBottom: '20px', textAlign: 'left'}}>
                 <h3 style={{ 
                   color: '#0891b2',
                   borderBottom: `2px solid ${isDarkMode ? 'rgba(8, 145, 178, 0.3)' : 'rgba(8, 145, 178, 0.2)'}`,
@@ -961,7 +984,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
 
             {/* Books Written */}
             {selectedProphet.booksWritten && (
-              <div style={{ marginBottom: '20px' }}>
+              <div style={{ marginBottom: '20px', textAlign: 'left'}}>
                 <h3 style={{ 
                   color: '#7c3aed',
                   borderBottom: `2px solid ${isDarkMode ? 'rgba(124, 58, 237, 0.3)' : 'rgba(124, 58, 237, 0.2)'}`,
@@ -986,14 +1009,14 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
             {/* Bible References */}
             {selectedProphet.references && (
               <div>
-                <h3 style={{ 
+                <h3 style={{ textAlign: 'left',
                   color: '#dc2626',
                   borderBottom: `2px solid ${isDarkMode ? 'rgba(220, 38, 38, 0.3)' : 'rgba(220, 38, 38, 0.2)'}`,
                   paddingBottom: '6px',
                   marginBottom: '12px',
                   fontSize: '1.1em'
                 }}>
-                  {lang === 'te' ? 'బైబిల్ సూత్రాలు' : 'Bible References'}
+                  {lang === 'te' ? 'బైబిల్ సూచనలు' : 'Bible References'}
                 </h3>
                 <p style={{ 
                   color: isDarkMode ? '#e2e8f0' : '#334155',

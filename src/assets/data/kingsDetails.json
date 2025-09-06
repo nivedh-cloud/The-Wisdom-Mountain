@@ -634,8 +634,8 @@
       "bibleReferences": {
         "primary": ["2 Kings 12", "2 Chronicles 24"]
       },
-      "prophets": ["Jehoiada", "Zechariah (son of Jehoiada)"],
-      "prophetsTelugu": ["యెహోయాదా", "జెకర్యా (యెహోయాదా కుమారుడు)"]
+      "prophets": ["Jehoiada (priest)", "Zechariah (son of Jehoiada)"],
+      "prophetsTelugu": ["యెహోయాదా (యాజకుడు)", "జెకర్యా (యెహోయాదా కుమారుడు)"]
     },
     "Amaziah": {
       "name": "Amaziah",

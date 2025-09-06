@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaUser, FaInfoCircle } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import DataGrid from '../components/DataGrid';
 import Modal from '../components/Modal';
 import prophetsData from '../assets/data/prophetsData.json';
@@ -50,7 +50,6 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
       booksWrittenCount: booksCount,
       ministryYears: ministryYears,
       
-      details: 'VIEW_DETAILS',
       // Keep original data for detailed view
       _original: prophet
     };
@@ -81,11 +80,6 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
     {
       header: translations.common.booksWritten,
       dataKey: 'booksWritten'
-    },
-    {
-      header: translations.common.details,
-      dataKey: 'details',
-      formatter: (value, row, lang) => value === 'VIEW_DETAILS' ? 'DETAILS_ICON' : value
     }
   ];
 
@@ -104,7 +98,7 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
     color: iconColor
   };
 
-  // Custom row renderer for prophets with details icon
+  // Custom row renderer for prophets with clickable names
   const customRowRenderer = (row, index, tooltipHandlers = {}) => {
     const { handleMouseEnter, handleMouseLeave, handleMouseMove } = tooltipHandlers;
     return (
@@ -113,22 +107,38 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
         className={`table-row ${index % 2 === 0 ? 'table-row-even' : 'table-row-odd'}`}
       >
         {columns.map((column, colIndex) => {
-          let value = row[column.dataKey];
+          const value = row[column.dataKey];
           
-          // Apply custom formatter if provided
-          if (column.formatter) {
-            value = column.formatter(value, row, lang);
-          }
-
-          // Special handling for details icon column
-          if (value === 'DETAILS_ICON') {
+          // Special handling for prophet column to make it clickable
+          if (column.dataKey === 'prophet') {
             return (
-              <td key={colIndex} className="table-cell text-center">
-                <FaInfoCircle
-                  onClick={() => handleDetailsClick(row)}
-                  className="details-icon"
-                  title={translations.common.viewDetails}
-                />
+              <td 
+                key={colIndex} 
+                className="table-cell"
+                onMouseEnter={handleMouseEnter ? (e) => handleMouseEnter(e, value) : undefined}
+                onMouseLeave={handleMouseLeave || undefined}
+                onMouseMove={handleMouseMove || undefined}
+              >
+                <span 
+                  onClick={(e) => {
+                    if (handleMouseLeave) handleMouseLeave(); // Hide tooltip
+                    handleDetailsClick(row);
+                  }}
+                  style={{ 
+                    color: '#6366f1', 
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    textDecoration: 'underline'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.color = '#4f46e5';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = '#6366f1';
+                  }}
+                >
+                  {value}
+                </span>
               </td>
             );
           }

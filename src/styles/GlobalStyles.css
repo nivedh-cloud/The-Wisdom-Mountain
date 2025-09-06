@@ -2063,7 +2063,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999;
   padding: 2em;
 }
 
@@ -2158,7 +2158,7 @@
 }
 
 .modal-title {
-  margin: 0 0 20px 0;
+  margin: 0 0 5px 0;
   color: var(--text-secondary);
   font-size: 1.8rem;
   font-weight: bold;
@@ -2192,7 +2192,7 @@
 }
 
 .modal-body {
-  padding: 24px;
+  padding: 5px 10px;
   overflow-y: auto;
   flex: 1;
   min-height: 0;
@@ -2647,7 +2647,7 @@
   }
 
   .chart-title {
-    font-size: 20px;
+    font-size: 12px;
   }
 }
 
@@ -3166,6 +3166,9 @@
   .header-container {
     padding: 0 0.5rem;
     height: 3.5rem;
+  }
+.top-header{
+    height: 60px !important;
   }
   
   .header-brand {

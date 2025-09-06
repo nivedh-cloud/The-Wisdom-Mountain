@@ -26,7 +26,7 @@ const PageHeader = ({
         <div className="page-header-left">
           {icon && <div className="page-header-icon">{icon}</div>}
           <div className="page-header-text">
-            <h1 className="page-header-title">{title}</h1>
+            <h1 className="section-title-with-icon">{title}</h1>
             {subtitle && <p className="page-header-subtitle">{subtitle}</p>}
           </div>
         </div>

@@ -189,30 +189,30 @@ export default function PostExilicGrid({ lang, section = 'post-exilic-period' })
         <div style={{ 
           display: 'flex', 
           justifyContent: 'center', 
-          marginBottom: '20px',
+          marginBottom: '5px',
           flexWrap: 'wrap',
-          gap: '20px'
+          gap: '5px'
         }}>
           {legendData.map((item, index) => (
             <div key={index} style={{ 
               display: 'flex', 
               alignItems: 'center', 
               gap: '8px',
-              padding: '8px 12px',
+              padding: '4px 8px',
               backgroundColor: isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)',
               borderRadius: '8px',
               backdropFilter: 'blur(10px)'
             }}>
               <div style={{ 
-                width: '16px', 
-                height: '16px', 
+                width: '12px', 
+                height: '12px', 
                 backgroundColor: item.color,
                 borderRadius: '4px'
               }}></div>
               <span style={{ 
                 color: colors.text, 
                 fontWeight: '500',
-                fontSize: '14px'
+                fontSize: '11px'
               }}>
                 {item.value}
               </span>

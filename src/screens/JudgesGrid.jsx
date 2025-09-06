@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaUser, FaInfoCircle } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import DataGrid from '../components/DataGrid';
 import Modal from '../components/Modal';
 import judgesData from '../assets/data/judgesData.json';
@@ -25,7 +25,6 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
     period: judge.period,
     yearsOfJudgeship: lang === 'te' ? judge.yearsOfJudgeshipTelugu : judge.yearsOfJudgeship,
     oppressor: lang === 'te' ? judge.oppressorTelugu : judge.oppressor,
-    details: 'VIEW_DETAILS', // Special value for details icon
     // Keep original numeric values for chart regardless of language
     yearsOfJudgeshipNumeric: judge.yearsOfJudgeship,
     // Keep original data for detailed view
@@ -53,16 +52,6 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
     {
       header: translations.judges.oppressor,
       dataKey: 'oppressor'
-    },
-    {
-      header: translations.common.details,
-      dataKey: 'details',
-      formatter: (value, row, lang) => {
-        if (value === 'VIEW_DETAILS') {
-          return 'DETAILS_ICON'; // Special value to render details icon
-        }
-        return '';
-      }
     }
   ];
 
@@ -81,7 +70,7 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
     color: iconColor
   };
 
-  // Custom row renderer for judges with details icon
+  // Custom row renderer for judges with clickable names
   const customRowRenderer = (row, index, tooltipHandlers = {}) => {
     const { handleMouseEnter, handleMouseLeave, handleMouseMove } = tooltipHandlers;
     return (
@@ -90,22 +79,38 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
         className={`table-row ${index % 2 === 0 ? 'table-row-even' : 'table-row-odd'}`}
       >
         {columns.map((column, colIndex) => {
-          let value = row[column.dataKey];
+          const value = row[column.dataKey];
           
-          // Apply custom formatter if provided
-          if (column.formatter) {
-            value = column.formatter(value, row, lang);
-          }
-
-          // Special handling for details icon column
-          if (value === 'DETAILS_ICON') {
+          // Special handling for judge column to make it clickable
+          if (column.dataKey === 'judge') {
             return (
-              <td key={colIndex} className="table-cell text-center">
-                <FaInfoCircle
-                  onClick={() => handleDetailsClick(row)}
-                  className="details-icon"
-                  title={translations.common.viewDetails}
-                />
+              <td 
+                key={colIndex} 
+                className="table-cell"
+                onMouseEnter={handleMouseEnter ? (e) => handleMouseEnter(e, value) : undefined}
+                onMouseLeave={handleMouseLeave || undefined}
+                onMouseMove={handleMouseMove || undefined}
+              >
+                <span 
+                  onClick={(e) => {
+                    if (handleMouseLeave) handleMouseLeave(); // Hide tooltip
+                    handleDetailsClick(row);
+                  }}
+                  style={{ 
+                    color: '#6366f1', 
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    textDecoration: 'underline'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.color = '#4f46e5';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = '#6366f1';
+                  }}
+                >
+                  {value}
+                </span>
               </td>
             );
           }
@@ -126,7 +131,7 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
     );
   };
 
-  // Function to handle details icon click
+  // Function to handle judge name click
   const handleDetailsClick = (rowData) => {
     if (rowData._original) {
       setSelectedJudge(rowData._original);
