@@ -81,8 +81,8 @@
       "keyVerses": [
         {
           "reference": "1 Samuel 15:22",
-          "text": "To obey is better than sacrifice, and to heed is better than the fat of rams.",
-          "textTelugu": "యజ్ఞం కన్నా విధేయత మేలు, పొట్టేళ్ల కొవ్వు కన్నా వినడం మేలు."
+          "text": "To obey is better than sacrifice, and to hearken than the fat of rams.",
+          "textTelugu": "బలులు అర్పించుటకంటె ఆజ్ఞను గైకొనుటయు, పొట్టేళ్ల క్రొవ్వు అర్పించుటకంటె మాట వినుటయు శ్రేష్ఠము."
         }
       ],
       "prophets": ["Samuel"],
@@ -177,12 +177,12 @@
         {
           "reference": "1 Samuel 13:14",
           "text": "The LORD has sought out a man after his own heart.",
-          "textTelugu": "యెహోవా తన హృదయానికి అనుగుణమైన వ్యక్తిని వెతికాడు."
+          "textTelugu": "యెహోవా తన చిత్తానుసారమైన మనస్సుగల యొకని కనుగొనియున్నాడు."
         },
         {
           "reference": "Psalm 23:1",
           "text": "The LORD is my shepherd, I lack nothing.",
-          "textTelugu": "యెహోవా నా కాపరి; నాకు ఏ లోపమూ ఉండదు."
+          "textTelugu": "యెహోవా నా కాపరి నాకు లేమి కలుగదు."
         }
       ],
       "prophets": ["Samuel", "Nathan", "Gad"],
@@ -275,8 +275,8 @@
       "keyVerses": [
         {
           "reference": "1 Kings 3:9",
-          "text": "Give your servant a discerning heart to govern your people and to distinguish between right and wrong.",
-          "textTelugu": "మీ ప్రజలను పాలించడానికి మరియు మంచి చెడ్డల మధ్య తేడా తెలుసుకోడానికి మీ దాసునికి వివేక హృదయాన్ని ఇవ్వండి."
+          "text": "Give therefore Thy servant an understanding heart to judge Thy people, that I may discern between good and bad.",
+          "textTelugu": "మంచి చెడ్డలు వివేచించి నీ జనులకు న్యాయము తీర్చునట్లు నీ దాసుడనైన నాకు వివేకముగల హృదయము దయ చేయుము."
         }
       ],
       "prophets": ["Nathan", "Ahijah"],

@@ -385,6 +385,13 @@
   animation: tooltipFadeIn 0.2s ease-out forwards;
 }
 
+/* Hide tooltips when modal is open */
+body.modal-open .data-grid-tooltip {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 @keyframes tooltipFadeIn {
   from {
     opacity: 0;

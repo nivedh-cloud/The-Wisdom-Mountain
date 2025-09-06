@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaCrown } from 'react-icons/fa';
 import { GiCrownCoin } from 'react-icons/gi';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList, Legend, Cell } from 'recharts';
@@ -17,6 +17,19 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
   const [selectedKing, setSelectedKing] = useState(null);
   const [showProphetModal, setShowProphetModal] = useState(false);
   const [selectedProphet, setSelectedProphet] = useState(null);
+  
+  useEffect(() => {
+    if (showProphetModal) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [showProphetModal]);
   
   // Choose the correct details file based on the section
   const kingsDetails = section === 'israel-kings' 
@@ -86,10 +99,10 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
       'zimri': 'Zimri',
       'omri': 'Omri',
       'ahab': 'Ahab',
-      'ahaziah-israel': 'Ahaziah (Israel)',
+      'ahaziah-israel': 'Ahaziah',
       'joram-israel': 'Joram',
       'jehu': 'Jehu',
-      'jehoahaz-israel': 'Jehoahaz (Israel)',
+      'jehoahaz-israel': 'Jehoahaz',
       'jehoash-israel': 'Jehoash',
       'jeroboam2': 'Jeroboam II',
       'zechariah-israel': 'Zechariah',
@@ -857,9 +870,27 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
                   {(lang === 'te' ? selectedKing.prophetsTelugu : selectedKing.prophets).map((prophet, index) => (
                     <button 
                       key={index} 
-                      onClick={() => {
+                      onClick={(e) => {
+                        // Force remove any active tooltips by hiding all tooltip elements
+                        const tooltips = document.querySelectorAll('.data-grid-tooltip');
+                        tooltips.forEach(tooltip => {
+                          tooltip.style.display = 'none';
+                          tooltip.remove();
+                        });
+                        
+                        // Also trigger mouse leave on the current element
+                        e.target.onmouseleave && e.target.onmouseleave(e);
+                        
                         setShowKingModal(false); // Close current king modal
                         handleProphetClick(prophet); // Open prophet modal
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = isDarkMode ? 'rgba(6, 182, 212, 0.2)' : 'rgba(6, 182, 212, 0.1)';
+                        e.target.style.transform = 'translateY(0)';
+                        
+                        // Additional tooltip cleanup
+                        const tooltips = document.querySelectorAll('.data-grid-tooltip');
+                        tooltips.forEach(tooltip => tooltip.style.display = 'none');
                       }}
                       style={{
                         backgroundColor: isDarkMode ? 'rgba(6, 182, 212, 0.2)' : 'rgba(6, 182, 212, 0.1)',
@@ -876,10 +907,6 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
                       onMouseEnter={(e) => {
                         e.target.style.backgroundColor = isDarkMode ? 'rgba(6, 182, 212, 0.3)' : 'rgba(6, 182, 212, 0.2)';
                         e.target.style.transform = 'translateY(-1px)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.backgroundColor = isDarkMode ? 'rgba(6, 182, 212, 0.2)' : 'rgba(6, 182, 212, 0.1)';
-                        e.target.style.transform = 'translateY(0)';
                       }}
                     >
                       {prophet}

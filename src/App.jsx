@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import TopHeader from './components/TopHeader';
 import MenuBar from './components/MenuBar';
 import LeftNav from './components/LeftNav';
@@ -64,9 +65,9 @@ const translations = {
   }
 };
 
-
-function App() {
-  const [lang, setLang] = useState('en');
+// Inner component that uses the LanguageContext
+function AppContent() {
+  const { language: lang, setLanguage: setLang } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -120,13 +121,12 @@ function App() {
   }));
 
   return (
-    <ThemeProvider>
-      <div className={`app-container ${page === 'home' ? 'home-page' : ''}`}>
-        <TopHeader lang={lang} setLang={setLang} />
-        <MenuBar lang={lang} page={page} setPage={navigateToPage} setLang={setLang} />
-        
-        {/* Mobile Menu Toggle Button */}
-        {(page === 'genealogy' || page === 'kings' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','post-exilic-period','adam-lineage','abraham-lineage','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && page !== 'judges' && page !== 'prophets' && !['list-of-judges', 'list-of-prophets'].includes(page) && (
+    <div className={`app-container ${page === 'home' ? 'home-page' : ''}`}>
+      <TopHeader lang={lang} setLang={setLang} />
+      <MenuBar lang={lang} page={page} setPage={navigateToPage} setLang={setLang} />
+      
+      {/* Mobile Menu Toggle Button */}
+      {(page === 'genealogy' || page === 'kings' || page === 'maps' || page === 'keyeras' || page === 'bookswriters' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','judah-kings','israel-kings','post-exilic-period','adam-lineage','abraham-lineage','old-testament-maps','new-testament-maps','israel-maps-tribes','wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile','old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) && page !== 'judges' && page !== 'prophets' && !['list-of-judges', 'list-of-prophets'].includes(page) && (
           <button 
             className="mobile-menu-toggle"
             onClick={toggleMobileMenu}
@@ -274,6 +274,16 @@ function App() {
         </div>
         <Footer />
       </div>
+  );
+}
+
+// Main App component with providers
+function App() {
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

@@ -23,7 +23,11 @@ export default function D3Chart({ lang = 'en' }) {
   const [searchTerm, setSearchTerm] = useState(''); // Search functionality
   const [searchResults, setSearchResults] = useState([]); // Search results
   const [showSearchResults, setShowSearchResults] = useState(false); // Show/hide search dropdown
-  const [lineStyle, setLineStyle] = useState('straight'); // Line style: 'straight', 'curved', 'diagonal'
+  const [lineStyle, setLineStyle] = useState(() => {
+    // Check localStorage for saved line style preference, default to 'curved'
+    const savedLineStyle = localStorage.getItem('d3ChartLineStyle');
+    return savedLineStyle || 'curved';
+  }); // Line style: 'straight', 'curved', 'diagonal'
   const [expandAll, setExpandAll] = useState(false); // Track expand all state
   const [forceUpdate, setForceUpdate] = useState(0); // Force re-render counter
   const [isMobilePanelOpen, setIsMobilePanelOpen] = useState(false); // Mobile panel state
@@ -1195,6 +1199,11 @@ export default function D3Chart({ lang = 'en' }) {
       setSavedTransformForLineStyle(currentTransform);
     }
   }, [lineStyle]); // Save transform when line style changes
+
+  // Save line style preference to localStorage
+  useEffect(() => {
+    localStorage.setItem('d3ChartLineStyle', lineStyle);
+  }, [lineStyle]);
 
   // Restore zoom after chart re-render
   useEffect(() => {
