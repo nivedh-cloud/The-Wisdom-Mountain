@@ -381,6 +381,15 @@
   display: block !important; /* Ensure label is always visible */
 }
 
+/* Separate styles for top navigation labels */
+.top-nav-label {
+  font-size: 1.1em !important;
+  letter-spacing: 0.3px;
+  display: block !important; /* Ensure label is always visible */
+  color: inherit;
+  font-weight: 600;
+}
+
 /* Desktop menu styles - ensure text labels are visible */
 @media screen and (min-width: 769px) {
   .nav-label {
@@ -388,6 +397,14 @@
     font-size: 0.9em !important;
     opacity: 1 !important;
     visibility: visible !important;
+  }
+  
+  .top-nav-label {
+    display: block !important;
+    font-size: 1.0em !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-weight: 700 !important;
   }
   
   .nav-item {
@@ -1038,8 +1055,10 @@
     font-size: 1em;
   }
   
-  .nav-label {
-    font-size: 0.8em;
+  .nav-label,
+  .top-nav-label {
+    font-size: 0.85em;
+    font-weight: 600;
   }
   
   .menu-item {
@@ -1636,9 +1655,11 @@
     font-size: 1.1em;
   }
   
-  .nav-label {
+  .nav-label,
+  .top-nav-label {
     font-size: 0.7em;
     line-height: 1.1;
+    font-weight: 600;
   }
   
   /* Improved sidebar for mobile */
@@ -1779,9 +1800,11 @@
     font-size: 1em;
   }
   
-  .nav-label {
+  .nav-label,
+  .top-nav-label {
     font-size: 0.65em;
     line-height: 1;
+    font-weight: 600;
   }
   
   .sidebar {

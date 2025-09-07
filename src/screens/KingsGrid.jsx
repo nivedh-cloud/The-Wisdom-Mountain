@@ -17,6 +17,7 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
   const [selectedKing, setSelectedKing] = useState(null);
   const [showProphetModal, setShowProphetModal] = useState(false);
   const [selectedProphet, setSelectedProphet] = useState(null);
+  const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
   
   useEffect(() => {
     if (showProphetModal) {
@@ -51,6 +52,8 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
     yearsRuled: lang === 'te' ? king.yearsRuledTelugu : king.yearsRuled,
     goodBad: lang === 'te' ? king.goodBadTelugu : king.goodBad,
     prophet: lang === 'te' ? king.prophetTelugu : king.prophet,
+    tribe: lang === 'te' ? king.tribeTelugu : king.tribe,
+    tribeEvidence: lang === 'te' ? king.tribeEvidenceTelugu : king.tribeEvidence,
     // Keep original numeric values for chart regardless of language
     yearsRuledNumeric: king.yearsRuled,
     // Use unique ID for lookup instead of name
@@ -363,6 +366,10 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
       dataKey: 'goodBad'
     },
     {
+      header: t.tribe,
+      dataKey: 'tribe'
+    },
+    {
       header: t.prophet,
       dataKey: 'prophet'
     }
@@ -498,6 +505,57 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
                     {index < prophets.length - 1 && ', '}
                   </span>
                 ))}
+              </td>
+            );
+          }
+          
+          // Special handling for tribe column to show appropriate language and biblical evidence
+          if (column.dataKey === 'tribe') {
+            const tribeValue = value || (lang === 'te' ? 'తెలియదు' : 'Unknown');
+            const tribeEvidence = row.tribeEvidence || '';
+            
+            const handleTribeMouseEnter = (e) => {
+              if (tribeEvidence) {
+                setTooltip({
+                  show: true,
+                  content: tribeEvidence,
+                  x: e.clientX,
+                  y: e.clientY
+                });
+              }
+            };
+            
+            const handleTribeMouseLeave = () => {
+              setTooltip({ show: false, content: '', x: 0, y: 0 });
+            };
+            
+            const handleTribeMouseMove = (e) => {
+              if (tooltip.show) {
+                setTooltip(prev => ({
+                  ...prev,
+                  x: e.clientX,
+                  y: e.clientY
+                }));
+              }
+            };
+            
+            return (
+              <td 
+                key={colIndex} 
+                className="table-cell"
+                onMouseEnter={handleTribeMouseEnter}
+                onMouseLeave={handleTribeMouseLeave}
+                onMouseMove={handleTribeMouseMove}
+                style={{ cursor: tribeEvidence ? 'help' : 'default' }}
+              >
+                <span style={{
+                  color: '#7c3aed',
+                  fontWeight: '500',
+                  fontSize: '0.95em',
+                  textDecoration: tribeEvidence ? 'underline dotted' : 'none'
+                }}>
+                  {tribeValue}
+                </span>
               </td>
             );
           }
@@ -1059,6 +1117,30 @@ export default function KingsGrid({ lang, section = 'judah-kings' }) {
           </div>
         )}
       </Modal>
+      
+      {/* Tooltip for biblical evidence */}
+      {tooltip.show && (
+        <div 
+          style={{
+            position: 'fixed',
+            left: tooltip.x + 10,
+            top: tooltip.y - 10,
+            backgroundColor: isDarkMode ? '#374151' : '#f9fafb',
+            color: isDarkMode ? '#e5e7eb' : '#374151',
+            border: `1px solid ${isDarkMode ? '#6b7280' : '#d1d5db'}`,
+            borderRadius: '6px',
+            padding: '8px 12px',
+            fontSize: '0.875rem',
+            maxWidth: '300px',
+            wordWrap: 'break-word',
+            zIndex: 1000,
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+            pointerEvents: 'none'
+          }}
+        >
+          {tooltip.content}
+        </div>
+      )}
     </div>
   );
 }

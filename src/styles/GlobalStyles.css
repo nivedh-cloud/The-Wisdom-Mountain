@@ -776,12 +776,27 @@
   font-size: var(--font-lg);
 }
 
+/* Separate styles for top navigation labels */
+.top-nav-label {
+  font-size: 13px;
+  color: inherit;
+  display: block !important;
+  letter-spacing: 0.3px;
+}
+
 /* Ensure nav labels are visible on desktop */
 @media (min-width: 769px) {
   .nav-label {
     display: block !important;
-    font-weight: 500 !important;
+    font-weight: 200 !important;
     font-size: var(--font-lg) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .top-nav-label {
+    display: block !important;
+    font-size: var(--font-xl) !important;
     opacity: 1 !important;
     visibility: visible !important;
   }
@@ -1213,7 +1228,7 @@
 
 .sidebar-header {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   color: #6366f1;
   margin-bottom: 18px;
   letter-spacing: 1px;
@@ -1440,6 +1455,10 @@
     font-size: 1.32rem !important;
   }
   
+  .top-nav-label{
+    font-size: 0.9rem !important;
+  }
+  
   .header-brand {
     width: 100%;
     justify-content: center;
@@ -1552,6 +1571,10 @@
     font-size: 1.32rem !important;
   }
   
+  .top-nav-label{
+    font-size: 0.9rem !important;
+  }
+  
   .main-content {
     padding: 1em 0.5em;
   }
@@ -1584,6 +1607,10 @@
   }
     .nav-label{
     font-size: 1.32rem !important;
+  }
+  
+  .top-nav-label{
+    font-size: 0.9rem !important;
   }
   
   .main-layout {

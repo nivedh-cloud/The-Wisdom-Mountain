@@ -105,7 +105,7 @@ const MenuBar = ({ lang, page, setPage, setLang }) => {
               onClick={item.onClick}
             >
               <item.icon className="nav-icon" />
-              <span className="nav-label">{item.label}</span>
+              <span className="top-nav-label">{item.label}</span>
             </button>
           ))}
         </div>

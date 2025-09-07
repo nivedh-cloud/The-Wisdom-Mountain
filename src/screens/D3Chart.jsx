@@ -2098,7 +2098,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={safeTranslations.d3Chart.zoomIn}
               style={{
                 padding: '8px',
-                backgroundColor: '#2563eb',
+                backgroundColor: '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -2134,7 +2134,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={safeTranslations.d3Chart.panTool}
               style={{
                 padding: '6px 8px',
-                backgroundColor: isPanMode ? '#10b981' : '#64748b',
+                backgroundColor: isPanMode ? '#2563eb' : '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -2155,7 +2155,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={safeTranslations.d3Chart.resetView}
               style={{
                 padding: '6px 8px',
-                backgroundColor: '#2563eb',
+                backgroundColor: '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -2178,7 +2178,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={safeTranslations.d3Chart.downloadChart}
               style={{
                 padding: '6px 8px',
-                backgroundColor: '#2563eb',
+                backgroundColor: '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -2202,7 +2202,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={safeTranslations.d3Chart.verticalLayout}
               style={{
                 padding: '6px 8px',
-                backgroundColor: isVertical ? '#10b981' : '#64748b',
+                backgroundColor: isVertical ? '#2563eb' : '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -2214,10 +2214,10 @@ export default function D3Chart({ lang = 'en' }) {
                 transition: 'all 0.2s ease'
               }}
               onMouseOver={(e) => {
-                if (!isVertical) e.target.style.backgroundColor = '#475569';
+                if (!isVertical) e.target.style.backgroundColor = '#2563eb';
               }}
               onMouseOut={(e) => {
-                if (!isVertical) e.target.style.backgroundColor = '#64748b';
+                if (!isVertical) e.target.style.backgroundColor = '#2563eb';
               }}
             >
               <FaArrowsAltV />
@@ -2229,7 +2229,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={safeTranslations.d3Chart.horizontalLayout}
               style={{
                 padding: '6px 8px',
-                backgroundColor: !isVertical ? '#10b981' : '#64748b',
+                backgroundColor: !isVertical ? '#2563eb' : '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -2241,10 +2241,10 @@ export default function D3Chart({ lang = 'en' }) {
                 transition: 'all 0.2s ease'
               }}
               onMouseOver={(e) => {
-                if (isVertical) e.target.style.backgroundColor = '#475569';
+                if (isVertical) e.target.style.backgroundColor = '#2563eb';
               }}
               onMouseOut={(e) => {
-                if (isVertical) e.target.style.backgroundColor = '#64748b';
+                if (isVertical) e.target.style.backgroundColor = '#2563eb';
               }}
             >
               <FaArrowsAltH />
@@ -2255,7 +2255,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={lang === 'te' ? 'నేరుగా లైన్లు' : 'Straight Lines'}
               style={{
                 padding: '8px',
-                backgroundColor: lineStyle === 'straight' ? '#10b981' : '#64748b',
+                backgroundColor: lineStyle === 'straight' ? '#2563eb' : '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -2284,7 +2284,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={lang === 'te' ? 'వంకర లైన్లు' : 'Curved Lines'}
               style={{
                 padding: '8px',
-                backgroundColor: lineStyle === 'curved' ? '#10b981' : '#64748b',
+                backgroundColor: lineStyle === 'curved' ? '#2563eb' : '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -2313,7 +2313,7 @@ export default function D3Chart({ lang = 'en' }) {
               title={lang === 'te' ? 'వికర్ణ లైన్లు' : 'Diagonal Lines'}
               style={{
                 padding: '8px',
-                backgroundColor: lineStyle === 'diagonal' ? '#10b981' : '#64748b',
+                backgroundColor: lineStyle === 'diagonal' ? '#2563eb' : '#64748b',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
