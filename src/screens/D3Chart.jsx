@@ -984,20 +984,22 @@ export default function D3Chart({ lang = 'en' }) {
       .style("fill", getTextColor)
       .style("pointer-events", "none")
       .text(d => {
-        // Improved fallback logic that respects language preference
+        // Improved language-specific text rendering
         let name;
         if (lang === 'te') {
-          // For Telugu: try displayName, then nameTe, then nameEn, then name
-          name = d.data.displayName || d.data.nameTe || d.data.nameEn || d.data.name;
+          // For Telugu: try nameTe first, then fallback to nameEn, then name
+          name = d.data.nameTe || d.data.nameEn || d.data.name;
         } else {
-          // For English: try displayName, then nameEn, then name
-          name = d.data.displayName || d.data.nameEn || d.data.name;
+          // For English: try nameEn first, then fallback to name
+          name = d.data.nameEn || d.data.name;
         }
         
-        // Debug logging for specific nodes
-        if (d.data.name === 'Adam' || d.data.nameEn === 'Adam' || d.data.name === 'Seth' || 
-            d.data.name === 'Methuselah' || d.data.name === 'Lamech') {
+        // Debug logging for language switching
+        if (d.data.name === 'Adam' || d.data.nameEn === 'Adam') {
+          console.log(`Rendering ${d.data.name}: Lang=${lang}, nameTe="${d.data.nameTe}", nameEn="${d.data.nameEn}", chosen="${name}"`);
         }
+        
+        return name || 'Unknown';
         // Truncate long names
         return name.length > 20 ? name.substring(0, 17) + "..." : name;
       });
@@ -1143,15 +1145,15 @@ export default function D3Chart({ lang = 'en' }) {
         // Use the same logic as in main chart creation
         let name;
         if (lang === 'te') {
-          // For Telugu: try displayName, then nameTe, then nameEn, then name
-          name = d.data.displayName || d.data.nameTe || d.data.nameEn || d.data.name;
+          // For Telugu: try nameTe first, then fallback to nameEn, then name
+          name = d.data.nameTe || d.data.nameEn || d.data.name;
         } else {
-          // For English: try displayName, then nameEn, then name
-          name = d.data.displayName || d.data.nameEn || d.data.name;
+          // For English: try nameEn first, then fallback to name
+          name = d.data.nameEn || d.data.name;
         }
         
         // Truncate long names
-        return name.length > 20 ? name.substring(0, 17) + "..." : name;
+        return name && name.length > 20 ? name.substring(0, 17) + "..." : (name || 'Unknown');
       });
 
     // Update text background rectangles to fit new text
@@ -1473,16 +1475,20 @@ export default function D3Chart({ lang = 'en' }) {
       const maxResults = 10;
       const searchTerm = term.toLowerCase();
       
-      // Function to search in bilingual data
+      // Function to search in bilingual data with cross-language support
       const searchInBilingualData = () => {
         const searchInNode = (node) => {
           if (results.length >= maxResults) return;
           
-          // As specified: Use only "name" field for search
+          // Enhanced cross-language search - search in both English and Telugu names
+          const searchNameEn = (node.nameEn || node.name || '').toLowerCase();
+          const searchNameTe = (node.nameTe || node.name || '').toLowerCase();
           const searchName = (node.name || '').toLowerCase();
           
-          // Search only in the "name" field as per user requirement
-          if (searchName.includes(searchTerm)) {
+          // Search in all name fields regardless of current language
+          if (searchNameEn.includes(searchTerm) || 
+              searchNameTe.includes(searchTerm) || 
+              searchName.includes(searchTerm)) {
 
             
             // Use the appropriate display name based on current language

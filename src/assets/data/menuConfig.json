@@ -19,6 +19,7 @@
     ],
     "genealogy": [
       { "key": "adam-to-jesus", "icon": "FaBible", "label": { "en": "Family Tree", "te": "కుటుంబ వృక్షాలు" } },
+      { "key": "family-tree-grid", "icon": "FaTable", "label": { "en": "Family Tree Grid", "te": "కుటుంబ వృక్ష గ్రిడ్" } },
       
       { "key": "adam-to-noah", "icon": "FaBible", "label": { "en": "Adam to Noah", "te": "ఆదాం నుండి నోవహు" } },
       { "key": "noah-to-abraham", "icon": "FaUserFriends", "label": { "en": "Noah to Abraham", "te": "నోవహు  నుండి అబ్రాహాము" } },

@@ -46,7 +46,7 @@ const MenuBar = ({ lang, page, setPage, setLang }) => {
       icon: FaUsers,
       label: lang === 'te' ? 'వంశావళి' : 'Genealogy',
       onClick: () => handleMenuClick('genealogy'),
-      active: isMenuActive('genealogy', ['adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','tree'])
+      active: isMenuActive('genealogy', ['adam-to-jesus','family-tree-grid','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile','tree','family-trees','adam-lineage','abraham-lineage'])
     },
     {
       key: 'bookswriters',
@@ -67,7 +67,7 @@ const MenuBar = ({ lang, page, setPage, setLang }) => {
       icon: FaCrown,
       label: lang === 'te' ? 'రాజులు' : 'Kings',
       onClick: () => handleMenuClick('kings'),
-      active: isMenuActive('kings', ['judah-kings','israel-kings'])
+      active: isMenuActive('kings', ['judah-kings','israel-kings','post-exilic-period'])
     },
     {
       key: 'prophets',

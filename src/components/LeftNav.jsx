@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import menuConfig from '../assets/data/menuConfig.json';
-import { FaSearch, FaSignOutAlt, FaMoon, FaBook, FaBookOpen, FaUser, FaList, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaSignOutAlt, FaMoon, FaBook, FaBookOpen, FaUser, FaList, FaTimes, FaTable, FaTree, FaBible, FaUserFriends } from 'react-icons/fa';
 import { FaHome, FaUsers, FaCrown, FaSitemap, FaGavel, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { GiHolyGrail } from 'react-icons/gi';
 
@@ -15,6 +15,10 @@ const IconComponents = {
   FaMapMarkerAlt,
   FaClock,
   FaSitemap,
+  FaTable,
+  FaTree,
+  FaBible,
+  FaUserFriends,
   GiHolyGrail
 };
 
@@ -66,14 +70,14 @@ const LeftNav = ({ lang, page, navigateToPage, translations, isMobileMenuOpen, c
 
   // Determine which menu to show
   let menuType = 'genealogy';
-  if (page === 'kings' || ['judah-kings','israel-kings'].includes(page)) menuType = 'kings';
+  if (page === 'kings' || ['judah-kings','israel-kings','post-exilic-period'].includes(page)) menuType = 'kings';
   if (page === 'family-trees' || ['adam-lineage','abraham-lineage'].includes(page)) menuType = 'familytrees';
   if (page === 'judges' || ['list-of-judges'].includes(page)) menuType = 'judges';
   if (page === 'prophets' || ['list-of-prophets'].includes(page)) menuType = 'prophets';
   if (page === 'maps' || ['old-testament-maps','new-testament-maps','israel-maps-tribes'].includes(page)) menuType = 'maps';
   if (page === 'keyeras' || ['wilderness-wanderings','the-exile','judges-period','united-kingdom','divided-kingdom','return-from-exile'].includes(page)) menuType = 'keyeras';
   if (page === 'bookswriters' || ['old-testament-books','new-testament-books','biblical-authors','books-by-category','names-of-god','old-testament-names','new-testament-names','old-testament-torah','old-testament-historical','old-testament-wisdom','old-testament-majorProphets','old-testament-minorProphets','new-testament-gospels','new-testament-history','new-testament-paulineEpistles','new-testament-generalEpistles','new-testament-prophecy'].includes(page)) menuType = 'bookswriters';
-  if (page === 'genealogy' || ['adam-to-jesus','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile'].includes(page)) menuType = 'genealogy';
+  if (page === 'genealogy' || ['adam-to-jesus','family-tree-grid','adam-to-noah','noah-to-abraham','abraham-to-moses','moses-to-david','david-to-hezekiah','before-babylonian-exile','after-babylonian-exile'].includes(page)) menuType = 'genealogy';
   
   // Menu header from JSON
 

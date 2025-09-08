@@ -5,6 +5,7 @@
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  padding-right: 1.5em;
 }
 
 .light .table-row-odd {
@@ -46,7 +47,8 @@
   /* Table container margins - default for desktop */
   .table-header-container,
   .table-body-container {
-    margin: 0 1em;
+    margin: 0 1em 0 1em;
+    padding-right: 1.5em;
   }
   
   .data-grid-table {
@@ -507,4 +509,143 @@ body.modal-open .data-grid-tooltip {
 
 .light .table-row-odd {
   background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Resizable Column Styles for Family Tree Grid */
+.genealogy-table th {
+  position: relative;
+  user-select: none;
+}
+
+.genealogy-table th .resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  cursor: col-resize;
+  background: transparent;
+  border-right: 2px solid transparent;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.genealogy-table th .resize-handle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-right-color: rgba(255, 255, 255, 0.5);
+}
+
+.genealogy-table th .resize-handle:active,
+.genealogy-table th.resizing .resize-handle {
+  background: rgba(255, 255, 255, 0.2);
+  border-right-color: var(--primary-color);
+}
+
+.genealogy-table th.resizing {
+  user-select: none;
+  cursor: col-resize;
+}
+
+/* Enhanced resize cursor for better UX */
+.genealogy-table th .resize-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1px;
+  width: 2px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%);
+  transition: background 0.2s ease;
+}
+
+.genealogy-table th .resize-handle:hover::after {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Table Container Styles for Horizontal Scroll */
+.table-header-container,
+.table-body-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.table-header-container::-webkit-scrollbar,
+.table-body-container::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.table-header-container::-webkit-scrollbar-track,
+.table-body-container::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.table-header-container::-webkit-scrollbar-thumb,
+.table-body-container::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.table-header-container::-webkit-scrollbar-thumb:hover,
+.table-body-container::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Ensure horizontal scrolling works properly */
+.data-grid-container .genealogy-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  table-layout: fixed !important;
+  min-width: 1500px !important;
+  width: 1500px !important;
+}
+
+.data-grid-container .table-header-container,
+.data-grid-container .table-body-container {
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Force horizontal scroll on containers */
+.table-header-container {
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track) !important;
+}
+
+.table-body-container {
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track) !important;
+}
+
+/* Ensure the main container doesn't have padding that causes issues */
+.data-grid-container {
+  padding: 0 1.5rem 0 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove right padding for mobile */
+@media (max-width: 768px) {
+  .data-grid-container {
+    padding: 0 !important;
+  }
+}
+
+/* Fix any layout issues */
+.genealogy-table .table-cell {
+  box-sizing: border-box !important;
+  word-wrap: break-word !important;
+}
+
+/* Sticky column fix */
+.genealogy-table th:first-child,
+.genealogy-table td:first-child {
+  position: sticky !important;
+  left: 0 !important;
+  z-index: 2 !important;
+  background-color: inherit !important;
 }

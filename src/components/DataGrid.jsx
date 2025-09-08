@@ -642,6 +642,7 @@ export default function DataGrid({
       className="data-grid-container" 
       style={{ 
         height: '100%', 
+        width:'100%',
         display: 'flex', 
         flexDirection: 'column',
         maxHeight: 'calc(100vh - 120px)',

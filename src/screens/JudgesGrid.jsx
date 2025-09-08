@@ -171,8 +171,11 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
       originalJudge.description?.te,
       originalJudge.significance?.en,
       originalJudge.significance?.te,
-      // Scripture reference
-      originalJudge.scripture
+      // Scripture reference (both languages)
+      originalJudge.scripture,
+      originalJudge.scriptureTelugu,
+      originalJudge.keyVerse,
+      originalJudge.keyVerseTelugu
     ];
     
     // Check if search text matches any of the fields
@@ -250,13 +253,12 @@ export default function JudgesGrid({ lang, section = 'list-of-judges' }) {
 
             {selectedJudge.scripture && (
               <div className="details-modal-scripture">
-                <div className="details-modal-scripture-label">{translations.scripture}:</div>
-                <div className="details-modal-scripture-text">
-                  {selectedJudge.scripture}
+                <div className="details-modal-scripture-label">
+                  {lang === 'te' ? selectedJudge.scriptureTelugu : selectedJudge.scripture}:
                 </div>
                 {selectedJudge.keyVerse && (
                   <div className="details-modal-scripture-text mt-8">
-                    "{selectedJudge.keyVerse}"
+                    "{lang === 'te' ? selectedJudge.keyVerseTelugu : selectedJudge.keyVerse}"
                   </div>
                 )}
               </div>
