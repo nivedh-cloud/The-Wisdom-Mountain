@@ -1,0 +1,172 @@
+[
+  {
+    "book": "Matthew",
+    "mainEvents": [
+      {
+        "title": "Birth of Jesus",
+        "reference": "Matthew 1:18-25",
+        "text": "She will give birth to a son, and you are to give him the name Jesus."
+      },
+      {
+        "title": "Sermon on the Mount",
+        "reference": "Matthew 5-7",
+        "text": "Blessed are the poor in spirit, for theirs is the kingdom of heaven."
+      },
+      {
+        "title": "Crucifixion and Resurrection",
+        "reference": "Matthew 27-28",
+        "text": "He is not here; he has risen, just as he said."
+      }
+        ,
+        {
+          "book": "Acts",
+          "mainEvents": [
+            {
+              "title": "Pentecost",
+              "reference": "Acts 2:4",
+              "text": "All of them were filled with the Holy Spirit and began to speak in other tongues."
+            },
+            {
+              "title": "Peter's Sermon",
+              "reference": "Acts 2:38",
+              "text": "Repent and be baptized, every one of you, in the name of Jesus Christ."
+            },
+            {
+              "title": "Paul's Conversion",
+              "reference": "Acts 9:4-6",
+              "text": "Saul, Saul, why do you persecute me?... Now get up and go into the city."
+            }
+          ],
+          "mainPersons": ["Peter", "Paul", "Stephen", "Barnabas"]
+        },
+        {
+          "book": "Romans",
+          "mainEvents": [
+            {
+              "title": "Justification by Faith",
+              "reference": "Romans 3:28",
+              "text": "For we maintain that a person is justified by faith apart from the works of the law."
+            },
+            {
+              "title": "Life in the Spirit",
+              "reference": "Romans 8:1-2",
+              "text": "There is now no condemnation for those who are in Christ Jesus."
+            }
+          ],
+          "mainPersons": ["Paul", "Phoebe"]
+        },
+        {
+          "book": "1 Corinthians",
+          "mainEvents": [
+            {
+              "title": "Unity in the Church",
+              "reference": "1 Corinthians 1:10",
+              "text": "I appeal to you, brothers and sisters, in the name of our Lord Jesus Christ, that all of you agree with one another."
+            },
+            {
+              "title": "Love Chapter",
+              "reference": "1 Corinthians 13:4-7",
+              "text": "Love is patient, love is kind..."
+            }
+          ],
+          "mainPersons": ["Paul", "Apollos", "Cephas"]
+        },
+        {
+          "book": "2 Corinthians",
+          "mainEvents": [
+            {
+              "title": "Ministry of Reconciliation",
+              "reference": "2 Corinthians 5:18",
+              "text": "God reconciled us to himself through Christ and gave us the ministry of reconciliation."
+            },
+            {
+              "title": "Paul's Suffering",
+              "reference": "2 Corinthians 11:24-27",
+              "text": "Five times I received from the Jews the forty lashes minus one..."
+            }
+          ],
+          "mainPersons": ["Paul", "Titus"]
+        },
+        {
+          "book": "Galatians",
+          "mainEvents": [
+            {
+              "title": "Fruit of the Spirit",
+              "reference": "Galatians 5:22-23",
+              "text": "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control."
+            },
+            {
+              "title": "Freedom in Christ",
+              "reference": "Galatians 5:1",
+              "text": "It is for freedom that Christ has set us free."
+            }
+          ],
+          "mainPersons": ["Paul", "Peter"]
+        }
+    ],
+    "mainPersons": ["Jesus", "Mary", "Joseph", "Peter", "John", "Judas"]
+  },
+  {
+    "book": "Mark",
+    "mainEvents": [
+      {
+        "title": "John the Baptist Prepares the Way",
+        "reference": "Mark 1:4",
+        "text": "John appeared, baptizing in the wilderness and proclaiming a baptism of repentance."
+      },
+      {
+        "title": "Miracles of Jesus",
+        "reference": "Mark 5:41",
+        "text": "He took her by the hand and said to her, 'Talitha koum!'"
+      },
+      {
+        "title": "The Last Supper",
+        "reference": "Mark 14:22-24",
+        "text": "Take it; this is my body."
+      }
+    ],
+    "mainPersons": ["Jesus", "John the Baptist", "Peter", "James", "Judas"]
+  },
+  {
+    "book": "Luke",
+    "mainEvents": [
+      {
+        "title": "Birth of John the Baptist",
+        "reference": "Luke 1:13",
+        "text": "Your wife Elizabeth will bear you a son, and you are to call him John."
+      },
+      {
+        "title": "Parable of the Good Samaritan",
+        "reference": "Luke 10:30-37",
+        "text": "A Samaritan, as he traveled, came where the man was; and when he saw him, he took pity on him."
+      },
+      {
+        "title": "Ascension of Jesus",
+        "reference": "Luke 24:51",
+        "text": "While he was blessing them, he left them and was taken up into heaven."
+      }
+    ],
+    "mainPersons": ["Jesus", "Mary", "Elizabeth", "John the Baptist", "Peter"]
+  },
+  {
+    "book": "John",
+    "mainEvents": [
+      {
+        "title": "Wedding at Cana",
+        "reference": "John 2:1-11",
+        "text": "He thus revealed his glory, and his disciples believed in him."
+      },
+      {
+        "title": "Raising of Lazarus",
+        "reference": "John 11:43-44",
+        "text": "Jesus called in a loud voice, 'Lazarus, come out!'"
+      },
+      {
+        "title": "Jesus Appears to Thomas",
+        "reference": "John 20:27",
+        "text": "Stop doubting and believe."
+      }
+    ],
+    "mainPersons": ["Jesus", "Mary", "Martha", "Lazarus", "Thomas", "Peter"]
+  }
+]

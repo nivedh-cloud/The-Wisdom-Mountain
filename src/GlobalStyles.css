@@ -1555,6 +1555,7 @@
   }
   
   .header-actions {
+    padding-right: 25px !important;
     justify-content: flex-start;
     gap: 0.5em;
     flex-wrap: nowrap !important;
@@ -1616,6 +1617,7 @@
   
   /* Force horizontal layout for DataGrid buttons */
   .header-actions {
+    padding-right: 25px !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
@@ -2054,7 +2056,9 @@
   
   /* Fix for header actions on mobile */
   .header-actions {
+    
     padding: 0.5rem !important;
+    padding-right: 25px !important;
     margin: 0 !important;
   }
 }

@@ -45,32 +45,24 @@ export default function FamilyTreeGrid() {
   };
 
   // Converter function to flatten the genealogy tree for table display
-  const convertGenealogyToTableData = (node, level = 0, parentPath = '', siblingIndex = 0) => {
+  const convertGenealogyToTableData = (node, level = 0, parentPath = '') => {
     const result = [];
     
     if (!node) return result;
 
-    // Use the unique ID from JSON data, fallback to path-based ID if not available
-    const uniqueId = node.id || `${parentPath ? `${parentPath}.${node.name}.${siblingIndex}` : `${node.name}.${siblingIndex}`}`;
+    const currentPath = parentPath ? `${parentPath}.${node.name}` : node.name;
     const displayName = lang === 'te' ? (node.nameTe || node.name) : (node.nameEn || node.name);
     const displaySpouse = lang === 'te' ? (node.spouseTe || node.spouse) : (node.spouseEn || node.spouse);
     
-    // Check for children in both 'children' and '_children' properties
-    const actualChildren = (node.children && Array.isArray(node.children) && node.children.length > 0) 
-      ? node.children 
-      : (node._children && Array.isArray(node._children) && node._children.length > 0) 
-        ? node._children 
-        : [];
-    
     const tableRow = {
-      id: uniqueId,
+      id: currentPath,
       name: displayName,
       birth: node.birth || '',
       death: node.death || '',
       age: node.age || '',
       spouse: displaySpouse || '',
       level: level,
-      hasChildren: actualChildren.length > 0,
+      hasChildren: node.children && node.children.length > 0,
       isExpanded: expandedNodes.has(node.name),
       originalName: node.name,
       // Store both language versions for cross-language search
@@ -83,9 +75,9 @@ export default function FamilyTreeGrid() {
     result.push(tableRow);
 
     // If node is expanded and has children, add them recursively
-    if (expandedNodes.has(node.name) && actualChildren.length > 0) {
-      actualChildren.forEach((child, index) => {
-        const childRows = convertGenealogyToTableData(child, level + 1, uniqueId, index);
+    if (expandedNodes.has(node.name) && node.children && node.children.length > 0) {
+      node.children.forEach(child => {
+        const childRows = convertGenealogyToTableData(child, level + 1, currentPath);
         result.push(...childRows);
       });
     }
@@ -145,29 +137,18 @@ export default function FamilyTreeGrid() {
     });
 
     if (exactMatches.length > 0) {
+      console.log('Found exact matches:', exactMatches.length);
       return exactMatches;
     }
 
+    console.log('No matches found, returning empty array');
     return [];
   };
 
   // Load genealogy data
   useEffect(() => {
-    if (genealogyTreeData) {
-      // Check if it's an array or object
-      if (Array.isArray(genealogyTreeData) && genealogyTreeData.length > 0) {
-        setGenealogyData(genealogyTreeData[0]);
-        // Auto expand the first few levels for testing
-        setExpandedNodes(new Set([genealogyTreeData[0].name]));
-      } else if (typeof genealogyTreeData === 'object' && genealogyTreeData.name) {
-        setGenealogyData(genealogyTreeData);
-        // Auto expand the first few levels for testing
-        setExpandedNodes(new Set([genealogyTreeData.name]));
-      } else {
-        console.error('FamilyTreeGrid - Unexpected data format:', genealogyTreeData);
-      }
-    } else {
-      console.error('FamilyTreeGrid - No genealogy data found');
+    if (genealogyTreeData && genealogyTreeData.length > 0) {
+      setGenealogyData(genealogyTreeData[0]);
     }
   }, []);
 
@@ -175,6 +156,7 @@ export default function FamilyTreeGrid() {
   useEffect(() => {
     if (genealogyData) {
       const tableData = convertGenealogyToTableData(genealogyData);
+      console.log('Converted table data:', tableData);
       setFilteredData(tableData);
     }
   }, [genealogyData, expandedNodes, lang]);
@@ -203,16 +185,8 @@ export default function FamilyTreeGrid() {
   const expandAll = () => {
     const getAllNodeNames = (node) => {
       const names = [node.name];
-      
-      // Check for children in both 'children' and '_children' properties
-      const actualChildren = (node.children && Array.isArray(node.children) && node.children.length > 0) 
-        ? node.children 
-        : (node._children && Array.isArray(node._children) && node._children.length > 0) 
-          ? node._children 
-          : [];
-      
-      if (actualChildren.length > 0) {
-        actualChildren.forEach(child => {
+      if (node.children && node.children.length > 0) {
+        node.children.forEach(child => {
           names.push(...getAllNodeNames(child));
         });
       }
@@ -363,15 +337,15 @@ export default function FamilyTreeGrid() {
         >
           <table className="genealogy-table family-tree-grid-table" style={{ 
             marginBottom: 0, 
-            minWidth: 'max-content',
-            width: 'max-content',
+            minWidth: '100%',
+            width: '100%',
             tableLayout: 'auto',
             borderCollapse: 'separate',
             borderSpacing: 0,
             position: 'relative'
           }}>
             <colgroup>
-              <col style={{ minWidth: 'max-content', width: 'auto' }} />
+              <col style={{ width: '100%' }} />
             </colgroup>
             <thead>
               <tr className="table-header">
@@ -384,8 +358,7 @@ export default function FamilyTreeGrid() {
                   padding: '12px 16px',
                   overflow: 'hidden',
                   userSelect: 'none',
-                  minWidth: 'max-content',
-                  width: 'auto'
+                  width: '100%'
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
                     <span>{lang === 'te' ? 'వంశపారంపర్య వృక్షం - వ్యక్తి వివరాలు' : 'Family Tree - Person Details'}</span>
@@ -417,14 +390,14 @@ export default function FamilyTreeGrid() {
         >
           <table className="genealogy-table family-tree-grid-table" style={{ 
             borderRadius: 0, 
-            minWidth: 'max-content',
-            width: 'max-content',
+            minWidth: '100%',
+            width: '100%',
             tableLayout: 'auto',
             borderCollapse: 'separate',
             borderSpacing: 0
           }}>
             <colgroup>
-              <col style={{ minWidth: 'max-content', width: 'auto' }} />
+              <col style={{ width: '100%' }} />
             </colgroup>
             <tbody>
               {filteredData.length === 0 ? (
@@ -449,7 +422,7 @@ export default function FamilyTreeGrid() {
                         '--level': row.level 
                       }}
                     >
-                        <td 
+                      <td 
                         className="table-cell" 
                         style={{ 
                           borderRight: 'none',
@@ -459,8 +432,7 @@ export default function FamilyTreeGrid() {
                           zIndex: 2,
                           padding: '12px 16px',
                           overflow: 'visible',
-                          minWidth: 'max-content',
-                          width: 'auto',
+                          width: '100%',
                           cursor: 'pointer'
                         }}
                         onMouseEnter={(e) => showTooltip(e, row)}
@@ -472,9 +444,7 @@ export default function FamilyTreeGrid() {
                             paddingLeft: `${20 + (row.level * 25)}px`,
                             display: 'flex',
                             alignItems: 'center',
-                            minWidth: 'max-content',
-                            width: 'auto',
-                            whiteSpace: 'nowrap'
+                            width: '100%'
                           }}
                         >
                           {row.hasChildren && (

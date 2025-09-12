@@ -3,10 +3,13 @@ import { FaBook, FaBookOpen, FaUser, FaList, FaInfoCircle } from 'react-icons/fa
 import DataGrid from './DataGrid';
 import Modal from './Modal';
 import biblicalBooksData from '../assets/data/biblicalBooksData.json';
+import oldTestamentBookDetails from '../assets/data/book-details.json';
+import newTestamentBookDetails from '../assets/data/new-testament-book-details.json';
 
 const BooksWritersGrid = ({ lang, page }) => {
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedBookDetails, setSelectedBookDetails] = useState(null);
 
   // Determine category and subcategory from page
   const getCategoryFromPage = () => {
@@ -310,6 +313,15 @@ const BooksWritersGrid = ({ lang, page }) => {
               </td>
             );
           }
+          // If this is the book name column, make it clickable
+          if (column.dataKey === 'name' && row._type === 'book') {
+            return (
+              <td key={colIndex} className="table-cell book-name-cell" style={{ cursor: 'pointer', color: '#6366f1', fontWeight: 500 }}
+                onClick={() => handleBookNameClick(row._original.name)}>
+                {value}
+              </td>
+            );
+          }
           
           return (
             <td 
@@ -330,8 +342,28 @@ const BooksWritersGrid = ({ lang, page }) => {
   const handleDetailsClick = (rowData) => {
     if (rowData._original) {
       setSelectedItem(rowData._original);
+      // Find book details by name
+      const details = (page.startsWith('new-testament-')
+        ? newTestamentBookDetails
+        : oldTestamentBookDetails
+      ).find(
+        b => b.book.toLowerCase() === rowData._original.name.toLowerCase()
+      );
+      setSelectedBookDetails(details || null);
       setShowDetailsModal(true);
     }
+  };
+
+  const handleBookNameClick = (bookName) => {
+    // Find book details by name
+    const details = (page.startsWith('new-testament-')
+      ? newTestamentBookDetails
+      : oldTestamentBookDetails
+    ).find(
+      b => b.book.toLowerCase() === bookName.toLowerCase()
+    );
+    setSelectedBookDetails(details || null);
+    setShowDetailsModal(true);
   };
 
   // Custom bilingual filter function
@@ -456,7 +488,64 @@ const BooksWritersGrid = ({ lang, page }) => {
                 }</p>
               </div>
             )}
+            {/* Book extra details from book-details.json */}
+            {selectedBookDetails && (
+              <div style={{ marginTop: '20px' }}>
+                {selectedBookDetails.mainEvents && (
+                  <div style={{ marginBottom: '18px', background: 'rgba(99,102,241,0.06)', border: '1px solid #e0e7ff', borderRadius: '8px', padding: '16px' }}>
+                    {selectedBookDetails.mainEvents.map((event, idx) => (
+                      <div key={idx} style={{ marginBottom: '12px' }}>
+                        <strong>{event.title} :</strong><br />
+                        <span style={{ fontWeight: 'bold' }}>{event.reference}:</span> {event.text}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {selectedBookDetails.mainPersons && (
+                  <div style={{ marginBottom: '18px', background: 'rgba(99,102,241,0.06)', border: '1px solid #e0e7ff', borderRadius: '8px', padding: '16px' }}>
+                    <strong>Main Persons:</strong><br />
+                    <span>{selectedBookDetails.mainPersons.join(', ')}</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
+        )}
+      </Modal>
+
+      {/* Book Name Modal Preview */}
+      <Modal
+        isOpen={showDetailsModal}
+        onClose={() => setShowDetailsModal(false)}
+        title={selectedBookDetails ? selectedBookDetails.book : ''}
+        closeLabel={t.close}
+      >
+        {selectedBookDetails ? (
+          <div style={{
+            textAlign: 'left'
+          }}>
+            {/* Main Events section with title, reference, and text */}
+            {selectedBookDetails.mainEvents && (
+              <div style={{ marginBottom: '18px', background: 'rgba(99,102,241,0.06)', border: '1px solid #e0e7ff', borderRadius: '8px', padding: '16px' }}>
+                <h4>Main Verses:</h4><br />
+                {selectedBookDetails.mainEvents.map((event, idx) => (
+                  <div key={idx} style={{ marginBottom: '12px' }}>
+                    <strong>{event.title} :</strong><br />
+                    <span style={{ fontWeight: 'bold' }}>{event.reference}:</span> {event.text}
+                  </div>
+                ))}
+              </div>
+            )}
+            {/* Main Persons as comma separated inline list */}
+            {selectedBookDetails.mainPersons && (
+              <div style={{ marginBottom: '18px', background: 'rgba(99,102,241,0.06)', border: '1px solid #e0e7ff', borderRadius: '8px', padding: '16px' }}>
+                <h4>Main Persons:</h4><br />
+                <span>{selectedBookDetails.mainPersons.join(', ')}</span>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div style={{ padding: '24px', textAlign: 'left', background: 'var(--card-bg)', border: '1px solid var(--border-color)', borderRadius: '12px' }}>No details available for this book.</div>
         )}
       </Modal>
     </div>

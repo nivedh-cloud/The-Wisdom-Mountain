@@ -1,42 +1,13 @@
 import React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import DataGrid from './DataGrid';
 
-const columns = (language) => [
-  {
-    field: 'id',
-    headerName: 'ID',
-    width: 90,
-  },
-  {
-    field: 'name',
-    headerName: language === 'te' ? 'పేరు' : 'Name',
-    width: 150,
-  },
-  {
-    field: 'period',
-    headerName: language === 'te' ? 'కాలం' : 'Period',
-    width: 150,
-  },
-  {
-    field: 'ministry',
-    headerName: language === 'te' ? 'సేవ' : 'Ministry',
-    width: 150,
-  },
-  {
-    field: 'category',
-    headerName: language === 'te' ? 'రకం' : 'Type',
-    width: 180,
-  },
-  {
-    field: 'booksWritten',
-    headerName: language === 'te' ? 'వ్రాసిన పుస్తకాలు' : 'Books Written',
-    width: 200,
-  },
-  {
-    field: 'details',
-    headerName: language === 'te' ? 'వివరాలు' : 'Details',
-    width: 300,
-  },
+const columns = [
+  { key: 'name', label: 'Prophet', width: 150 },
+  { key: 'period', label: 'Period', width: 150 },
+  { key: 'ministry', label: 'Ministry', width: 150 },
+  { key: 'category', label: 'Type', width: 180 },
+  { key: 'booksWritten', label: 'Books Written', width: 200 },
+  { key: 'details', label: 'Details', width: 300 },
 ];
 
 const rows = [
@@ -53,13 +24,12 @@ const rows = [
 
 export default function ProphetsGrid({ language }) {
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div className="data-grid-container">
       <DataGrid
-        rows={rows}
-        columns={columns(language)}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
+        data={rows}
+        columns={columns}
+        lang={language}
+        title={language === 'te' ? 'ప్రవక్తలు' : 'Prophets'}
       />
     </div>
   );

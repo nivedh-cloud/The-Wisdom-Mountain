@@ -24,6 +24,7 @@
     -webkit-overflow-scrolling: touch;
     display: flex !important;
     align-items: center !important;
+    padding-right: 25px !important;
   }
   
   .row-count-text {
@@ -84,6 +85,7 @@
     -webkit-overflow-scrolling: touch;
     padding: 0 0.5em;
     display: flex !important;
+    padding-right: 25px !important;
   }
   
   /* Complete mobile table scrolling override */
@@ -226,6 +228,7 @@
       flex-wrap: nowrap !important;
       justify-content: flex-start !important;
       overflow-x: auto;
+      padding-right: 25px !important;
     }
     
     .row-count-text {
@@ -474,6 +477,7 @@ body.modal-open .data-grid-tooltip {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     padding: 0 1em !important;
+    padding-right: 25px !important;
   }
   
   .action-button {
@@ -487,6 +491,7 @@ body.modal-open .data-grid-tooltip {
   .header-actions {
     gap: 0.3em !important;
     padding: 0 0.5em !important;
+    padding-right: 25px !important;
   }
   
   .action-button {
@@ -499,6 +504,7 @@ body.modal-open .data-grid-tooltip {
   .header-actions {
     gap: 0.2em !important;
     padding: 0 0.3em !important;
+    padding-right: 25px !important;
   }
   
   .action-button {
@@ -641,11 +647,160 @@ body.modal-open .data-grid-tooltip {
   word-wrap: break-word !important;
 }
 
-/* Sticky column fix */
-.genealogy-table th:first-child,
-.genealogy-table td:first-child {
+/* Sticky column fix - ONLY for Family Tree Grid */
+.family-tree-grid-table th:first-child,
+.family-tree-grid-table td:first-child {
   position: sticky !important;
   left: 0 !important;
   z-index: 2 !important;
   background-color: inherit !important;
+}
+
+/* Mobile sticky column behavior for ALL other grids (NOT Family Tree Grid) */
+@media (max-width: 768px) {
+  /* Ensure proper table layout and full width coverage */
+    .genealogy-table:not(.family-tree-grid-table) {
+      min-width: 100vw !important;
+      width: 100vw !important;
+      table-layout: auto !important;
+      border-collapse: collapse !important;
+    }
+  /* Force header and body first column alignment */
+  .genealogy-table:not(.family-tree-grid-table) th:first-child,
+  .genealogy-table:not(.family-tree-grid-table) td:first-child {
+    min-width: 150px !important;
+    max-width: 180px !important;
+    width: 150px !important;
+    box-sizing: border-box !important;
+    padding: 12px 8px !important;
+    left: 0 !important;
+    position: sticky !important;
+    z-index: 10 !important;
+    border-right: 2px solid rgba(255,255,255,0.2) !important;
+  }
+  
+  /* Ensure container alignment and scrolling - full width */
+  .data-grid-container .table-header-container,
+  .data-grid-container .table-body-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Apply sticky first column to all genealogy tables EXCEPT Family Tree Grid */
+  .genealogy-table:not(.family-tree-grid-table) th:first-child,
+  .genealogy-table:not(.family-tree-grid-table) td:first-child {
+    position: sticky !important;
+    left: 0 !important;
+    z-index: 10 !important;
+    background-color: var(--card-bg) !important;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15) !important;
+    border-right: 2px solid rgba(255, 255, 255, 0.2) !important;
+    min-width: 150px !important;
+    max-width: 180px !important;
+    width: auto !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    padding: 12px 8px !important;
+  }
+  
+  /* Allow other columns to fill remaining space */
+  .genealogy-table:not(.family-tree-grid-table) th:not(:first-child),
+  .genealogy-table:not(.family-tree-grid-table) td:not(:first-child) {
+    position: relative !important;
+    z-index: 1 !important;
+    min-width: 140px !important;
+    width: auto !important;
+    padding: 12px 8px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Header styling for sticky column - SOLID COLOR, NO GRADIENT */
+  .genealogy-table:not(.family-tree-grid-table) th:first-child {
+    background-color: rgb(79, 70, 229) !important;
+    color: white !important;
+    font-weight: bold !important;
+    border-bottom: none !important;
+    min-width: 150px !important;
+    max-width: 180px !important;
+    width: 150px !important;
+    box-sizing: border-box !important;
+    padding: 12px 8px !important;
+  }
+  
+  /* Body cell styling for sticky column in regular grids */
+  .genealogy-table:not(.family-tree-grid-table) td:first-child {
+    background-color: var(--card-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    font-weight: 500 !important;
+    min-width: 150px !important;
+    max-width: 180px !important;
+    width: 150px !important;
+    box-sizing: border-box !important;
+    padding: 12px 8px !important;
+  }
+    /* Alternate colors for first column on mobile */
+    .genealogy-table:not(.family-tree-grid-table) tbody tr:nth-child(even) td:first-child {
+      background-color: #f3f4f6 !important;
+    }
+    .genealogy-table:not(.family-tree-grid-table) tbody tr:nth-child(odd) td:first-child {
+      background-color: #e0e7ff !important;
+    }
+  
+  /* Ensure headers maintain solid color styling - NO GRADIENT */
+  .genealogy-table:not(.family-tree-grid-table) th {
+    background-color: rgb(79, 70, 229) !important;
+    color: white !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 5 !important;
+    border-bottom: none !important;
+  }
+  
+  /* Special z-index for first header cell (both sticky top and left) */
+  .genealogy-table:not(.family-tree-grid-table) th:first-child {
+    z-index: 15 !important;
+  }
+  
+  /* Synchronized scrolling for header and body */
+  .table-header-container {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  .table-header-container::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Remove any white space padding on mobile */
+  .data-grid-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+  }
+}
+
+/* Family Tree Grid specific styles - ensure it's not affected by mobile sticky columns */
+.family-tree-grid-table {
+  width: 100% !important;
+  min-width: 100% !important;
+  table-layout: auto !important;
+}
+
+.family-tree-grid-table th,
+.family-tree-grid-table td {
+  width: 100% !important;
+  min-width: auto !important;
+  max-width: none !important;
+}
+
+/* Ensure Family Tree Grid tooltip is visible */
+.family-tree-grid-table td {
+  overflow: visible !important;
 }
