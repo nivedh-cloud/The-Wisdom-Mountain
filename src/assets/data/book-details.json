@@ -26,9 +26,357 @@
         "title": "Joseph in Egypt",
         "reference": "Genesis 50:20",
         "text": "You intended to harm me, but God intended it for good."
+      },
+      {
+        "title": "Destruction of Sodom and Gomorrah",
+        "reference": "Genesis 19:24-26",
+        "text": "Then the Lord rained down burning sulfur on Sodom and Gomorrah... But Lot’s wife looked back, and she became a pillar of salt."
       }
     ],
     "mainPersons": ["Adam", "Eve", "Noah", "Abraham", "Isaac", "Jacob", "Joseph"]
+  },{
+    "book": "Leviticus",
+    "mainEvents": [
+      {
+        "title": "Laws of Sacrifice",
+        "reference": "Leviticus 1:2",
+        "text": "When any of you brings an offering to the LORD..."
+      },
+      {
+        "title": "Day of Atonement",
+        "reference": "Leviticus 16:30",
+        "text": "On this day atonement will be made for you, to cleanse you."
+      },
+      {
+        "title": "Laws of Holiness",
+        "reference": "Leviticus 19:2",
+        "text": "Be holy, for I the LORD your God am holy."
+      }
+    ],
+    "mainPersons": ["Moses", "Aaron"]
+  },
+  {
+    "book": "Numbers",
+    "mainEvents": [
+      {
+        "title": "Census of Israel",
+        "reference": "Numbers 1:2",
+        "text": "Take a census of the whole Israelite community."
+      },
+      {
+        "title": "Spies Sent to Canaan",
+        "reference": "Numbers 13:2",
+        "text": "Send some men to explore the land of Canaan."
+      },
+      {
+        "title": "Balaam's Donkey",
+        "reference": "Numbers 22:28",
+        "text": "Then the LORD opened the donkey's mouth..."
+      },
+      {
+        "title": "Aaron's Death",
+        "reference": "Numbers 20:28",
+        "text": "Aaron died there on the top of the mountain."
+      }
+    ],
+    "mainPersons": ["Moses", "Aaron", "Joshua", "Caleb", "Balaam"]
+  },
+  {
+    "book": "Deuteronomy",
+    "mainEvents": [
+      {
+        "title": "Moses' Final Address",
+        "reference": "Deuteronomy 6:4-5",
+        "text": "Hear, O Israel: The LORD our God, the LORD is one. Love the LORD your God..."
+      },
+      {
+        "title": "The Shema",
+        "reference": "Deuteronomy 6:4",
+        "text": "Hear, O Israel: The LORD our God, the LORD is one."
+      },
+      {
+        "title": "Blessings and Curses",
+        "reference": "Deuteronomy 28:2",
+        "text": "All these blessings will come on you and accompany you if you obey the LORD your God."
+      },
+      {
+        "title": "Death of Moses",
+        "reference": "Deuteronomy 34:5",
+        "text": "And Moses the servant of the LORD died there in Moab."
+      }
+    ],
+    "mainPersons": ["Moses", "Joshua"]
+  },
+  {
+    "book": "Joshua",
+    "mainEvents": [
+      {
+        "title": "Crossing the Jordan",
+        "reference": "Joshua 3:17",
+        "text": "The priests who carried the ark of the covenant of the LORD stood firm on dry ground in the middle of the Jordan."
+      },
+      {
+        "title": "Fall of Jericho",
+        "reference": "Joshua 6:20",
+        "text": "When the trumpets sounded, the wall collapsed; so every man charged straight in, and they took the city."
+      },
+      {
+        "title": "Sun Stands Still",
+        "reference": "Joshua 10:13",
+        "text": "So the sun stood still, and the moon stopped, till the nation avenged itself on its enemies."
+      }
+    ],
+    "mainPersons": ["Joshua", "Rahab", "Achan"]
+  },
+  {
+    "book": "Judges",
+    "mainEvents": [
+      {
+        "title": "Deborah Leads Israel",
+        "reference": "Judges 4:4",
+        "text": "Deborah, a prophetess, was leading Israel at that time."
+      },
+      {
+        "title": "Gideon's Victory",
+        "reference": "Judges 7:20",
+        "text": "They blew their trumpets and broke the jars... and the Midianite army fled."
+      },
+      {
+        "title": "Samson and Delilah",
+        "reference": "Judges 16:30",
+        "text": "Samson said, 'Let me die with the Philistines!' Then he pushed with all his might, and the temple fell."
+      }
+    ],
+    "mainPersons": ["Deborah", "Gideon", "Samson", "Jephthah"]
+  },
+  {
+    "book": "Ruth",
+    "mainEvents": [
+      {
+        "title": "Ruth's Loyalty",
+        "reference": "Ruth 1:16",
+        "text": "Where you go I will go, and where you stay I will stay. Your people will be my people and your God my God."
+      },
+      {
+        "title": "Ruth Meets Boaz",
+        "reference": "Ruth 2:12",
+        "text": "May the LORD repay you for what you have done."
+      },
+      {
+        "title": "Ruth Marries Boaz",
+        "reference": "Ruth 4:13",
+        "text": "So Boaz took Ruth and she became his wife."
+      }
+    ],
+    "mainPersons": ["Ruth", "Naomi", "Boaz"]
+  },
+  {
+    "book": "1 Samuel",
+    "mainEvents": [
+      {
+        "title": "Hannah's Prayer",
+        "reference": "1 Samuel 1:27",
+        "text": "I prayed for this child, and the LORD has granted me what I asked of him."
+      },
+      {
+        "title": "Samuel Hears God",
+        "reference": "1 Samuel 3:10",
+        "text": "The LORD came and stood there, calling as at the other times, 'Samuel! Samuel!'"
+      },
+      {
+        "title": "Saul Anointed King",
+        "reference": "1 Samuel 10:1",
+        "text": "Samuel took a flask of oil and poured it on Saul's head and kissed him, saying, 'Has not the LORD anointed you ruler over his inheritance?'"
+      },
+      {
+        "title": "David and Goliath",
+        "reference": "1 Samuel 17:50",
+        "text": "So David triumphed over the Philistine with a sling and a stone."
+      }
+    ],
+    "mainPersons": ["Samuel", "Saul", "David", "Hannah"]
+  },
+    {
+      "book": "2 Samuel",
+      "mainEvents": [
+        {
+          "title": "David Becomes King",
+          "reference": "2 Samuel 5:3",
+          "text": "They anointed David king over Israel."
+        },
+        {
+          "title": "David Brings the Ark to Jerusalem",
+          "reference": "2 Samuel 6:14",
+          "text": "David, wearing a linen ephod, danced before the LORD with all his might."
+        },
+        {
+          "title": "God's Covenant with David",
+          "reference": "2 Samuel 7:16",
+          "text": "Your house and your kingdom will endure forever before me; your throne will be established forever."
+        },
+        {
+          "title": "Bathsheba and Uriah",
+          "reference": "2 Samuel 11:15",
+          "text": "Put Uriah out in front where the fighting is fiercest."
+        },
+        {
+          "title": "Absalom's Rebellion",
+          "reference": "2 Samuel 15:10",
+          "text": "Absalom sent secret messengers throughout the tribes of Israel to say, 'As soon as you hear the sound of the trumpets, then say, Absalom is king in Hebron.'"
+        }
+      ],
+      "mainPersons": ["David", "Bathsheba", "Uriah", "Absalom", "Joab", "Nathan"]
+    },
+  {
+  "book": "2 Samuel",
+  "mainEvents": [
+    {
+      "title": "David Becomes King",
+      "reference": "2 Samuel 5:3",
+      "text": "They anointed David king over Israel."
+    },
+    {
+      "title": "David Brings the Ark to Jerusalem",
+      "reference": "2 Samuel 6:14",
+      "text": "David, wearing a linen ephod, danced before the LORD with all his might."
+    },
+    {
+      "title": "God's Covenant with David",
+      "reference": "2 Samuel 7:16",
+      "text": "Your house and your kingdom will endure forever before me; your throne will be established forever."
+    },
+    {
+      "title": "Bathsheba and Uriah",
+      "reference": "2 Samuel 11:15",
+      "text": "Put Uriah out in front where the fighting is fiercest."
+    },
+    {
+      "title": "Absalom's Rebellion",
+      "reference": "2 Samuel 15:10",
+      "text": "Absalom sent secret messengers throughout the tribes of Israel to say, 'As soon as you hear the sound of the trumpets, then say, Absalom is king in Hebron.'"
+    }
+  ],
+  "mainPersons": ["David", "Bathsheba", "Uriah", "Absalom", "Joab", "Nathan"]
+},
+  {
+    "book": "1 Kings",
+    "mainEvents": [
+      {
+        "title": "Solomon Becomes King",
+        "reference": "1 Kings 2:12",
+        "text": "So Solomon sat on the throne of his father David, and his rule was firmly established."
+      },
+      {
+        "title": "Solomon Builds the Temple",
+        "reference": "1 Kings 6:1",
+        "text": "In the four hundred and eightieth year after the Israelites came out of Egypt... Solomon began to build the temple of the LORD."
+      },
+      {
+        "title": "Division of the Kingdom",
+        "reference": "1 Kings 12:20",
+        "text": "All Israel made Jeroboam king over all Israel."
+      },
+      {
+        "title": "Elijah and the Prophets of Baal",
+        "reference": "1 Kings 18:38",
+        "text": "Then the fire of the LORD fell and burned up the sacrifice."
+      }
+    ],
+    "mainPersons": ["Solomon", "Elijah", "Jeroboam", "Ahab"]
+  },
+  {
+    "book": "2 Kings",
+    "mainEvents": [
+      {
+        "title": "Elisha Succeeds Elijah",
+        "reference": "2 Kings 2:11",
+        "text": "Elijah went up to heaven in a whirlwind."
+      },
+      {
+        "title": "Hezekiah's Prayer",
+        "reference": "2 Kings 19:15",
+        "text": "Hezekiah prayed to the LORD: 'O LORD, God of Israel... you alone are God.'"
+      },
+      {
+        "title": "Josiah's Reform",
+        "reference": "2 Kings 23:25",
+        "text": "Neither before nor after Josiah was there a king like him who turned to the LORD as he did."
+      },
+      {
+        "title": "Fall of Jerusalem",
+        "reference": "2 Kings 25:9",
+        "text": "He set fire to the temple of the LORD, the royal palace and all the houses of Jerusalem."
+      }
+    ],
+    "mainPersons": ["Elisha", "Hezekiah", "Josiah", "Zedekiah"]
+  },
+  {
+    "book": "1 Chronicles",
+    "mainEvents": [
+      {
+        "title": "Genealogies of Israel",
+        "reference": "1 Chronicles 1:1",
+        "text": "Adam, Seth, Enosh..."
+      },
+      {
+        "title": "David Brings the Ark to Jerusalem",
+        "reference": "1 Chronicles 15:28",
+        "text": "So all Israel brought up the ark of the covenant of the LORD with shouts."
+      },
+      {
+        "title": "David's Plans for the Temple",
+        "reference": "1 Chronicles 22:7",
+        "text": "David said to Solomon: 'My son, I had it in my heart to build a house for the Name of the LORD my God.'"
+      }
+    ],
+    "mainPersons": ["David", "Solomon", "Levites"]
+  },
+  {
+    "book": "2 Chronicles",
+    "mainEvents": [
+      {
+        "title": "Solomon's Temple Dedicated",
+        "reference": "2 Chronicles 7:1",
+        "text": "When Solomon finished praying, fire came down from heaven and consumed the burnt offering."
+      },
+      {
+        "title": "Jehoshaphat's Victory",
+        "reference": "2 Chronicles 20:22",
+        "text": "As they began to sing and praise, the LORD set ambushes against the men of Ammon and Moab."
+      },
+      {
+        "title": "Reforms of Hezekiah",
+        "reference": "2 Chronicles 29:3",
+        "text": "In the first month of the first year of his reign, he opened the doors of the temple of the LORD and repaired them."
+      },
+      {
+        "title": "Fall of Jerusalem",
+        "reference": "2 Chronicles 36:19",
+        "text": "They set fire to God's temple and broke down the wall of Jerusalem."
+      }
+    ],
+    "mainPersons": ["Solomon", "Jehoshaphat", "Hezekiah", "Zedekiah"]
+  },
+  {
+    "book": "Ezra",
+    "mainEvents": [
+      {
+        "title": "Return from Exile",
+        "reference": "Ezra 1:3",
+        "text": "Any of his people among you may go up to Jerusalem in Judah and build the temple of the LORD."
+      },
+      {
+        "title": "Rebuilding the Temple",
+        "reference": "Ezra 3:11",
+        "text": "With praise and thanksgiving they sang to the LORD: 'He is good; his love toward Israel endures forever.'"
+      },
+      {
+        "title": "Ezra Reads the Law",
+        "reference": "Ezra 7:10",
+        "text": "Ezra had devoted himself to the study and observance of the Law of the LORD."
+      }
+    ],
+    "mainPersons": ["Ezra", "Zerubbabel", "Jeshua"]
   },
   {
     "book": "Nehemiah",
@@ -484,6 +832,16 @@
     "book": "Exodus",
     "mainEvents": [
       {
+        "title": "Burning Bush",
+        "reference": "Exodus 3:2-4",
+        "text": "The angel of the Lord appeared to him in flames of fire from within a bush. Moses saw that though the bush was on fire it did not burn up."
+      },
+      {
+        "title": "Pharaoh and the Ten Plagues",
+        "reference": "Exodus 7-12",
+        "text": "God sent ten plagues upon Egypt to convince Pharaoh to let the Israelites go."
+      },
+      {
         "title": "Passover",
         "reference": "Exodus 12",
         "text": "The first Passover and deliverance from Egypt."
@@ -503,350 +861,7 @@
       "Moses", "Aaron", "Pharaoh", "Miriam"
     ]
   },
-  {
-    "book": "Leviticus",
-    "mainEvents": [
-      {
-        "title": "Laws of Sacrifice",
-        "reference": "Leviticus 1:2",
-        "text": "When any of you brings an offering to the LORD..."
-      },
-      {
-        "title": "Day of Atonement",
-        "reference": "Leviticus 16:30",
-        "text": "On this day atonement will be made for you, to cleanse you."
-      },
-      {
-        "title": "Laws of Holiness",
-        "reference": "Leviticus 19:2",
-        "text": "Be holy, for I the LORD your God am holy."
-      }
-    ],
-    "mainPersons": ["Moses", "Aaron"]
-  },
-  {
-    "book": "Numbers",
-    "mainEvents": [
-      {
-        "title": "Census of Israel",
-        "reference": "Numbers 1:2",
-        "text": "Take a census of the whole Israelite community."
-      },
-      {
-        "title": "Spies Sent to Canaan",
-        "reference": "Numbers 13:2",
-        "text": "Send some men to explore the land of Canaan."
-      },
-      {
-        "title": "Balaam's Donkey",
-        "reference": "Numbers 22:28",
-        "text": "Then the LORD opened the donkey's mouth..."
-      },
-      {
-        "title": "Aaron's Death",
-        "reference": "Numbers 20:28",
-        "text": "Aaron died there on the top of the mountain."
-      }
-    ],
-    "mainPersons": ["Moses", "Aaron", "Joshua", "Caleb", "Balaam"]
-  },
-  {
-    "book": "Deuteronomy",
-    "mainEvents": [
-      {
-        "title": "Moses' Final Address",
-        "reference": "Deuteronomy 6:4-5",
-        "text": "Hear, O Israel: The LORD our God, the LORD is one. Love the LORD your God..."
-      },
-      {
-        "title": "The Shema",
-        "reference": "Deuteronomy 6:4",
-        "text": "Hear, O Israel: The LORD our God, the LORD is one."
-      },
-      {
-        "title": "Blessings and Curses",
-        "reference": "Deuteronomy 28:2",
-        "text": "All these blessings will come on you and accompany you if you obey the LORD your God."
-      },
-      {
-        "title": "Death of Moses",
-        "reference": "Deuteronomy 34:5",
-        "text": "And Moses the servant of the LORD died there in Moab."
-      }
-    ],
-    "mainPersons": ["Moses", "Joshua"]
-  },
-  {
-    "book": "Joshua",
-    "mainEvents": [
-      {
-        "title": "Crossing the Jordan",
-        "reference": "Joshua 3:17",
-        "text": "The priests who carried the ark of the covenant of the LORD stood firm on dry ground in the middle of the Jordan."
-      },
-      {
-        "title": "Fall of Jericho",
-        "reference": "Joshua 6:20",
-        "text": "When the trumpets sounded, the wall collapsed; so every man charged straight in, and they took the city."
-      },
-      {
-        "title": "Sun Stands Still",
-        "reference": "Joshua 10:13",
-        "text": "So the sun stood still, and the moon stopped, till the nation avenged itself on its enemies."
-      }
-    ],
-    "mainPersons": ["Joshua", "Rahab", "Achan"]
-  },
-  {
-    "book": "Judges",
-    "mainEvents": [
-      {
-        "title": "Deborah Leads Israel",
-        "reference": "Judges 4:4",
-        "text": "Deborah, a prophetess, was leading Israel at that time."
-      },
-      {
-        "title": "Gideon's Victory",
-        "reference": "Judges 7:20",
-        "text": "They blew their trumpets and broke the jars... and the Midianite army fled."
-      },
-      {
-        "title": "Samson and Delilah",
-        "reference": "Judges 16:30",
-        "text": "Samson said, 'Let me die with the Philistines!' Then he pushed with all his might, and the temple fell."
-      }
-    ],
-    "mainPersons": ["Deborah", "Gideon", "Samson", "Jephthah"]
-  },
-  {
-    "book": "Ruth",
-    "mainEvents": [
-      {
-        "title": "Ruth's Loyalty",
-        "reference": "Ruth 1:16",
-        "text": "Where you go I will go, and where you stay I will stay. Your people will be my people and your God my God."
-      },
-      {
-        "title": "Ruth Meets Boaz",
-        "reference": "Ruth 2:12",
-        "text": "May the LORD repay you for what you have done."
-      },
-      {
-        "title": "Ruth Marries Boaz",
-        "reference": "Ruth 4:13",
-        "text": "So Boaz took Ruth and she became his wife."
-      }
-    ],
-    "mainPersons": ["Ruth", "Naomi", "Boaz"]
-  },
-  {
-    "book": "1 Samuel",
-    "mainEvents": [
-      {
-        "title": "Hannah's Prayer",
-        "reference": "1 Samuel 1:27",
-        "text": "I prayed for this child, and the LORD has granted me what I asked of him."
-      },
-      {
-        "title": "Samuel Hears God",
-        "reference": "1 Samuel 3:10",
-        "text": "The LORD came and stood there, calling as at the other times, 'Samuel! Samuel!'"
-      },
-      {
-        "title": "Saul Anointed King",
-        "reference": "1 Samuel 10:1",
-        "text": "Samuel took a flask of oil and poured it on Saul's head and kissed him, saying, 'Has not the LORD anointed you ruler over his inheritance?'"
-      },
-      {
-        "title": "David and Goliath",
-        "reference": "1 Samuel 17:50",
-        "text": "So David triumphed over the Philistine with a sling and a stone."
-      }
-    ],
-    "mainPersons": ["Samuel", "Saul", "David", "Hannah"]
-  },
-    {
-      "book": "2 Samuel",
-      "mainEvents": [
-        {
-          "title": "David Becomes King",
-          "reference": "2 Samuel 5:3",
-          "text": "They anointed David king over Israel."
-        },
-        {
-          "title": "David Brings the Ark to Jerusalem",
-          "reference": "2 Samuel 6:14",
-          "text": "David, wearing a linen ephod, danced before the LORD with all his might."
-        },
-        {
-          "title": "God's Covenant with David",
-          "reference": "2 Samuel 7:16",
-          "text": "Your house and your kingdom will endure forever before me; your throne will be established forever."
-        },
-        {
-          "title": "Bathsheba and Uriah",
-          "reference": "2 Samuel 11:15",
-          "text": "Put Uriah out in front where the fighting is fiercest."
-        },
-        {
-          "title": "Absalom's Rebellion",
-          "reference": "2 Samuel 15:10",
-          "text": "Absalom sent secret messengers throughout the tribes of Israel to say, 'As soon as you hear the sound of the trumpets, then say, Absalom is king in Hebron.'"
-        }
-      ],
-      "mainPersons": ["David", "Bathsheba", "Uriah", "Absalom", "Joab", "Nathan"]
-    },
-  {
-  "book": "2 Samuel",
-  "mainEvents": [
-    {
-      "title": "David Becomes King",
-      "reference": "2 Samuel 5:3",
-      "text": "They anointed David king over Israel."
-    },
-    {
-      "title": "David Brings the Ark to Jerusalem",
-      "reference": "2 Samuel 6:14",
-      "text": "David, wearing a linen ephod, danced before the LORD with all his might."
-    },
-    {
-      "title": "God's Covenant with David",
-      "reference": "2 Samuel 7:16",
-      "text": "Your house and your kingdom will endure forever before me; your throne will be established forever."
-    },
-    {
-      "title": "Bathsheba and Uriah",
-      "reference": "2 Samuel 11:15",
-      "text": "Put Uriah out in front where the fighting is fiercest."
-    },
-    {
-      "title": "Absalom's Rebellion",
-      "reference": "2 Samuel 15:10",
-      "text": "Absalom sent secret messengers throughout the tribes of Israel to say, 'As soon as you hear the sound of the trumpets, then say, Absalom is king in Hebron.'"
-    }
-  ],
-  "mainPersons": ["David", "Bathsheba", "Uriah", "Absalom", "Joab", "Nathan"]
-},
-  {
-    "book": "1 Kings",
-    "mainEvents": [
-      {
-        "title": "Solomon Becomes King",
-        "reference": "1 Kings 2:12",
-        "text": "So Solomon sat on the throne of his father David, and his rule was firmly established."
-      },
-      {
-        "title": "Solomon Builds the Temple",
-        "reference": "1 Kings 6:1",
-        "text": "In the four hundred and eightieth year after the Israelites came out of Egypt... Solomon began to build the temple of the LORD."
-      },
-      {
-        "title": "Division of the Kingdom",
-        "reference": "1 Kings 12:20",
-        "text": "All Israel made Jeroboam king over all Israel."
-      },
-      {
-        "title": "Elijah and the Prophets of Baal",
-        "reference": "1 Kings 18:38",
-        "text": "Then the fire of the LORD fell and burned up the sacrifice."
-      }
-    ],
-    "mainPersons": ["Solomon", "Elijah", "Jeroboam", "Ahab"]
-  },
-  {
-    "book": "2 Kings",
-    "mainEvents": [
-      {
-        "title": "Elisha Succeeds Elijah",
-        "reference": "2 Kings 2:11",
-        "text": "Elijah went up to heaven in a whirlwind."
-      },
-      {
-        "title": "Hezekiah's Prayer",
-        "reference": "2 Kings 19:15",
-        "text": "Hezekiah prayed to the LORD: 'O LORD, God of Israel... you alone are God.'"
-      },
-      {
-        "title": "Josiah's Reform",
-        "reference": "2 Kings 23:25",
-        "text": "Neither before nor after Josiah was there a king like him who turned to the LORD as he did."
-      },
-      {
-        "title": "Fall of Jerusalem",
-        "reference": "2 Kings 25:9",
-        "text": "He set fire to the temple of the LORD, the royal palace and all the houses of Jerusalem."
-      }
-    ],
-    "mainPersons": ["Elisha", "Hezekiah", "Josiah", "Zedekiah"]
-  },
-  {
-    "book": "1 Chronicles",
-    "mainEvents": [
-      {
-        "title": "Genealogies of Israel",
-        "reference": "1 Chronicles 1:1",
-        "text": "Adam, Seth, Enosh..."
-      },
-      {
-        "title": "David Brings the Ark to Jerusalem",
-        "reference": "1 Chronicles 15:28",
-        "text": "So all Israel brought up the ark of the covenant of the LORD with shouts."
-      },
-      {
-        "title": "David's Plans for the Temple",
-        "reference": "1 Chronicles 22:7",
-        "text": "David said to Solomon: 'My son, I had it in my heart to build a house for the Name of the LORD my God.'"
-      }
-    ],
-    "mainPersons": ["David", "Solomon", "Levites"]
-  },
-  {
-    "book": "2 Chronicles",
-    "mainEvents": [
-      {
-        "title": "Solomon's Temple Dedicated",
-        "reference": "2 Chronicles 7:1",
-        "text": "When Solomon finished praying, fire came down from heaven and consumed the burnt offering."
-      },
-      {
-        "title": "Jehoshaphat's Victory",
-        "reference": "2 Chronicles 20:22",
-        "text": "As they began to sing and praise, the LORD set ambushes against the men of Ammon and Moab."
-      },
-      {
-        "title": "Reforms of Hezekiah",
-        "reference": "2 Chronicles 29:3",
-        "text": "In the first month of the first year of his reign, he opened the doors of the temple of the LORD and repaired them."
-      },
-      {
-        "title": "Fall of Jerusalem",
-        "reference": "2 Chronicles 36:19",
-        "text": "They set fire to God's temple and broke down the wall of Jerusalem."
-      }
-    ],
-    "mainPersons": ["Solomon", "Jehoshaphat", "Hezekiah", "Zedekiah"]
-  },
-  {
-    "book": "Ezra",
-    "mainEvents": [
-      {
-        "title": "Return from Exile",
-        "reference": "Ezra 1:3",
-        "text": "Any of his people among you may go up to Jerusalem in Judah and build the temple of the LORD."
-      },
-      {
-        "title": "Rebuilding the Temple",
-        "reference": "Ezra 3:11",
-        "text": "With praise and thanksgiving they sang to the LORD: 'He is good; his love toward Israel endures forever.'"
-      },
-      {
-        "title": "Ezra Reads the Law",
-        "reference": "Ezra 7:10",
-        "text": "Ezra had devoted himself to the study and observance of the Law of the LORD."
-      }
-    ],
-    "mainPersons": ["Ezra", "Zerubbabel", "Jeshua"]
-  },
+  
     {
       "book": "Song of Songs",
       "mainEvents": [

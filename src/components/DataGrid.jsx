@@ -40,6 +40,15 @@ export default function DataGrid({
   const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
   const { isDarkMode } = useTheme();
 
+  // Restore missing handleMouseLeave function
+  const handleMouseLeave = () => {
+    setTooltip({ show: false, content: '', x: 0, y: 0 });
+  };
+
+  // Add missing refs for header and body containers
+  const headerContainerRef = useRef(null);
+  const bodyContainerRef = useRef(null);
+
   // Theme-aware colors
   const colors = {
     primary: isDarkMode ? '#818cf8' : '#6366f1',
@@ -64,36 +73,24 @@ export default function DataGrid({
     });
   };
 
-  const handleMouseLeave = () => {
-    setTooltip({ show: false, content: '', x: 0, y: 0 });
-  };
-
-  // Refs for scroll synchronization
-  const headerContainerRef = useRef(null);
-  const bodyContainerRef = useRef(null);
-
+  // Export to PDF function
   // Synchronize header and body horizontal scrolling
   useEffect(() => {
     const headerContainer = headerContainerRef.current;
     const bodyContainer = bodyContainerRef.current;
-
     if (!headerContainer || !bodyContainer) return;
-
     const syncHeaderScroll = () => {
       if (headerContainer && bodyContainer) {
         bodyContainer.scrollLeft = headerContainer.scrollLeft;
       }
     };
-
     const syncBodyScroll = () => {
       if (headerContainer && bodyContainer) {
         headerContainer.scrollLeft = bodyContainer.scrollLeft;
       }
     };
-
     headerContainer.addEventListener('scroll', syncHeaderScroll);
     bodyContainer.addEventListener('scroll', syncBodyScroll);
-
     return () => {
       headerContainer.removeEventListener('scroll', syncHeaderScroll);
       bodyContainer.removeEventListener('scroll', syncBodyScroll);
