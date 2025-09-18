@@ -412,7 +412,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.4);
-    z-index: 1900;
+    z-index: 997;
   }
 }
 
@@ -1535,7 +1535,12 @@
     gap: 0;
     position: relative;
   }
-  .nav-label{
+  .theme-toggle-container {
+    top: -30px;
+    position: relative;
+    left: 92px;
+  }
+  .nav-label {
     font-size: 1.32rem !important;
   }
   
@@ -1552,7 +1557,7 @@
   /* Mobile controls bar for very small screens */
   .header-controls {
     position: absolute;
-    top: 14rem;
+    top: 2rem;
     width: 160px;
     right: 0;
     padding: 0.5rem 0.75rem;
