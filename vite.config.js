@@ -47,6 +47,7 @@ export default defineConfig(({ command, mode }) => {
       },
       workbox: {
         cleanupOutdatedCaches: true,
+        maximumFileSizeToCacheInBytes: 20 * 1024 * 1024, // 20 MB
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com/,

@@ -17,7 +17,7 @@ echo   • PWA (installable on mobile)
 echo   • Offline functionality
 echo   • Dark/Light themes
 echo   • Bilingual support
-echo   • Books & Writers with icons
+echo   • Books with icons
 echo   • Interactive charts and maps
 echo.
 echo 🎯 Recommended: Visit netlify.com and drag the 'dist' folder!

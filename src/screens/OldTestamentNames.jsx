@@ -4,6 +4,7 @@ import Modal from '../components/Modal';
 import { FaCrown } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
 import namesOfGodData from '../assets/data/namesOfGodData.json';
+import { localized } from '../utils/i18n';
 
 const OldTestamentNames = ({ lang }) => {
   const { isDarkMode } = useTheme();
@@ -25,11 +26,11 @@ const OldTestamentNames = ({ lang }) => {
 
   // Prepare data for DataGrid
   const gridData = (oldTestamentNames || []).map(name => ({
-    name: lang === 'te' ? (name?.nameTelugu || name?.name) : (name?.name || ''),
+    name: localized(name, 'name', lang),
     meaning: name?.meaning?.[lang] || '',
     reference: name?.reference?.[lang] || '',
     description: name?.description?.[lang] || '',
-    category: lang === 'te' ? (name?.categoryTelugu || name?.category) : (name?.category || ''),
+    category: localized(name, 'category', lang),
     _originalData: name // Keep original data for modal
   }));
 
@@ -117,7 +118,7 @@ const OldTestamentNames = ({ lang }) => {
               <FaCrown style={{ fontSize: '2rem', color: '#fbbf24' }} />
               <div>
                 <h2 style={{ margin: 0, fontSize: '1.8rem' }}>
-                  {lang === 'te' ? selectedName.nameTelugu : selectedName.name}
+                  {localized(selectedName, 'name', lang)}
                 </h2>
                 <p style={{ margin: '5px 0 0 0', opacity: 0.9 }}>
                   {selectedName.meaning[lang]}
@@ -181,7 +182,7 @@ const OldTestamentNames = ({ lang }) => {
                   borderRadius: '20px',
                   fontSize: '0.9rem'
                 }}>
-                  {lang === 'te' ? selectedName.categoryTelugu : selectedName.category}
+                  {localized(selectedName, 'category', lang)}
                 </p>
               </div>
             </div>

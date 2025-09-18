@@ -7,6 +7,7 @@ import namesOfGodData from '../assets/data/namesOfGodData.json';
 import menuConfig from '../assets/data/menuConfig.json';
 import { FaCrown } from 'react-icons/fa';
 import { GiHolyGrail } from 'react-icons/gi';
+import { localized } from '../utils/i18n';
 
 export default function NamesOfGodGrid({ lang }) {
   const { isDarkMode } = useTheme();
@@ -27,12 +28,12 @@ export default function NamesOfGodGrid({ lang }) {
   ];
   
   const data = allNames.map(name => ({
-    name: lang === 'te' ? name.nameTelugu : name.name,
-    meaning: lang === 'te' ? name.meaning.te : name.meaning.en,
-    reference: lang === 'te' ? name.reference.te : name.reference.en,
-    description: lang === 'te' ? name.description.te : name.description.en,
-    testament: lang === 'te' ? name.testamentTelugu : name.testament,
-    category: lang === 'te' ? name.categoryTelugu : name.category,
+    name: localized(name, 'name', lang),
+    meaning: name.meaning?.[lang] || '',
+    reference: name.reference?.[lang] || '',
+    description: name.description?.[lang] || '',
+    testament: localized(name, 'testament', lang),
+    category: localized(name, 'category', lang),
     // Keep original data for modal
     _originalData: name
   }));
@@ -249,7 +250,7 @@ export default function NamesOfGodGrid({ lang }) {
       <Modal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
-        title={selectedName ? (lang === 'te' ? selectedName.nameTelugu : selectedName.name) : ''}
+        title={selectedName ? localized(selectedName, 'name', lang) : ''}
         closeLabel={lang === 'te' ? 'మూసివేయండి' : 'Close'}
         maxWidth="700px"
       >
@@ -273,7 +274,7 @@ export default function NamesOfGodGrid({ lang }) {
                 color: iconColor,
                 fontSize: '1.8em'
               }}>
-                {lang === 'te' ? selectedName.nameTelugu : selectedName.name}
+                {localized(selectedName, 'name', lang)}
               </h2>
               <p style={{ 
                 margin: '0 0 10px 0',
@@ -281,7 +282,7 @@ export default function NamesOfGodGrid({ lang }) {
                 fontWeight: '600',
                 color: isDarkMode ? '#e2e8f0' : '#334155'
               }}>
-                {lang === 'te' ? selectedName.meaning.te : selectedName.meaning.en}
+                  {selectedName.meaning?.[lang] || ''}
               </p>
               <div style={{
                 display: 'flex',
@@ -298,7 +299,7 @@ export default function NamesOfGodGrid({ lang }) {
                   fontSize: '0.9em',
                   fontWeight: '500'
                 }}>
-                  {lang === 'te' ? selectedName.testamentTelugu : selectedName.testament}
+                  {localized(selectedName, 'testament', lang)}
                 </span>
                 <span style={{
                   backgroundColor: isDarkMode ? 'rgba(99, 102, 241, 0.2)' : 'rgba(99, 102, 241, 0.1)',
@@ -308,7 +309,7 @@ export default function NamesOfGodGrid({ lang }) {
                   fontSize: '0.9em',
                   fontWeight: '500'
                 }}>
-                  {lang === 'te' ? selectedName.categoryTelugu : selectedName.category}
+                  {localized(selectedName, 'category', lang)}
                 </span>
               </div>
             </div>

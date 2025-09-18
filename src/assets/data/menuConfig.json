@@ -10,7 +10,7 @@
     "prophets": { "en": "Prophets", "te": "ప్రవక్తలు" },
     "maps": { "en": "Maps", "te": "మ్యాప్‌లు" },
     "keyeras": { "en": "Key Eras", "te": "ముఖ్య యుగాలు" },
-    "bookswriters": { "en": "Books & Writers", "te": "పుస్తకాలు & రచయితలు" }
+  "bookswriters": { "en": "Books", "te": "పుస్తకాలు" }
   },
   "menus": {
     "familytrees": [
@@ -43,6 +43,7 @@
     "bookswriters": [
       { "key": "old-testament-books", "icon": "FaBook", "label": { "en": "Old Testament Books", "te": "పాత నిబంధన పుస్తకాలు" } },
       { "key": "new-testament-books", "icon": "FaBookOpen", "label": { "en": "New Testament Books", "te": "కొత్త నిబంధన పుస్తకాలు" } },
+      { "key": "bible-reading", "icon": "FaBible", "label": { "en": "Bible Reading", "te": "బైబిల్ చదువు" } },
       { "key": "names-of-god", "icon": "GiHolyGrail", "iconColor": "#8b5cf6", "label": { "en": "Names of GOD", "te": "దేవుని నామాలు" } }
     ],
     "maps": [
@@ -83,8 +84,8 @@
     },
     {
       "id": "bookswriters",
-      "title": "Books & Writers",
-      "titleTelugu": "పుస్తకాలు & రచయితలు",
+      "title": "Books",
+      "titleTelugu": "పుస్తకాలు",
       "icon": "FaBook",
       "color": "#f59e0b"
     }

@@ -5,6 +5,7 @@ import Modal from '../components/Modal';
 import mapsData from '../assets/data/mapsData.json';
 import menuConfig from '../assets/data/menuConfig.json';
 import translationsData from '../assets/data/translations.json';
+import { localized } from '../utils/i18n';
 
 export default function MapsGrid({ lang, section = 'old-testament-maps' }) {
   const [showImageModal, setShowImageModal] = React.useState(false);
@@ -27,7 +28,7 @@ export default function MapsGrid({ lang, section = 'old-testament-maps' }) {
 
   // Transform data for DataGrid with special values for icons
   const transformedData = rawData.map(item => ({
-    title: lang === 'te' ? (item.titleTelugu || item.title) : item.title,
+    title: localized(item, 'title', lang),
     period: item.period,
     modernLocation: item.modernLocation,
     scripture: item.scripture,
@@ -214,7 +215,7 @@ export default function MapsGrid({ lang, section = 'old-testament-maps' }) {
       {showDetailsModal && selectedDetails && (
         <Modal
           isOpen={showDetailsModal}
-          title={selectedDetails.title || translations?.maps?.mapNotFound || 'Map not found'}
+          title={localized(selectedDetails, 'title', lang) || translations?.maps?.mapNotFound || 'Map not found'}
           onClose={closeDetailsModal}
           closeLabel={translations?.common?.close || 'Close'}
         >

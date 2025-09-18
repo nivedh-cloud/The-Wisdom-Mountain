@@ -51,9 +51,9 @@ const MenuBar = ({ lang, page, setPage, setLang }) => {
     {
       key: 'bookswriters',
       icon: FaBook,
-      label: lang === 'te' ? 'పుస్తకాలు & రచయితలు' : 'Books & Writers',
+      label: lang === 'te' ? 'పుస్తకాలు' : 'Books',
       onClick: () => handleMenuClick('bookswriters'),
-      active: isMenuActive('bookswriters', ['old-testament-books','new-testament-books','biblical-authors','books-by-category'])
+      active: isMenuActive('bookswriters', ['old-testament-books','new-testament-books','biblical-authors','books-by-category','bible-reading','names-of-god'])
     },
     {
       key: 'judges',

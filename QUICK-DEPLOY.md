@@ -54,7 +54,7 @@ Your app is configured as a Progressive Web App:
 - **Assets:** ✅ Optimized and cached
 
 ## 🌟 Production Features
-- ✅ **Books & Writers** with React Icons
+- ✅ **Books** with React Icons
 - ✅ **Mobile Responsive** design
 - ✅ **Dark/Light Theme** toggle
 - ✅ **Bilingual Support** (English/Telugu)

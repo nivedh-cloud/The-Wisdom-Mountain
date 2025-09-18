@@ -1,5 +1,5 @@
-/* Force Books & Writers left menu text and icon color for light theme */
-/* Only force colors for Books & Writers accordion menu */
+/* Force Books left menu text and icon color for light theme */
+/* Only force colors for Books accordion menu */
 .books-accordion .accordion-main-header,
 .books-accordion .accordion-main-header .main-header-icon,
 .books-accordion .accordion-sub-header,
@@ -12,7 +12,7 @@
   color: #4b3cc4 !important;
 }
 
-/* Dark mode: Books & Writers accordion menu colors */
+/* Dark mode: Books accordion menu colors */
 .dark-mode .books-accordion .accordion-main-header,
 .dark-mode .books-accordion .accordion-main-header .main-header-icon,
 .dark-mode .books-accordion .accordion-sub-header,
@@ -24,7 +24,7 @@
 .dark-mode .books-accordion .accordion-sub-header .sub-category-icon {
   color: #edeaff !important;
 }
-/* Force Books & Writers accordion menu text and icon color for light theme */
+/* Force Books accordion menu text and icon color for light theme */
 .books-accordion .accordion-main-header,
 .books-accordion .accordion-main-header .main-header-icon,
 .books-accordion .accordion-sub-header,
@@ -37,7 +37,7 @@
   color: #4b3cc4 !important;
 }
 
-/* Dark mode: Books & Writers accordion menu colors */
+/* Dark mode: Books accordion menu colors */
 .dark-mode .books-accordion .accordion-main-header,
 .dark-mode .books-accordion .accordion-main-header .main-header-icon,
 .dark-mode .books-accordion .accordion-sub-header,
@@ -726,6 +726,43 @@
   min-height: 5rem;
 }
 
+/* Bible reader specific controls - ensure visibility over dark backgrounds */
+.bible-reading-container select.control-select,
+.bible-reading-container input.control-input,
+.bible-reading-container button.control-btn {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.bible-reading-container select.control-select:focus,
+.bible-reading-container input.control-input:focus,
+.bible-reading-container button.control-btn:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.12) !important;
+  border-color: var(--text-secondary) !important;
+}
+
+/* Make the English and Telugu panes clearly visible and independently scrollable */
+.bible-pane {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  max-height: calc(100vh - 320px);
+  overflow-y: auto;
+}
+
+.bible-verse-number {
+  min-width: 2rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
 .menu-nav {
   display: flex;
   align-items: center;
@@ -1393,9 +1430,8 @@
   }
   
   .modern-menu-bar {
-    top: 6rem; /* Adjust for header + controls */
+    top: 5rem; /* Adjust for header + controls */
   }
-}
   
   .menu-container {
     min-height: 4rem;
@@ -1521,7 +1557,7 @@
   }
   
   .modern-menu-bar {
-    top: 6rem; /* Adjust for header + controls */
+    top: 5rem; /* Adjust for header + controls */
   }
   
   /* Adjust main content for mobile controls */
@@ -2585,6 +2621,25 @@
   transform: translateY(-1px);
 }
 
+/* Verse selection highlight and toolbar */
+.bible-pane .verse-selected {
+  background: rgba(99,102,241,0.08) !important;
+  border-left: 4px solid rgba(99,102,241,0.6) !important;
+}
+
+.verse-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.25rem 0.5rem;
+}
+
+.verse-toolbar .control-btn {
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
 .chart-instruction {
   text-align: center;
   margin-bottom: 15px;
@@ -2774,7 +2829,7 @@
   }
 }
 
-/* Books & Writers Accordion Styles */
+/* Books Accordion Styles */
 .books-accordion {
   padding: 0;
   margin: 0;
@@ -3250,7 +3305,7 @@
   }
   
   .modern-menu-bar {
-    top: 6rem; /* Adjust for smaller header + controls */
+    top: 5rem; /* Adjust for smaller header + controls */
   }
   
   .sidebar {

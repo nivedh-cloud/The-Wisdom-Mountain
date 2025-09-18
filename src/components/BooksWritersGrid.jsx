@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaBook, FaBookOpen, FaUser, FaList, FaInfoCircle } from 'react-icons/fa';
+import { localized } from '../utils/i18n';
 import DataGrid from './DataGrid';
 import Modal from './Modal';
 import biblicalBooksData from '../assets/data/biblicalBooksData.json';
@@ -88,7 +89,7 @@ const BooksWritersGrid = ({ lang, page }) => {
 
   const translations = {
     en: {
-      title: 'Biblical Books & Writers',
+      title: 'Biblical Books',
       book: 'Book',
       author: 'Author',
       period: 'Period',
@@ -119,9 +120,13 @@ const BooksWritersGrid = ({ lang, page }) => {
       totalBooks: 'Total Books',
       keyVerse: 'Key Verse',
       writtenDate: 'Written Time'
+      ,
+      mainPersons: 'Main Persons'
+      ,
+      mainVerses: 'Main Verses'
     },
     te: {
-      title: 'బైబిల్ పుస్తకాలు మరియు రచయితలు',
+      title: 'బైబిల్ పుస్తకాలు',
       book: 'పుస్తకం',
       author: 'రచయిత',
       period: 'కాలం',
@@ -152,6 +157,10 @@ const BooksWritersGrid = ({ lang, page }) => {
       totalBooks: 'మొత్తం పుస్తకాలు',
       keyVerse: 'ముఖ్య వచనం',
       writtenDate: 'రచించబడిన తేదీ'
+    ,
+    mainPersons: 'ప్రధాన వ్యక్తులు'
+    ,
+    mainVerses: 'ప్రధాన వచనాలు'
     }
   };
 
@@ -181,8 +190,8 @@ const BooksWritersGrid = ({ lang, page }) => {
   // Get data based on selected category
   const getData = () => {
     if (selectedCategory === 'biblical-authors') {
-      return biblicalBooksData.biblicalAuthors.map((author, index) => ({
-        name: lang === 'te' ? author.nameTelugu : author.name,
+    return biblicalBooksData.biblicalAuthors.map((author, index) => ({
+      name: localized(author, 'name', lang),
         nameOriginal: author.nameHebrew || author.nameGreek || '',
         period: author.period,
         role: author.role,
@@ -208,9 +217,9 @@ const BooksWritersGrid = ({ lang, page }) => {
         books = biblicalBooksData.oldTestament[selectedSubCategory] || [];
       }
       return books.map((book, index) => ({
-        name: lang === 'te' ? book.nameTelugu : book.name,
+        name: localized(book, 'name', lang),
         nameOriginal: book.nameHebrew || '',
-        author: lang === 'te' ? book.authorTelugu : book.author,
+        author: localized(book, 'author', lang),
         writtenDate: book.writtenDate,
         chapters: book.chapters,
         verses: book.verses,
@@ -235,9 +244,9 @@ const BooksWritersGrid = ({ lang, page }) => {
         books = biblicalBooksData.newTestament[selectedSubCategory] || [];
       }
       return books.map((book, index) => ({
-        name: lang === 'te' ? book.nameTelugu : book.name,
+        name: localized(book, 'name', lang),
         nameOriginal: book.nameGreek || '',
-        author: lang === 'te' ? book.authorTelugu : book.author,
+        author: localized(book, 'author', lang),
         writtenDate: book.writtenDate,
         chapters: book.chapters,
         verses: book.verses,
@@ -250,6 +259,8 @@ const BooksWritersGrid = ({ lang, page }) => {
     }
     return [];
   };
+
+    // ...existing code...
 
   // Get columns based on data type
   const getColumns = () => {
@@ -443,7 +454,7 @@ const BooksWritersGrid = ({ lang, page }) => {
       <Modal
         isOpen={showDetailsModal}
         onClose={() => setShowDetailsModal(false)}
-        title={selectedItem ? (lang === 'te' ? selectedItem.nameTelugu : selectedItem.name) : ''}
+        title={selectedItem ? localized(selectedItem, 'name', lang) : ''}
         closeLabel={t.close}
       >
         {selectedItem && (
@@ -493,18 +504,23 @@ const BooksWritersGrid = ({ lang, page }) => {
               <div style={{ marginTop: '20px' }}>
                 {selectedBookDetails.mainEvents && (
                   <div style={{ marginBottom: '18px', background: 'rgba(99,102,241,0.06)', border: '1px solid #e0e7ff', borderRadius: '8px', padding: '16px' }}>
-                    {selectedBookDetails.mainEvents.map((event, idx) => (
-                      <div key={idx} style={{ marginBottom: '12px' }}>
-                        <strong>{event.title} :</strong><br />
-                        <span style={{ fontWeight: 'bold' }}>{event.reference}:</span> {event.text}
-                      </div>
-                    ))}
+            {selectedBookDetails.mainEvents.map((event, idx) => {
+              const title = localized(event, 'title', lang);
+              const reference = localized(event, 'reference', lang);
+              const text = localized(event, 'text', lang);
+                      return (
+                        <div key={idx} style={{ marginBottom: '12px' }}>
+                          <strong>{title} :</strong><br />
+                          <span style={{ fontWeight: 'bold' }}>{reference}:</span> {text}
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
                 {selectedBookDetails.mainPersons && (
                   <div style={{ marginBottom: '18px', background: 'rgba(99,102,241,0.06)', border: '1px solid #e0e7ff', borderRadius: '8px', padding: '16px' }}>
-                    <strong>Main Persons:</strong><br />
-                    <span>{selectedBookDetails.mainPersons.join(', ')}</span>
+                    <strong>{t.mainPersons}:</strong><br />
+                    <span>{(lang === 'te' && Array.isArray(selectedBookDetails.mainPersonsTe) && selectedBookDetails.mainPersonsTe.length > 0) ? selectedBookDetails.mainPersonsTe.join(', ') : (selectedBookDetails.mainPersons || []).join(', ')}</span>
                   </div>
                 )}
               </div>
@@ -517,7 +533,7 @@ const BooksWritersGrid = ({ lang, page }) => {
       <Modal
         isOpen={showDetailsModal}
         onClose={() => setShowDetailsModal(false)}
-        title={selectedBookDetails ? selectedBookDetails.book : ''}
+        title={selectedBookDetails ? (localized(selectedBookDetails, 'book', lang) || selectedBookDetails.book) : ''}
         closeLabel={t.close}
       >
         {selectedBookDetails ? (
@@ -525,22 +541,27 @@ const BooksWritersGrid = ({ lang, page }) => {
             textAlign: 'left'
           }}>
             {/* Main Events section with title, reference, and text */}
-            {selectedBookDetails.mainEvents && (
+                {selectedBookDetails.mainEvents && (
               <div style={{ marginBottom: '18px', background: 'rgba(99,102,241,0.06)', border: '1px solid #e0e7ff', borderRadius: '8px', padding: '16px' }}>
-                <h4>Main Verses:</h4><br />
-                {selectedBookDetails.mainEvents.map((event, idx) => (
-                  <div key={idx} style={{ marginBottom: '12px' }}>
-                    <strong>{event.title} :</strong><br />
-                    <span style={{ fontWeight: 'bold' }}>{event.reference}:</span> {event.text}
-                  </div>
-                ))}
+                <h4>{t.mainVerses}:</h4><br />
+                {selectedBookDetails.mainEvents.map((event, idx) => {
+                  const title = localized(event, 'title', lang);
+                  const reference = localized(event, 'reference', lang);
+                  const text = localized(event, 'text', lang);
+                  return (
+                    <div key={idx} style={{ marginBottom: '12px' }}>
+                      <strong>{title} :</strong><br />
+                      <span style={{ fontWeight: 'bold' }}>{reference}:</span> {text}
+                    </div>
+                  );
+                })}
               </div>
             )}
             {/* Main Persons as comma separated inline list */}
             {selectedBookDetails.mainPersons && (
               <div style={{ marginBottom: '18px', background: 'rgba(99,102,241,0.06)', border: '1px solid #e0e7ff', borderRadius: '8px', padding: '16px' }}>
-                <h4>Main Persons:</h4><br />
-                <span>{selectedBookDetails.mainPersons.join(', ')}</span>
+                <h4>{t.mainPersons}:</h4><br />
+                <span>{(lang === 'te' && Array.isArray(selectedBookDetails.mainPersonsTe) && selectedBookDetails.mainPersonsTe.length > 0) ? selectedBookDetails.mainPersonsTe.join(', ') : (selectedBookDetails.mainPersons || []).join(', ')}</span>
               </div>
             )}
           </div>

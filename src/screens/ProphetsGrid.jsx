@@ -5,6 +5,7 @@ import Modal from '../components/Modal';
 import prophetsData from '../assets/data/prophetsData.json';
 import menuConfig from '../assets/data/menuConfig.json';
 import translationsData from '../assets/data/translations.json';
+import { localized } from '../utils/i18n';
 
 export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
   const [showDetailsModal, setShowDetailsModal] = useState(false);
@@ -37,11 +38,11 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
     })();
 
     return {
-      prophet: lang === 'te' ? prophet.nameTelugu : prophet.name,
+      prophet: localized(prophet, 'name', lang),
       period: prophet.period,
       ministry: Array.isArray(prophet.ministry) ? prophet.ministry.join(', ') : prophet.ministry,
-      type: lang === 'te' ? prophet.ministryTypeTelugu : (prophet.category || prophet.type || 'Prophet'),
-      nation: lang === 'te' ? prophet.nationTelugu : prophet.nation,
+      type: localized(prophet, 'ministryType', lang) || (prophet.category || prophet.type || 'Prophet'),
+      nation: localized(prophet, 'nation', lang) || prophet.nation,
       booksWritten: Array.isArray(booksWrittenArr) 
         ? booksWrittenArr.join(', ') 
         : booksWrittenArr,
@@ -229,7 +230,7 @@ export default function ProphetsGrid({ lang, section = 'list-of-prophets' }) {
       <Modal
         isOpen={showDetailsModal}
         onClose={() => setShowDetailsModal(false)}
-        title={selectedProphet ? (lang === 'te' ? selectedProphet.nameTelugu : selectedProphet.name) : ''}
+  title={selectedProphet ? localized(selectedProphet, 'name', lang) : ''}
         closeLabel={translations.common.close}
       >
         {selectedProphet && (

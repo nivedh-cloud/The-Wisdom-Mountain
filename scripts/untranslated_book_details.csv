@@ -1,0 +1,185 @@
+book,bookKey,eventIndex,field,englishText,teluguText,issue
+Deuteronomy,book,2,title,Blessings and Curses,Blessings and Curses,identical_to_english
+Deuteronomy,book,2,text,All these blessings will come on you and accompany you if you obey the LORD your God.,All these blessings will come on you and accompany you if you obey the LORD your God.,identical_to_english
+Deuteronomy,book,3,title,Death of Moses,Death of Moses,identical_to_english
+Deuteronomy,book,3,text,And Moses the servant of the LORD died there in Moab.,And Moses the servant of the LORD died there in Moab.,identical_to_english
+Joshua,book,1,title,Fall of Jericho,Fall of Jericho,identical_to_english
+Joshua,book,1,text,"When the trumpets sounded, the wall collapsed; so every man charged straight in, and they took the city.","When the trumpets sounded, the wall collapsed; so every man charged straight in, and they took the city.",identical_to_english
+Joshua,book,2,title,Sun Stands Still,Sun Stands Still,identical_to_english
+Joshua,book,2,text,"So the sun stood still, and the moon stopped, till the nation avenged itself on its enemies.","So the sun stood still, and the moon stopped, till the nation avenged itself on its enemies.",identical_to_english
+Judges,book,1,title,Gideon's Victory,Gideon's Victory,identical_to_english
+Judges,book,1,text,They blew their trumpets and broke the jars... and the Midianite army fled.,They blew their trumpets and broke the jars... and the Midianite army fled.,identical_to_english
+Judges,book,2,title,Samson and Delilah,Samson and Delilah,identical_to_english
+Judges,book,2,text,"Samson said, 'Let me die with the Philistines!' Then he pushed with all his might, and the temple fell.","Samson said, 'Let me die with the Philistines!' Then he pushed with all his might, and the temple fell.",identical_to_english
+Ruth,book,1,title,Ruth Meets Boaz,Ruth Meets Boaz,identical_to_english
+Ruth,book,1,text,May the LORD repay you for what you have done.,May the LORD repay you for what you have done.,identical_to_english
+Ruth,book,2,title,Ruth Marries Boaz,Ruth Marries Boaz,identical_to_english
+Ruth,book,2,text,So Boaz took Ruth and she became his wife.,So Boaz took Ruth and she became his wife.,identical_to_english
+1 Samuel,book,1,title,Samuel Hears God,Samuel Hears God,identical_to_english
+1 Samuel,book,1,text,"The LORD came and stood there, calling as at the other times, 'Samuel! Samuel!'","The LORD came and stood there, calling as at the other times, 'Samuel! Samuel!'",identical_to_english
+1 Samuel,book,2,title,Saul Anointed King,Saul Anointed King,identical_to_english
+1 Samuel,book,2,text,"Samuel took a flask of oil and poured it on Saul's head and kissed him, saying, 'Has not the LORD anointed you ruler over his inheritance?'","Samuel took a flask of oil and poured it on Saul's head and kissed him, saying, 'Has not the LORD anointed you ruler over his inheritance?'",identical_to_english
+1 Samuel,book,3,title,David and Goliath,David and Goliath,identical_to_english
+1 Samuel,book,3,text,So David triumphed over the Philistine with a sling and a stone.,So David triumphed over the Philistine with a sling and a stone.,identical_to_english
+2 Samuel,book,1,title,David Brings the Ark to Jerusalem,David Brings the Ark to Jerusalem,identical_to_english
+2 Samuel,book,1,text,"David, wearing a linen ephod, danced before the LORD with all his might.","David, wearing a linen ephod, danced before the LORD with all his might.",identical_to_english
+2 Samuel,book,2,title,God's Covenant with David,God's Covenant with David,identical_to_english
+2 Samuel,book,2,text,Your house and your kingdom will endure forever before me; your throne will be established forever.,Your house and your kingdom will endure forever before me; your throne will be established forever.,identical_to_english
+2 Samuel,book,3,title,Bathsheba and Uriah,Bathsheba and Uriah,identical_to_english
+2 Samuel,book,3,text,Put Uriah out in front where the fighting is fiercest.,Put Uriah out in front where the fighting is fiercest.,identical_to_english
+2 Samuel,book,4,title,Absalom's Rebellion,Absalom's Rebellion,identical_to_english
+2 Samuel,book,4,text,"Absalom sent secret messengers throughout the tribes of Israel to say, 'As soon as you hear the sound of the trumpets, then say, Absalom is king in Hebron.'","Absalom sent secret messengers throughout the tribes of Israel to say, 'As soon as you hear the sound of the trumpets, then say, Absalom is king in Hebron.'",identical_to_english
+1 Kings,book,1,title,Solomon Builds the Temple,Solomon Builds the Temple,identical_to_english
+1 Kings,book,1,text,In the four hundred and eightieth year after the Israelites came out of Egypt... Solomon began to build the temple of the LORD.,In the four hundred and eightieth year after the Israelites came out of Egypt... Solomon began to build the temple of the LORD.,identical_to_english
+1 Kings,book,2,title,Division of the Kingdom,Division of the Kingdom,identical_to_english
+1 Kings,book,2,text,All Israel made Jeroboam king over all Israel.,All Israel made Jeroboam king over all Israel.,identical_to_english
+1 Kings,book,3,title,Elijah and the Prophets of Baal,Elijah and the Prophets of Baal,identical_to_english
+1 Kings,book,3,text,Then the fire of the LORD fell and burned up the sacrifice.,Then the fire of the LORD fell and burned up the sacrifice.,identical_to_english
+2 Kings,book,0,title,Elisha Succeeds Elijah,Elisha Succeeds Elijah,identical_to_english
+2 Kings,book,0,text,Elijah went up to heaven in a whirlwind.,Elijah went up to heaven in a whirlwind.,identical_to_english
+2 Kings,book,1,title,Hezekiah's Prayer,Hezekiah's Prayer,identical_to_english
+2 Kings,book,1,text,"Hezekiah prayed to the LORD: 'O LORD, God of Israel... you alone are God.'","Hezekiah prayed to the LORD: 'O LORD, God of Israel... you alone are God.'",identical_to_english
+2 Kings,book,2,title,Josiah's Reform,Josiah's Reform,identical_to_english
+2 Kings,book,2,text,Neither before nor after Josiah was there a king like him who turned to the LORD as he did.,Neither before nor after Josiah was there a king like him who turned to the LORD as he did.,identical_to_english
+2 Kings,book,3,title,Fall of Jerusalem,Fall of Jerusalem,identical_to_english
+2 Kings,book,3,text,"He set fire to the temple of the LORD, the royal palace and all the houses of Jerusalem.","He set fire to the temple of the LORD, the royal palace and all the houses of Jerusalem.",identical_to_english
+1 Chronicles,book,0,title,Genealogies of Israel,Genealogies of Israel,identical_to_english
+1 Chronicles,book,0,text,"Adam, Seth, Enosh...","Adam, Seth, Enosh...",identical_to_english
+1 Chronicles,book,1,title,David Brings the Ark to Jerusalem,David Brings the Ark to Jerusalem,identical_to_english
+1 Chronicles,book,1,text,So all Israel brought up the ark of the covenant of the LORD with shouts.,So all Israel brought up the ark of the covenant of the LORD with shouts.,identical_to_english
+1 Chronicles,book,2,title,David's Plans for the Temple,David's Plans for the Temple,identical_to_english
+1 Chronicles,book,2,text,"David said to Solomon: 'My son, I had it in my heart to build a house for the Name of the LORD my God.'","David said to Solomon: 'My son, I had it in my heart to build a house for the Name of the LORD my God.'",identical_to_english
+2 Chronicles,book,0,title,Solomon's Temple Dedicated,Solomon's Temple Dedicated,identical_to_english
+2 Chronicles,book,0,text,"When Solomon finished praying, fire came down from heaven and consumed the burnt offering.","When Solomon finished praying, fire came down from heaven and consumed the burnt offering.",identical_to_english
+2 Chronicles,book,1,title,Jehoshaphat's Victory,Jehoshaphat's Victory,identical_to_english
+2 Chronicles,book,1,text,"As they began to sing and praise, the LORD set ambushes against the men of Ammon and Moab.","As they began to sing and praise, the LORD set ambushes against the men of Ammon and Moab.",identical_to_english
+2 Chronicles,book,2,title,Reforms of Hezekiah,Reforms of Hezekiah,identical_to_english
+2 Chronicles,book,2,text,"In the first month of the first year of his reign, he opened the doors of the temple of the LORD and repaired them.","In the first month of the first year of his reign, he opened the doors of the temple of the LORD and repaired them.",identical_to_english
+2 Chronicles,book,3,title,Fall of Jerusalem,Fall of Jerusalem,identical_to_english
+2 Chronicles,book,3,text,They set fire to God's temple and broke down the wall of Jerusalem.,They set fire to God's temple and broke down the wall of Jerusalem.,identical_to_english
+Ezra,book,0,title,Return from Exile,Return from Exile,identical_to_english
+Ezra,book,0,text,Any of his people among you may go up to Jerusalem in Judah and build the temple of the LORD.,Any of his people among you may go up to Jerusalem in Judah and build the temple of the LORD.,identical_to_english
+Ezra,book,1,title,Rebuilding the Temple,Rebuilding the Temple,identical_to_english
+Ezra,book,1,text,With praise and thanksgiving they sang to the LORD: 'He is good; his love toward Israel endures forever.',With praise and thanksgiving they sang to the LORD: 'He is good; his love toward Israel endures forever.',identical_to_english
+Ezra,book,2,title,Ezra Reads the Law,Ezra Reads the Law,identical_to_english
+Ezra,book,2,text,Ezra had devoted himself to the study and observance of the Law of the LORD.,Ezra had devoted himself to the study and observance of the Law of the LORD.,identical_to_english
+Nehemiah,book,0,title,Nehemiah Rebuilds Jerusalem's Walls,Nehemiah Rebuilds Jerusalem's Walls,identical_to_english
+Nehemiah,book,0,text,"Come, let us rebuild the wall of Jerusalem, and we will no longer be in disgrace.","Come, let us rebuild the wall of Jerusalem, and we will no longer be in disgrace.",identical_to_english
+Nehemiah,book,1,title,Reading of the Law,Reading of the Law,identical_to_english
+Nehemiah,book,1,text,"They read from the Book of the Law of God, making it clear and giving the meaning.","They read from the Book of the Law of God, making it clear and giving the meaning.",identical_to_english
+Nehemiah,book,2,title,Dedication of the Wall,Dedication of the Wall,identical_to_english
+Nehemiah,book,2,text,The sound of rejoicing in Jerusalem could be heard far away.,The sound of rejoicing in Jerusalem could be heard far away.,identical_to_english
+Esther,book,0,title,Esther Becomes Queen,Esther Becomes Queen,identical_to_english
+Esther,book,0,text,Now the king was attracted to Esther more than to any of the other women.,Now the king was attracted to Esther more than to any of the other women.,identical_to_english
+Esther,book,1,title,Haman's Plot,Haman's Plot,identical_to_english
+Esther,book,1,text,"Haman looked for a way to destroy all Mordecai's people, the Jews.","Haman looked for a way to destroy all Mordecai's people, the Jews.",identical_to_english
+Esther,book,2,title,Esther Saves Her People,Esther Saves Her People,identical_to_english
+Esther,book,2,text,Grant me my life—this is my petition. And spare my people—this is my request.,Grant me my life—this is my petition. And spare my people—this is my request.,identical_to_english
+Job,book,0,title,Job's Suffering,Job's Suffering,identical_to_english
+Job,book,0,text,The LORD gave and the LORD has taken away; may the name of the LORD be praised.,The LORD gave and the LORD has taken away; may the name of the LORD be praised.,identical_to_english
+Job,book,1,title,Job's Friends' Counsel,Job's Friends' Counsel,identical_to_english
+Job,book,1,text,They set out from their homes and met together by agreement to go and sympathize with him and comfort him.,They set out from their homes and met together by agreement to go and sympathize with him and comfort him.,identical_to_english
+Job,book,2,title,God Speaks to Job,God Speaks to Job,identical_to_english
+Job,book,2,text,Then the LORD spoke to Job out of the storm.,Then the LORD spoke to Job out of the storm.,identical_to_english
+Job,book,3,title,Job's Restoration,Job's Restoration,identical_to_english
+Job,book,3,text,"After Job had prayed for his friends, the LORD restored his fortunes and gave him twice as much as he had before.","After Job had prayed for his friends, the LORD restored his fortunes and gave him twice as much as he had before.",identical_to_english
+Psalms,book,0,title,Psalm of Praise,Psalm of Praise,identical_to_english
+Psalms,book,0,text,"The LORD is my shepherd, I shall not want.","The LORD is my shepherd, I shall not want.",identical_to_english
+Psalms,book,1,title,Psalm of Repentance,Psalm of Repentance,identical_to_english
+Psalms,book,1,text,"Create in me a pure heart, O God, and renew a steadfast spirit within me.","Create in me a pure heart, O God, and renew a steadfast spirit within me.",identical_to_english
+Psalms,book,2,title,Psalm of Thanksgiving,Psalm of Thanksgiving,identical_to_english
+Psalms,book,2,text,Enter his gates with thanksgiving and his courts with praise.,Enter his gates with thanksgiving and his courts with praise.,identical_to_english
+Proverbs,book,0,title,The Beginning of Wisdom,The Beginning of Wisdom,identical_to_english
+Proverbs,book,0,text,The fear of the LORD is the beginning of knowledge.,The fear of the LORD is the beginning of knowledge.,identical_to_english
+Proverbs,book,1,title,Trust in the LORD,Trust in the LORD,identical_to_english
+Proverbs,book,1,text,Trust in the LORD with all your heart and lean not on your own understanding.,Trust in the LORD with all your heart and lean not on your own understanding.,identical_to_english
+Proverbs,book,2,title,A Virtuous Woman,A Virtuous Woman,identical_to_english
+Proverbs,book,2,text,A wife of noble character who can find? She is worth far more than rubies.,A wife of noble character who can find? She is worth far more than rubies.,identical_to_english
+Ecclesiastes,book,0,title,Everything is Meaningless,Everything is Meaningless,identical_to_english
+Ecclesiastes,book,0,text,Meaningless! Meaningless! says the Teacher. Utterly meaningless! Everything is meaningless.,Meaningless! Meaningless! says the Teacher. Utterly meaningless! Everything is meaningless.,identical_to_english
+Ecclesiastes,book,1,title,A Time for Everything,A Time for Everything,identical_to_english
+Ecclesiastes,book,1,text,"There is a time for everything, and a season for every activity under the heavens.","There is a time for everything, and a season for every activity under the heavens.",identical_to_english
+Ecclesiastes,book,2,title,Remember Your Creator,Remember Your Creator,identical_to_english
+Ecclesiastes,book,2,text,Remember your Creator in the days of your youth.,Remember your Creator in the days of your youth.,identical_to_english
+Song of Solomon,book,0,title,The Bride and Bridegroom,The Bride and Bridegroom,identical_to_english
+Song of Solomon,book,0,text,My beloved is mine and I am his.,My beloved is mine and I am his.,identical_to_english
+Song of Solomon,book,1,title,Love's Strength,Love's Strength,identical_to_english
+Song of Solomon,book,1,text,"Love is as strong as death, its jealousy unyielding as the grave.","Love is as strong as death, its jealousy unyielding as the grave.",identical_to_english
+Isaiah,book,0,title,Isaiah's Vision,Isaiah's Vision,identical_to_english
+Isaiah,book,0,text,"I saw the Lord, high and exalted, seated on a throne.","I saw the Lord, high and exalted, seated on a throne.",identical_to_english
+Isaiah,book,1,title,Prophecy of the Messiah,Prophecy of the Messiah,identical_to_english
+Isaiah,book,1,text,"For to us a child is born, to us a son is given.","For to us a child is born, to us a son is given.",identical_to_english
+Isaiah,book,2,title,Suffering Servant,Suffering Servant,identical_to_english
+Isaiah,book,2,text,"He was pierced for our transgressions, he was crushed for our iniquities.","He was pierced for our transgressions, he was crushed for our iniquities.",identical_to_english
+Jeremiah,book,0,title,Jeremiah's Call,Jeremiah's Call,identical_to_english
+Jeremiah,book,0,text,"Before I formed you in the womb I knew you, before you were born I set you apart.","Before I formed you in the womb I knew you, before you were born I set you apart.",identical_to_english
+Jeremiah,book,1,title,Prophecy of the New Covenant,Prophecy of the New Covenant,identical_to_english
+Jeremiah,book,1,text,I will make a new covenant with the people of Israel and with the people of Judah.,I will make a new covenant with the people of Israel and with the people of Judah.,identical_to_english
+Jeremiah,book,2,title,Fall of Jerusalem,Fall of Jerusalem,identical_to_english
+Jeremiah,book,2,text,"On the ninth day of the fourth month of Zedekiah's eleventh year, the city wall was broken through.","On the ninth day of the fourth month of Zedekiah's eleventh year, the city wall was broken through.",identical_to_english
+Lamentations,book,0,title,Jerusalem's Destruction,Jerusalem's Destruction,identical_to_english
+Lamentations,book,0,text,"How deserted lies the city, once so full of people!","How deserted lies the city, once so full of people!",identical_to_english
+Lamentations,book,1,title,Great Is Your Faithfulness,Great Is Your Faithfulness,identical_to_english
+Lamentations,book,1,text,Great is your faithfulness.,Great is your faithfulness.,identical_to_english
+Ezekiel,book,0,title,Vision of the Valley of Dry Bones,Vision of the Valley of Dry Bones,identical_to_english
+Ezekiel,book,0,text,"I will make breath enter you, and you will come to life.","I will make breath enter you, and you will come to life.",identical_to_english
+Ezekiel,book,1,title,Vision of God's Glory,Vision of God's Glory,identical_to_english
+Ezekiel,book,1,text,This was the appearance of the likeness of the glory of the LORD.,This was the appearance of the likeness of the glory of the LORD.,identical_to_english
+Ezekiel,book,2,title,Prophecy Against Gog,Prophecy Against Gog,identical_to_english
+Ezekiel,book,2,text,"Son of man, set your face against Gog of the land of Magog.","Son of man, set your face against Gog of the land of Magog.",identical_to_english
+Daniel,book,0,title,Daniel in the Lion's Den,Daniel in the Lion's Den,identical_to_english
+Daniel,book,0,text,"My God sent his angel, and he shut the mouths of the lions.","My God sent his angel, and he shut the mouths of the lions.",identical_to_english
+Daniel,book,1,title,Fiery Furnace,Fiery Furnace,identical_to_english
+Daniel,book,1,text,"I see four men walking around in the fire, unbound and unharmed.","I see four men walking around in the fire, unbound and unharmed.",identical_to_english
+Daniel,book,2,title,Nebuchadnezzar's Dream,Nebuchadnezzar's Dream,identical_to_english
+Daniel,book,2,text,The mystery was revealed to Daniel in a vision.,The mystery was revealed to Daniel in a vision.,identical_to_english
+Hosea,book,0,title,Hosea's Marriage to Gomer,Hosea's Marriage to Gomer,identical_to_english
+Hosea,book,0,text,"Go, marry a promiscuous woman and have children with her.","Go, marry a promiscuous woman and have children with her.",identical_to_english
+Hosea,book,1,title,God's Love for Israel,God's Love for Israel,identical_to_english
+Hosea,book,1,text,"I led them with cords of human kindness, with ties of love.","I led them with cords of human kindness, with ties of love.",identical_to_english
+Joel,book,0,title,The Locust Plague,The Locust Plague,identical_to_english
+Joel,book,0,text,What the locust swarm has left the great locusts have eaten.,What the locust swarm has left the great locusts have eaten.,identical_to_english
+Joel,book,1,title,Promise of the Spirit,Promise of the Spirit,identical_to_english
+Joel,book,1,text,I will pour out my Spirit on all people.,I will pour out my Spirit on all people.,identical_to_english
+Amos,book,0,title,Judgment on Israel,Judgment on Israel,identical_to_english
+Amos,book,0,text,Therefore I will send you into exile beyond Damascus.,Therefore I will send you into exile beyond Damascus.,identical_to_english
+Amos,book,1,title,Vision of the Plumb Line,Vision of the Plumb Line,identical_to_english
+Amos,book,1,text,I am setting a plumb line among my people Israel.,I am setting a plumb line among my people Israel.,identical_to_english
+Obadiah,book,0,title,Prophecy Against Edom,Prophecy Against Edom,identical_to_english
+Obadiah,book,0,text,"We have heard a message from the LORD: An envoy was sent to the nations to say, 'Rise, let us go against her for battle.'","We have heard a message from the LORD: An envoy was sent to the nations to say, 'Rise, let us go against her for battle.'",identical_to_english
+Obadiah,book,1,title,Restoration of Israel,Restoration of Israel,identical_to_english
+Obadiah,book,1,text,"But on Mount Zion will be deliverance; it will be holy, and Jacob will possess his inheritance.","But on Mount Zion will be deliverance; it will be holy, and Jacob will possess his inheritance.",identical_to_english
+Jonah,book,0,title,Jonah Flees from God,Jonah Flees from God,identical_to_english
+Jonah,book,0,text,But Jonah ran away from the LORD and headed for Tarshish.,But Jonah ran away from the LORD and headed for Tarshish.,identical_to_english
+Jonah,book,1,title,Jonah in the Fish,Jonah in the Fish,identical_to_english
+Jonah,book,1,text,From inside the fish Jonah prayed to the LORD his God.,From inside the fish Jonah prayed to the LORD his God.,identical_to_english
+Jonah,book,2,title,Nineveh Repents,Nineveh Repents,identical_to_english
+Jonah,book,2,text,"The Ninevites believed God. A fast was proclaimed, and all of them, from the greatest to the least, put on sackcloth.","The Ninevites believed God. A fast was proclaimed, and all of them, from the greatest to the least, put on sackcloth.",identical_to_english
+Micah,book,0,title,Prophecy of Bethlehem,Prophecy of Bethlehem,identical_to_english
+Micah,book,0,text,"But you, Bethlehem Ephrathah, though you are small among the clans of Judah, out of you will come for me one who will be ruler over Israel.","But you, Bethlehem Ephrathah, though you are small among the clans of Judah, out of you will come for me one who will be ruler over Israel.",identical_to_english
+Micah,book,1,title,Call for Justice,Call for Justice,identical_to_english
+Micah,book,1,text,"He has shown you, O mortal, what is good. And what does the LORD require of you? To act justly and to love mercy and to walk humbly with your God.","He has shown you, O mortal, what is good. And what does the LORD require of you? To act justly and to love mercy and to walk humbly with your God.",identical_to_english
+Nahum,book,0,title,Prophecy Against Nineveh,Prophecy Against Nineveh,identical_to_english
+Nahum,book,0,text,A prophecy concerning Nineveh. The book of the vision of Nahum the Elkoshite.,A prophecy concerning Nineveh. The book of the vision of Nahum the Elkoshite.,identical_to_english
+Nahum,book,1,title,Fall of Nineveh,Fall of Nineveh,identical_to_english
+Nahum,book,1,text,All who hear the news about you clap their hands at your fall.,All who hear the news about you clap their hands at your fall.,identical_to_english
+Habakkuk,book,0,title,Habakkuk's Complaint,Habakkuk's Complaint,identical_to_english
+Habakkuk,book,0,text,"How long, LORD, must I call for help, but you do not listen?","How long, LORD, must I call for help, but you do not listen?",identical_to_english
+Habakkuk,book,1,title,The Righteous Will Live by Faith,The Righteous Will Live by Faith,identical_to_english
+Habakkuk,book,1,text,But the righteous person will live by his faithfulness.,But the righteous person will live by his faithfulness.,identical_to_english
+Zephaniah,book,0,title,The Day of the LORD,The Day of the LORD,identical_to_english
+Zephaniah,book,0,text,The great day of the LORD is near—near and coming quickly.,The great day of the LORD is near—near and coming quickly.,identical_to_english
+Zephaniah,book,1,title,Promise to the Remnant,Promise to the Remnant,identical_to_english
+Zephaniah,book,1,text,"The LORD your God is with you, the Mighty Warrior who saves.","The LORD your God is with you, the Mighty Warrior who saves.",identical_to_english
+Haggai,book,0,title,Call to Rebuild the Temple,Call to Rebuild the Temple,identical_to_english
+Haggai,book,0,text,Go up into the mountains and bring down timber and build my house.,Go up into the mountains and bring down timber and build my house.,identical_to_english
+Haggai,book,1,title,Future Glory of the Temple,Future Glory of the Temple,identical_to_english
+Haggai,book,1,text,The glory of this present house will be greater than the glory of the former house.,The glory of this present house will be greater than the glory of the former house.,identical_to_english
+Zechariah,book,0,title,Vision of the Horses,Vision of the Horses,identical_to_english
+Zechariah,book,0,text,I saw a man riding a red horse!,I saw a man riding a red horse!,identical_to_english
+Zechariah,book,2,title,Prophecy of the King,Prophecy of the King,identical_to_english
+Zechariah,book,2,text,"See, your king comes to you, righteous and victorious, lowly and riding on a donkey.","See, your king comes to you, righteous and victorious, lowly and riding on a donkey.",identical_to_english
+Malachi,book,0,title,The Messenger of the Covenant,The Messenger of the Covenant,identical_to_english
+Malachi,book,0,text,"I will send my messenger, who will prepare the way before me.","I will send my messenger, who will prepare the way before me.",identical_to_english
+Malachi,book,1,title,Promise of Elijah,Promise of Elijah,identical_to_english
+Malachi,book,1,text,"See, I will send the prophet Elijah to you before that great and dreadful day of the LORD comes.","See, I will send the prophet Elijah to you before that great and dreadful day of the LORD comes.",identical_to_english

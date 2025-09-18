@@ -20,6 +20,7 @@ import BooksWritersGrid from './components/BooksWritersGrid';
 import NamesOfGodGrid from './screens/NamesOfGodGrid';
 import OldTestamentNames from './screens/OldTestamentNames';
 import NewTestamentNames from './screens/NewTestamentNames';
+import BibleReading from './screens/BibleReading';
 import carouselData from './assets/data/carouselData.json';
 
 // Import carousel images from src assets (Vite will handle the paths correctly)
@@ -223,7 +224,7 @@ function AppContent() {
               <Route path="/bookswriters" element={
                 <div className="page-container">
                   <PageHeader 
-                    title={lang === 'te' ? 'పుస్తకాలు & రచయితలు' : 'Books & Writers'}
+                    title={lang === 'te' ? 'పుస్తకాలు' : 'Books'}
                     subtitle={lang === 'te' ? 'బైబిల్ పుస్తకాలు మరియు రచయితల విభాగాన్ని ఎంచుకోండి.' : 'Select a biblical books and writers section from the left.'}
                     icon={<FaBook />}
                   />
@@ -249,6 +250,10 @@ function AppContent() {
               {/* Names of God route */}
               <Route path="/names-of-god" element={
                 <NamesOfGodGrid lang={lang} />
+              } />
+              {/* Bible Reading route */}
+              <Route path="/bible-reading" element={
+                <BibleReading lang={lang} />
               } />
               {/* Old Testament Names route */}
               <Route path="/old-testament-names" element={
