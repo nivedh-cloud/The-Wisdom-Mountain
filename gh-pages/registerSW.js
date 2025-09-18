@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/The-Wisdom-Mountain/sw.js', { scope: '/The-Wisdom-Mountain/' })})}

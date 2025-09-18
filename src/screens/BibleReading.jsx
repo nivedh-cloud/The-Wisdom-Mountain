@@ -330,31 +330,44 @@ const BibleReading = ({ lang }) => {
           {/* Row 1: Search (centered) */}
           <div style={{ width: '100%', maxWidth: 720 }}>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <input
-                type="text"
-                className="control-input"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={(e) => { if (e.key === 'Enter') handleSearch(); }}
-                placeholder={lang === 'te' ? 'పదం లేదా వాక్యం...' : 'Word or phrase...'}
-                autoComplete="off"
-                style={{ flex: 1 }}
-              />
-              <button
-                onClick={handleSearch}
-                disabled={isSearching}
-                className="control-btn"
-                style={{ background: '#4f46e5', color: '#fff' }}
-              >
-                <FaSearch />
-              </button>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', width: '100%' }}>
+                <input
+                  ref={(el) => { window._searchInput = el; }}
+                  type="text"
+                  className="control-input"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={(e) => { if (e.key === 'Enter') handleSearch(); }}
+                  placeholder={lang === 'te' ? 'పదం లేదా వాక్యం...' : 'Word or phrase...'}
+                  autoComplete="off"
+                  style={{ flex: 1 }}
+                />
+                <button
+                  onClick={() => { setSearchQuery(''); setSuggestions([]); clearSelections(); window._searchInput && window._searchInput.focus(); }}
+                  className="control-btn"
+                  title={lang === 'te' ? 'సరిపరచు' : 'Clear'}
+                >
+                  ×
+                </button>
+                <button
+                  onClick={handleSearch}
+                  disabled={isSearching}
+                  className="control-btn"
+                  style={{ background: '#4f46e5', color: '#fff' }}
+                >
+                  <FaSearch />
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Row 2: Centered clickable reference */}
+          {/* Row 2: Centered clickable reference (only in selected language) */}
           <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => setShowReferenceModal(true)}>
-            <h2 className="text-sm text-gray-600" style={{ margin: 0 }}>{teluguBookName} {selectedChapter}:{selectedVerse}</h2>
-            <p className="text-lg font-semibold" style={{ margin: 0 }}>{selectedBook} {selectedChapter}:{selectedVerse}</p>
+            {lang === 'te' ? (
+              <h2 className="text-lg font-semibold" style={{ margin: 0 }}>{teluguBookName} {selectedChapter}:{selectedVerse}</h2>
+            ) : (
+              <h2 className="text-lg font-semibold" style={{ margin: 0 }}>{selectedBook} {selectedChapter}:{selectedVerse}</h2>
+            )}
           </div>
 
           {/* Row 3: Navigation buttons (centered) */}
@@ -494,6 +507,23 @@ const BibleReading = ({ lang }) => {
             </h3>
           </div>
         </div>
+        {/* Centered toolbar between panes */}
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-0.5rem', marginBottom: '0.5rem' }}>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            { (selectedTeluguVerses && selectedTeluguVerses.size > 0) && (
+              <>
+                <button className="control-btn" onClick={() => copySelected('telugu')}>{lang === 'te' ? 'కాపీ తెలుగు' : 'Copy Telugu'}</button>
+                <button className="control-btn" onClick={() => clearSelections()}>{lang === 'te' ? 'క్లియర్' : 'Clear'}</button>
+              </>
+            )}
+            { (selectedEnglishVerses && selectedEnglishVerses.size > 0) && (
+              <>
+                <button className="control-btn" onClick={() => copySelected('english')}>{lang === 'te' ? 'కాపీ ఇంగ్లీష్' : 'Copy English'}</button>
+                <button className="control-btn" onClick={() => clearSelections()}>{lang === 'te' ? 'క్లియర్' : 'Clear'}</button>
+              </>
+            )}
+          </div>
+        </div>
         <div style={{ display: 'flex', gap: '2rem' }}>
           {/* Telugu Bible */}
           <div
@@ -501,14 +531,7 @@ const BibleReading = ({ lang }) => {
             style={{ flex: 1, minWidth: 0, maxHeight: '60vh', overflowY: 'auto' }}
             ref={teluguPaneRef}
           >
-            {/* Toolbar for Telugu pane selections */}
-            {selectedTeluguVerses && selectedTeluguVerses.size > 0 && (
-              <div className="verse-toolbar">
-                <div style={{ flex: 1 }} />
-                <button className="control-btn" onClick={() => copySelected('telugu')}>Copy</button>
-                <button className="control-btn" onClick={() => clearSelections()}>Clear</button>
-              </div>
-            )}
+            
             {currentTeluguChapter && Object.keys(currentTeluguChapter).length > 0 ? (
               Object.entries(currentTeluguChapter).map(([verseNum, teluguText]) => (
                 <div
@@ -544,14 +567,7 @@ const BibleReading = ({ lang }) => {
             style={{ flex: 1, minWidth: 0, maxHeight: '60vh', overflowY: 'auto' }}
             ref={englishPaneRef}
           >
-            {/* Toolbar for English pane selections */}
-            {selectedEnglishVerses && selectedEnglishVerses.size > 0 && (
-              <div className="verse-toolbar">
-                <div style={{ flex: 1 }} />
-                <button className="control-btn" onClick={() => copySelected('english')}>Copy</button>
-                <button className="control-btn" onClick={() => clearSelections()}>Clear</button>
-              </div>
-            )}
+            
             {currentChapter ? (
               Object.entries(currentChapter).map(([verseNum, englishText]) => (
                 <div
