@@ -484,9 +484,7 @@ const BibleReading = ({ lang }) => {
               <button className="control-btn" style={{ background: '#4f46e5', color: '#fff', flex: 1 }} onClick={() => { setShowReferenceModal(false); loadChapter(); }}>
                 {lang === 'te' ? 'జరిపించు' : 'Go'}
               </button>
-              <button className="control-btn" style={{ flex: 1 }} onClick={() => setShowReferenceModal(false)}>
-                {lang === 'te' ? 'రద్దు' : 'Cancel'}
-              </button>
+              
             </div>
           </div>
         </div>

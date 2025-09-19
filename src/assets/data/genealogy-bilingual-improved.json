@@ -633,6 +633,17 @@
                                                                               "parentId": "person_46"
                                                                             },
                                                                             {
+                                                                              "name": "Sarah",
+                                                                              "nameEn": "Sarah",
+                                                                              "nameTe": "సారా",
+                                                                              "class": "base female",
+                                                                              "detail": "(Genesis 20:12 ) she is the daughter of my father, but not the daughter of my mother; and she became my wife.",                                                                              
+                                                                              "detailTe": "(ఆదికాండము 20:12) ఆమె నా తండ్రి కుమార్తెగాని నా తల్లి కుమార్తె కాదు; ఆమె నాకు భార్యయైనది.",
+                                                                              "detailEn": "(Genesis 20:12) she is the daughter of my father, but not the daughter of my mother; and she became my wife.",
+                                                                              "id": "person_2145",
+                                                                              "parentId": "person_2145"
+                                                                            },
+                                                                            {
                                                                               "name": "Abram/Abraham",
                                                                               "nameEn": "Abram/Abraham",
                                                                               "nameTe": "అబ్రాము/అబ్రహాము",
