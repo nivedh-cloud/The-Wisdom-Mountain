@@ -1,9 +1,10 @@
 import './DataGrid.css';
 import React, { useState, useRef, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList } from 'recharts';
-import { FaChartBar, FaTimes, FaPrint, FaFileExcel } from 'react-icons/fa';
+import { FaChartBar, FaTimes, FaPrint, FaFilePdf } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
-import * as XLSX from 'xlsx';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import { saveAs } from 'file-saver';
 
 /**
@@ -39,6 +40,8 @@ export default function DataGrid({
   const [selectedImage, setSelectedImage] = useState(null);
   const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
   const { isDarkMode } = useTheme();
+
+  const chartRef = useRef(null);
 
   // Restore missing handleMouseLeave function
   const handleMouseLeave = () => {
@@ -149,6 +152,93 @@ export default function DataGrid({
     printWindow.print();
   };
 
+  // Print the chart modal content by capturing it as an image and opening print dialog
+  const handlePrintChart = async () => {
+    try {
+      const el = chartRef.current || document.querySelector('.chart-container') || document.querySelector('.d3-chart-container');
+      if (!el) return alert('Chart not found for printing');
+
+      const canvas = await html2canvas(el, { scale: 2, useCORS: true });
+      const dataUrl = canvas.toDataURL('image/png');
+
+      // Open print window with page CSS to match A4 orientation
+      const a4 = { width: 595.28, height: 841.89 };
+      const orientation = canvas.width / canvas.height > (a4.width / a4.height) ? 'landscape' : 'portrait';
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(`<!doctype html><html><head><title>Print Chart</title>
+        <style>@page { size: A4 ${orientation}; margin: 0; } body { margin: 0; }</style>
+        </head><body style="margin:0;padding:0;">
+        <img src="${dataUrl}" style="width:100%;height:auto;"/>
+      </body></html>`);
+      printWindow.document.close();
+      printWindow.focus();
+      setTimeout(() => { printWindow.print(); }, 500);
+    } catch (err) {
+      console.error('Print chart failed', err);
+      alert('Print failed: ' + (err.message || err));
+    }
+  };
+
+  // Export the chart modal content to PDF
+  const handleExportChartPdf = async () => {
+    try {
+      const el = chartRef.current || document.querySelector('.chart-container') || document.querySelector('.d3-chart-container');
+      if (!el) return alert('Chart not found for PDF export');
+
+      const clone = el.cloneNode(true);
+      const wrapper = document.createElement('div');
+      wrapper.style.position = 'fixed';
+      wrapper.style.left = '-10000px';
+      wrapper.style.top = '0';
+      wrapper.style.zIndex = '9999';
+      wrapper.appendChild(clone);
+      document.body.appendChild(wrapper);
+
+  // Render canvas sized to PDF printable width to avoid clipping
+  const pdfForMeasure = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+  const pdfPrintableWidth = pdfForMeasure.internal.pageSize.getWidth() - 20 * 2; // pts
+  const pxPerPt = 96 / 72; // approx CSS pixels per PDF pt
+  const desiredImgWidthPx = Math.max(800, Math.round(pdfPrintableWidth * pxPerPt));
+  const cloneWidth = clone.scrollWidth || clone.offsetWidth || desiredImgWidthPx;
+  const scale = desiredImgWidthPx / cloneWidth;
+  const canvas = await html2canvas(clone, { scale: scale, useCORS: true, allowTaint: true });
+  const imgData = canvas.toDataURL('image/png');
+      document.body.removeChild(wrapper);
+
+      // Choose orientation and fit like grid export
+      const a4 = { width: 595.28, height: 841.89 };
+      const canvasRatio = canvas.width / canvas.height;
+      const a4Ratio = a4.width / a4.height;
+      const orientation = canvasRatio > a4Ratio ? 'landscape' : 'portrait';
+      const pdf = new jsPDF({ orientation, unit: 'pt', format: 'a4' });
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const margin = 20;
+
+      let imgWidth = pdfWidth - margin * 2;
+      let imgHeight = (canvas.height * imgWidth) / canvas.width;
+      if (imgHeight > pdfHeight - margin * 2) {
+        imgHeight = pdfHeight - margin * 2;
+        imgWidth = (canvas.width * imgHeight) / canvas.height;
+      }
+
+      const pageHeight = pdfHeight - margin * 2;
+      const totalPages = Math.max(1, Math.ceil(imgHeight / pageHeight));
+      const xOffset = (pdfWidth - imgWidth) / 2;
+      for (let page = 0; page < totalPages; page++) {
+        if (page > 0) pdf.addPage();
+        const yOffset = -page * pageHeight + margin;
+        pdf.addImage(imgData, 'PNG', xOffset, yOffset, imgWidth, imgHeight);
+      }
+
+      const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}_chart_${new Date().toISOString().slice(0,10)}.pdf`;
+      pdf.save(fileName);
+    } catch (err) {
+      console.error('Chart PDF export failed', err);
+      alert('Chart PDF export failed: ' + (err.message || err));
+    }
+  };
+
   // Generate print content
   const generatePrintContent = () => {
     let tableHTML = '<table><thead><tr>';
@@ -184,46 +274,90 @@ export default function DataGrid({
     return tableHTML;
   };
 
-  // Export to Excel function
-  const handleExportExcel = () => {
-    // Prepare data for Excel
-    const excelData = filteredData.map(row => {
-      const excelRow = {};
-      columns.forEach(column => {
-        let value = row[column.dataKey];
-        
-        // Handle language-specific fields
-        if (column.langKey && lang === 'te' && row[column.langKey]) {
-          value = row[column.langKey];
-        }
-        
-        // Apply custom formatter if provided
-        if (column.formatter) {
-          value = column.formatter(value, row, lang);
-        }
-        
-        excelRow[column.header] = value || '';
-      });
-      return excelRow;
-    });
+  // Export visible grid to PDF using html2canvas + jsPDF
+  const handleExportPdf = async () => {
+    try {
+      // Select the grid container (use bodyContainerRef as root if available)
+      const original = document.querySelector('.data-grid-container') || bodyContainerRef.current || document.body;
 
-    // Create workbook and worksheet
-    const wb = XLSX.utils.book_new();
-    const ws = XLSX.utils.json_to_sheet(excelData);
-    
-    // Set column widths
-    const colWidths = columns.map(() => ({ wch: 15 }));
-    ws['!cols'] = colWidths;
-    
-    // Add worksheet to workbook
-    XLSX.utils.book_append_sheet(wb, ws, title.substring(0, 31)); // Excel sheet name limit
-    
-    // Generate Excel file and download
-    const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const data = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-    
-    const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0, 10)}.xlsx`;
-    saveAs(data, fileName);
+      // Clone the original container so we can render the full scrollable content offscreen
+      const clone = original.cloneNode(true);
+
+      // Ensure cloned container expands to full content size
+      clone.style.maxHeight = 'none';
+      clone.style.height = 'auto';
+      clone.style.overflow = 'visible';
+      clone.style.width = original.scrollWidth ? original.scrollWidth + 'px' : original.offsetWidth + 'px';
+
+      // Make inner header/body containers visible and auto-height
+      const inner = clone.querySelectorAll('.table-body-container, .table-header-container, .data-grid-table, .genealogy-table');
+      inner.forEach(el => {
+        el.style.maxHeight = 'none';
+        el.style.height = 'auto';
+        el.style.overflow = 'visible';
+        el.style.width = 'auto';
+      });
+
+      // Place clone offscreen to avoid affecting layout
+      const wrapper = document.createElement('div');
+      wrapper.style.position = 'fixed';
+      wrapper.style.left = '-10000px';
+      wrapper.style.top = '0';
+      wrapper.style.zIndex = '9999';
+      wrapper.appendChild(clone);
+      document.body.appendChild(wrapper);
+
+  // Render canvas sized to PDF printable width to avoid clipping
+  const pdfForMeasure = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+  const pdfPrintableWidth = pdfForMeasure.internal.pageSize.getWidth() - 20 * 2; // pts
+  const pxPerPt = 96 / 72;
+  const desiredImgWidthPx = Math.max(800, Math.round(pdfPrintableWidth * pxPerPt));
+  const cloneWidth = clone.scrollWidth || clone.offsetWidth || desiredImgWidthPx;
+  const scale = desiredImgWidthPx / cloneWidth;
+  const canvas = await html2canvas(clone, { scale: scale, useCORS: true, allowTaint: true });
+  const imgData = canvas.toDataURL('image/png');
+
+      // Clean up the offscreen clone
+      document.body.removeChild(wrapper);
+
+      // Decide orientation based on canvas aspect ratio vs A4 aspect ratio
+      const a4 = { width: 595.28, height: 841.89 }; // A4 in points (pt)
+      const canvasRatio = canvas.width / canvas.height;
+      const a4Ratio = a4.width / a4.height;
+      const orientation = canvasRatio > a4Ratio ? 'landscape' : 'portrait';
+
+      const pdf = new jsPDF({ orientation, unit: 'pt', format: 'a4' });
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const margin = 20;
+
+      // Compute image size to fit into available PDF area while preserving aspect ratio
+      let imgWidth = pdfWidth - margin * 2;
+      let imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      // If image height exceeds page height, fit by height instead
+      if (imgHeight > pdfHeight - margin * 2) {
+        imgHeight = pdfHeight - margin * 2;
+        imgWidth = (canvas.width * imgHeight) / canvas.height;
+      }
+
+      // Number of pages needed
+      const pageHeight = pdfHeight - margin * 2;
+      const totalPages = Math.max(1, Math.ceil(imgHeight / pageHeight));
+
+      // Add pages and render the same full-size image shifted vertically to show each slice
+      for (let page = 0; page < totalPages; page++) {
+        if (page > 0) pdf.addPage();
+        const yOffset = -page * pageHeight + margin; // negative offset in PDF points
+        pdf.addImage(imgData, 'PNG', margin, yOffset, imgWidth, imgHeight);
+      }
+
+      const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0, 10)}.pdf`;
+      pdf.save(fileName);
+    } catch (err) {
+      console.error('PDF export failed', err);
+      alert('PDF export failed: ' + (err.message || err));
+    }
   };
 
   // Default filter function
@@ -693,12 +827,12 @@ export default function DataGrid({
             <span className="action-button-text">{lang === 'te' ? 'ప్రింట్' : 'Print'}</span>
           </button>
           <button
-            onClick={handleExportExcel}
-            className="action-button excel-button"
-            title={lang === 'te' ? 'ఎక్సెల్‌లో ఎగుమతి చేయండి' : 'Export to Excel'}
+            onClick={handleExportPdf}
+            className="action-button print-button"
+            title={lang === 'te' ? 'PDF గా డౌన్లోడ్ చేయండి' : 'Download as PDF'}
           >
-            <FaFileExcel />
-            <span className="action-button-text">{lang === 'te' ? 'ఎక్సెల్' : 'Excel'}</span>
+            <FaFilePdf />
+            <span className="action-button-text">{lang === 'te' ? 'PDF' : 'PDF'}</span>
           </button>
           {chartConfig && (
             <button
@@ -766,10 +900,23 @@ export default function DataGrid({
             >
               ×
             </button>
-            <h3 className="chart-title">
-              {title} {t.chart}
-            </h3>
-            {renderChart()}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+              <h3 className="chart-title" style={{ margin: 0 }}>
+                {title} {t.chart}
+              </h3>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <button className="chart-action-btn" onClick={handlePrintChart} title={lang === 'te' ? 'ప్రింట్ చేయండి' : 'Print Chart'}>
+                  🖨️
+                </button>
+                <button className="chart-action-btn" onClick={handleExportChartPdf} title={lang === 'te' ? 'PDF గా డౌన్లోడ్' : 'Download Chart PDF'}>
+                  📄
+                </button>
+              </div>
+            </div>
+            {/* Attach ref to the chart container for printing/export */}
+            <div ref={chartRef}>
+              {renderChart()}
+            </div>
           </div>
         </div>
       )}

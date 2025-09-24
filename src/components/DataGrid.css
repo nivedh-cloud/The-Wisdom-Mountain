@@ -360,12 +360,34 @@
   background: #15803d;
 }
 
+/* PDF button shares similar styling to excel button but different color */
+.pdf-button {
+  background: #6366f1;
+  color: #fff;
+}
+.pdf-button:hover {
+  background: #3730a3;
+}
+
 .chart-button {
   background: #6366f1;
   color: #fff;
 }
 .chart-button:hover {
   background: #3730a3;
+}
+
+/* Chart modal action buttons (print / PDF) */
+.chart-action-btn {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.chart-action-btn:hover {
+  background: rgba(0,0,0,0.04);
 }
 
 .action-button-text {
