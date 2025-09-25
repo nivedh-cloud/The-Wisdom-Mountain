@@ -621,6 +621,7 @@
   gap: 8px;
   margin-right: 8px;
   padding-right: 0;
+  height: 22px !important;
 }
 
 .language-option {

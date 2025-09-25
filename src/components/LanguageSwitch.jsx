@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 const LanguageSwitch = ({ lang, setLang }) => {
+  const isTelugu = lang === 'te';
+
+  const toggleLang = useCallback(() => {
+    setLang(isTelugu ? 'en' : 'te');
+  }, [isTelugu, setLang]);
+
   return (
-    <div className="language-switcher">
+    <div className="theme-toggle-container language-toggle-container language-position">
       <button
-        className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
-        onClick={() => setLang('en')}
-        title="English"
+        className="theme-toggle language-toggle"
+        onClick={toggleLang}
+        aria-label="Toggle language"
+        title={isTelugu ? 'Telugu' : 'English'}
       >
-        <span className="lang-text">En</span>
-      </button>
-      <button
-        className={`lang-btn ${lang === 'te' ? 'active' : ''}`}
-        onClick={() => setLang('te')}
-        title="Telugu"
-      >
-        <span className="lang-icon">తె</span>
+        <div className={`theme-toggle-slider ${isTelugu ? 'active' : ''}`}>
+          <div className="theme-toggle-handle">
+            {/* Use glificon-like spans for consistency with ThemeToggle */}
+            <span className={`lang-icon ${isTelugu ? 'lang-te' : 'lang-en'}`} aria-hidden="true">
+              {isTelugu ? 'తె' : 'En'}
+            </span>
+          </div>
+        </div>
       </button>
     </div>
   );

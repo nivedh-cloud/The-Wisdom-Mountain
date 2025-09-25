@@ -8,6 +8,7 @@ import PageHeader from '../components/PageHeader';
 import { useTheme } from '../contexts/ThemeContext';
 import JesusImage from '../assets/images/JesusImageThumbnail.png';
 
+
 export default function D3Chart({ lang = 'en' }) {
   
   const svgRef = useRef();
@@ -33,6 +34,8 @@ export default function D3Chart({ lang = 'en' }) {
   const [isMobilePanelOpen, setIsMobilePanelOpen] = useState(false); // Mobile panel state
   
   const translations = translationsData[lang] || translationsData.en;
+  const IMAGE_BASE = "src/assets/images/tribes/"; // use this as prefix for bare filenames in JSON
+
 
   // Helper function to create tooltip with current language
   const createInlineTooltip = (event, d) => {
@@ -598,22 +601,106 @@ export default function D3Chart({ lang = 'en' }) {
       const isAbraham = d.data.name && (d.data.name.toLowerCase().includes('abraham') || d.data.name.toLowerCase().includes('abram'));
       // Check if this node should be rendered as a star (David or Abraham)
       const isStar = isDavid || isAbraham;
-      // Determine color based on class (keeping existing color logic)
+  // Determine color based on class (keeping existing color logic)
       let fillColor = "#f97316"; // default - Others (orange)
       if (d.data.class && d.data.class.includes('major')) fillColor = "#dc2626";
       else if (d.data.class && d.data.class.includes('priest')) fillColor = "#7c2d12";
       else if (d.data.class && d.data.class.includes('Israel')) fillColor = "#16a34a";
+      // If node has an explicit image in its JSON, use it and skip default shapes
+      if (d.data.image) {
+        const rawImage = String(d.data.image || '').trim();
+        let imageHref = rawImage;
+
+        // If it's an absolute URL, keep it as-is
+        if (/^https?:\/\//i.test(rawImage) || rawImage.startsWith('//')) {
+          imageHref = rawImage;
+        } else {
+          // Otherwise always resolve from IMAGE_BASE using the basename of the provided path
+          // This ensures consistent served paths like `${IMAGE_BASE}Reuben.png`
+          const parts = rawImage.split(/[\\/]/).filter(Boolean);
+          const basename = parts.length > 0 ? parts[parts.length - 1] : rawImage;
+          imageHref = IMAGE_BASE + basename;
+        }
+
+        try { console.debug('D3Chart: node image', rawImage, 'resolved ->', imageHref, 'node=', d.data.name || d.data.id); } catch (e) {}
+
+        node.append('rect')
+          .attr('x', -16.5)
+          .attr('y', -16.5)
+          .attr('width', 33)
+          .attr('height', 33)
+          .style('fill', 'none')
+          .style('stroke', getStrokeColor())
+          .style('stroke-width', 2)
+          .style('cursor', 'pointer')
+          .on('click', function(event, dd) {
+            setSelectedNode(d.data);
+            setShowModal(true);
+            zoomToNodeOnClick(d.data);
+          });
+
+        node.append('image')
+          .attr('xlink:href', imageHref)
+          .attr('x', -15)
+          .attr('y', -15)
+          .attr('width', 30)
+          .attr('height', 30)
+          .style('cursor', 'pointer')
+          .on('click', function(event, dd) {
+            setSelectedNode(d.data);
+            setShowModal(true);
+            zoomToNodeOnClick(d.data);
+          })
+          .on('mouseover', function(event, dd) {
+            createInlineTooltip(event, d);
+            d3.select(this)
+              .transition()
+              .duration(180)
+              .attr('width', 36)
+              .attr('height', 36)
+              .attr('x', -18)
+              .attr('y', -18);
+            d3.select(this.parentNode).select('rect')
+              .transition()
+              .duration(180)
+              .attr('width', 39)
+              .attr('height', 39)
+              .attr('x', -19.5)
+              .attr('y', -19.5)
+              .style('stroke-width', 3);
+          })
+          .on('mouseout', function() {
+            d3.selectAll('.d3-tooltip').remove();
+            d3.select(this)
+              .transition()
+              .duration(180)
+              .attr('width', 30)
+              .attr('height', 30)
+              .attr('x', -15)
+              .attr('y', -15);
+            d3.select(this.parentNode).select('rect')
+              .transition()
+              .duration(180)
+              .attr('width', 33)
+              .attr('height', 33)
+              .attr('x', -16.5)
+              .attr('y', -16.5)
+              .style('stroke-width', 2);
+          });
+        return; // done rendering this node using explicit image
+      }
+
       if (isJesus) {
         // Render Jesus node as an image with border
         // Add border rectangle first
         node.append("rect")
-          .attr("x", -19.5) // Slightly larger than image to create border effect
-          .attr("y", -19.5)
-          .attr("width", 39)
-          .attr("height", 39)
+          .attr("x", -58.5) // 3x of -19.5
+          .attr("y", -58.5)
+          .attr("width", 117) // 3x of 39
+          .attr("height", 117)
           .style("fill", "none")
           .style("stroke", getStrokeColor())
-          .style("stroke-width", 3)
+          .style("stroke-width", 9) // 3x of 3
           .style("cursor", "pointer")
           .on("click", function(event, d) {
             setSelectedNode(d.data);
@@ -624,10 +711,10 @@ export default function D3Chart({ lang = 'en' }) {
         // Add the image on top
         node.append("image")
           .attr("xlink:href", JesusImage)
-          .attr("x", -18)
-          .attr("y", -18)
-          .attr("width", 36)
-          .attr("height", 36)
+          .attr("x", -54) // 3x of -18
+          .attr("y", -54)
+          .attr("width", 108) // 3x of 36
+          .attr("height", 108)
           .style("cursor", "pointer")
           .on("click", function(event, d) {
             setSelectedNode(d.data);
@@ -741,43 +828,43 @@ export default function D3Chart({ lang = 'en' }) {
               .transition()
               .duration(200)
               .style("opacity", 1);
-            // Scale up both image and border on hover
-            d3.select(this)
-              .transition()
-              .duration(200)
-              .attr("width", 42)
-              .attr("height", 42)
-              .attr("x", -21)
-              .attr("y", -21);
-            // Also scale the border
-            d3.select(this.parentNode).select("rect")
-              .transition()
-              .duration(200)
-              .attr("width", 45)
-              .attr("height", 45)
-              .attr("x", -22.5)
-              .attr("y", -22.5)
-              .style("stroke-width", 4);
+              // Scale up both image and border on hover (3x)
+              d3.select(this)
+                .transition()
+                .duration(200)
+                .attr("width", 126) // 3x of 42
+                .attr("height", 126)
+                .attr("x", -63)
+                .attr("y", -63);
+              // Also scale the border
+              d3.select(this.parentNode).select("rect")
+                .transition()
+                .duration(200)
+                .attr("width", 135) // 3x of 45
+                .attr("height", 135)
+                .attr("x", -67.5)
+                .attr("y", -67.5)
+                .style("stroke-width", 12);
           })
           .on("mouseout", function(event, d) {
             d3.selectAll(".d3-tooltip").remove();
-            // Scale back both image and border
-            d3.select(this)
-              .transition()
-              .duration(200)
-              .attr("width", 36)
-              .attr("height", 36)
-              .attr("x", -18)
-              .attr("y", -18);
-            // Also scale back the border
-            d3.select(this.parentNode).select("rect")
-              .transition()
-              .duration(200)
-              .attr("width", 39)
-              .attr("height", 39)
-              .attr("x", -19.5)
-              .attr("y", -19.5)
-              .style("stroke-width", 3);
+              // Scale back both image and border
+              d3.select(this)
+                .transition()
+                .duration(200)
+                .attr("width", 108)
+                .attr("height", 108)
+                .attr("x", -54)
+                .attr("y", -54);
+              // Also scale back the border
+              d3.select(this.parentNode).select("rect")
+                .transition()
+                .duration(200)
+                .attr("width", 117)
+                .attr("height", 117)
+                .attr("x", -58.5)
+                .attr("y", -58.5)
+                .style("stroke-width", 9);
           })
           .on("mousemove", function(event, d) {
             d3.selectAll(".d3-tooltip")

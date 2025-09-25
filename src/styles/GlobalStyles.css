@@ -895,6 +895,7 @@
   padding: 0.25rem;
   border: 1px solid var(--border-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 26px !important;
 }
 
 .lang-btn {
@@ -959,6 +960,116 @@
   transform: translateY(-1px);
   background: var(--text-secondary);
 }
+
+/* Ensure language switch buttons and theme toggle share the same size and visual weight */
+:root {
+  --header-control-height: 36px;
+  --header-control-font-size: 0.875rem;
+  --header-control-padding-x: 0.6rem;
+}
+
+.language-switcher {
+  height: var(--header-control-height);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem;
+}
+
+.language-switcher .lang-btn {
+  height: 22px;
+  padding: 0  var(--header-control-padding-x);
+  font-size: var(--header-control-font-size);
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle {
+  height: calc(var(--header-control-height) - 8px);
+  min-width: calc(var(--header-control-height) - 8px);
+  padding: 0 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.theme-toggle .glificon, .language-switcher .lang-icon, .language-switcher .lang-text {
+  font-size: 0.95rem;
+}
+
+/* Mobile: normalize sizes of header controls (language switcher and theme toggle) */
+@media (max-width: 600px) {
+  .language-switcher {
+    padding: 0.15rem;
+    border-radius: 10px;
+    gap: 0.25rem;
+  }
+
+  .language-switcher .lang-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .language-switcher .lang-icon {
+    font-size: 0.85rem;
+  }
+
+  /* Make theme toggle match the compact size */
+  .theme-toggle-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.25rem;
+  }
+
+  .theme-toggle {
+    padding: 0.15rem;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .theme-toggle-slider {
+    width: 36px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-toggle-handle svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+/* Glificon icon font helpers (fallback to emoji if font not loaded) */
+.glificon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  font-size: 0.95rem;
+  font-family: 'glificons', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  text-align: center;
+}
+
+/* Specific icon classes: if glificons font is present, the font's glyph will show via content mapping;
+   otherwise we provide an emoji fallback using ::before */
+.glificon-sun::before {
+  content: '\2600'; /* SUN emoji fallback */
+}
+.glificon-moon::before {
+  content: '\1F319'; /* CRESCENT MOON fallback */
+}
+
+/* If the glificons font maps icons via specific unicode codepoints, the font will replace the glyphs.
+   Additional mapping can be added when the glificons font details are known. */
 
 /* Chart Button Styles */
 .chart-button {
@@ -1538,7 +1649,13 @@
   .theme-toggle-container {
     top: -30px;
     position: relative;
-    left: 92px;
+  }
+  .theme-position {
+    right: -95px;
+  }
+  .language-position {
+    left:16px;
+    top:0px;
   }
   .nav-label {
     font-size: 1.32rem !important;

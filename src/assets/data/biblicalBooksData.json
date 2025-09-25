@@ -25,7 +25,7 @@
       {"id": 18, "name": "Job", "nameHebrew": "אִיּוֹב", "nameTelugu": "యోబు", "author": "Unknown (possibly Moses or Job)", "authorHebrew": "לא ידוע", "authorTelugu": "తెలియదు", "writtenDate": "2000-1500 BC", "chapters": 42, "verses": 1070, "category": "Wisdom"},
       {"id": 19, "name": "Psalms", "nameHebrew": "תְּהִלִּים", "nameTelugu": "కీర్తనలు", "author": "David, Asaph, Sons of Korah, Solomon, Moses, others", "authorHebrew": "דָּוִד, אָסָף, בְּנֵי קֹרַח, שְׁלֹמֹה, מֹשֶׁה", "authorTelugu": "దావీదు, ఆసాపు, కోరహు కుమారులు, సొలొమోను, మోషే", "writtenDate": "1440-400 BC", "chapters": 150, "verses": 2461, "category": "Wisdom/Poetry"},
       {"id": 20, "name": "Proverbs", "nameHebrew": "מִשְׁלֵי", "nameTelugu": "సామెతలు", "author": "Solomon, Agur, Lemuel", "authorHebrew": "שְׁלֹמֹה, אָגוּר, לְמוּאֵל", "authorTelugu": "సొలొమోను, ఆగూరు, లెమూయేలు", "writtenDate": "970-700 BC", "chapters": 31, "verses": 915, "category": "Wisdom"},
-      {"id": 21, "name": "Ecclesiastes", "nameHebrew": "קֹהֶלֶת", "nameTelugu": "ప్రకటన", "author": "Solomon (trad.)", "authorHebrew": "שְׁלֹמֹה", "authorTelugu": "సొలొమోను", "writtenDate": "935 BC", "chapters": 12, "verses": 222, "category": "Wisdom"},
+      {"id": 21, "name": "Ecclesiastes", "nameHebrew": "קֹהֶלֶת", "nameTelugu": "ప్రసంగి", "author": "Solomon (trad.)", "authorHebrew": "שְׁלֹמֹה", "authorTelugu": "సొలొమోను", "writtenDate": "935 BC", "chapters": 12, "verses": 222, "category": "Wisdom"},
       {"id": 22, "name": "Song of Songs", "nameHebrew": "שִׁיר הַשִּׁירִים", "nameTelugu": "కీర్తనల కీర్తన", "author": "Solomon", "authorHebrew": "שְׁלֹמֹה", "authorTelugu": "సొలొమోను", "writtenDate": "965 BC", "chapters": 8, "verses": 117, "category": "Wisdom/Poetry"}
     ],
     "majorProphets": [

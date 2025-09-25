@@ -283,11 +283,11 @@ export default function DataGrid({
       // Clone the original container so we can render the full scrollable content offscreen
       const clone = original.cloneNode(true);
 
-      // Ensure cloned container expands to full content size
+      // Ensure cloned container expands to full content size and shows all rows
       clone.style.maxHeight = 'none';
       clone.style.height = 'auto';
       clone.style.overflow = 'visible';
-      clone.style.width = original.scrollWidth ? original.scrollWidth + 'px' : original.offsetWidth + 'px';
+      clone.style.width = 'auto';
 
       // Make inner header/body containers visible and auto-height
       const inner = clone.querySelectorAll('.table-body-container, .table-header-container, .data-grid-table, .genealogy-table');
@@ -307,53 +307,28 @@ export default function DataGrid({
       wrapper.appendChild(clone);
       document.body.appendChild(wrapper);
 
-  // Render canvas sized to PDF printable width to avoid clipping
-  const pdfForMeasure = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
-  const pdfPrintableWidth = pdfForMeasure.internal.pageSize.getWidth() - 20 * 2; // pts
-  const pxPerPt = 96 / 72;
-  const desiredImgWidthPx = Math.max(800, Math.round(pdfPrintableWidth * pxPerPt));
-  const cloneWidth = clone.scrollWidth || clone.offsetWidth || desiredImgWidthPx;
-  const scale = desiredImgWidthPx / cloneWidth;
-  const canvas = await html2canvas(clone, { scale: scale, useCORS: true, allowTaint: true });
-  const imgData = canvas.toDataURL('image/png');
-
-      // Clean up the offscreen clone
-      document.body.removeChild(wrapper);
-
-      // Decide orientation based on canvas aspect ratio vs A4 aspect ratio
-      const a4 = { width: 595.28, height: 841.89 }; // A4 in points (pt)
-      const canvasRatio = canvas.width / canvas.height;
-      const a4Ratio = a4.width / a4.height;
-      const orientation = canvasRatio > a4Ratio ? 'landscape' : 'portrait';
+      // Use jsPDF's HTML renderer which preserves text where possible
+      // Choose orientation based on content aspect ratio
+      const contentWidth = clone.scrollWidth || clone.offsetWidth || 800;
+      const contentHeight = clone.scrollHeight || clone.offsetHeight || 1000;
+      const a4PortraitRatio = 595.28 / 841.89;
+      const contentRatio = contentWidth / contentHeight;
+      const orientation = contentRatio > a4PortraitRatio ? 'landscape' : 'portrait';
 
       const pdf = new jsPDF({ orientation, unit: 'pt', format: 'a4' });
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const margin = 20;
 
-      // Compute image size to fit into available PDF area while preserving aspect ratio
-      let imgWidth = pdfWidth - margin * 2;
-      let imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      // If image height exceeds page height, fit by height instead
-      if (imgHeight > pdfHeight - margin * 2) {
-        imgHeight = pdfHeight - margin * 2;
-        imgWidth = (canvas.width * imgHeight) / canvas.height;
-      }
-
-      // Number of pages needed
-      const pageHeight = pdfHeight - margin * 2;
-      const totalPages = Math.max(1, Math.ceil(imgHeight / pageHeight));
-
-      // Add pages and render the same full-size image shifted vertically to show each slice
-      for (let page = 0; page < totalPages; page++) {
-        if (page > 0) pdf.addPage();
-        const yOffset = -page * pageHeight + margin; // negative offset in PDF points
-        pdf.addImage(imgData, 'PNG', margin, yOffset, imgWidth, imgHeight);
-      }
-
-      const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0, 10)}.pdf`;
-      pdf.save(fileName);
+      await pdf.html(clone, {
+        x: 20,
+        y: 20,
+        width: pdf.internal.pageSize.getWidth() - 40,
+        html2canvas: { scale: 1, useCORS: true, allowTaint: true },
+        callback: (pdfInstance) => {
+          const fileName = `${title.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0, 10)}.pdf`;
+          pdfInstance.save(fileName);
+          // Clean up the offscreen clone
+          try { document.body.removeChild(wrapper); } catch (e) { /* ignore */ }
+        }
+      });
     } catch (err) {
       console.error('PDF export failed', err);
       alert('PDF export failed: ' + (err.message || err));
