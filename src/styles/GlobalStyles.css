@@ -2788,6 +2788,10 @@
   transform: translateY(-1px);
 }
 
+.verse-text-size{
+  font-size: 15px !important;
+}
+
 
 /* Verse selection highlight and toolbar */
 .bible-pane .verse-selected {

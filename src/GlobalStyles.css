@@ -17,6 +17,9 @@
   --table-hover: #f8fafc;
 }
 
+.verse-text-size{
+  font-size: 15px !important;
+}
 
 /* Dark Mode Colors */
 .dark-mode {
