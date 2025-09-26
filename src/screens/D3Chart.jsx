@@ -474,7 +474,7 @@ export default function D3Chart({ lang = 'en' }) {
 
     // Create zoom behavior
     const zoom = d3.zoom()
-      .scaleExtent([0.1, 10])
+  .scaleExtent([0.1, 15])
       .on("zoom", (event) => {
         container.attr("transform", event.transform);
         setTransform(event.transform);
