@@ -37,7 +37,6 @@ export default function D3Chart({ lang = 'en' }) {
   const translations = translationsData[lang] || translationsData.en;
 
 
-
   // Use the same path logic as JesusImageThumbnail.png import
   // Jesus image works because it's imported as: import JesusImage from '../assets/images/JesusImageThumbnail.png';
   // Vite/React rewrites imports to /assets/...
