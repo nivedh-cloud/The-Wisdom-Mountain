@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 // LeftNav is rendered by App.jsx; do not render it here to avoid duplicate sidebars
-import { FaBook, FaSearch, FaChevronLeft, FaChevronRight, FaBible } from 'react-icons/fa';
+import { FaBook, FaSearch, FaChevronLeft, FaChevronRight, FaBible, FaEllipsisV, FaCog } from 'react-icons/fa';
 import { getVerse, getChapter, getBook, searchVerses } from '../utils/bibleUtils.js';
 import { getTeluguVerse, getTeluguChapter, getTeluguBook, searchTeluguVerses, getBookNameMapping, getTeluguBookList } from '../utils/teluguBibleUtils.js';
 import teluguData from '../assets/data/books/telugu.json';
@@ -21,10 +21,14 @@ const BibleReading = ({ lang }) => {
   const [showReferenceModal, setShowReferenceModal] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [viewMode, setViewMode] = useState('chapter');
+  const [showScreenModeDropdown, setShowScreenModeDropdown] = useState(false);
+  const [showCopyDropdown, setShowCopyDropdown] = useState(false);
 
   // Refs for scrollable panes
   const teluguPaneRef = useRef(null);
   const englishPaneRef = useRef(null);
+  // Split/Full screen mode: 'split', 'telugu', 'english'
+  const [screenMode, setScreenMode] = useState('split');
   // Prevent scroll loop
   const isSyncingScroll = useRef(false);
   // Synchronize scroll from Telugu to English
@@ -62,6 +66,21 @@ const BibleReading = ({ lang }) => {
       teluguPane.removeEventListener('scroll', handleTeluguScroll);
     };
   }, [currentTeluguChapter, currentChapter]);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.dropdown-container')) {
+        setShowScreenModeDropdown(false);
+        setShowCopyDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const bookMapping = getBookNameMapping();
   const teluguBookName = bookMapping[selectedBook];
@@ -155,9 +174,22 @@ const BibleReading = ({ lang }) => {
       if (pane === 'telugu') {
         const sel = Array.from(selectedTeluguVerses).sort((a,b)=>Number(a)-Number(b));
         text = sel.map(v => `${v}. ${currentTeluguChapter && currentTeluguChapter[v] ? currentTeluguChapter[v] : ''}`).join('\n');
-      } else {
+      } else if (pane === 'english') {
         const sel = Array.from(selectedEnglishVerses).sort((a,b)=>Number(a)-Number(b));
         text = sel.map(v => `${v}. ${currentChapter && currentChapter[v] ? currentChapter[v] : ''}`).join('\n');
+      } else if (pane === 'both') {
+        // Copy both Telugu and English versions
+        const allVerses = new Set([...Array.from(selectedTeluguVerses), ...Array.from(selectedEnglishVerses)]);
+        const sortedVerses = Array.from(allVerses).sort((a,b)=>Number(a)-Number(b));
+        const lines = [];
+        for (const verseNum of sortedVerses) {
+          const teluguText = currentTeluguChapter && currentTeluguChapter[verseNum] ? currentTeluguChapter[verseNum] : '';
+          const englishText = currentChapter && currentChapter[verseNum] ? currentChapter[verseNum] : '';
+          lines.push(`${verseNum}. తెలుగు: ${teluguText}`);
+          lines.push(`${verseNum}. English: ${englishText}`);
+          lines.push(''); // Empty line between verses
+        }
+        text = lines.join('\n');
       }
       await navigator.clipboard.writeText(text);
       // small visual feedback could be added later
@@ -323,7 +355,7 @@ const BibleReading = ({ lang }) => {
   };
 
   return (
-    <div className="bible-reading-container max-w-7xl mx-auto p-6" style={{ flex: 1 }}>
+    <div className="bible-reading-container max-w-7xl mx-auto p-6" style={{ flex: 1, position: 'relative' }}>
       {/* Controls */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
         <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
@@ -487,105 +519,306 @@ const BibleReading = ({ lang }) => {
         </div>
       )}
 
+      {/* Right side dropdown menus */}
+      <div style={{ position: 'absolute', top: '35px', right: '20px', display: 'flex', gap: '0.5rem', zIndex: 1000 }}>
+        {/* Copy Actions Dropdown - Always visible */}
+        <div style={{ position: 'relative' }} className="dropdown-container">
+          <button
+            className="control-btn"
+            style={{ background: '#f3f4f6', color: '#374151', padding: '0.5rem', minWidth: 'auto', border: '1px solid #d1d5db', borderRadius: '4px' }}
+            onClick={() => {
+              setShowCopyDropdown(!showCopyDropdown);
+              setShowScreenModeDropdown(false); // Close screen mode dropdown
+            }}
+          >
+            <FaEllipsisV />
+          </button>
+          {showCopyDropdown && (
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              right: 0,
+              background: 'white',
+              border: '1px solid #e5e7eb',
+              borderRadius: '0.375rem',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+              zIndex: 1001,
+              minWidth: '140px'
+            }}>
+              {selectedTeluguVerses && selectedTeluguVerses.size > 0 && (
+                <button
+                  className="dropdown-item"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    textAlign: 'left',
+                    border: 'none',
+                    background: 'none',
+                    cursor: 'pointer',
+                    color: '#6d28d9'
+                  }}
+                  onClick={() => {
+                    copySelected('telugu');
+                    setShowCopyDropdown(false);
+                  }}
+                >
+                  {lang === 'te' ? 'కాపీ తెలుగు' : 'Copy Telugu'}
+                </button>
+              )}
+              {selectedEnglishVerses && selectedEnglishVerses.size > 0 && (
+                <button
+                  className="dropdown-item"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    textAlign: 'left',
+                    border: 'none',
+                    background: 'none',
+                    cursor: 'pointer',
+                    color: '#2563eb'
+                  }}
+                  onClick={() => {
+                    copySelected('english');
+                    setShowCopyDropdown(false);
+                  }}
+                >
+                  {lang === 'te' ? 'కాపీ ఇంగ్లీష్' : 'Copy English'}
+                </button>
+              )}
+              {((selectedTeluguVerses && selectedTeluguVerses.size > 0) || (selectedEnglishVerses && selectedEnglishVerses.size > 0)) && (
+                <button
+                  className="dropdown-item"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    textAlign: 'left',
+                    border: 'none',
+                    background: 'none',
+                    cursor: 'pointer',
+                    color: '#059669'
+                  }}
+                  onClick={() => {
+                    copySelected('both');
+                    setShowCopyDropdown(false);
+                  }}
+                >
+                  {lang === 'te' ? 'రెండూ కాపీ చేయండి' : 'Copy Both'}
+                </button>
+              )}
+              {((selectedTeluguVerses && selectedTeluguVerses.size > 0) || (selectedEnglishVerses && selectedEnglishVerses.size > 0)) && (
+                <button
+                  className="dropdown-item"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    textAlign: 'left',
+                    border: 'none',
+                    background: 'none',
+                    cursor: 'pointer',
+                    color: '#dc2626'
+                  }}
+                  onClick={() => {
+                    clearSelections();
+                    setShowCopyDropdown(false);
+                  }}
+                >
+                  {lang === 'te' ? 'క్లియర్' : 'Clear'}
+                </button>
+              )}
+              {(!selectedTeluguVerses || selectedTeluguVerses.size === 0) && (!selectedEnglishVerses || selectedEnglishVerses.size === 0) && (
+                <div style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  textAlign: 'left',
+                  color: '#9ca3af',
+                  fontSize: '0.875rem'
+                }}>
+                  {lang === 'te' ? 'వర్సెస్ ఎంచుకోండి' : 'Select verses to copy'}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Screen Mode Dropdown */}
+        <div style={{ position: 'relative' }} className="dropdown-container">
+          <button
+            className="control-btn"
+            style={{ background: '#f3f4f6', color: '#374151', padding: '0.5rem', minWidth: 'auto', border: '1px solid #d1d5db', borderRadius: '4px' }}
+            onClick={() => {
+              setShowScreenModeDropdown(!showScreenModeDropdown);
+              setShowCopyDropdown(false); // Close copy dropdown
+            }}
+          >
+            <FaCog />
+          </button>
+          {showScreenModeDropdown && (
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              right: 0,
+              background: 'white',
+              border: '1px solid #e5e7eb',
+              borderRadius: '0.375rem',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+              zIndex: 1001,
+              minWidth: '160px'
+            }}>
+              {screenMode === 'split' && (
+                <>
+                  <button
+                    className="dropdown-item"
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem 1rem',
+                      textAlign: 'left',
+                      border: 'none',
+                      background: 'none',
+                      cursor: 'pointer',
+                      color: '#6d28d9'
+                    }}
+                    onClick={() => {
+                      setScreenMode('telugu');
+                      setShowScreenModeDropdown(false);
+                    }}
+                  >
+                    {lang === 'te' ? 'తెలుగు పూర్తి స్క్రీన్' : 'Telugu Full Screen'}
+                  </button>
+                  <button
+                    className="dropdown-item"
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem 1rem',
+                      textAlign: 'left',
+                      border: 'none',
+                      background: 'none',
+                      cursor: 'pointer',
+                      color: '#2563eb'
+                    }}
+                    onClick={() => {
+                      setScreenMode('english');
+                      setShowScreenModeDropdown(false);
+                    }}
+                  >
+                    {lang === 'te' ? 'ఇంగ్లీష్ పూర్తి స్క్రీన్' : 'English Full Screen'}
+                  </button>
+                </>
+              )}
+              {(screenMode === 'telugu' || screenMode === 'english') && (
+                <button
+                  className="dropdown-item"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    textAlign: 'left',
+                    border: 'none',
+                    background: 'none',
+                    cursor: 'pointer',
+                    color: '#2a1a6e'
+                  }}
+                  onClick={() => {
+                    setScreenMode('split');
+                    setShowScreenModeDropdown(false);
+                  }}
+                >
+                  {lang === 'te' ? 'విభజన స్క్రీన్' : 'Split Screen'}
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Content */}
       <div className="bible-reading-content bg-gray-50 rounded-lg p-6" style={{ display: 'flex', flexDirection: 'column', minHeight: '400px' }}>
         {/* Headings above scrollable panes */}
         <div style={{ display: 'flex' }}>
-          <div style={{ flex: 1}}>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2" style={{textAlign: 'center', fontSize: 13}}>
-              {lang === 'te' ? 'తెలుగు' : 'Telugu'}
-            </h3>
-          </div>
-          <div style={{ flex: 1 }}>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2" style={{textAlign: 'center', fontSize: 13}}>
-              {lang === 'te' ? 'ఇంగ్లీష్ (KJV)' : 'English (KJV)'}
-            </h3>
-          </div>
-        </div>
-        {/* Centered toolbar between panes */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-0.5rem', marginBottom: '0.5rem' }}>
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
-            { (selectedTeluguVerses && selectedTeluguVerses.size > 0) && (
-              <>
-                <button className="control-btn" onClick={() => copySelected('telugu')}>{lang === 'te' ? 'కాపీ తెలుగు' : 'Copy Telugu'}</button>
-                <button className="control-btn" onClick={() => clearSelections()}>{lang === 'te' ? 'క్లియర్' : 'Clear'}</button>
-              </>
-            )}
-            { (selectedEnglishVerses && selectedEnglishVerses.size > 0) && (
-              <>
-                <button className="control-btn" onClick={() => copySelected('english')}>{lang === 'te' ? 'కాపీ ఇంగ్లీష్' : 'Copy English'}</button>
-                <button className="control-btn" onClick={() => clearSelections()}>{lang === 'te' ? 'క్లియర్' : 'Clear'}</button>
-              </>
-            )}
-          </div>
+          {(screenMode === 'split' || screenMode === 'telugu') && (
+            <div style={{ flex: 1}}>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2" style={{textAlign: 'center', fontSize: 13}}>
+                {lang === 'te' ? 'తెలుగు' : 'Telugu'}
+              </h3>
+            </div>
+          )}
+          {(screenMode === 'split' || screenMode === 'english') && (
+            <div style={{ flex: 1 }}>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2" style={{textAlign: 'center', fontSize: 13}}>
+                {lang === 'te' ? 'ఇంగ్లీష్ (KJV)' : 'English (KJV)'}
+              </h3>
+            </div>
+          )}
         </div>
         <div style={{ display: 'flex', gap: '2rem' }}>
           {/* Telugu Bible */}
-          <div
-            className="bible-pane"
-            style={{ flex: 1, minWidth: 0, maxHeight: '50vh', overflowY: 'auto' }}
-            ref={teluguPaneRef}
-          >
-            
-            {currentTeluguChapter && Object.keys(currentTeluguChapter).length > 0 ? (
-              Object.entries(currentTeluguChapter).map(([verseNum, teluguText]) => (
-                <div
-                  key={`te-${verseNum}`}
-                  data-verse={verseNum}
-                  className={`p-3 rounded transition-colors ${selectedTeluguVerses && selectedTeluguVerses.has(verseNum) ? 'verse-selected' : (selectedVerse === verseNum ? 'bg-purple-50 border-l-4 border-purple-500' : 'hover:bg-gray-50')}`}
-                  onClick={() => handleVerseClick(verseNum)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <div className="flex items-start space-x-3">
-                    <span className="bible-verse-number text-purple-600 text-sm">{verseNum}</span>
-                    <p
-                      className="text-purple-800 leading-relaxed text-sm"
-                      style={{fontFamily: 'Noto Sans Telugu, sans-serif', textAlign: 'left'}}
-                    >
-                      {teluguText}
-                    </p>
+          {(screenMode === 'split' || screenMode === 'telugu') && (
+            <div
+              className="bible-pane"
+              style={{ flex: 1, minWidth: 0, maxHeight: screenMode === 'telugu' ? '80vh' : '50vh', overflowY: 'auto', transition: 'max-height 0.3s' }}
+              ref={teluguPaneRef}
+            >
+              
+              {currentTeluguChapter && Object.keys(currentTeluguChapter).length > 0 ? (
+                Object.entries(currentTeluguChapter).map(([verseNum, teluguText]) => (
+                  <div
+                    key={`te-${verseNum}`}
+                    data-verse={verseNum}
+                    className={`p-3 rounded transition-colors ${selectedTeluguVerses && selectedTeluguVerses.has(verseNum) ? 'verse-selected' : (selectedVerse === verseNum ? 'bg-purple-50 border-l-4 border-purple-500' : 'hover:bg-gray-50')}`}
+                    onClick={() => handleVerseClick(verseNum)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div className="flex items-start space-x-3">
+                      <span className="bible-verse-number text-purple-600 text-sm">{verseNum}</span>
+                      <p
+                        className="text-purple-800 leading-relaxed text-sm"
+                        style={{fontFamily: 'Noto Sans Telugu, sans-serif', textAlign: 'left'}}
+                      >
+                        {teluguText}
+                      </p>
+                    </div>
                   </div>
+                ))
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-gray-500">
+                    {lang === 'te' ? 'తెలుగు అధ్యాయం అందుబాటులో లేదు' : 'Telugu chapter not available'}
+                  </p>
                 </div>
-              ))
-            ) : (
-              <div className="text-center py-8">
-                <p className="text-gray-500">
-                  {lang === 'te' ? 'తెలుగు అధ్యాయం అందుబాటులో లేదు' : 'Telugu chapter not available'}
-                </p>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
 
           {/* English Bible */}
-          <div
-            className="bible-pane"
-            style={{ flex: 1, minWidth: 0, maxHeight: '50vh', overflowY: 'auto' }}
-            ref={englishPaneRef}
-          >
-            
-            {currentChapter ? (
-              Object.entries(currentChapter).map(([verseNum, englishText]) => (
-                <div
-                  key={`en-${verseNum}`}
-                  data-verse={verseNum}
-                  className={`p-3 rounded transition-colors ${selectedEnglishVerses && selectedEnglishVerses.has(verseNum) ? 'verse-selected' : (selectedVerse === verseNum ? 'bg-blue-50 border-l-4 border-blue-500' : 'hover:bg-gray-50')}`}
-                  onClick={() => handleVerseClick(verseNum)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <div className="flex items-start space-x-3">
-                    <span className="bible-verse-number text-blue-600 text-sm">{verseNum}</span>
-                    <p className="text-gray-800 leading-relaxed text-sm" style={{textAlign: 'left'}}>{englishText}</p>
+          {(screenMode === 'split' || screenMode === 'english') && (
+            <div
+              className="bible-pane"
+              style={{ flex: 1, minWidth: 0, maxHeight: screenMode === 'english' ? '80vh' : '50vh', overflowY: 'auto', transition: 'max-height 0.3s' }}
+              ref={englishPaneRef}
+            >
+              
+              {currentChapter ? (
+                Object.entries(currentChapter).map(([verseNum, englishText]) => (
+                  <div
+                    key={`en-${verseNum}`}
+                    data-verse={verseNum}
+                    className={`p-3 rounded transition-colors ${selectedEnglishVerses && selectedEnglishVerses.has(verseNum) ? 'verse-selected' : (selectedVerse === verseNum ? 'bg-blue-50 border-l-4 border-blue-500' : 'hover:bg-gray-50')}`}
+                    onClick={() => handleVerseClick(verseNum)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div className="flex items-start space-x-3">
+                      <span className="bible-verse-number text-blue-600 text-sm">{verseNum}</span>
+                      <p className="text-gray-800 leading-relaxed text-sm" style={{textAlign: 'left'}}>{englishText}</p>
+                    </div>
                   </div>
+                ))
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-gray-500">
+                    {lang === 'te' ? 'ఇంగ్లీష్ అధ్యాయం అందుబాటులో లేదు' : 'English chapter not available'}
+                  </p>
                 </div>
-              ))
-            ) : (
-              <div className="text-center py-8">
-                <p className="text-gray-500">
-                  {lang === 'te' ? 'ఇంగ్లీష్ అధ్యాయం అందుబాటులో లేదు' : 'English chapter not available'}
-                </p>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
