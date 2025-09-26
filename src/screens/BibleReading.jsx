@@ -6,9 +6,15 @@ import { getTeluguVerse, getTeluguChapter, getTeluguBook, searchTeluguVerses, ge
 import teluguData from '../assets/data/books/telugu.json';
 
 const BibleReading = ({ lang }) => {
-  const [selectedBook, setSelectedBook] = useState('Genesis');
-  const [selectedChapter, setSelectedChapter] = useState('1');
-  const [selectedVerse, setSelectedVerse] = useState('1');
+  const [selectedBook, setSelectedBook] = useState(() => {
+    return localStorage.getItem('bibleSelectedBook') || 'Genesis';
+  });
+  const [selectedChapter, setSelectedChapter] = useState(() => {
+    return localStorage.getItem('bibleSelectedChapter') || '1';
+  });
+  const [selectedVerse, setSelectedVerse] = useState(() => {
+    return localStorage.getItem('bibleSelectedVerse') || '1';
+  });
   const [currentChapter, setCurrentChapter] = useState(null);
   const [currentTeluguChapter, setCurrentTeluguChapter] = useState(null);
   const [selectedTeluguVerses, setSelectedTeluguVerses] = useState(new Set());
@@ -31,7 +37,78 @@ const BibleReading = ({ lang }) => {
   const teluguPaneRef = useRef(null);
   const englishPaneRef = useRef(null);
   // Split/Full screen mode: 'split', 'telugu', 'english'
-  const [screenMode, setScreenMode] = useState('split');
+  const [screenMode, setScreenMode] = useState(() => {
+    if (lang === 'te') return 'telugu';
+    if (lang === 'en') return 'english';
+    return 'split';
+  });
+
+  // Switch full screen pane when language changes
+  useEffect(() => {
+    if (lang === 'te') setScreenMode('telugu');
+    else if (lang === 'en') setScreenMode('english');
+    else setScreenMode('split');
+  }, [lang]);
+
+  // Mobile swipe gesture support for chapter navigation
+  useEffect(() => {
+    // Only enable on mobile devices (touch)
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (!isTouchDevice) return;
+
+    let touchStartX = null;
+    let touchStartY = null;
+    let touchEndX = null;
+    let touchEndY = null;
+    const threshold = 60; // px
+
+    const handleTouchStart = (e) => {
+      if (e.touches && e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }
+    };
+    const handleTouchMove = (e) => {
+      if (e.touches && e.touches.length === 1) {
+        touchEndX = e.touches[0].clientX;
+        touchEndY = e.touches[0].clientY;
+      }
+    };
+    const handleTouchEnd = () => {
+      if (touchStartX !== null && touchEndX !== null) {
+        const dx = touchEndX - touchStartX;
+        const dy = touchEndY - touchStartY;
+        // Only consider horizontal swipes
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > threshold) {
+          if (dx < 0) {
+            // Swipe left: next chapter
+            navigateChapter('next');
+          } else {
+            // Swipe right: previous chapter
+            navigateChapter('prev');
+          }
+        }
+      }
+      touchStartX = null;
+      touchEndX = null;
+      touchStartY = null;
+      touchEndY = null;
+    };
+
+    const contentDiv = document.querySelector('.bible-reading-content');
+    if (contentDiv) {
+      contentDiv.addEventListener('touchstart', handleTouchStart, { passive: true });
+      contentDiv.addEventListener('touchmove', handleTouchMove, { passive: true });
+      contentDiv.addEventListener('touchend', handleTouchEnd, { passive: true });
+    }
+    return () => {
+      if (contentDiv) {
+        contentDiv.removeEventListener('touchstart', handleTouchStart);
+        contentDiv.removeEventListener('touchmove', handleTouchMove);
+        contentDiv.removeEventListener('touchend', handleTouchEnd);
+      }
+    };
+  }, [selectedChapter, selectedBook]);
   // Prevent scroll loop
   const isSyncingScroll = useRef(false);
   // Synchronize scroll from Telugu to English
@@ -154,24 +231,30 @@ const BibleReading = ({ lang }) => {
 
   const handleBookChange = (book) => {
     setSelectedBook(book);
+    localStorage.setItem('bibleSelectedBook', book);
     setSelectedChapter('1');
+    localStorage.setItem('bibleSelectedChapter', '1');
     setSelectedVerse('1');
+    localStorage.setItem('bibleSelectedVerse', '1');
     setViewMode('chapter');
-    // Clear verse selections when changing books
     setSelectedTeluguVerses(new Set());
     setSelectedEnglishVerses(new Set());
+    // Do NOT clear bookmarks here
   };
 
   const handleChapterChange = (chapter) => {
     setSelectedChapter(chapter);
+    localStorage.setItem('bibleSelectedChapter', chapter);
     setSelectedVerse('1');
-    // Clear verse selections when changing chapters
+    localStorage.setItem('bibleSelectedVerse', '1');
     setSelectedTeluguVerses(new Set());
     setSelectedEnglishVerses(new Set());
+    // Do NOT clear bookmarks here
   };
 
   const handleVerseChange = (verse) => {
     setSelectedVerse(verse);
+    localStorage.setItem('bibleSelectedVerse', verse);
   };
 
   // Helper function to get font size based on textSize state
@@ -236,6 +319,7 @@ const BibleReading = ({ lang }) => {
 
   const clearAllBookmarks = () => {
     setBookmarks({});
+    // Only clear bookmarks here, when user clicks 'Clear Bookmarks'
   };
 
   const clearChapterBookmarks = () => {
@@ -535,9 +619,9 @@ const BibleReading = ({ lang }) => {
             </button>
             <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => setShowReferenceModal(true)}>
               {lang === 'te' ? (
-                <h2 className="text-lg font-semibold" style={{ margin: 0, backgroundColor:'cornsilk', padding:'5px 24px', borderRadius : 10 }}>{teluguBookName} {selectedChapter}:{selectedVerse}</h2>
+                <h2 className="text-lg font-semibold" style={{ margin: 0, backgroundColor:'cornsilk', padding:'5px 24px', borderRadius : 10 , fontSize:16}}>{teluguBookName} {selectedChapter}:{selectedVerse}</h2>
               ) : (
-                <h2 className="text-lg font-semibold" style={{ margin: 0, backgroundColor:'cornsilk', padding:'5px 24px', borderRadius : 10 }}>{selectedBook} {selectedChapter}:{selectedVerse}</h2>
+                <h2 className="text-lg font-semibold" style={{ margin: 0, backgroundColor:'cornsilk', padding:'5px 24px', borderRadius : 10 , fontSize:18}}>{selectedBook} {selectedChapter}:{selectedVerse}</h2>
               )}
             </div>
             <button
@@ -651,16 +735,21 @@ const BibleReading = ({ lang }) => {
       {/* Right side dropdown menus */}
       <div style={{ position: 'absolute', top: '100px', right: '20px', display: 'flex', gap: '0.5rem', zIndex: 1000 }}>
         {/* Copy Actions Dropdown - Always visible */}
-        <div style={{ position: 'relative' }} className="dropdown-container">
+  <div style={{ position: 'relative', top: '-15px' }} className="dropdown-container">
           <button
             className="control-btn"
-            style={{ background: '#f3f4f6', color: '#374151', padding: '0.5rem', minWidth: 'auto', border: '1px solid #d1d5db', borderRadius: '4px' }}
+            style={{ background: '#f3f4f6', color: '#374151', padding: '0.7rem', minWidth: 'auto', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '1.35rem' }}
             onClick={() => {
-              setShowCopyDropdown(!showCopyDropdown);
-              setShowScreenModeDropdown(false); // Close screen mode dropdown
+              setShowCopyDropdown(prev => {
+                if (!prev) {
+                  setShowBookmarkDropdown(false);
+                  setShowScreenModeDropdown(false);
+                }
+                return !prev;
+              });
             }}
           >
-            <FaEllipsisV />
+            <FaEllipsisV style={{ fontSize: '1.35rem' }} />
           </button>
           {showCopyDropdown && (
             <div style={{
@@ -672,7 +761,9 @@ const BibleReading = ({ lang }) => {
               borderRadius: '0.375rem',
               boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
               zIndex: 1001,
-              minWidth: '140px'
+              minWidth: '200px',
+              fontSize: '1.5rem',
+              padding: '1.1rem 0.8rem'
             }}>
               {selectedTeluguVerses && selectedTeluguVerses.size > 0 && (
                 <button
@@ -770,17 +861,21 @@ const BibleReading = ({ lang }) => {
         </div>
 
         {/* Bookmark Dropdown */}
-        <div style={{ position: 'relative' }} className="dropdown-container">
+        <div style={{ position: 'relative', top: '-15px' }} className="dropdown-container">
           <button
             className="control-btn"
-            style={{ background: '#f3f4f6', color: '#374151', padding: '0.5rem', minWidth: 'auto', border: '1px solid #d1d5db', borderRadius: '4px' }}
+            style={{ background: '#f3f4f6', color: '#374151', padding: '0.7rem', minWidth: 'auto', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '1.35rem' }}
             onClick={() => {
-              setShowBookmarkDropdown(!showBookmarkDropdown);
-              setShowCopyDropdown(false);
-              setShowScreenModeDropdown(false);
+              setShowBookmarkDropdown(prev => {
+                if (!prev) {
+                  setShowCopyDropdown(false);
+                  setShowScreenModeDropdown(false);
+                }
+                return !prev;
+              });
             }}
           >
-            <FaBookmark />
+            <FaBookmark style={{ fontSize: '1.35rem' }} />
           </button>
           {showBookmarkDropdown && (
             <div style={{
@@ -792,7 +887,9 @@ const BibleReading = ({ lang }) => {
               borderRadius: '0.375rem',
               boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
               zIndex: 1001,
-              minWidth: '160px'
+              minWidth: '220px',
+              fontSize: '1.5rem',
+              padding: '1.1rem 0.8rem'
             }}>
               <div style={{ padding: '0.5rem 1rem', fontSize: '0.875rem', fontWeight: '500', color: '#374151', borderBottom: '1px solid #e5e7eb' }}>
                 {lang === 'te' ? 'బుక్మార్క్ వర్ణం' : 'Bookmark Color'}
@@ -803,77 +900,89 @@ const BibleReading = ({ lang }) => {
                     className="control-btn"
                     style={{
                       padding: '0.5rem',
-                      fontSize: '0.75rem',
+                      fontSize: '1.1rem',
                       background: '#fee2e2',
                       color: '#dc2626',
-                      border: '1px solid #fecaca'
+                      border: '1px solid #fecaca',
+                      display: 'flex', alignItems: 'center', gap: '0.5rem'
                     }}
                     onClick={() => {
                       const allSelectedVerses = new Set([...Array.from(selectedTeluguVerses), ...Array.from(selectedEnglishVerses)]);
                       if (allSelectedVerses.size > 0) {
                         addBookmarkToSelectedVerses('red');
+                        setSelectedTeluguVerses(new Set());
+                        setSelectedEnglishVerses(new Set());
                         setShowBookmarkDropdown(false);
                       }
                     }}
                   >
-                    🔴 {lang === 'te' ? 'ఎరుపు' : 'Red'}
+                    <FaBookmark style={{ color: '#dc2626', fontSize: '1.1rem' }} /> {lang === 'te' ? 'ఎరుపు' : 'Red'}
                   </button>
                   <button
                     className="control-btn"
                     style={{
                       padding: '0.5rem',
-                      fontSize: '0.75rem',
+                      fontSize: '1.1rem',
                       background: '#dbeafe',
                       color: '#2563eb',
-                      border: '1px solid #bfdbfe'
+                      border: '1px solid #bfdbfe',
+                      display: 'flex', alignItems: 'center', gap: '0.5rem'
                     }}
                     onClick={() => {
                       const allSelectedVerses = new Set([...Array.from(selectedTeluguVerses), ...Array.from(selectedEnglishVerses)]);
                       if (allSelectedVerses.size > 0) {
                         addBookmarkToSelectedVerses('blue');
+                        setSelectedTeluguVerses(new Set());
+                        setSelectedEnglishVerses(new Set());
                         setShowBookmarkDropdown(false);
                       }
                     }}
                   >
-                    🔵 {lang === 'te' ? 'నీలం' : 'Blue'}
+                    <FaBookmark style={{ color: '#2563eb', fontSize: '1.1rem' }} /> {lang === 'te' ? 'నీలం' : 'Blue'}
                   </button>
                   <button
                     className="control-btn"
                     style={{
                       padding: '0.5rem',
-                      fontSize: '0.75rem',
+                      fontSize: '1.1rem',
                       background: '#d1fae5',
                       color: '#059669',
-                      border: '1px solid #a7f3d0'
+                      border: '1px solid #a7f3d0',
+                      display: 'flex', alignItems: 'center', gap: '0.5rem'
                     }}
                     onClick={() => {
                       const allSelectedVerses = new Set([...Array.from(selectedTeluguVerses), ...Array.from(selectedEnglishVerses)]);
                       if (allSelectedVerses.size > 0) {
                         addBookmarkToSelectedVerses('green');
+                        setSelectedTeluguVerses(new Set());
+                        setSelectedEnglishVerses(new Set());
                         setShowBookmarkDropdown(false);
                       }
                     }}
                   >
-                    🟢 {lang === 'te' ? 'పచ్చ' : 'Green'}
+                    <FaBookmark style={{ color: '#059669', fontSize: '1.1rem' }} /> {lang === 'te' ? 'పచ్చ' : 'Green'}
                   </button>
                   <button
                     className="control-btn"
                     style={{
                       padding: '0.5rem',
-                      fontSize: '0.75rem',
+                      fontSize: '1.1rem',
                       background: '#fef3c7',
                       color: '#d97706',
-                      border: '1px solid #fde68a'
+                      border: '1px solid #fde68a',
+                      display: 'flex', alignItems: 'center', gap: '0.5rem'
                     }}
                     onClick={() => {
                       const allSelectedVerses = new Set([...Array.from(selectedTeluguVerses), ...Array.from(selectedEnglishVerses)]);
                       if (allSelectedVerses.size > 0) {
                         addBookmarkToSelectedVerses('yellow');
+                        setSelectedTeluguVerses(new Set());
+                        setSelectedEnglishVerses(new Set());
                         setShowBookmarkDropdown(false);
                       }
                     }}
                   >
-                    🟡 {lang === 'te' ? 'పసుపు' : 'Yellow'}
+                    <FaBookmark style={{ color: '#d97706', fontSize: '1.1rem' }} /> {lang === 'te' ? 'పసుపు' : 'Yellow'}
                   </button>
                 </div>
                 {(() => {
@@ -938,10 +1047,8 @@ const BibleReading = ({ lang }) => {
                           border: '1px solid #fecaca'
                         }}
                         onClick={() => {
-                          if (window.confirm(lang === 'te' ? 'అన్ని బుక్మార్క్ తీసివేయాలా?' : 'Clear all bookmarks?')) {
-                            clearAllBookmarks();
-                            setShowBookmarkDropdown(false);
-                          }
+                          clearAllBookmarks();
+                          setShowBookmarkDropdown(false);
                         }}
                       >
                         {lang === 'te' ? 'అన్ని' : 'All'}
@@ -955,16 +1062,21 @@ const BibleReading = ({ lang }) => {
         </div>
 
         {/* Screen Mode Dropdown */}
-        <div style={{ position: 'relative' }} className="dropdown-container">
+        <div style={{ position: 'relative', top: '-15px' }} className="dropdown-container">
           <button
             className="control-btn"
-            style={{ background: '#f3f4f6', color: '#374151', padding: '0.5rem', minWidth: 'auto', border: '1px solid #d1d5db', borderRadius: '4px' }}
+            style={{ background: '#f3f4f6', color: '#374151', padding: '0.7rem', minWidth: 'auto', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '1.35rem' }}
             onClick={() => {
-              setShowScreenModeDropdown(!showScreenModeDropdown);
-              setShowCopyDropdown(false); // Close copy dropdown
+              setShowScreenModeDropdown(prev => {
+                if (!prev) {
+                  setShowCopyDropdown(false);
+                  setShowBookmarkDropdown(false);
+                }
+                return !prev;
+              });
             }}
           >
-            <FaCog />
+            <FaCog style={{ fontSize: '1.35rem' }} />
           </button>
           {showScreenModeDropdown && (
             <div style={{
@@ -976,10 +1088,13 @@ const BibleReading = ({ lang }) => {
               borderRadius: '0.375rem',
               boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
               zIndex: 1001,
-              minWidth: '160px'
+              minWidth: '220px',
+              fontSize: '1.5rem',
+              padding: '1.1rem 0.8rem'
             }}>
-              {screenMode === 'split' && (
-                <>
+              {/* Show all screen mode options in dropdown */}
+              <>
+                {screenMode !== 'split' && (
                   <button
                     className="dropdown-item"
                     style={{
@@ -989,15 +1104,17 @@ const BibleReading = ({ lang }) => {
                       border: 'none',
                       background: 'none',
                       cursor: 'pointer',
-                      color: '#6d28d9'
+                      color: '#2a1a6e'
                     }}
                     onClick={() => {
-                      setScreenMode('telugu');
+                      setScreenMode('split');
                       setShowScreenModeDropdown(false);
                     }}
                   >
-                    {lang === 'te' ? 'తెలుగు పూర్తి స్క్రీన్' : 'Telugu Full Screen'}
+                    {'Split Screen'}
                   </button>
+                )}
+                {(screenMode === 'split' || screenMode === 'telugu') && (
                   <button
                     className="dropdown-item"
                     style={{
@@ -1014,30 +1131,31 @@ const BibleReading = ({ lang }) => {
                       setShowScreenModeDropdown(false);
                     }}
                   >
-                    {lang === 'te' ? 'ఇంగ్లీష్ పూర్తి స్క్రీన్' : 'English Full Screen'}
+                    {'English Full Screen'}
                   </button>
-                </>
-              )}
-              {(screenMode === 'telugu' || screenMode === 'english') && (
-                <button
-                  className="dropdown-item"
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    textAlign: 'left',
-                    border: 'none',
-                    background: 'none',
-                    cursor: 'pointer',
-                    color: '#2a1a6e'
-                  }}
-                  onClick={() => {
-                    setScreenMode('split');
-                    setShowScreenModeDropdown(false);
-                  }}
-                >
-                  {lang === 'te' ? 'విభజన స్క్రీన్' : 'Split Screen'}
-                </button>
-              )}
+                )}
+                {(screenMode === 'split' || screenMode === 'english') && (
+                  <button
+                    className="dropdown-item"
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem 1rem',
+                      textAlign: 'left',
+                      border: 'none',
+                      background: 'none',
+                      cursor: 'pointer',
+                      color: '#6d28d9'
+                    }}
+                    onClick={() => {
+                      setScreenMode('telugu');
+                      setShowScreenModeDropdown(false);
+                    }}
+                  >
+                    {'Telugu Full Screen'}
+                  </button>
+                )}
+                {/* Text Size controls always shown below */}
+              </>
 
               {/* Text Size Controls */}
               <div style={{ borderTop: '1px solid #e5e7eb', margin: '0.5rem 0' }}></div>
