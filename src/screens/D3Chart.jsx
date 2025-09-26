@@ -36,7 +36,6 @@ export default function D3Chart({ lang = 'en' }) {
   
   const translations = translationsData[lang] || translationsData.en;
 
-  const IMAGE_BASE = "/assets/images/tribes/"; // use this as prefix for bare filenames in JSON
 
 
   // Use the same path logic as JesusImageThumbnail.png import
