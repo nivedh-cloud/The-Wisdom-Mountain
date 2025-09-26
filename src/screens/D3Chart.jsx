@@ -7,7 +7,7 @@ import Modal from '../components/Modal';
 import PageHeader from '../components/PageHeader';
 import { useTheme } from '../contexts/ThemeContext';
 import JesusImage from '../assets/images/JesusImageThumbnail.png';
-
+  
 
 
 export default function D3Chart({ lang = 'en' }) {
@@ -2160,14 +2160,14 @@ export default function D3Chart({ lang = 'en' }) {
               <input
                 type="range"
                 min="10"
-                max="1000"
+                max="1500"
                 value={zoomLevel}
                 onChange={handleZoomSlider}
                 style={{
                   flex: 1,
                   height: '6px',
                   borderRadius: '3px',
-                  background: `linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) ${((zoomLevel - 10) / (1000 - 10)) * 100}%, var(--border-color) ${((zoomLevel - 10) / (1000 - 10)) * 100}%, var(--border-color) 100%)`,
+                  background: `linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) ${((zoomLevel - 10) / (1500 - 10)) * 100}%, var(--border-color) ${((zoomLevel - 10) / (1500 - 10)) * 100}%, var(--border-color) 100%)`,
                   outline: 'none',
                   cursor: 'pointer',
                   WebkitAppearance: 'none',
@@ -2179,7 +2179,7 @@ export default function D3Chart({ lang = 'en' }) {
                 color: 'var(--text-secondary)',
                 minWidth: '35px'
               }}>
-                1000%
+                1500%
               </span>
               <span style={{ 
                 fontSize: '12px', 
