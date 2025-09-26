@@ -2788,6 +2788,7 @@
   transform: translateY(-1px);
 }
 
+
 /* Verse selection highlight and toolbar */
 .bible-pane .verse-selected {
   background: rgba(99,102,241,0.6) !important;
