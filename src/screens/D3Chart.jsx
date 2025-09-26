@@ -42,7 +42,6 @@ export default function D3Chart({ lang = 'en' }) {
   // So for tribe images, use '/assets/images/tribes/' as the base path
   const IMAGE_BASE = "/assets/images/tribes/";
 
-
   // Helper function to create tooltip with current language
   const createInlineTooltip = (event, d) => {
     
