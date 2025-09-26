@@ -178,18 +178,29 @@ const BibleReading = ({ lang }) => {
         const sel = Array.from(selectedEnglishVerses).sort((a,b)=>Number(a)-Number(b));
         text = sel.map(v => `${v}. ${currentChapter && currentChapter[v] ? currentChapter[v] : ''}`).join('\n');
       } else if (pane === 'both') {
-        // Copy both Telugu and English versions
+        // Copy both Telugu and English versions in the requested format
         const allVerses = new Set([...Array.from(selectedTeluguVerses), ...Array.from(selectedEnglishVerses)]);
         const sortedVerses = Array.from(allVerses).sort((a,b)=>Number(a)-Number(b));
-        const lines = [];
+        const minVerse = Math.min(...sortedVerses);
+        const maxVerse = Math.max(...sortedVerses);
+        const verseRange = minVerse === maxVerse ? minVerse : `${minVerse}-${maxVerse}`;
+
+        // Telugu section
+        const teluguBookName = bookMapping[selectedBook] || selectedBook;
+        const teluguLines = [`${teluguBookName} ${selectedChapter}:${verseRange}`];
         for (const verseNum of sortedVerses) {
           const teluguText = currentTeluguChapter && currentTeluguChapter[verseNum] ? currentTeluguChapter[verseNum] : '';
-          const englishText = currentChapter && currentChapter[verseNum] ? currentChapter[verseNum] : '';
-          lines.push(`${verseNum}. తెలుగు: ${teluguText}`);
-          lines.push(`${verseNum}. English: ${englishText}`);
-          lines.push(''); // Empty line between verses
+          teluguLines.push(teluguText);
         }
-        text = lines.join('\n');
+
+        // English section
+        const englishLines = [`${selectedBook} ${selectedChapter}:${verseRange}`];
+        for (const verseNum of sortedVerses) {
+          const englishText = currentChapter && currentChapter[verseNum] ? currentChapter[verseNum] : '';
+          englishLines.push(englishText);
+        }
+
+        text = [...teluguLines, '', ...englishLines].join('\n');
       }
       await navigator.clipboard.writeText(text);
       // small visual feedback could be added later
