@@ -364,9 +364,9 @@ const BibleReading = ({ lang }) => {
           {/* Row 2: Centered clickable reference (only in selected language) */}
           <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => setShowReferenceModal(true)}>
             {lang === 'te' ? (
-              <h2 className="text-lg font-semibold" style={{ margin: 0 }}>{teluguBookName} {selectedChapter}:{selectedVerse}</h2>
+              <h2 className="text-lg font-semibold" style={{ margin: 0, backgroundColor:'cornsilk', padding:'5px', borderRadius : 10 }}>{teluguBookName} {selectedChapter}:{selectedVerse}</h2>
             ) : (
-              <h2 className="text-lg font-semibold" style={{ margin: 0 }}>{selectedBook} {selectedChapter}:{selectedVerse}</h2>
+              <h2 className="text-lg font-semibold" style={{ margin: 0, backgroundColor:'cornsilk', padding:'5px', borderRadius : 10 }}>{selectedBook} {selectedChapter}:{selectedVerse}</h2>
             )}
           </div>
 
@@ -376,7 +376,7 @@ const BibleReading = ({ lang }) => {
               onClick={() => navigateChapter('prev')}
               disabled={getChapterNumbers().indexOf(selectedChapter) === 0}
               className="control-btn flex items-center px-4 py-2"
-              style={{ background: '#edeaff', color: '#2a1a6e', border: '1px solid #b7aaff' }}
+              style={{ background: '#edeaff', color: '#2a1a6e', border: '1px solid #b7aaff', fontSize:`11px` }}
             >
               <FaChevronLeft className="mr-2" />
               {lang === 'te' ? 'మునుపటి' : 'Prev'}
@@ -386,7 +386,7 @@ const BibleReading = ({ lang }) => {
               onClick={() => navigateChapter('next')}
               disabled={getChapterNumbers().indexOf(selectedChapter) === getChapterNumbers().length - 1}
               className="control-btn flex items-center px-4 py-2"
-              style={{ background: '#edeaff', color: '#2a1a6e', border: '1px solid #b7aaff' }}
+              style={{ background: '#edeaff', color: '#2a1a6e', border: '1px solid #b7aaff', fontSize:`11px` }}
             >
               {lang === 'te' ? 'తరువాతి' : 'Next'}
               <FaChevronRight className="ml-2" />
@@ -440,28 +440,25 @@ const BibleReading = ({ lang }) => {
       {/* Reference Modal */}
       {showReferenceModal && (
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.25)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ background: '#fff', borderRadius: 8, boxShadow: '0 2px 16px rgba(0,0,0,0.15)', maxWidth: 520, width: '95%', maxHeight: '80vh', overflowY: 'auto', padding: 24, position: 'relative' }}>
+          <div style={{ background: 'rgb(206 212 233)', borderRadius: 8, boxShadow: '0 2px 16px rgba(0,0,0,0.15)', maxWidth: 400, width: '95%', maxHeight: '80vh', overflowY: 'auto', padding: 24, position: 'relative' }}>
             <button style={{ position: 'absolute', top: 12, right: 16, fontSize: 22, background: 'none', border: 'none', cursor: 'pointer' }} onClick={() => setShowReferenceModal(false)}>&times;</button>
-            <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 12 }}>{lang === 'te' ? 'సూచి ఎంపిక' : 'Select Reference'}</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 12 }}>{lang === 'te' ? 'పుస్తకం ఎంపిక' : 'Select Reference'}</h2>
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 12 }}>
-              <div style={{ flex: '1 1 220px' }}>
-                <label className="text-sm text-gray-700">{lang === 'te' ? 'పుస్తకం' : 'Book'}</label>
+              <div style={{ flex: '1 3 350px' }}>
+                <label className="text-sm text-gray-700">{lang === 'te' ? 'గ్రంధము ' : 'Book'}</label>
                 <select className="control-select w-full" value={selectedBook} onChange={(e) => handleBookChange(e.target.value)}>
-                  <optgroup label={lang === 'te' ? 'పాత నిబంధన' : 'Old Testament'}>
-                    {oldTestamentBooks.map(book => (
-                      <option key={book} value={book}>{book} {bookMapping[book] ? `(${bookMapping[book]})` : ''}</option>
-                    ))}
-                  </optgroup>
-                  <optgroup label={lang === 'te' ? 'క్రొత్త నిబంధన' : 'New Testament'}>
-                    {newTestamentBooks.map(book => (
-                      <option key={book} value={book}>{book} {bookMapping[book] ? `(${bookMapping[book]})` : ''}</option>
-                    ))}
-                  </optgroup>
+                  {lang === 'te'
+                      ? teluguBooks.map(book => (
+                          <option key={book} value={book}>{book}</option>
+                        ))
+                      : bibleBooks.map(book => (
+                          <option key={book} value={book}>{book}</option>
+                        ))}
                 </select>
               </div>
 
-              <div style={{ flex: '0 0 120px' }}>
+              <div style={{ flex: '1 0 120px' }}>
                 <label className="text-sm text-gray-700">{lang === 'te' ? 'అధ్యాయం' : 'Chapter'}</label>
                 <select className="control-select w-full" value={selectedChapter} onChange={(e) => handleChapterChange(e.target.value)} disabled={isLoading}>
                   {isLoading ? <option value="">{lang === 'te' ? 'లోడ్...' : 'Loading...'}</option> : (
@@ -470,8 +467,8 @@ const BibleReading = ({ lang }) => {
                 </select>
               </div>
 
-              <div style={{ flex: '0 0 120px' }}>
-                <label className="text-sm text-gray-700">{lang === 'te' ? 'పద్యము' : 'Verse'}</label>
+              <div style={{ flex: '1 0 120px' }}>
+                <label className="text-sm text-gray-700">{lang === 'te' ? 'వచనము' : 'Verse'}</label>
                 <select className="control-select w-full" value={selectedVerse} onChange={(e) => handleVerseChange(e.target.value)} disabled={isLoading}>
                   {isLoading ? <option value="">{lang === 'te' ? 'లోడ్...' : 'Loading...'}</option> : (
                     getVerseNumbers().map(v => <option key={v} value={v}>{v}</option>)
@@ -482,7 +479,7 @@ const BibleReading = ({ lang }) => {
 
             <div style={{ display: 'flex', gap: 8 }}>
               <button className="control-btn" style={{ background: '#4f46e5', color: '#fff', flex: 1 }} onClick={() => { setShowReferenceModal(false); loadChapter(); }}>
-                {lang === 'te' ? 'జరిపించు' : 'Go'}
+                {lang === 'te' ? 'శోధన' : 'Go'}
               </button>
               
             </div>
@@ -491,16 +488,16 @@ const BibleReading = ({ lang }) => {
       )}
 
       {/* Content */}
-      <div className="bible-reading-content bg-gray-50 rounded-lg p-6" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', minHeight: '400px' }}>
+      <div className="bible-reading-content bg-gray-50 rounded-lg p-6" style={{ display: 'flex', flexDirection: 'column', minHeight: '400px' }}>
         {/* Headings above scrollable panes */}
-        <div style={{ display: 'flex', gap: '2rem', marginBottom: '1rem' }}>
-          <div style={{ flex: 1 }}>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2" style={{textAlign: 'center'}}>
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: 1}}>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2" style={{textAlign: 'center', fontSize: 13}}>
               {lang === 'te' ? 'తెలుగు' : 'Telugu'}
             </h3>
           </div>
           <div style={{ flex: 1 }}>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2" style={{textAlign: 'center'}}>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2" style={{textAlign: 'center', fontSize: 13}}>
               {lang === 'te' ? 'ఇంగ్లీష్ (KJV)' : 'English (KJV)'}
             </h3>
           </div>
@@ -526,7 +523,7 @@ const BibleReading = ({ lang }) => {
           {/* Telugu Bible */}
           <div
             className="bible-pane"
-            style={{ flex: 1, minWidth: 0, maxHeight: '60vh', overflowY: 'auto' }}
+            style={{ flex: 1, minWidth: 0, maxHeight: '50vh', overflowY: 'auto' }}
             ref={teluguPaneRef}
           >
             
@@ -562,7 +559,7 @@ const BibleReading = ({ lang }) => {
           {/* English Bible */}
           <div
             className="bible-pane"
-            style={{ flex: 1, minWidth: 0, maxHeight: '60vh', overflowY: 'auto' }}
+            style={{ flex: 1, minWidth: 0, maxHeight: '50vh', overflowY: 'auto' }}
             ref={englishPaneRef}
           >
             
