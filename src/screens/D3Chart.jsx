@@ -9,6 +9,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import JesusImage from '../assets/images/JesusImageThumbnail.png';
 
 
+
 export default function D3Chart({ lang = 'en' }) {
   
   const svgRef = useRef();
@@ -34,7 +35,7 @@ export default function D3Chart({ lang = 'en' }) {
   const [isMobilePanelOpen, setIsMobilePanelOpen] = useState(false); // Mobile panel state
   
   const translations = translationsData[lang] || translationsData.en;
-  const IMAGE_BASE = "src/assets/images/tribes/"; // use this as prefix for bare filenames in JSON
+  const IMAGE_BASE = "/src/assets/images/tribes/"; // use this as prefix for bare filenames in JSON
 
 
   // Helper function to create tooltip with current language

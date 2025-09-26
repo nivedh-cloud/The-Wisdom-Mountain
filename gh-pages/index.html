@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Favicon Configuration -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/The-Wisdom-Mountain/favicon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/The-Wisdom-Mountain/favicon.png" />
-    <link rel="shortcut icon" type="image/png" href="/The-Wisdom-Mountain/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/The-Wisdom-Mountain/favicon.png" />
-    <link rel="manifest" href="/The-Wisdom-Mountain/manifest.json" />
+    <script>
+      window.BASE_PATH = (window.BASE_PATH || (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_BASE_PATH)) || '/The-Wisdom-Mountain/';
+    </script>
+    <link rel="icon" type="image/png" sizes="32x32" href="<script>document.write(window.BASE_PATH + 'favicon.png');</script>" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<script>document.write(window.BASE_PATH + 'favicon.png');</script>" />
+    <link rel="shortcut icon" type="image/png" href="<script>document.write(window.BASE_PATH + 'favicon.png');</script>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<script>document.write(window.BASE_PATH + 'favicon.png');</script>" />
+    <link rel="manifest" href="<script>document.write(window.BASE_PATH + 'manifest.json');</script>" />
     <meta name="theme-color" content="#2c3e50" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wisdom Mountain - Scripture wisdom</title>
@@ -41,10 +44,11 @@
       }(window.location))
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
-    <script type="module" crossorigin src="/The-Wisdom-Mountain/assets/index-BhJjSmwu.js"></script>
-    <link rel="stylesheet" crossorigin href="/The-Wisdom-Mountain/assets/index-Cw2w4iKh.css">
-  <link rel="manifest" href="/The-Wisdom-Mountain/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/The-Wisdom-Mountain/registerSW.js"></script></head>
+    <script type="module" crossorigin src="<script>document.write(window.BASE_PATH + 'assets/index-BhJjSmwu.js');</script>"></script>
+    <link rel="stylesheet" crossorigin href="<script>document.write(window.BASE_PATH + 'assets/index-Cw2w4iKh.css');</script>">
+  <link rel="manifest" href="<script>document.write(window.BASE_PATH + 'manifest.webmanifest');</script>"><script id="vite-plugin-pwa:register-sw" src="<script>document.write(window.BASE_PATH + 'registerSW.js');</script>"></script></head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
+
   </body>
 </html>
