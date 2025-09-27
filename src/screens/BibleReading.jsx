@@ -867,7 +867,7 @@ const BibleReading = ({ lang }) => {
                     setShowCopyDropdown(false);
                   }}
                 >
-                  {lang === 'te' ? 'కాపీ తెలుగు' : 'Copy Telugu'}
+                  {lang === 'te' ? 'Copy Telugu' : 'Copy Telugu'}
                 </button>
               )}
               {selectedEnglishVerses && selectedEnglishVerses.size > 0 && (
@@ -887,7 +887,7 @@ const BibleReading = ({ lang }) => {
                     setShowCopyDropdown(false);
                   }}
                 >
-                  {lang === 'te' ? 'కాపీ ఇంగ్లీష్' : 'Copy English'}
+                  {lang === 'te' ? 'Copy English' : 'Copy English'}
                 </button>
               )}
               {((selectedTeluguVerses && selectedTeluguVerses.size > 0) || (selectedEnglishVerses && selectedEnglishVerses.size > 0)) && (
@@ -907,7 +907,7 @@ const BibleReading = ({ lang }) => {
                     setShowCopyDropdown(false);
                   }}
                 >
-                  {lang === 'te' ? 'రెండూ కాపీ చేయండి' : 'Copy Both'}
+                  {lang === 'te' ? 'Copy Both' : 'Copy Both'}
                 </button>
               )}
               {((selectedTeluguVerses && selectedTeluguVerses.size > 0) || (selectedEnglishVerses && selectedEnglishVerses.size > 0)) && (
@@ -938,7 +938,7 @@ const BibleReading = ({ lang }) => {
                   color: '#9ca3af',
                   fontSize: '0.875rem'
                 }}>
-                  {lang === 'te' ? 'వర్సెస్ ఎంచుకోండి' : 'Select verses to copy'}
+                  {lang === 'te' ? 'Select verses to copy' : 'Select verses to copy'}
                 </div>
               )}
             </div>
@@ -977,7 +977,7 @@ const BibleReading = ({ lang }) => {
               padding: '1.1rem 0.8rem'
             }}>
               <div style={{ padding: '0.5rem 1rem', fontSize: '0.875rem', fontWeight: '500', color: '#374151', borderBottom: '1px solid #e5e7eb' }}>
-                {lang === 'te' ? 'బుక్మార్క్ వర్ణం' : 'Bookmark Color'}
+                {lang === 'te' ? 'Bookmark Color' : 'Bookmark Color'}
               </div>
               <div style={{ padding: '0.5rem' }}>
                 <BookmarkColorDropdown
@@ -1024,14 +1024,14 @@ const BibleReading = ({ lang }) => {
                         setShowBookmarkDropdown(false);
                       }}
                     >
-                      ❌ {lang === 'te' ? 'ఎంచుకున్న వచనాల బుక్మార్క్ తీసివేయి' : 'Remove Selected Bookmarks'}
+                      ❌ {lang === 'te' ? 'Remove Selected Bookmarks' : 'Remove Selected Bookmarks'}
                     </button>
                   );
                 })()}
                 {Object.keys(bookmarks).length > 0 && (
                   <div style={{ borderTop: '1px solid #e5e7eb', margin: '0.5rem 0', paddingTop: '0.5rem' }}>
                     <div style={{ fontSize: '0.75rem', fontWeight: '500', color: '#6b7280', marginBottom: '0.5rem' }}>
-                      {lang === 'te' ? 'అన్ని బుక్మార్క్ తీసివేయి' : 'Clear Bookmarks'}
+                      {lang === 'te' ? 'Clear Bookmarks' : 'Clear Bookmarks'}
                     </div>
                     <div style={{ display: 'flex', gap: '0.25rem' }}>
                       <button
@@ -1049,9 +1049,9 @@ const BibleReading = ({ lang }) => {
                           setShowBookmarkDropdown(false);
                         }}
                       >
-                        {lang === 'te' ? 'ఈ అధ్యాయం' : 'This Chapter'}
+                        {lang === 'te' ? 'This Chapter' : 'This Chapter'}
                       </button>
-                      <button
+                      {/*<button
                         className="control-btn"
                         style={{
                           flex: 1,
@@ -1066,8 +1066,8 @@ const BibleReading = ({ lang }) => {
                           setShowBookmarkDropdown(false);
                         }}
                       >
-                        {lang === 'te' ? 'అన్ని' : 'All'}
-                      </button>
+                        {lang === 'te' ? 'All' : 'All'}
+                      </button>*/}
                     </div>
                   </div>
                 )}
@@ -1179,7 +1179,7 @@ const BibleReading = ({ lang }) => {
               <div style={{ borderTop: '1px solid #e5e7eb', margin: '0.5rem 0' }}></div>
               <div style={{ padding: '0.5rem 1rem' }}>
                 <div style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                  {lang === 'te' ? 'టెక్స్ట్ సైజ్' : 'Text Size'}
+                  {lang === 'te' ? 'Text Size' : 'Text Size'}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <button
@@ -1194,7 +1194,7 @@ const BibleReading = ({ lang }) => {
                     onClick={() => setTextSize('small')}
                     disabled={textSize === 'small'}
                   >
-                    {lang === 'te' ? 'చిన్న' : 'Small'}
+                    {lang === 'te' ? 'Small' : 'Small'}
                   </button>
                   <button
                     className="control-btn"
@@ -1208,7 +1208,7 @@ const BibleReading = ({ lang }) => {
                     onClick={() => setTextSize('medium')}
                     disabled={textSize === 'medium'}
                   >
-                    {lang === 'te' ? 'మధ్య' : 'Medium'}
+                    {lang === 'te' ? 'Medium' : 'Medium'}
                   </button>
                   <button
                     className="control-btn"
@@ -1222,7 +1222,7 @@ const BibleReading = ({ lang }) => {
                     onClick={() => setTextSize('large')}
                     disabled={textSize === 'large'}
                   >
-                    {lang === 'te' ? 'పెద్ద' : 'Large'}
+                    {lang === 'te' ? 'Large' : 'Large'}
                   </button>
                 </div>
               </div>
