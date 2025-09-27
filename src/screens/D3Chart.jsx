@@ -9,6 +9,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import JesusImage from '../assets/images/JesusImageThumbnail.png';
 
 
+
 export default function D3Chart({ lang = 'en' }) {
   
   const svgRef = useRef();
@@ -34,6 +35,7 @@ export default function D3Chart({ lang = 'en' }) {
   const [isMobilePanelOpen, setIsMobilePanelOpen] = useState(false); // Mobile panel state
   
   const translations = translationsData[lang] || translationsData.en;
+
   // Use the same path logic as JesusImageThumbnail.png import
   // Jesus image works because it's imported as: import JesusImage from '../assets/images/JesusImageThumbnail.png';
   // Vite/React rewrites imports to /assets/...

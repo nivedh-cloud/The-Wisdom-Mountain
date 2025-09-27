@@ -4,9 +4,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig(({ command, mode }) => {
-  // Use base path only for production builds (GitHub Pages)
-  const base = command === 'build' ? '/The-Wisdom-Mountain/' : '/';
-  
+  // Use VITE_BASE_PATH from env, fallback to default
+  const base = process.env.VITE_BASE_PATH || (command === 'build' ? '/The-Wisdom-Mountain/' : '/');
   return {
     base,
     plugins: [
